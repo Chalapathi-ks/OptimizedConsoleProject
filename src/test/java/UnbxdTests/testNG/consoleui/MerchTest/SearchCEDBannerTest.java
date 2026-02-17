@@ -93,6 +93,8 @@ public class SearchCEDBannerTest extends MerchandisingTest {
         searchPageActions.awaitForPageToLoad();
         searchPageActions.selectActionType(UnbxdEnum.EDIT,query);
         searchPage.await();
+        merchandisingActions.awaitForElementPresence(searchPageActions.htmlPreview);
+        merchandisingActions.scrollUntilVisible(searchPageActions.htmlPreview);
         Assert.assertTrue(searchPageActions.htmlPreview.getText().contains(html),"SEARCH:  HTML URL IS NOT SAME AS GIVEN ");
 
         bannerActions.addImgBanner(editImg);

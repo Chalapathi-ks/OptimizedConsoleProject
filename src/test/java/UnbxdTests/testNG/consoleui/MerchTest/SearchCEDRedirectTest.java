@@ -8,6 +8,9 @@ import core.consoleui.actions.MerchandisingActions;
 import lib.annotation.FileToTest;
 import lib.enums.UnbxdEnum;
 import org.fluentlenium.core.annotation.Page;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -67,7 +70,14 @@ public class SearchCEDRedirectTest extends MerchandisingTest {
         ThreadWait();
         searchPageActions.selectActionType(UnbxdEnum.PREVIEW,query);
         ThreadWait();
-        Assert.assertEquals(searchPageActions.redirectPreview.getValue(),editRedirectUrl,"REDIRECT URL IS NOT SAME AS GIVEN");
+        merchandisingActions.awaitForElementPresence(searchPageActions.redirectPreview);
+        new WebDriverWait(merchandisingActions.getDriver(), 15).until(new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver driver) {
+                return editRedirectUrl.equals(searchPageActions.redirectPreview.getValue());
+            }
+        });
+        Assert.assertEquals(searchPageActions.redirectPreview.getValue(), editRedirectUrl, "REDIRECT URL IS NOT SAME AS GIVEN");
 
         searchPage.threadWait();
         goTo(searchPage);

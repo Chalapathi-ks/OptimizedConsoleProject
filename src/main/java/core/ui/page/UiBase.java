@@ -882,9 +882,8 @@ public class UiBase extends FluentPage {
         JavascriptExecutor ex = (JavascriptExecutor) getDriver();
         try {
             ex.executeScript("arguments[0].click();", fluentWebElement.getElement());
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
             try {
-                // Fallback: re-query a concrete WebElement via CSS and click via JS
                 String css = getCssLocatorForFluent(fluentWebElement);
                 WebElement concrete = getDriver().findElement(By.cssSelector(css));
                 ex.executeScript("arguments[0].click();", concrete);

@@ -423,9 +423,21 @@ public class MerchandisingActions extends MerchandisingRulesPage {
 
 
     public void selectPinningProduct(int product) {
-        pinningDropdown.click();
+        scrollUntilVisible(pinningDropdown);
+        try {
+            pinningDropdown.click();
+        } catch (ElementClickInterceptedException e) {
+            ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", pinningDropdown.getElement());
+        }
+        await();
         if (pinningDropDownList.size() > 0) {
-            pinningDropDownList.get(product).click();
+            FluentWebElement productItem = pinningDropDownList.get(product);
+            scrollUntilVisible(productItem);
+            try {
+                productItem.click();
+            } catch (ElementClickInterceptedException e) {
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", productItem.getElement());
+            }
         } else {
             Assert.fail("PINNING DROPDOWN LIST IS EMPTY");
         }
