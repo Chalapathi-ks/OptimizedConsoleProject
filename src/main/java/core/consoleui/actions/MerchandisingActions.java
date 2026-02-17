@@ -10,6 +10,7 @@ import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
@@ -72,6 +73,7 @@ public class MerchandisingActions extends MerchandisingRulesPage {
 
             selectAttribute(key, attributeElement);
             selectCondition(condition, conditionElement);
+            valueElement = row.findFirst(valueOfAttribute);
             selectValue(value, valueElement);
             if (awaitForElementPresence(boostValueSection)) {
                 boostRowSection = rowGroup.find(ruleValueGroups).get(index);
@@ -194,17 +196,62 @@ public class MerchandisingActions extends MerchandisingRulesPage {
     }
 
     public void selectAttribute(String value, FluentWebElement attribute) throws InterruptedException {
-        attribute.find(".RCB-select-arrow").click();
+        scrollUntilVisible(attribute);
+        await();
+        FluentWebElement attributeArrow = attribute.findFirst(".RCB-select-arrow");
+        waitForElementToBeClickable(attributeArrow, "Attribute dropdown arrow");
+        safeClick(attributeArrow);
         new WebDriverWait(getDriver(), 10).until((ExpectedCondition<Boolean>) d -> attributeDropDownList.size() > 0);
         if (attributeDropDownList.size() > 0) {
             attributeInput.clear();
             attributeInput.fill().with(value);
             new WebDriverWait(getDriver(), 10).until((ExpectedCondition<Boolean>) d -> attributeDropDownList.size() > 0);
-            selectDropDownValue(attributeDropDownList, value);
+            await();
+            WebElement optionToSelect = new WebDriverWait(getDriver(), 10).until((ExpectedCondition<WebElement>) d -> {
+                for (FluentWebElement el : attributeDropDownList) {
+                    if (value != null && !value.trim().isEmpty()
+                            && el.getText().trim().toLowerCase().contains(value.trim().toLowerCase())) {
+                        try {
+                            WebElement we = el.getElement();
+                            if (we.isDisplayed() && we.isEnabled()) return we;
+                        } catch (Exception ignored) { }
+                    }
+                }
+                return null;
+            });
+            if (optionToSelect != null) {
+                new WebDriverWait(getDriver(), 5).until(ExpectedConditions.elementToBeClickable(optionToSelect));
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", optionToSelect);
+            } else {
+                try {
+                    attributeInput.getElement().sendKeys(Keys.ARROW_DOWN);
+                    await();
+                    attributeInput.getElement().sendKeys(Keys.ENTER);
+                } catch (Exception e) {
+                    selectAttributeOptionInOpenDropdown(value);
+                }
+            }
             await();
         } else {
             Assert.fail("ATTRIBUTE DROPDOWN LIST IS EMPTY!!!");
         }
+    }
+
+    private void selectAttributeOptionInOpenDropdown(String value) {
+        String searchLower = value == null ? "" : value.trim().toLowerCase();
+        java.util.List<WebElement> options = getDriver().findElements(
+            By.cssSelector(".RCB-inline-modal-body .RCB-align-left .RCB-list-item, .RCB-inline-modal .RCB-align-left .RCB-list-item"));
+        for (WebElement opt : options) {
+            if (!opt.isDisplayed()) continue;
+            String text = opt.getText().trim();
+            if (!text.isEmpty() && text.toLowerCase().contains(searchLower)) {
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView({block:'center'});", opt);
+                await();
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", opt);
+                return;
+            }
+        }
+        selectDropDownValue(attributeDropDownList, value);
     }
 
     public void selectAttributeValue(String value) throws InterruptedException {
@@ -217,7 +264,10 @@ public class MerchandisingActions extends MerchandisingRulesPage {
 
     public void selectSortAttribute(String value, FluentWebElement attribute) throws InterruptedException {
         await();
-        attribute.find(".RCB-select-arrow").click();
+        scrollUntilVisible(attribute);
+        FluentWebElement sortArrow = attribute.findFirst(".RCB-select-arrow");
+        waitForElementToBeClickable(sortArrow, "Sort attribute dropdown arrow");
+        safeClick(sortArrow);
         new WebDriverWait(getDriver(), 10).until((ExpectedCondition<Boolean>) d -> attributeDropDwnList.size() > 0);
         selectDropDownValue(attributeDropDwnList, value);
         await();
@@ -225,21 +275,53 @@ public class MerchandisingActions extends MerchandisingRulesPage {
 
 
     public void selectCondition(String condition, FluentWebElement comparator) {
-        comparator.click();
+        scrollUntilVisible(comparator);
+        await();
+        waitForElementToBeClickable(comparator, "Condition comparator");
+        safeClick(comparator);
         new WebDriverWait(getDriver(), 5).until((ExpectedCondition<Boolean>) d -> conditionList.size() > 0);
         Assert.assertTrue(conditionList.size() > 0, "Conditions are not loading");
         for (FluentWebElement option : conditionList) {
             if (option.getTextContent().trim().toLowerCase().contains(condition.toLowerCase())) {
-                option.click();
+                scrollUntilVisible(option);
+                safeClick(option);
                 break;
             }
         }
     }
 
     public void selectValue(String value, FluentWebElement element) {
-        Attribbutevalue.click();
+        if (element == null) return;
+        scrollUntilVisible(element);
         await();
-        Attribbutevalue.fill().with(value);
+        waitForElementToBeClickable(element, "Filter value input");
+        safeClick(element);
+        await();
+        FluentWebElement targetInput = null;
+        try {
+            if (Attribbutevalue != null && awaitForElementPresence(Attribbutevalue) && Attribbutevalue.isDisplayed()) {
+                targetInput = Attribbutevalue;
+            }
+        } catch (Exception ignored) { }
+        if (targetInput == null && element != null) {
+            try {
+                WebElement el = element.getElement();
+                if (el != null && "input".equalsIgnoreCase(el.getTagName())) {
+                    targetInput = element;
+                } else if (element.find("input").size() > 0) {
+                    targetInput = element.findFirst("input");
+                } else {
+                    targetInput = element;
+                }
+            } catch (Exception e) {
+                targetInput = element;
+            }
+        }
+        if (targetInput != null) {
+            targetInput.clear();
+            targetInput.fill().with(value);
+        }
+        await();
     }
 
 
@@ -274,8 +356,19 @@ public class MerchandisingActions extends MerchandisingRulesPage {
 
 
     public MerchandisingActions nextPage() {
+        try {
+            new WebDriverWait(getDriver(), 20).until(
+                ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".browse-picker-modal")));
+        } catch (Exception ignored) {
+        }
         awaitTillElementDisplayed(nextButton);
-        nextButton.click();
+        scrollUntilVisible(nextButton);
+        waitForElementToBeClickable(nextButton, "Next button");
+        try {
+            nextButton.click();
+        } catch (ElementClickInterceptedException e) {
+            ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", nextButton.getElement());
+        }
         awaitForPageToLoad();
         return this;
     }

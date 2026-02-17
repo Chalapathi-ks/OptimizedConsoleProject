@@ -199,6 +199,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         searchPageActions.selectActionFromMore(UnbxdEnum.STOPPED,query);
         searchPageActions.selectModelWindow();
         Assert.assertTrue(searchPageActions.checkSuccessMessage(), SUCCESS_MESSAGE_FAILURE);
+        merchandisingActions.awaitTillElementDisplayed(searchPageActions.stopCampaign);
         Assert.assertTrue(searchPageActions.stopCampaign.isDisplayed(),"SEARCH: PROMOTION RULE IS NOT IN STOPPED STATE");
 
         //Duplicate the rule
@@ -250,6 +251,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         Map<String, Object> campaignData = merchandisingActions.getCampaignData("browseUpcomingStatusTest.json");
 
         searchPageActions.fillPageName(object);
+        merchandisingActions.nextPage();
         merchandisingActions.fillCampaignDataforUpcoming(campaignData);
         merchandisingActions.awaitForElementPresence(merchandisingActions.calendarIcon);
         if (merchandisingActions.calendarIcon.isDisplayed()) {
@@ -329,6 +331,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         Map<String, Object> campaignData = merchandisingActions.getCampaignData("browsePromotionDuplicateTest.json");
 
         searchPageActions.fillPageName(object);
+        merchandisingActions.nextPage();
         merchandisingActions.fillCampaignData(campaignData);
         merchandisingActions.await();
         merchandisingActions.goToLandingPage();
@@ -348,6 +351,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         searchPageActions.selectActionFromMore(UnbxdEnum.STOPPED,page);
         searchPageActions.selectModelWindow();
         Assert.assertTrue(searchPageActions.checkSuccessMessage(), SUCCESS_MESSAGE_FAILURE);
+        merchandisingActions.awaitTillElementDisplayed(searchPageActions.stopCampaign);
         Assert.assertTrue(searchPageActions.stopCampaign.isDisplayed(),"SEARCH: PROMOTION RULE IS NOT IN STOPPED STATE");
 
         //Duplicate the rule

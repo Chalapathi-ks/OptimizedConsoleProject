@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Single - promotionActiveAndStopStatusTest" verbose="2">
+    <test name="Merch - PromotionStatusTest - promotionActiveAndStopStatusTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PromotionStatusTest">
+                <methods>
+                    <include name="promotionActiveAndStopStatusTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

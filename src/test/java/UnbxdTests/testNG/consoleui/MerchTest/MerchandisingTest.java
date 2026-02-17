@@ -72,7 +72,8 @@ public class MerchandisingTest extends BaseTest {
                 } else {
                     searchPage.threadWait();
                     searchPage.clickOnAddRule(bannerOrFacet);
-                    if (searchPage.awaitForElementPresence(searchPage.newQueryRuleInput) == true) {
+                    searchPage.await();
+                    if (searchPage.awaitForElementPresence(searchPage.newQueryRuleInput)) {
                         searchPage.fillQueryRuleData(query, null);
                     }
                 }
@@ -90,8 +91,8 @@ public class MerchandisingTest extends BaseTest {
                 }
                 else {
                     searchPage.clickOnAddRule(bannerOrFacet);
-                    searchPage.threadWait();
-                    if (searchPage.awaitForElementPresence(searchPage.newQueryRuleInput) == true) {
+                    searchPage.await();
+                    if (searchPage.awaitForElementPresence(searchPage.newQueryRuleInput)) {
                         searchPage.fillQueryRuleData(query, null);
                     }
                 }

@@ -21,13 +21,14 @@ public class EnvironmentConfig {
         if(configuration==null)
         {
             Yaml yaml = new Yaml();
-            // Resolve profile: system property first, then config.properties. No fallback.
+            // Resolve profile: system property first, then config.properties, then default for IDE runs.
             String resolvedProfile = System.getProperty("env.profile");
             if (resolvedProfile == null || resolvedProfile.trim().isEmpty()) {
                 resolvedProfile = Config.getEnvironmentProfile();
             }
             if (resolvedProfile == null || resolvedProfile.trim().isEmpty() || resolvedProfile.contains("${")) {
-                throw new Exception("Environment profile not set. Provide -Denv.profile=<ProfileName> (e.g., ProdGCP) or set 'environment.profile' in config.properties.");
+                resolvedProfile = "ProdUK";
+                System.out.println("[INFO] Environment profile not set; using default: " + resolvedProfile + " (for Maven use -P<ProfileName> e.g. -PProdUK, or -Denv.profile=<ProfileName>)");
             }
             String file= resolvedProfile + ".yaml";
             try(InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream(file)) {

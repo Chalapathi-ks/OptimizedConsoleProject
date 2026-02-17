@@ -77,7 +77,12 @@ public class Config {
 
     public static String getBrowser() {
         if (configuration == null) getInstance();
-        return configuration.getString(BROWSER);
+        String browser = configuration.getString(BROWSER);
+        // Default to chrome when not set or unresolved (e.g. IDE run without Maven filtering)
+        if (browser == null || browser.trim().isEmpty() || browser.contains("${")) {
+            return "chrome";
+        }
+        return browser;
     }
 
     public static String getOsPlatform() {

@@ -7,6 +7,8 @@ import core.consoleui.page.CommerceSearchPage;
 import lib.enums.UnbxdEnum;
 import org.fluentlenium.core.domain.FluentList;
 import org.fluentlenium.core.domain.FluentWebElement;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
@@ -291,23 +293,56 @@ public class CommercePageActions extends CommerceSearchPage {
             awaitForElementPresence(BuildPath);
             BuildPath.click();
             browseAttributeArrow.click();
-            FluentWebElement searchInput = findFirst(".RCB-dd-search-ip");
+            await();
+            FluentWebElement browseModal = findFirst(".browse-picker-modal");
+            awaitForElementPresence(browseModal);
+            FluentWebElement searchInput = browseModal.findFirst(".RCB-dd-search-ip");
             searchInput.fill().with(browse_Attribute);
             await();
-            for (FluentWebElement attribute : browseAttributeList) {
-                if (attribute.getText().trim().equalsIgnoreCase(browse_Attribute)) {
-                    attribute.click();
-                    await();
-                    break;
+            FluentWebElement attributeOption = null;
+            for (int retry = 0; retry < 15; retry++) {
+                await();
+                FluentWebElement modal = findFirst(".browse-picker-modal");
+                FluentList<FluentWebElement> items = modal.find(".RCB-list-item.dm-dd-item");
+                for (FluentWebElement el : items) {
+                    if (el.getText().trim().equalsIgnoreCase(browse_Attribute)) {
+                        attributeOption = el;
+                        break;
+                    }
                 }
+                if (attributeOption != null) break;
+                threadWait();
+            }
+            Assert.assertNotNull(attributeOption, "Attribute option not found in browse-picker: " + browse_Attribute);
+            scrollUntilVisible(attributeOption);
+            waitForElementToBeClickable(attributeOption, "Attribute option");
+            try {
+                attributeOption.click();
+            } catch (ElementClickInterceptedException e) {
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", attributeOption.getElement());
             }
             await();
-            for (FluentWebElement value : categoeyValueList) {
-                if (value.getText().trim().equalsIgnoreCase(browse_Value)) {
-                    ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", value.getElement());
-                    await();
-                    break;
+            FluentWebElement valueOption = null;
+            for (int retry = 0; retry < 15; retry++) {
+                await();
+                FluentWebElement modal = findFirst(".browse-picker-modal");
+                FluentList<FluentWebElement> valueItems = modal.find(".list-item");
+                for (FluentWebElement el : valueItems) {
+                    if (el.getText().trim().equalsIgnoreCase(browse_Value)) {
+                        valueOption = el;
+                        break;
+                    }
                 }
+                if (valueOption != null) break;
+                threadWait();
+            }
+            Assert.assertNotNull(valueOption, "Value option not found in browse-picker: " + browse_Value);
+            scrollUntilVisible(valueOption);
+            waitForElementToBeClickable(valueOption, "Value option");
+            try {
+                valueOption.click();
+            } catch (ElementClickInterceptedException e) {
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", valueOption.getElement());
             }
             await();
             categorypathApplyButton.click();

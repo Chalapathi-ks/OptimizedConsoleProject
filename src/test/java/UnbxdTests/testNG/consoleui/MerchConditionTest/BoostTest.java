@@ -73,6 +73,7 @@ public class BoostTest extends MerchandisingTest {
         String previewPage = driver.getCurrentUrl();
         Assert.assertTrue(previewPage.contains("preview"),"Not redirecting to preview page");
         merchandisingActions.awaitForElementPresence(merchandisingActions.SearchpreviewOption);
+        merchandisingActions.awaitForElementPresence(merchandisingActions.showingResultinPreview);
         Assert.assertTrue(merchandisingActions.showingResultinPreview.getText().contains(query));
 
         merchandisingActions.ClickViewHideInsight();
@@ -111,6 +112,7 @@ public class BoostTest extends MerchandisingTest {
         String previewpage = driver.getCurrentUrl();
         Assert.assertTrue(previewpage.contains("preview"),"Not redirecting to preview page");
         merchandisingActions.awaitForElementPresence(merchandisingActions.SearchpreviewOption);
+        merchandisingActions.awaitForElementPresence(merchandisingActions.showingResultinPreview);
         Assert.assertTrue(merchandisingActions.showingResultinPreview.getText().contains(query));
 
         merchandisingActions.ClickViewHideInsight();

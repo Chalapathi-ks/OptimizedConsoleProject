@@ -4,7 +4,23 @@ Selenium automation suite for Self Serve UI
 
 ## Running Tests
 
-### Run Full Test Suite
+### Run locally (no Grid)
+
+Do **not** pass `-DhubUrl`. ChromeDriver is auto-downloaded to match your installed Chrome (via WebDriverManager).
+
+```bash
+mvn test -P[Profile] -Denv.profile=[Profile] -DsuiteXmlFile=src/test/resources/testNG/[SuiteFile].xml
+```
+
+Example (UK, single test):
+```bash
+mvn test -PProdUK -Denv.profile=ProdUK -DsuiteXmlFile=src/test/resources/testNG/SingleTest-BrowsePinPreview.xml
+```
+
+To force local when `hubUrl` might be set elsewhere: add `-DhubUrl=` to the command.
+
+### Run on Selenium Grid
+
 ```bash
 mvn test -P[Profile] -DsuiteXmlFile=src/test/resources/testNG/[SuiteFile].xml -DhubUrl=[SeleniumGridURL]
 ```

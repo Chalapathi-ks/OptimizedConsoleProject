@@ -22,6 +22,7 @@ import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import static org.openqa.selenium.chrome.ChromeDriverService.CHROME_DRIVER_EXE_PROPERTY;
 
 public class BrowserInitializer {
@@ -306,35 +307,28 @@ public class BrowserInitializer {
                 }
             }
         } catch (org.openqa.selenium.SessionNotCreatedException e) {
-            System.err.println("[ERROR] ❌ Session creation failed - Grid rejected the session request");
-            System.err.println("[ERROR] =========================================");
-            System.err.println("[ERROR] MOST LIKELY CAUSE: No nodes are registered/available in the Grid");
-            System.err.println("[ERROR] =========================================");
-            // Convert hub URL to UI URL
-            String gridUiUrl = "https://selenium-hub.netcorein.com/ui/#";
-            if (hubUrl != null && hubUrl.contains("selenium-hub.netcorein.com")) {
-                gridUiUrl = "https://selenium-hub.netcorein.com/ui/#";
-            } else if (hubUrl != null) {
-                // Generic conversion for other Grid URLs
-                gridUiUrl = hubUrl.replace(":4444/wd/hub", "").replace("http://", "https://").replace("https://", "https://") + "/ui/#";
+            String msg = e.getMessage() != null ? e.getMessage() : "";
+            boolean isLocal = (hubUrl == null || hubUrl.isEmpty());
+            boolean isChromeVersionMismatch = msg.contains("This version of ChromeDriver only supports Chrome version") || msg.contains("Current browser version is");
+            if (isLocal && isChromeVersionMismatch) {
+                System.err.println("[ERROR] ❌ Session creation failed - ChromeDriver / Chrome version mismatch (local run)");
+                System.err.println("[ERROR] Ensure WebDriverManager resolves a driver matching your Chrome. Exception: " + msg);
+            } else if (isLocal) {
+                System.err.println("[ERROR] ❌ Session creation failed (local run): " + msg);
+            } else {
+                System.err.println("[ERROR] ❌ Session creation failed - Grid rejected the session request");
+                System.err.println("[ERROR] =========================================");
+                System.err.println("[ERROR] MOST LIKELY CAUSE: No nodes are registered/available in the Grid");
+                System.err.println("[ERROR] =========================================");
+                String gridUiUrl = (hubUrl != null && hubUrl.contains("selenium-hub.netcorein.com")) ? "https://selenium-hub.netcorein.com/ui/#" : (hubUrl != null ? hubUrl.replace(":4444/wd/hub", "").replace("http://", "https://").replace("https://", "https://") + "/ui/#" : "/ui/#");
+                System.err.println("[ERROR] Check the Grid UI: " + gridUiUrl);
+                System.err.println("[ERROR] Exception details: " + msg);
             }
-            System.err.println("[ERROR] Check the Grid UI: " + gridUiUrl);
-            System.err.println("[ERROR] Look for:");
-            System.err.println("[ERROR]   1. 'Concurrency: 0%' or '0/X' - means NO nodes are running");
-            System.err.println("[ERROR]   2. Queue size > 0 but no active sessions - nodes not accepting sessions");
-            System.err.println("[ERROR]   3. Go to 'Overview' tab to see if any nodes are registered");
-            System.err.println("[ERROR] ");
-            System.err.println("[ERROR] Other possible causes:");
-            System.err.println("[ERROR]   1. Capabilities don't match any available nodes");
-            System.err.println("[ERROR]   2. Nodes are unhealthy or busy");
-            System.err.println("[ERROR]   3. Network connectivity issues");
-            System.err.println("[ERROR] ");
-            System.err.println("[ERROR] Exception details: " + e.getMessage());
             if (e.getCause() != null) {
                 System.err.println("[ERROR] Root cause: " + e.getCause().getClass().getSimpleName() + ": " + e.getCause().getMessage());
             }
             e.printStackTrace();
-            throw new RuntimeException("Driver init failed for: " + browser.getName() + " - Session creation rejected. Check Grid nodes and capabilities.", e);
+            throw new RuntimeException("Driver init failed for: " + browser.getName() + " - " + (isLocal && isChromeVersionMismatch ? "ChromeDriver/Chrome version mismatch." : "Session creation rejected."), e);
         } catch (Exception e) {
             String exceptionType = e.getClass().getSimpleName();
             String exceptionMsg = e.getMessage();
@@ -386,10 +380,18 @@ public class BrowserInitializer {
             System.setProperty(chromeDriverKey, chromeDriverPath);
             capabilities.setCapability(chromeDriverKey, chromeDriverPath);
         } else {
-            String defaultPath = getChromeDriverPath();
-            System.out.println("[DEBUG] CHROME_DRIVER_PATH not set. Using default: " + defaultPath);
-            System.setProperty(chromeDriverKey, defaultPath);
-            capabilities.setCapability(chromeDriverKey, defaultPath);
+            // Local run: use WebDriverManager to auto-download ChromeDriver (Chrome for Testing; supports 115+)
+            System.out.println("[DEBUG] Local run: using WebDriverManager for ChromeDriver");
+            String forcedVersion = System.getProperty("wdm.chromeVersion");
+            if (forcedVersion != null && !forcedVersion.isEmpty()) {
+                WebDriverManager.chromedriver().browserVersion(forcedVersion).setup();
+            } else {
+                WebDriverManager.chromedriver().setup();
+            }
+            String wdmPath = System.getProperty(chromeDriverKey);
+            if (wdmPath != null && !wdmPath.isEmpty()) {
+                capabilities.setCapability(chromeDriverKey, wdmPath);
+            }
         }
         capabilities.setCapability("chrome.switches", Arrays.asList("--start-maximized"));
         LoggingPreferences preferences = new LoggingPreferences();

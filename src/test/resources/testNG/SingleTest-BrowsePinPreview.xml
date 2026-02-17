@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Single - BrowsePinPreview" verbose="2">
+    <test name="browsePinTheProductFromConsolePreviewTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PinTheProductFromConsoleTest">
+                <methods>
+                    <include name="browsePinTheProductFromConsolePreviewTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

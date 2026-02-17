@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Single - BoostTest" verbose="2">
+    <test name="Merch - BoostTest - boostingTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.BoostTest">
+                <methods>
+                    <include name="boostingTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -129,16 +129,21 @@ public class UiBase extends FluentPage {
     }
 
     public void selectDropDownValue(FluentList<FluentWebElement> dropDownList, String searchValue) {
+        String searchLower = searchValue == null ? "" : searchValue.trim().toLowerCase();
         for (FluentWebElement value : dropDownList) {
-            System.out.println("value is "+value.getText());
-
-            if (value.getText().trim().contains(searchValue)) {
+            String optionText = value.getText().trim();
+            if (!optionText.isEmpty() && optionText.toLowerCase().contains(searchLower)) {
                 ThreadWait();
+                scrollUntilVisible(value);
                 ThreadWait();
-                robustClick(value);
+                waitForElementToBeClickable(value, "Dropdown option");
+                try {
+                    value.click();
+                } catch (Exception e) {
+                    ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", value.getElement());
+                }
                 break;
             }
-
         }
     }
 

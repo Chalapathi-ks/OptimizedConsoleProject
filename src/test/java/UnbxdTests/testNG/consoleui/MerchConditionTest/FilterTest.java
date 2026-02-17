@@ -44,19 +44,21 @@ public class FilterTest extends MerchandisingTest {
         query = filterJsonObject.get("query").getAsString();
 
         goTo(searchPage);
-        searchPage.threadWait();
+        searchPage.await();
+        searchPage.awaitForPageToLoad();
+        merchandisingActions.await();
         createPromotion(query,false,false);
 
         JsonArray object = filterJsonObject.get("data").getAsJsonArray();
         Map<String, Object> campaignData = merchandisingActions.getCampaignData("filters.json");
 
-        // goTo(searchPage);
+        merchandisingActions.nextPage();
         merchandisingActions.fillCampaignData(campaignData);
-        ThreadWait();
+        merchandisingActions.await();
         merchandisingActions.goToLandingPage();
         merchandisingActions.goToSectionInMerchandising(UnbxdEnum.FILTER);
 
-        searchPage.threadWait();
+        searchPage.await();
         fillMerchandisingData(object, UnbxdEnum.FILTER,false);
         merchandisingActions.clickOnApplyButton();
         merchandisingActions.publishCampaign();
@@ -71,6 +73,7 @@ public class FilterTest extends MerchandisingTest {
         String previewPage = driver.getCurrentUrl();
         Assert.assertTrue(previewPage.contains("preview"),"Not redirecting to preview page");
         merchandisingActions.awaitForElementPresence(merchandisingActions.SearchpreviewOption);
+        merchandisingActions.awaitForElementPresence(merchandisingActions.showingResultinPreview);
         Assert.assertTrue(merchandisingActions.showingResultinPreview.getText().contains(query));
 
         merchandisingActions.ClickViewHideInsight();
@@ -110,6 +113,7 @@ public class FilterTest extends MerchandisingTest {
         String previewpage = driver.getCurrentUrl();
         Assert.assertTrue(previewpage.contains("preview"),"Not redirecting to preview page");
         merchandisingActions.awaitForElementPresence(merchandisingActions.SearchpreviewOption);
+        merchandisingActions.awaitForElementPresence(merchandisingActions.showingResultinPreview);
         Assert.assertTrue(merchandisingActions.showingResultinPreview.getText().contains(query));
         merchandisingActions.ClickViewHideInsight();
         merchandisingActions.awaitForElementPresence(merchandisingActions.inSighttitle);

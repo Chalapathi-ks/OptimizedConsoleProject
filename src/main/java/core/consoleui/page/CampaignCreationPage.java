@@ -8,7 +8,11 @@ import java.util.Map;
 import org.fluentlenium.core.annotation.Page;
 import org.fluentlenium.core.domain.FluentList;
 import org.fluentlenium.core.domain.FluentWebElement;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import core.ui.page.UnbxdCommonPage;
@@ -20,10 +24,7 @@ public class CampaignCreationPage extends UnbxdCommonPage {
 
     public String deviceTypeName = ".segments-dd-item";
 
-//    @FindBy(css = ".campaign-name-search .RCB-form-el")
-//    public FluentWebElement campaignNameInput;
-
-    @FindBy(xpath = "//*[@id='ruleName']")
+    @FindBy(css = ".campaign-name-search .RCB-form-el")
     public FluentWebElement campaignNameInput;
     @FindBy(css = ".RCB-align-left .flex-display")
     public FluentList<FluentWebElement> deviceTypeList;
@@ -91,9 +92,13 @@ public class CampaignCreationPage extends UnbxdCommonPage {
 
     public String fillCampaignDataforUpcoming(Map<String, Object> campaignData) throws InterruptedException {
         String campaignName = "AutoTestupcoming" + System.currentTimeMillis();
-        awaitForElementPresence(campaignNameInput);
+        waitForCampaignNameInputVisible();
         await();
-        campaignNameInput.fill().with(campaignName);
+        FluentWebElement nameInput = getCampaignNameInput();
+        scrollUntilVisible(nameInput);
+        nameInput.click();
+        await();
+        nameInput.fill().with(campaignName);
         awaitForElementPresence(moreOptionLink);
         await();
         click(moreOptionLink);
@@ -120,11 +125,53 @@ public class CampaignCreationPage extends UnbxdCommonPage {
         await();
     }
 
+    private void waitForCampaignNameInputVisible() {
+        By[] locators = {
+            By.cssSelector(".campaign-name-search .RCB-form-el"),
+            By.id("ruleName"),
+            By.id("ruleNar"),
+            By.cssSelector("input[name=\"Campaign name*\"]")
+        };
+        new WebDriverWait(getDriver(), 20).until(new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver driver) {
+                for (By by : locators) {
+                    try {
+                        if (driver.findElement(by).isDisplayed()) return true;
+                    } catch (Exception ignored) {
+                    }
+                }
+                return false;
+            }
+        });
+    }
+
+    private FluentWebElement getCampaignNameInput() {
+        String[] selectors = {
+            ".campaign-name-search .RCB-form-el",
+            "#ruleName",
+            "#ruleNar",
+            "input[name=\"Campaign name*\"]"
+        };
+        for (String sel : selectors) {
+            try {
+                FluentWebElement el = findFirst(sel);
+                if (el.isDisplayed()) return el;
+            } catch (Exception ignored) {
+            }
+        }
+        return findFirst(selectors[0]);
+    }
+
     public String fillCampaignData(Map<String, Object> campaignData) throws InterruptedException {
         String campaignName = "AutoTest" + System.currentTimeMillis();
-        awaitForElementPresence(campaignNameInput);
+        waitForCampaignNameInputVisible();
         await();
-        campaignNameInput.fill().with(campaignName);
+        FluentWebElement nameInput = getCampaignNameInput();
+        scrollUntilVisible(nameInput);
+        nameInput.click();
+        await();
+        nameInput.fill().with(campaignName);
         awaitForElementPresence(moreOptionLink);
         await();
         click(moreOptionLink);
