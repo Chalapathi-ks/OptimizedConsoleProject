@@ -10,6 +10,6 @@ public class AnnotationTransformer implements IAnnotationTransformer{
 
     @Override
     public synchronized void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
-        annotation.setRetryAnalyzer(RetryAnalyser.class);
+        // Retry disabled: no in-run retries
     }
 }
