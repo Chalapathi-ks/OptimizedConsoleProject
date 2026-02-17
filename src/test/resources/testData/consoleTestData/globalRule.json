@@ -1,0 +1,18 @@
+{
+  "testData":[
+    {
+      "query": "Camera",
+      "data": [
+        {
+          "rows": [
+            {
+              "attribute": "categoryPath1",
+              "condition": "not contain",
+              "value": "Polaroid"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

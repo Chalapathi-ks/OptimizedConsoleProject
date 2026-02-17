@@ -1,0 +1,5 @@
+{
+  "campaignName": "Automation",
+  "devices": ["Desktop browser", "Tablet browser"],
+  "CampaignDescription": "Testing Automation "
+}

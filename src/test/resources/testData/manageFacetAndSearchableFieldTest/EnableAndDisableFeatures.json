@@ -1,0 +1,23 @@
+
+{
+  "testData":[
+    {
+      "query": "Merchandisable",
+      "fieldName": "catlevel1Name",
+      "featureMerchandisable": "Merchandisable",
+      "featureFacetable": "Facetable",
+      "featureAutosuggest":"AutoSuggest",
+      "featureFieldRule":"Field Rule",
+      "suggestionSection" : "KEYWORD",
+      "data": [
+        {
+          "rows": [
+            {
+              "attribute": "catlevel1Name"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

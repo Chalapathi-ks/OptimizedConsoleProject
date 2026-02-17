@@ -1,0 +1,9 @@
+{
+  "testData":[
+    {
+      "query": "TestAutomationRedirect",
+      "redirect": "https://stackoverflow.co/",
+      "editRedirect": "https://images.express.com/is/image/expressfashion/0027_09393654_0904?cache=on"
+    }
+  ]
+}

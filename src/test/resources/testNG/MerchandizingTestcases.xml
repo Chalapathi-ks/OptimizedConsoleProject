@@ -1,0 +1,584 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="MerchandizingTests " parallel="tests" thread-count="40" verbose="10" preserve-order="true">
+
+
+<!--     ABTest methods -->
+    <test name="Merch - ABTest - abCreateAndPreviewTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.ABTest.ABTest">
+                <methods>
+                    <include name="abCreateAndPreviewTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - ABTest - abUpcomingCreateAndEditTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.ABTest.ABTest">
+                <methods>
+                    <include name="abUpcomingCreateAndEditTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - ABTest - abCreateAndPreviewTestForSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.ABTest.ABTest">
+                <methods>
+                    <include name="abCreateAndPreviewTestForSearch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - ABTest - abUpcomingCreateAndEditTestForSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.ABTest.ABTest">
+                <methods>
+                    <include name="abUpcomingCreateAndEditTestForSearch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!--     FilterTest methods -->
+    <test name="Merch - FilterTest - filtersTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.FilterTest">
+                <methods>
+                    <include name="filtersTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!--     PromotionStatusTest methods -->
+    <test name="Merch - PromotionStatusTest - UpcomingStatusTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PromotionStatusTest">
+                <methods>
+                    <include name="UpcomingStatusTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - PromotionStatusTest - promotionActiveAndStopStatusTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PromotionStatusTest">
+                <methods>
+                    <include name="promotionActiveAndStopStatusTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - PromotionStatusTest - promotionStoppedDuplicateTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PromotionStatusTest">
+                <methods>
+                    <include name="promotionStoppedDuplicateTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - PromotionStatusTest - browseUpcomingStatusTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PromotionStatusTest">
+                <methods>
+                    <include name="browseUpcomingStatusTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - PromotionStatusTest - browsePromotionDuplicateTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PromotionStatusTest">
+                <methods>
+                    <include name="browsePromotionDuplicateTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- SlotTest methods -->
+    <test name="Merch - SlotTest - slotCreateTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.SlotTest">
+                <methods>
+                    <include name="slotCreateTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!--     BannerTest methods -->
+    <test name="Merch - SearchBannerTest - duplicateBannerHtmlTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SearchBannerTest">
+                <methods>
+                    <include name="duplicateBannerHtmlTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SearchBannerTest - createAndEditSearchFieldRuleImageBannerTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SearchBannerTest">
+                <methods>
+                    <include name="createAndEditSearchFieldRuleImageBannerTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SearchCEDBannerTest - createAndEditSearchHtmlBannerTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SearchCEDBannerTest">
+                <methods>
+                    <include name="createAndEditSearchHtmlBannerTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!--    &lt;!&ndash; RedirectTest methods &ndash;&gt;-->
+    <test name="Merch - SearchCEDRedirectTest - createEditDeleteRedirectTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SearchCEDRedirectTest">
+                <methods>
+                    <include name="createEditDeleteRedirectTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SearchRedirectTest - stopAndDuplicateRedirectTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SearchRedirectTest">
+                <methods>
+                    <include name="stopAndDuplicateRedirectTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- PinningTest methods -->
+    <test name="Merch - PinningTest - pinningCreateTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PinningTest">
+                <methods>
+                    <include name="pinningCreateTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - PinningTest - pinTheProductFromConsolePreviewTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PinTheProductFromConsoleTest">
+                <methods>
+                    <include name="pinTheProductFromConsolePreviewTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- PromotedSuggestionsTest methods -->
+    <test name="Merch - PromotedSuggestionsTest - addPromotedSuggestionTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.Autosuggest.PromotedSuggestionsTest">
+                <methods>
+                    <include name="addPromotedSuggestionTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- BlacklistedSuggestionsTest methods -->
+    <test name="Merch - BlacklistedSuggestionsTest - addEditDeleteBlacklistedSuggestionTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.Autosuggest.BlacklistedSuggestionsTest">
+                <methods>
+                    <include name="addEditDeleteBlacklistedSuggestionTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!--     SegmentTest methods -->
+    <test name="Merch - SegmentTest - createAndEditSearchSegmentTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SegmentTest">
+                <methods>
+                    <include name="createAndEditSearchSegmentTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SegmentTest - verifySearchSegmentInBannerTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SegmentTest">
+                <methods>
+                    <include name="verifySearchSegmentInBannerTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SegmentTest - createAndEditSearchSegmentWithCustomAttributeTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SegmentTest">
+                <methods>
+                    <include name="createAndEditSearchSegmentWithCustomAttributeTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SegmentTest - verifySearchSegmentWithCustomAttributeInPromotionTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SegmentTest">
+                <methods>
+                    <include name="verifySearchSegmentWithCustomAttributeInPromotionTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SegmentTest - createAndEditBrowseSegmentTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SegmentTest">
+                <methods>
+                    <include name="createAndEditBrowseSegmentTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SegmentTest - verifyBrowseSegmentInBannerTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SegmentTest">
+                <methods>
+                    <include name="verifyBrowseSegmentInBannerTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SegmentTest - createAndEditBrowseSegmentWithCustomAttributeInPromotionTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SegmentTest">
+                <methods>
+                    <include name="createAndEditBrowseSegmentWithCustomAttributeInPromotionTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- SortTest methods -->
+    <test name="Merch - SortTest - sortTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.SortTest">
+                <methods>
+                    <include name="sortTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- SimilarQueryTest methods -->
+    <test name="Merch - SimilarQueryTest - similarQueryTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.SimilarQueryTest">
+                <methods>
+                    <include name="similarQueryTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SimilarQueryTest - similarQueryTestBanner">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.SimilarQueryTest">
+                <methods>
+                    <include name="similarQueryTestBanner"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SimilarQueryTest - similarQueryTestRedirect">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.SimilarQueryTest">
+                <methods>
+                    <include name="similarQueryTestRedirect"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SimilarQueryTest - AIsuggestedSimilarQueryTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.SimilarQueryTest">
+                <methods>
+                    <include name="AIsuggestedSimilarQueryTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SimilarQueryTest - promotionAddAnotherRule">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.SimilarQueryTest">
+                <methods>
+                    <include name="promotionAddAnotherRule"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SimilarQueryTest - browsePromotionAddAnotherRule">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.SimilarQueryTest">
+                <methods>
+                    <include name="browsePromotionAddAnotherRule"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- FieldRuleFacetTest methods (search and browse facets) -->
+
+    <test name="Merch - FieldRuleFacetTest - BrowseFacetConfigurationFieldRuleTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.FieldRuleFacetTest">
+                <methods>
+                    <include name="BrowseFacetConfigurationFieldRuleTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Merch - FieldRuleFacetTest - createAndEditBrowseFieldRuleFacetTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.FieldRuleFacetTest">
+                <methods>
+                    <include name="createAndEditBrowseFieldRuleFacetTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Merch - FieldRuleFacetTest - createAndEditSearchFieldRuleFacetTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.FieldRuleFacetTest">
+                <methods>
+                    <include name="createAndEditSearchFieldRuleFacetTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - FieldRuleFacetTest - enableAndDisableSearchFacetRankingTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.FieldRuleFacetTest">
+                <methods>
+                    <include name="enableAndDisableSearchFacetRankingTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - FieldRuleFacetTest - verifyGlobalSearchFacetFiltersTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.FieldRuleFacetTest">
+                <methods>
+                    <include name="verifyGlobalSearchFacetFiltersTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - FieldRuleFacetTest - createAndEditSearchRangeFacetInFieldRuleTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.FieldRuleFacetTest">
+                <methods>
+                    <include name="createAndEditSearchRangeFacetInFieldRuleTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - FieldRuleFacetTest - FacetConfigurationFieldRuleTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.FieldRuleFacetTest">
+                <methods>
+                    <include name="FacetConfigurationFieldRuleTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - FieldRuleFacetTest - verifySearchFieldRuleFacetDetailsTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.FieldRuleFacetTest">
+                <methods>
+                    <include name="verifySearchFieldRuleFacetDetailsTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - FieldRuleFacetTest - verifyBrowseFieldRuleFacetDetailsTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.FieldRuleFacetTest">
+                <methods>
+                    <include name="verifyBrowseFieldRuleFacetDetailsTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Merch - FieldRuleFacetTest - browseGlobalFacetWithFilterTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.FieldRuleFacetTest">
+                <methods>
+                    <include name="browseGlobalFacetWithFilterTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <!-- BoostTest methods -->
+    <test name="Merch - BoostTest - boostingTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.BoostTest">
+                <methods>
+                    <include name="boostingTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - BoostTest - globalBoostingTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.BoostTest">
+                <methods>
+                    <include name="globalBoostingTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- BrowseSortTest methods -->
+    <test name="Merch - BrowseSortTest - BrowseSortTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.BrowseSortTest">
+                <methods>
+                    <include name="BrowseSortTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- BrowseSlotTest methods -->
+    <test name="Merch - BrowseSlotTest - browseSlotCreateTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.BrowseSlotTest">
+                <methods>
+                    <include name="browseSlotCreateTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- BrowseFilterTest methods -->
+    <test name="Merch - BrowseFilterTest - browseFiltersTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.BrowseFilterTest">
+                <methods>
+                    <include name="browseFiltersTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- BrowseBoostTest methods -->
+    <test name="Merch - BrowseBoost - Create">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.BrowseBoostTest">
+                <methods>
+                    <include name="browseBoostingTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - BrowseBoost - Global">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.BrowseBoostTest">
+                <methods>
+                    <include name="browseGlobalBoostingTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- BrowsePinningTest methods -->
+    <test name="Merch - BrowsePinningTest - browsePinningCreateTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.BrowsePinningTest">
+                <methods>
+                    <include name="browsePinningCreateTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - BrowsePinningTest - browsePinTheProductFromConsolePreviewTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PinTheProductFromConsoleTest">
+                <methods>
+                    <include name="browsePinTheProductFromConsolePreviewTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- BrowseBannerTest methods -->
+    <test name="Merch - BrowseBannerTest - createAndEditBrowseFieldRuleImageBannerTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.BrowseBannerTest">
+                <methods>
+                    <include name="createAndEditBrowseFieldRuleImageBannerTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - BrowseCEDBannerTest - createAndEditBrowseHtmlBannerTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.BrowseCEDBannerTest">
+                <methods>
+                    <include name="createAndEditBrowseHtmlBannerTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- FreshnessTest methods -->
+    <test name="Merch - SearchFreshnessTest - searchFreshnessCreateEditDeleteTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.freshnessTest.searchFreshness">
+                <methods>
+                    <include name="searchFreshnessCreateEditDeleteTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SearchFreshnessTest - searchGlobalFreshnessTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.freshnessTest.searchFreshness">
+                <methods>
+                    <include name="searchGlobalFreshnessTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - BrowseFreshnessTest - browseFreshnessCreateEditDeleteTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.freshnessTest.browseFreshness">
+                <methods>
+                    <include name="browseFreshnessCreateEditDeleteTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - BrowseFreshnessTest - browseGlobalFreshnessTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.freshnessTest.browseFreshness">
+                <methods>
+                    <include name="browseGlobalFreshnessTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

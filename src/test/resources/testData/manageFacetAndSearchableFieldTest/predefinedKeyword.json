@@ -1,0 +1,10 @@
+{
+  "testData": [
+    {
+      "preDefinedFields": ["Brand"],
+      "suggestionSection" : "KEYWORD",
+      "dropDownValue" : "catalogId"
+    }
+
+  ]
+}

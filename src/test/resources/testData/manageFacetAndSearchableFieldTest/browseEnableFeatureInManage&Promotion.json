@@ -1,0 +1,24 @@
+
+{
+  "testData":[
+    {
+      "query": "2-Pack Lamps",
+      "fieldName": "Lamp_Type",
+      "featureMerchandisable": "Merchandisable",
+      "featureFacetable": "Facetable",
+      "featureAutosuggest":"AutoSuggest",
+      "featureFieldRule":"Field Rule",
+      "suggestionSection" : "KEYWORD",
+      "data": [
+        {
+          "rows": [
+            {
+              "Browse_Attribute": "Lamp_Type",
+              "Browse_Value": "2-Pack Lamps"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

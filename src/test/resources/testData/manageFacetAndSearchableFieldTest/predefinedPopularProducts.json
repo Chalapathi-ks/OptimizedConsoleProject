@@ -1,0 +1,10 @@
+{
+  "testData": [
+    {
+      "preDefinedFields": ["name","name", "price", "damImageUrl", "url"],
+      "suggestionSection" : "POPULAR_PRODUCTS",
+      "dropDownValue" : "catalogId"
+    }
+
+  ]
+}

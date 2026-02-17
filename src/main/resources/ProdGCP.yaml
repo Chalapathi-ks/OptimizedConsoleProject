@@ -1,0 +1,79 @@
+
+---
+applicationUrl: https://console.unbxd.io
+baseUrl: https://console-g-nam.unbxd.io
+services:
+  - name: solr
+    url: http://docker-fsd2.unbxd.io:8900
+  - name: brewer
+    url: http://docker-fsd2.unbxd.io:8901
+  - name: groot
+    url: http://docker-fsd2.unbxd.io:8903
+  - name: gimli
+    url: http://docker-fsd2.unbxd.io:8904
+  - name: asterix
+    url: http://docker-fsd2.unbxd.io:6339
+  - name: feed
+    url: http://feed-g-nam.unbxd.io
+  - name: ether
+    url: http://docker-fsd2.unbxd.io:2205
+  - name: mysql
+    url: docker-fsd.unbxd.io:3306
+  - name: console
+    url: https://console-g-nam.unbxd.io
+
+
+sites:
+  - siteKey: ss-unbxd-gus-v4-1-17release14331719397372
+    apiKey: c7a5003a6ce0c03fd8567188a3d5e054
+    secretKey: 555abd97c9e34b57c1ed5beaad194f76
+    statusById: 0fb9260e-a4f8-432a-9495-86b7a996f7eb
+    siteId: 1662
+    region: AZ Customer Sites
+    id: 1
+  - siteKey: ss-unbxd-gus-v4-1-17release14331719397372
+    apiKey: c7a5003a6ce0c03fd8567188a3d5e054
+    secretKey: 555abd97c9e34b57c1ed5beaad194f76
+    statusById: 91e3453d-4824-474a-b63e-f347eb65e461
+    siteId: 1631
+    region: AU Customer Sites
+    id: 2
+  - siteKey: ss-unbxd-testAiFacetsandfields9431619513295
+    apiKey: 37cc9fb7fed03de26372442d6c87973d
+    secretKey: 3e5f09ee0420bff67cf59ccf60fe9bed
+    statusById: db1fd314-ff0f-40dc-a7be-9a2df7ec64be
+    siteId: 1409
+    region: AU Customer Sites
+    id: 3
+  - siteKey: ss-unbxd-expressaiFacets9431619778853
+    apiKey: fd1825a19851ad09c9fe08bac942aaaa
+    secretKey: 53c711a0b6919855ec8e1f0462b47d9f
+    statusById: 67d0a975-6343-4f7b-8518-bdf6ca3d5729
+    siteId: 1409
+    region: AU Customer Sites
+    id: 4
+  - siteKey: ss-unbxd-expressContentrelevance9431619779080
+    apiKey: 29c22be16c6a43e23aa297a159015ae5
+    secretKey: ac620e8d96eb36d24df36a7c61005dff
+    statusById: 5a34f8cf-1363-4668-9728-a19db88e0cf2
+    siteId: 1409
+    region: AU Customer Sites
+    id: 5
+  - siteKey: ss-unbxd-expressautoSuggest9431619779277
+    apiKey: 29c22be16c6a43e23aa297a159015ae5
+    secretKey: ac620e8d96eb36d24df36a7c61005dff
+    statusById: f64ed0b9-015f-4b4e-b58d-d94f611b9802
+    siteId: 1631
+    region: AU Customer Sites
+    id: 6
+
+
+users:
+  - id: 1
+    email: AutomationSeleniumUSE@yopmail.com
+    password: Password@123
+    deleteSiteSsoIdKeyValue: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjpudWxsLCJleHBpcnkiOiIyMDIxLTA0LTEzIDA5OjIxOjE2IFVUQyIsImVtYWlsIjoicHJvZGF6MUB5b3BtYWlsLmNvbSIsInJlZ2lvbnMiOnsidXMiOnsicmVmX3VzZXJfaWQiOjgxODAwfSwiYXUiOnsicmVmX3VzZXJfaWQiOjk0M30sInVrIjp7InJlZl91c2VyX2lkIjo5MjN9LCJzZyI6eyJyZWZfdXNlcl9pZCI6MTE2NH19fQ.nSwcIlR1i9XfKgxCi0yQxbGmipapcTSM4OROoFgyWR8
+
+  - id: 2
+    email: AutomationSeleniumUSE@yopmail.com
+    password: Password@123

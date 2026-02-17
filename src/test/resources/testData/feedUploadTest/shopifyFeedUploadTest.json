@@ -1,0 +1,12 @@
+{
+  "testData": [
+    {
+      "email": "shopifyautomation@yopmail.com",
+      "password" : "unbxd@123",
+      "store" : "crew100",
+      "subMenu" : "Apps",
+      "catalogUrl" : "crew100.myshopify.com",
+      "uploader" : "PIM_UPLOAD"
+    }
+  ]
+}

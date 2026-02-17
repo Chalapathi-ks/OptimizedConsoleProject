@@ -1,0 +1,12 @@
+{
+  "testData":[
+    {
+      "Facet_Type": "text",
+      "Facet_Status": "enabled",
+
+      "FacetType": "range",
+      "FacetStatus": "disabled"
+
+    }
+  ]
+}

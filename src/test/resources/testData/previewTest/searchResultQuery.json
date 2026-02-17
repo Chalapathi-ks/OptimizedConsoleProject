@@ -1,0 +1,10 @@
+{
+  "testData": [
+    {
+      "query":"dress"
+    },
+    {
+      "query":"shirt"
+    }
+  ]
+}

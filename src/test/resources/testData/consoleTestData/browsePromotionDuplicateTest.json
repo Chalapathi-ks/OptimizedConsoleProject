@@ -1,0 +1,26 @@
+{
+  "testData":[
+    {
+      "page": "bar-furniture",
+      "data": [
+
+        {
+          "rows": [
+            {
+              "Browse_Attribute": "categoryPath2",
+              "Browse_Value": "bar-furniture",
+
+              "attribute": "availability",
+              "condition": "Does not contain",
+              "value": "degree",
+
+              "updatedAttribute": "extracted_color",
+              "updatedCondition": "Does not contain",
+              "updatedValue": "val"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

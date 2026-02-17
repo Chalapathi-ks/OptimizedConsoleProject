@@ -1,0 +1,24 @@
+{
+  "testData":[
+    {
+      "page": "Burgundy",
+      "pinningPosition": "1",
+      "data": [
+        {
+          "rows": [
+            {
+              "Browse_Attribute": "Color_Family",
+              "Browse_Value": "Burgundy",
+
+              "product":"1",
+              "value": "1",
+
+              "updatedProduct":"2",
+              "updatedValue": "2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

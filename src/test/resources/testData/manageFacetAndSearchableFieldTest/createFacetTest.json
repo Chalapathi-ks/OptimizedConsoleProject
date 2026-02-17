@@ -1,0 +1,24 @@
+{
+  "testData": [
+    {
+      "facetDisplayName": "auto1",
+      "facetName": "Upholstery_Type",
+      "facetLength": "12",
+      "sortOrder": "Alphabetical (A-Z)",
+      "facetDisplayValue" : "Disabled",
+
+      "updateDisplayName": "auto2",
+      "updateSortOrder": "Product Count"
+    }
+    /*,
+    {
+      "facetDisplayName": "auto2",
+      "facetName": "cost",
+      "facetLength": "12",
+      "rangeStart":"2",
+      "rangeStop":"8",
+      "rangeGap":"2",
+      "facetDisplayValue" : "Disabled"
+    }*/
+  ]
+}

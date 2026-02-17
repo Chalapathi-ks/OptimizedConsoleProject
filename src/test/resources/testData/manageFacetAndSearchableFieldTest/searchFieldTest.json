@@ -1,0 +1,9 @@
+{
+  "testData": [
+    {
+      "fields": ["name","color"],
+      "ExpectedSearchWeight" : "Low",
+      "pageCount" : "100"
+    }
+  ]
+}

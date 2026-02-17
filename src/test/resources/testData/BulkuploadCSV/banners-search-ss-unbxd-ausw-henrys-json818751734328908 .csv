@@ -1,0 +1,6 @@
+RuleType,Query,SimilarQuery,Attribute,Value,CampaignName,StartDate,EndDate,Description,TimeZone,Segments,ImageUrl,RedirectBannerUrl,Html
+query,camera,"",,,banner,07/01/2025 00:00:00,07/01/2100 00:00:00,,Etc/UTC,global,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOf0gRkTKKK3CQmcRF0hH1NlSMua9x11_taw&s,,
+field,,"",AngleofView,29 degrees,ALL AngleofView: 29 degrees,17/01/2025 00:00:00,17/01/2100 00:00:00,,Etc/UTC,"",,,hello
+field,,"",AdditionalZoom,1.33-2x Intelligent,ALL AdditionalZoom: 1.33-2x Intelligent,17/01/2025 00:00:00,17/01/2100 00:00:00,,Etc/UTC,"",https://sdihfgydshv,,
+field,,"",AccessoryShoe,Yes,ALL AccessoryShoe: Yes,17/01/2025 00:00:00,17/01/2100 00:00:00,,Etc/UTC,"",https://dfkjhgjhdfb,,
+field,,"",AngleofView,34-12 degrees,ALL AngleofView: 34-12 degrees,17/01/2025 00:00:00,17/01/2100 00:00:00,,Etc/UTC,"",,,hello

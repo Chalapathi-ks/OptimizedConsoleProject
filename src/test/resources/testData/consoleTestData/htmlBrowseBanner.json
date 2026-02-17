@@ -1,0 +1,22 @@
+{
+  "testData":[
+    {
+      "page": "Full",
+      "Banner": "https://images.express.com/is/image/expressfashion/0027_09393654_0904?cache=on",
+      "editBanner": "https://www.lulus.com/images/product/xlarge/4952550_999802.jpg",
+
+      "data": [
+
+        {
+          "rows": [
+            {
+              "Browse_Attribute": "Bed_Size",
+              "Browse_Value": "Full"
+
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

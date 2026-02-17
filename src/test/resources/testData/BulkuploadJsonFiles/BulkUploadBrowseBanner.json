@@ -1,0 +1,10 @@
+{
+  "testData": [
+    {
+      "BannerQueryRule": "Banner1",
+      "BannerQueryRule1": "Banner2",
+      "BannerFieldRule": "page1",
+      "BannerFieldRule1": "page2"
+    }
+  ]
+}

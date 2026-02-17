@@ -1,0 +1,9 @@
+{
+  "testData": [
+    {
+      "fields": ["Stone","Brand","Type"],
+      "ExpectedSearchWeight" : "Low",
+      "pageCount" : "100"
+    }
+  ]
+}

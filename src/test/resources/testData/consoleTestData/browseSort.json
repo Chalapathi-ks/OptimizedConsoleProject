@@ -1,0 +1,23 @@
+{
+  "testData":[
+    {
+      "page": "Beige",
+      "data": [
+        {
+          "rows": [
+            {
+              "Browse_Attribute": "Color_Family",
+              "Browse_Value": "Beige",
+
+              "attribute": "title",
+              "value": "Descending (Z to A)",
+
+              "updatedAttribute": "Base_Grade",
+              "updatedValue": "Ascending (A to Z)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

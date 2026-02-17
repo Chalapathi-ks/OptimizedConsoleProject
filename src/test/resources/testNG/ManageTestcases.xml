@@ -1,0 +1,164 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="ManageTestcases" parallel="tests" thread-count="3" verbose="10" preserve-order="false">
+
+    <test name="SearchManageTest - manageSearchFacetTest">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.manageSearchFacetTest"/>
+        </classes>
+    </test>
+
+    <test name="SearchManageTest - DimensionMappingTest">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.DimensionMappingTest"/>
+        </classes>
+    </test>
+
+    <test name="SearchManageTest - ProductCardMappingTest">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.ProductCardMappingTest"/>
+        </classes>
+    </test>
+
+    <test name="SearchManageTest - MerasurementSearchTest">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.MerasurementSearchTest"/>
+        </classes>
+    </test>
+
+<!--    <test name="SearchManageTest - VectorSearchTest">-->
+<!--        <classes>-->
+<!--            <class name="UnbxdTests.testNG.ui.SearchManageTest.VectorSearchTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="SearchManageTest - FieldPropertiesTest">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.FieldPropertiesTest"/>
+        </classes>
+    </test>
+
+    <!-- Individual Algorithm Tests - Each in separate browser -->
+    <test name="AlgorithmTest - ConceptsTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmTest.ConceptsTest"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmTest - PhrasesTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmTest.PhrasesTest"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmTest - StemmingTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmTest.StemmingTest"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmTest - StopWordsTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmTest.StopWordsTest"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmTest - SynonymsTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmTest.SynonymsTest"/>
+        </classes>
+    </test>
+
+    <!-- VariantLockTest methods -->
+    <test name="Merch - SearchVariantPinningTest - searchGlobalVariantPinningTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.variantLockTest.searchVariantPinning">
+                <methods>
+                    <include name="searchGlobalVariantPinningTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SearchVariantPinningTest - searchVariantPinningCreateEditDeleteTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.variantLockTest.searchVariantPinning">
+                <methods>
+                    <include name="searchVariantPinningCreateEditDeleteTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SearchVariantPinningTest - searchVariantPinningWithSyncTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.variantLockTest.searchVariantPinning">
+                <methods>
+                    <include name="searchVariantPinningWithSyncTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SearchVariantPinningTest - searchVariantPinningWithPendingSyncTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.variantLockTest.searchVariantPinning">
+                <methods>
+                    <include name="searchVariantPinningWithPendingSyncTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SearchVariantPinningTest - searchVariantPinningABPendingSyncTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.variantLockTest.searchVariantPinning">
+                <methods>
+                    <include name="searchVariantPinningABPendingSyncTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - BrowseVariantPinningTest - browseGlobalVariantPinningTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.variantLockTest.browseVariantPinning">
+                <methods>
+                    <include name="browseGlobalVariantPinningTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - BrowseVariantPinningTest - browseVariantPinningCreateEditDeleteTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.variantLockTest.browseVariantPinning">
+                <methods>
+                    <include name="browseVariantPinningCreateEditDeleteTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - BrowseVariantPinningTest - browseVariantPinningWithSyncTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.variantLockTest.browseVariantPinning">
+                <methods>
+                    <include name="browseVariantPinningWithSyncTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - BrowseVariantPinningTest - browseVariantPinningWithPendingSyncTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.variantLockTest.browseVariantPinning">
+                <methods>
+                    <include name="browseVariantPinningWithPendingSyncTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - BrowseVariantPinningTest - browseVariantPinningABPendingSyncTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.variantLockTest.browseVariantPinning">
+                <methods>
+                    <include name="browseVariantPinningABPendingSyncTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

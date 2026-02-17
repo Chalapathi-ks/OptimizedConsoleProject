@@ -1,0 +1,20 @@
+{
+  "testData":[
+    {
+      "query": "TestAutomationSort",
+      "data": [
+        {
+          "rows": [
+            {
+              "attribute": "title",
+              "value": "Descending (Z to A)",
+
+              "updatedAttribute": "availability",
+              "updatedValue": "Ascending (A to Z)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

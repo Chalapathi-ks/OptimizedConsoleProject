@@ -1,0 +1,26 @@
+{
+  "testData":[
+    {
+      "Attribute": "categoryPath",
+      "Value": "clearance",
+      "data": "https://images.express.com/is/image/expressfashion/0027_09393654_0904?cache=on",
+      "editBanner": "https://www.lulus.com/images/product/xlarge/4952550_999802.jpg",
+      "FacetRange": "1",
+      "facet length": "3",
+      "sort order":"Alphabetical (A-Z)",
+      "range start": "0",
+      "range end": "450",
+      "range gap": "5",
+
+
+      "facetDisplayName": "detail_names",
+      "facetName": "detail_names",
+      "facetLength": "2",
+      "sortOrder": "Alphabetical (A-Z)",
+
+      "updatedFacetDisplayName": "detail_name",
+      "updatedfacetLength": "1",
+      "updateSortOrder": "Product Count"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "testData":[
+    {
+      "Segment": "SegmentBrowseT",
+      "Location":"Bangalore",
+      "UserTypeNew": "NEW",
+      "UserTypeRepeat": "REPEAT",
+      "SegmentDeviceType":"Desktop browser",
+      "BrowsePage" : "SegmentPage",
+      "data": "EnterData",
+      "query": "TestAutomationBannerForSearch",
+      "BnnerUrl": "https://images.express.com/is/image/expressfashion/0027_09393654_0904?cache=on",
+      "CustomAttribute": "silverG",
+      "data": [
+        {
+          "rows": [
+            {
+              "Browse_Attribute": "Department",
+              "Browse_Value": "Premier",
+
+              "attribute": "availability",
+              "condition": "Does not contain",
+              "value": "degree",
+
+              "updatedAttribute": "extracted_color",
+              "updatedCondition": "Does not contain",
+              "updatedValue": "val"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+---
+applicationUrl: https://console-g-d.unbxd.io
+baseUrl: https://console-g-d.unbxd.io
+services:
+  - name: solr
+    url: http://docker-fsd2.unbxd.io:8900
+  - name: brewer
+    url: http://docker-fsd2.unbxd.io:8901
+  - name: groot
+    url: http://docker-fsd2.unbxd.io:8903
+  - name: gimli
+    url: http://docker-fsd2.unbxd.io:8904
+  - name: asterix
+    url: http://docker-fsd2.unbxd.io:6339
+  - name: feed
+    url: http://search-qa.unbxd.io/
+  - name: ether
+    url: http://docker-fsd2.unbxd.io:2205
+  - name: mysql
+    url: docker-fsd.unbxd.io:3306
+  - name: console
+    url: https://console-g-d.unbxd.io
+
+sites:
+  - siteKey: ss-unbxd-auk-v4SiteCreationTest391753250200
+    apiKey: 391c57cb8c2d71985f9ff9b806b43442
+    secretKey: 165129dc3612fea3b83484e13c0394a5
+    statusById : 4aefbb7d-32b4-4aba-bb9a-539f5c58da7f
+    siteId: 125
+    region: SG Customer Sites
+    id: 3
+  - siteKey: ss-unbxd-auk-v4SiteCreationTest391753250200
+    apiKey: 391c57cb8c2d71985f9ff9b806b43442
+    secretKey: 165129dc3612fea3b83484e13c0394a5
+    statusById : 4aefbb7d-32b4-4aba-bb9a-539f5c58da7f
+    siteId: 129
+    region: SG Customer Sites
+    id: 2
+  - siteKey: ss-unbxd-auk-v4SiteCreationTest391753250200
+    apiKey: 391c57cb8c2d71985f9ff9b806b43442
+    secretKey: 165129dc3612fea3b83484e13c0394a5
+    statusById : 4aefbb7d-32b4-4aba-bb9a-539f5c58da7f
+    siteId: 30
+    region: AU Customer Sites
+    id: 1
+
+users:
+  - id: 1
+    email: newdevtest@yopmail.com
+    password: Password@123
+
+  - id: 2
+    email: newdevtest@yopmail.com
+    password: Password@123
+
+  - id: 3
+    email: newdevtest@yopmail.com
+    password: Password@123
+

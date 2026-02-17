@@ -1,0 +1,16 @@
+{
+  "testData":[
+    {
+      "Segment": "TestAutomationSegment",
+      "Location":"Bangalore",
+      "UserTypeNew": "NEW",
+      "UserTypeRepeat": "REPEAT",
+      "SegmentDeviceType":"Desktop browser",
+      "BrowsePage" : "SegmentPage",
+      "data": "EnterData",
+      "query": "TestAutomationBannerForSearch",
+      "BnnerUrl": "https://images.express.com/is/image/expressfashion/0027_09393654_0904?cache=on",
+      "CustomAttribute": "yellowGold"
+    }
+  ]
+}

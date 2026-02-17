@@ -1,0 +1,26 @@
+{
+  "testData":[
+    {
+      "page": "Bookcase",
+      "data": [
+
+        {
+          "rows": [
+            {
+              "Browse_Attribute": "Bed_Type",
+              "Browse_Value": "Bookcase",
+
+              "attribute": "availability",
+              "condition": "Does not contain",
+              "value": "degree",
+
+              "updatedAttribute": "extracted_color",
+              "updatedCondition": "Does not contain",
+              "updatedValue": "val"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

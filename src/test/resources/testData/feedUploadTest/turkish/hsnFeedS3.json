@@ -1,0 +1,3524 @@
+{
+	"feed":{
+		"catalog":{
+			"schema":[
+				{
+					"fieldName":"Brand",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"BrushType",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"ConsoleType",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"Gender",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"GiftsByRecipient",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"GiftsbyOccasion",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"HeadphoneType",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"HeelType",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"RAM",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"RingStyle",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"RugSize",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"RugType",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"Scent",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"Shade",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"Shape",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"ShoeStyle",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"ShopbyAge",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"ShopbyApparelSize",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"ShopbyColor",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"SkinTone",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"SkinType",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"Stone",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"Technique",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"Type",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"UpperMaterial",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"categoryPath",
+					"dataType":"path",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"categoryPathId",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"price",
+					"dataType":"decimal",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"product_available_flag",
+					"dataType":"text",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"product_image_url",
+					"dataType":"link",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"product_name",
+					"dataType":"text",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"sku",
+					"dataType":"sku",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"item_number",
+					"dataType":"sku",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"keywords",
+					"dataType":"text",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"price",
+					"dataType":"decimal",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"uniqueId",
+					"dataType":"text",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				}
+			],
+			"add":{
+				"items":[
+					{
+						"product_name":"Zanaatkar\u0131n Yolda\u015f\u0131 Annabel Spenceley Noel Karakteri Pullar\u0131",
+						"product_available_flag":true,
+						"uniqueId":"9654456",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-annabel-spenceley-christmas-characte-d-2020080511174824~723795.jpg",
+						"price":1556,
+						"item_number":"723795",
+						"categoryPath":[
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Damgalama>Pullar\u0131 Temizle"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Jay King Crazy Lace Akik ve Fil Derisi Opal Boncuk Kolye",
+						"product_available_flag":true,
+						"uniqueId":"9717293",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-crazy-lace-agate-and-elephant-skin-opal-bead-n-d-20200924080953213~730153.jpg",
+						"price":12650,
+						"item_number":"730153",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						]
+					},
+					{
+						"product_name":"Heidi Daus \"Lux Rhapsody\" Kristal Aksanl\u0131 D\u00fc\u011fme K\u00fcpe",
+						"product_available_flag":false,
+						"uniqueId":"1174514",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/heidi-daus-lux-rhapsody-crystal-accented-button-earring-d-20151013155736047~444958.jpg",
+						"price":8995,
+						"item_number":"444958",
+						"categoryPath":[
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"Brand":[
+							"Heidi Daus"
+						]
+					},
+					{
+						"product_name":"Dyan Reaveley'in Dylusions Stamp Collections 8.5X7 - Mini Me",
+						"product_available_flag":true,
+						"uniqueId":"9096365",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/dyan-reaveleys-dylusions-cling-stamp-collections-85x7-m-d-2019040515042875~9096365w.jpg",
+						"price":2524,
+						"item_number":"1218479",
+						"categoryPath":[
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Damgalama>Kau\u00e7uk Pullar"
+						],
+						"Brand":[
+							"Dylusions"
+						]
+					},
+					{
+						"product_name":"Cristina Sabatini Alt\u0131n Tonlu G\u00fcm\u00fc\u015f G\u00fcl Zincir Bib Gerdanl\u0131k",
+						"product_available_flag":true,
+						"uniqueId":"9655558",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/cristina-sabatini-gold-tone-sterling-silver-rose-chain-d-2020082109035794~723846.jpg",
+						"price":29998,
+						"item_number":"723846",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Brand":[
+							"Cristina Sabatini"
+						]
+					},
+					{
+						"product_name":"Barnie's Coffee Kremal\u0131 Tereya\u011fl\u0131 Karamelli Tek Servis B\u00f6lmeleri",
+						"product_available_flag":true,
+						"uniqueId":"9717295",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/barnies-coffee-creamy-buttery-caramel-single-serve-pods-d-20200803103517033~730155.jpg",
+						"price":3341,
+						"item_number":"730155",
+						"categoryPath":[
+							"Mutfak & Yiyecek>Yiyecek & \u0130\u00e7ecekler>\u0130\u00e7ecekler>Kahve"
+						],
+						"Brand":[
+							"Barnie's Coffee and Tea"
+						]
+					},
+					{
+						"product_name":"Colleen Lopez 3.14 Ayar Peridot ve Beyaz Zirkon Damla K\u00fcpe",
+						"product_available_flag":true,
+						"uniqueId":"1270935",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/colleen-lopez-314ct-peridot-and-white-zircon-drop-earri-d-20180406152214847~605237.jpg",
+						"price":10040,
+						"item_number":"605237",
+						"categoryPath":[
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"Brand":[
+							"Colleen Lopez Collection"
+						]
+					},
+					{
+						"product_name":"Dyan Reaveley'nin Dylusions Stamp Collections 8.5X7 - G\u00fcl\u00fcn til",
+						"product_available_flag":false,
+						"uniqueId":"9096372",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/dyan-reaveleys-dylusions-cling-stamp-collections-85x7-l-d-2019040515040558~9096372w.jpg",
+						"price":2524,
+						"item_number":"1218476",
+						"Brand":[
+							"Dylusions"
+						]
+					},
+					{
+						"product_name":"Cristina Sabatini Alt\u0131n Ton G\u00fcm\u00fc\u015f Mistica Man\u015fet Bileklik",
+						"product_available_flag":true,
+						"uniqueId":"9655577",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/cristina-sabatini-gold-tone-sterling-silver-mistica-cuf-d-20210121093221763~723853.jpg",
+						"price":23375,
+						"item_number":"723853",
+						"categoryPath":[
+							"Tak\u0131>Bilezikler"
+						],
+						"Brand":[
+							"Cristina Sabatini"
+						]
+					},
+					{
+						"product_name":"Jay King Som G\u00fcm\u00fc\u015f Ye\u015fil Beyaz Akik Mezun Boncuklu Kolye",
+						"product_available_flag":true,
+						"uniqueId":"9717310",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-green-and-white-agate-graduate-d-2020100108512331~730164.jpg",
+						"price":9975,
+						"item_number":"730164",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Agate"
+						]
+					},
+					{
+						"product_name":"Cepli Nina Leonard Houndstooth Kazak Tunik",
+						"product_available_flag":false,
+						"uniqueId":"1315264",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/nina-leonard-houndstooth-sweater-tunic-with-pockets-d-2019122308270227~682324.jpg",
+						"price":3168,
+						"item_number":"682324",
+						"Brand":[
+							"Nina Leonard"
+						]
+					},
+					{
+						"product_name":"M. Asam\u00ae VINO GOLD\u00ae 2.02 fl. oz. 2 Fazl\u0131 Serum",
+						"product_available_flag":true,
+						"uniqueId":"9096399",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/m-asamandreg-vino-goldandreg-202-fl-oz-2-phase-serum-d-20191118093835~670259.jpg",
+						"price":4999,
+						"item_number":"670259",
+						"categoryPath":[
+							"G\u00fczellik>Cilt Bak\u0131m\u0131>Serumlar>Y\u00fcz"
+						],
+						"Brand":[
+							"M. Asam"
+						],
+						"SkinType":[
+							"Dry",
+							"Combination",
+							"Oily",
+							"Normal"
+						]
+					},
+					{
+						"product_name":"Crafter's Companion \u0130kizler Noel Sevinci 2 Tarafl\u0131 Kal\u0131p Seti",
+						"product_available_flag":true,
+						"uniqueId":"9655794",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-gemini-christmas-joy-2-sided-die-set-d-2020072810345705~723875.jpg",
+						"price":2571,
+						"item_number":"723875",
+						"categoryPath":[
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Kal\u0131p Kesme>Pastalar ve Aksesuarlar",
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Aletler ve Aksesuarlar>Kal\u0131p Kesme ve Aksesuarlar"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Jay King Som G\u00fcm\u00fc\u015f \u00c7ok Renkli Safir Damla K\u00fcpe",
+						"product_available_flag":true,
+						"uniqueId":"9717312",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-multi-color-sapphire-drop-earr-d-20201001085121973~730177.jpg",
+						"price":18450,
+						"item_number":"730177",
+						"categoryPath":[
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Sapphire"
+						]
+					},
+					{
+						"product_name":"Crafter's Companion Good Luck Kavisli Duygular Edge'able Dies",
+						"product_available_flag":true,
+						"uniqueId":"1329495",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-good-luck-curved-sentiments-edgeable-d-20201019080150113~706724.jpg",
+						"price":1795,
+						"item_number":"706724",
+						"categoryPath":[
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Aletler ve Aksesuarlar>Kal\u0131p Kesme ve Aksesuarlar",
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Kal\u0131p Kesme>Pastalar ve Aksesuarlar"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Zanaatkar\u0131n Yolda\u015f \u0130kizler Elemanlar\u0131 Sarma Kal\u0131plar\u0131 - Hediyeler",
+						"product_available_flag":true,
+						"uniqueId":"9097769",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-gemini-elements-wraparound-dies-gift-d-202010200739595~670371.jpg",
+						"price":1795,
+						"item_number":"670371",
+						"categoryPath":[
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Kal\u0131p Kesme>Pastalar ve Aksesuarlar",
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Aletler ve Aksesuarlar>Kal\u0131p Kesme ve Aksesuarlar"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Crafter's Companion \u0130kizler Noel 2 Tarafl\u0131 Tatil Kal\u0131p Seti",
+						"product_available_flag":true,
+						"uniqueId":"9655892",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-gemini-noel-2-sided-holiday-die-set-d-20200728100444043~723880.jpg",
+						"price":2571,
+						"item_number":"723880",
+						"categoryPath":[
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Kal\u0131p Kesme>Pastalar ve Aksesuarlar",
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Aletler ve Aksesuarlar>Kal\u0131p Kesme ve Aksesuarlar"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Jay King Amazonit ve Papa\u011fan Kanad\u0131 Ta\u015fl\u0131 Kolyeli Kolye",
+						"product_available_flag":true,
+						"uniqueId":"9717344",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-amazonite-and-parrot-wing-stone-pendant-with-n-d-2020100108512382~730198.jpg",
+						"price":19975,
+						"item_number":"730198",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Amazonite"
+						]
+					},
+					{
+						"product_name":"Bell & Howell 7 Par\u00e7al\u0131 StackMaster Tencere Seti",
+						"product_available_flag":true,
+						"uniqueId":"1334073",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/bell-andamp-howell-7-piece-stackmaster-cookware-set-d-2021012608434011~714354.jpg",
+						"price":6995,
+						"item_number":"714354",
+						"categoryPath":[
+							"Mutfak & Yiyecek>Tencere>K\u0131zartma Tavalar\u0131 ve Tavalar",
+							"Mutfak & Yiyecek>Tencere>Stok ve \u00c7oklu Kaplar",
+							"Mutfak & Yemek>Tencere>Sos Tavalar\u0131",
+							"Mutfak & G\u0131da>Tencere>Tencere Setleri"
+						],
+						"Brand":[
+							"Bell + Howell"
+						],
+						"ShopbyColor":[
+							"Ivory/Off White"
+						]
+					},
+					{
+						"product_name":"Pure Garden 18\" \u0130\u00e7 Mekan Yapay Microphylla Yaprak \u00c7elenk",
+						"product_available_flag":true,
+						"uniqueId":"9097867",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/pure-garden-18-indoor-artificial-microphylla-leaf-wreat-d-20200327084705567~9097867w.jpg",
+						"price":2894,
+						"item_number":"1242775",
+						"categoryPath":[
+							"Ana Sayfa>Ev Dekoru>Ev Aksanlar\u0131>Sahte Bitkiler ve \u00c7elenkler"
+						],
+						"Brand":[
+							"Pure Garden"
+						]
+					},
+					{
+						"product_name":"Soul Naturalizer \u015e\u0131k Kama Tanga Sandalet",
+						"product_available_flag":true,
+						"uniqueId":"9656211",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/soul-naturalizer-nifty-wedge-thong-sandal-d-20200720085603547~723887.jpg",
+						"price":5600,
+						"item_number":"723887",
+						"categoryPath":[
+							"Moda>Ayakkab\u0131>Sandalet",
+							"Moda>Ayakkab\u0131>Takozlar"
+						],
+						"HeelType":[
+							"Wedge"
+						],
+						"ShopbyColor":[
+							"Animal",
+							"Black",
+							"Tan",
+							"White"
+						],
+						"ShoeStyle":[
+							"Thong",
+							"Wedge"
+						],
+						"Brand":[
+							"SOUL Naturalizer"
+						]
+					},
+					{
+						"product_name":"Jay King G\u00fcm\u00fc\u015f Azure Peaks Turkuaz Boncuklu Kolye",
+						"product_available_flag":true,
+						"uniqueId":"9450872",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-azure-peaks-turquoise-bead-nec-d-20200714102851847~709941.jpg",
+						"price":9198,
+						"item_number":"709941",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Stone":[
+							"Turquoise"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						]
+					},
+					{
+						"product_name":"Patricia Nash Benvenuto Deri \u00c7anta",
+						"product_available_flag":false,
+						"uniqueId":"1334175",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/patricia-nash-benvenuto-leather-tote-d-20200708082601087~714576_59D.jpg",
+						"price":24900,
+						"item_number":"714576",
+						"Brand":[
+							"Patricia Nash"
+						]
+					},
+					{
+						"product_name":"Jay King Som G\u00fcm\u00fc\u015f 10mm Yuvarlak Ametist Vidali K\u00fcpe",
+						"product_available_flag":true,
+						"uniqueId":"9127541",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-10mm-round-amethyst-stud-earri-d-20190620073657007~672610.jpg",
+						"price":3480,
+						"item_number":"672610",
+						"categoryPath":[
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Amethyst"
+						]
+					},
+					{
+						"product_name":"Soul Naturalizer Glimmer Kamal\u0131 Pompa",
+						"product_available_flag":true,
+						"uniqueId":"9656460",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/soul-naturalizer-glimmer-wedge-pump-d-2020072008571963~723897_USM.jpg",
+						"price":4239,
+						"item_number":"723897",
+						"categoryPath":[
+							"Moda>Ayakkab\u0131>Takozlar"
+						],
+						"ShoeStyle":[
+							"Slip-On",
+							"Wedge",
+							"Pump"
+						],
+						"Brand":[
+							"SOUL Naturalizer"
+						],
+						"HeelType":[
+							"Wedge"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Gray/Grey"
+						]
+					},
+					{
+						"product_name":"Heidi Daus Zebra Ba\u015f ve Kuyruk Kristal Boncuklu Kolye",
+						"product_available_flag":true,
+						"uniqueId":"9451190",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/heidi-daus-zebra-head-and-tail-crystal-beaded-necklace-d-20200330072655577~709996.jpg",
+						"price":17200,
+						"item_number":"709996",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Brand":[
+							"Heidi Daus"
+						]
+					},
+					{
+						"product_name":"\"Oldu\u011fu Gibi\" Samantha Kahverengi Croco-Kabartmal\u0131 Hardside Koltuk Alt\u0131 \u00c7antas\u0131",
+						"product_available_flag":false,
+						"uniqueId":"1338455",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-samantha-brown-croco-embossed-hardside-underseat-d-20200519163625843~723911.jpg",
+						"price":7299,
+						"item_number":"723911",
+						"Brand":[
+							"Samantha Brown"
+						],
+						"Type":[
+							"Carry-On",
+							"Hardside",
+							"Wheeled Luggage"
+						]
+					},
+					{
+						"product_name":"Olympus VP-10 Dijital Ses Kay\u0131t Cihaz\u0131",
+						"product_available_flag":true,
+						"uniqueId":"9128109",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/olympus-vp-10-digital-voice-recorder-d-2019043017120426~9128109w.jpg",
+						"price":10499,
+						"item_number":"1225688",
+						"categoryPath":[
+							"Elektronik>Ses>Hoparl\u00f6rler"
+						],
+						"Brand":[
+							"Olympus"
+						]
+					},
+					{
+						"product_name":"Zanaatkar\u0131n Arkada\u015f\u0131 Noel Baba'n\u0131n Mutfa\u011f\u0131 Pi\u015firme Damgas\u0131 ve Kal\u0131p Seti",
+						"product_available_flag":false,
+						"uniqueId":"9656745",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-santas-kitchen-baking-stamp-and-die-d-20200914082032413~723917.jpg",
+						"price":3037,
+						"item_number":"723917",
+						"Brand":[
+							"Crafter's Companion",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"G\u00f6rkemli \u00c7elik Dereceli Kare Damla K\u00fcpe",
+						"product_available_flag":true,
+						"uniqueId":"9451222",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/stately-steel-graduated-square-drop-earrings-d-20200219152445377~9451222w.jpg",
+						"price":2895,
+						"item_number":"1241835",
+						"categoryPath":[
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"Brand":[
+							"Stately Steel"
+						]
+					},
+					{
+						"product_name":"Giuliana Hacci \u00d6rg\u00fc Bal\u0131k\u00e7\u0131 Yaka taraf\u0131ndan \"Oldu\u011fu Gibi\" G",
+						"product_available_flag":true,
+						"uniqueId":"1345307",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-g-by-giuliana-hacci-knit-turtleneck-d-20201202154947153~747334_638.jpg",
+						"price":2199,
+						"item_number":"747334",
+						"categoryPath":[
+							"Moda>Giyim>\u00dcstler"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Gray/Grey",
+							"Green",
+							"Red"
+						],
+						"ShopbyApparelSize":[
+							"XS (0-2)"
+						],
+						"Brand":[
+							"G by GIULIANA"
+						]
+					},
+					{
+						"product_name":"Jay G\u00fcm\u00fc\u015f Kral Gongshan K\u0131rm\u0131z\u0131 Orkide Ta\u015fl\u0131 K\u00fcpe",
+						"product_available_flag":true,
+						"uniqueId":"9128820",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-sterling-silver-king-gongshan-red-orchid-stone-earr-d-20190628093357357~672794.jpg",
+						"price":3100,
+						"item_number":"672794",
+						"categoryPath":[
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						]
+					},
+					{
+						"product_name":"Crafter's Companion 2020 Noel Takvimi",
+						"product_available_flag":true,
+						"uniqueId":"9694117",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-2020-advent-calendar-d-20200904095837297~726725.jpg",
+						"price":1795,
+						"item_number":"726725",
+						"categoryPath":[
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Aletler ve Aksesuarlar>Kal\u0131p Kesme ve Aksesuarlar",
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Kal\u0131p Kesme>Pastalar ve Aksesuarlar"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"G\u00f6rkemli \u00c7elik Y\u0131ld\u0131z Kesme Y\u00fcz\u00fck",
+						"product_available_flag":true,
+						"uniqueId":"9451225",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/stately-steel-star-cutout-ring-d-202002191524498~9451225w.jpg",
+						"price":1995,
+						"item_number":"1241841",
+						"categoryPath":[
+							"Tak\u0131>Y\u00fcz\u00fckler"
+						],
+						"Brand":[
+							"Stately Steel"
+						],
+						"ShopbyColor":[
+							"Metallic"
+						]
+					},
+					{
+						"product_name":"Spectrum Noir Ultimate Kalem Saklama Tepsisi",
+						"product_available_flag":true,
+						"uniqueId":"1347647",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/spectrum-noir-ultimate-pen-storage-tray-d-20210209092800757~754973.jpg",
+						"price":3995,
+						"item_number":"754973",
+						"categoryPath":[
+							"El Sanatlar\u0131 ve Diki\u015f>El Sanatlar\u0131 Deposu>El Sanatlar\u0131 Organizat\u00f6rleri ve Tepsileri"
+						],
+						"Brand":[
+							"Crafts & Sewing",
+							"Spectrum Noir"
+						]
+					},
+					{
+						"product_name":"Pure Relief by\nPure Enrichment XXL Ultra-Wide Heating Pad",
+						"product_available_flag":false,
+						"uniqueId":"9129138",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/pure-relief-by-pure-enrichment-xxl-ultra-wide-heating-p-d-20190502114609283~672865.jpg",
+						"price":4962,
+						"item_number":"672865",
+						"keywords":"pure enrichment",
+						"Brand":[
+							"Pure Enrichment"
+						]
+					},
+					{
+						"product_name":"BLACK+DECKER BUFK12W 1.2 K\u00fcbik-ft. Kompakt Dik Dondurucu",
+						"product_available_flag":true,
+						"uniqueId":"9694119",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/blackdecker-bufk12w-12-cubic-ft-compact-upright-freezer-d-20210302115704763~9694119w.jpg",
+						"price":23995,
+						"item_number":"1253026",
+						"categoryPath":[
+							"Ana Sayfa>Ev Aletleri>Buzdolaplar\u0131 ve Dondurucular",
+							"Mutfak & Yiyecek>Alet Aletleri>Buzdolaplar\u0131 ve Dondurucular"
+						],
+						"Brand":[
+							"Black & Decker\u00ae"
+						]
+					},
+					{
+						"product_name":"G\u00f6rkemli \u00c7elik \u0130ki Ton F\u0131r\u00e7al\u0131 Oval Bileklik",
+						"product_available_flag":true,
+						"uniqueId":"9451239",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/stately-steel-two-tone-brushed-oval-bracelet-d-20200225110609553~9451239w.jpg",
+						"price":4495,
+						"item_number":"1241843",
+						"categoryPath":[
+							"Tak\u0131>Bilezikler"
+						],
+						"Brand":[
+							"Stately Steel"
+						]
+					},
+					{
+						"product_name":"Jay King Som G\u00fcm\u00fc\u015f Siyah Obsidyen Boncuklu Kolye",
+						"product_available_flag":true,
+						"uniqueId":"1315307",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-black-obsidian-beaded-necklace-d-20190925094636237~682449.jpg",
+						"price":5700,
+						"item_number":"682449",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						]
+					},
+					{
+						"product_name":"Anuschka Handpainted Hakiki Deri Bileklik",
+						"product_available_flag":true,
+						"uniqueId":"9129145",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/anuschka-handpainted-genuine-leather-wristlet-d-2019110408421738~672867.jpg",
+						"price":5440,
+						"item_number":"672867",
+						"keywords":"ANIMAL BUTTERFLY TAN\nTRIBAL POPOURRI\nSIN CITY",
+						"categoryPath":[
+							"Moda>El \u00c7antalar\u0131 ve C\u00fczdanlar>Kad\u0131n C\u00fczdanlar\u0131 ve Bileklikleri"
+						],
+						"Brand":[
+							"Anuschka"
+						],
+						"ShopbyColor":[
+							"Pattern/Print"
+						]
+					},
+					{
+						"product_name":"Chaco Kanyon G\u00fcm\u00fc\u015f Kingman Turkuaz Y\u0131ld\u0131z Bildiri Y\u00fcz\u00fc\u011f\u00fc",
+						"product_available_flag":false,
+						"uniqueId":"9694153",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/chaco-canyon-sterling-silver-kingman-turquoise-star-sta-d-20200619155937783~726745.jpg",
+						"price":13851,
+						"item_number":"726745",
+						"Brand":[
+							"Chaco Canyon Southwest Jewelry"
+						],
+						"RingStyle":[
+							"Gemstone"
+						],
+						"Stone":[
+							"Turquoise"
+						]
+					},
+					{
+						"product_name":"G\u00f6rkemli \u00c7elik \u0130ki Renkli F\u0131r\u00e7alanm\u0131\u015f Oval Stre\u00e7 Bileklik",
+						"product_available_flag":true,
+						"uniqueId":"9451240",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/stately-steel-two-tone-brushed-oval-stretch-bracelet-d-20200219152446203~9451240w.jpg",
+						"price":3995,
+						"item_number":"1241845",
+						"categoryPath":[
+							"Tak\u0131>Bilezikler"
+						],
+						"Brand":[
+							"Stately Steel"
+						]
+					},
+					{
+						"product_name":"Bali RoManse Som G\u00fcm\u00fc\u015f ve 18 Ayar Etiyopya Opal 3 Ta\u015fl\u0131 Y\u00fcz\u00fck",
+						"product_available_flag":true,
+						"uniqueId":"1347170",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/bali-romanse-sterling-silver-and-18k-ethiopian-opal-3-s-d-2021030309164617~753227.jpg",
+						"price":24950,
+						"item_number":"753227",
+						"categoryPath":[
+							"Tak\u0131>Y\u00fcz\u00fckler"
+						],
+						"Brand":[
+							"Bali RoManse by Robert Manse"
+						]
+					},
+					{
+						"product_name":"Colleen Lopez Ekose E\u015farpl\u0131 Drop-Omuz Kazak \u00dcst",
+						"product_available_flag":true,
+						"uniqueId":"9129270",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/colleen-lopez-drop-shoulder-sweater-top-with-plaid-scar-d-20191007095619607~672942.jpg",
+						"price":6300,
+						"item_number":"672942",
+						"categoryPath":[
+							"Moda>Giyim>Kazaklar"
+						],
+						"Brand":[
+							"Colleen Lopez Collection"
+						],
+						"ShopbyApparelSize":[
+							"1X (16W - 18W)",
+							"Plus Size"
+						],
+						"ShoeStyle":[
+							"Moto"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Blue",
+							"Gray/Grey",
+							"Green",
+							"Ivory/Off White"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						]
+					},
+					{
+						"product_name":"Crafter's Companion \"Armoire - Love\" 3D Kal\u0131p U\u00e7lar\u0131",
+						"product_available_flag":true,
+						"uniqueId":"9694194",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-armoire-love-3d-die-inserts-d-2020091412164335~726761.jpg",
+						"price":2195,
+						"item_number":"726761",
+						"categoryPath":[
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Kal\u0131p Kesme>Pastalar ve Aksesuarlar",
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Aletler ve Aksesuarlar>Kal\u0131p Kesme ve Aksesuarlar"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"IMAN Global Chic Suni Deri Cabrio S\u0131rt \u00c7antas\u0131",
+						"product_available_flag":true,
+						"uniqueId":"9451307",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/iman-global-chic-faux-leather-convertible-backpack-d-20200626085726483~710040_304.jpg",
+						"price":5070,
+						"item_number":"710040",
+						"categoryPath":[
+							"Moda>El \u00c7antalar\u0131 ve C\u00fczdanlar>S\u0131rt \u00c7antalar\u0131"
+						],
+						"Brand":[
+							"IMAN"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Blue",
+							"Green",
+							"Pink",
+							"Tan",
+							"White"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						]
+					},
+					{
+						"product_name":"Bali RoManse G\u00fcm\u00fc\u015f ve 18 Ayar Tulang Naga Ta\u015fl\u0131 Alyans",
+						"product_available_flag":true,
+						"uniqueId":"1428660",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/bali-romanse-sterling-silver-and-18k-tulang-naga-gemsto-d-2019061107544419~668298.jpg",
+						"price":5126,
+						"item_number":"668298",
+						"categoryPath":[
+							"Tak\u0131>Y\u00fcz\u00fckler"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Metallic",
+							"Pink",
+							"White"
+						],
+						"Brand":[
+							"Bali RoManse by Robert Manse"
+						]
+					},
+					{
+						"product_name":"Colleen Lopez Patchwork Sahte K\u00fcrk Mont",
+						"product_available_flag":true,
+						"uniqueId":"9129531",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/colleen-lopez-patchwork-faux-fur-coat-d-2019100108225256~672990.jpg",
+						"price":3640,
+						"item_number":"672990",
+						"categoryPath":[
+							"Moda>Giyim>Ceket ve D\u0131\u015f Giyim"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						],
+						"ShopbyColor":[
+							"Animal",
+							"Black"
+						],
+						"Brand":[
+							"Colleen Lopez Collection"
+						],
+						"ShopbyApparelSize":[
+							"3X (24W - 26W)",
+							"Plus Size"
+						]
+					},
+					{
+						"product_name":"Crafter's Companion \u0130kizler Yuvalama Kal\u0131p Seti, Depolamal\u0131",
+						"product_available_flag":true,
+						"uniqueId":"9694328",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-gemini-nesting-die-kit-with-storage-d-20200904095839787~726771.jpg",
+						"price":12574,
+						"item_number":"726771",
+						"categoryPath":[
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Aletler ve Aksesuarlar>Kal\u0131p Kesme ve Aksesuarlar",
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Kal\u0131p Kesme>Pastalar ve Aksesuarlar",
+							"El Sanatlar\u0131 ve Diki\u015f>El Sanatlar\u0131 Deposu>Ta\u015f\u0131ma \u00c7antalar\u0131 ve \u00c7antalar\u0131"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Keds Chillax Slip-On Spor Ayakkab\u0131",
+						"product_available_flag":true,
+						"uniqueId":"9451475",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/keds-chillax-slip-on-sneaker-d-20200813102911653~710074_203.jpg",
+						"price":5000,
+						"item_number":"710074",
+						"categoryPath":[
+							"Moda>Ayakkab\u0131>Spor Ayakkab\u0131 ve Atletik"
+						],
+						"Brand":[
+							"Keds\u00ae"
+						],
+						"ShoeStyle":[
+							"Slip-On"
+						],
+						"ShopbyColor":[
+							"Tan",
+							"White"
+						]
+					},
+					{
+						"product_name":"Antthony Boss Lady Stre\u00e7 \u00d6rg\u00fc Kolay Kesim Pantolon",
+						"product_available_flag":true,
+						"uniqueId":"1428717",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/antthony-boss-lady-stretch-knit-easy-fit-pant-d-20200901084231123~717009_710.jpg",
+						"price":4250,
+						"item_number":"717009",
+						"keywords":"Antthony Boss Lady Stretch Knit Easy Fit Pant,,Muhammad Ali and Joe Frazier Autographed Picture Frame,,",
+						"categoryPath":[
+							"Moda>Giyim>Pantolon"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Blue",
+							"Brown",
+							"Green",
+							"Metallic",
+							"Red"
+						],
+						"Brand":[
+							"Antthony Design Originals"
+						],
+						"ShopbyApparelSize":[
+							"XL (16-18)",
+							"Petite"
+						]
+					},
+					{
+						"product_name":"HP 17,3\u201d AMD A9 8GB RAM, 1TB HDD Windows 10 Diz\u00fcst\u00fc Bilgisayar",
+						"product_available_flag":false,
+						"uniqueId":"9129770",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/hp-173andrdquo-amd-a9-8gb-ram-1tb-hdd-windows-10-laptop-d-20190606120407587~9129770w.jpg",
+						"price":59999,
+						"item_number":"1220764",
+						"Brand":[
+							"HP"
+						],
+						"RAM":[
+							"8 GB"
+						]
+					},
+					{
+						"product_name":"\"Oldu\u011fu Gibi\" Sun Joe\u00ae \u0130\u00e7/D\u0131\u015f Mekan 25' 5 \u00c7\u0131k\u0131\u015fl\u0131 Uzatma Kablosu",
+						"product_available_flag":false,
+						"uniqueId":"9695230",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-sun-joeandreg-indooroutdoor-25-extension-cord-wit-d-20200614092615993~726791.jpg",
+						"price":1799,
+						"item_number":"726791",
+						"categoryPath":[
+							"Ana Sayfa>Bah\u00e7e & D\u0131\u015f Mekanlar>D\u0131\u015f Mekan Aletleri ve Ekipmanlar\u0131>D\u0131\u015f Mekan Alet Aksesuarlar\u0131"
+						],
+						"Brand":[
+							"Sun Joe"
+						],
+						"ShopbyColor":[
+							"Green"
+						]
+					},
+					{
+						"product_name":"Jay King Som G\u00fcm\u00fc\u015f Mavi Topaz Boncuklu Lineer Damla K\u00fcpe",
+						"product_available_flag":true,
+						"uniqueId":"9451576",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-blue-topaz-bead-linear-drop-ea-d-2020071409252673~710081.jpg",
+						"price":5275,
+						"item_number":"710081",
+						"categoryPath":[
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Topaz"
+						]
+					},
+					{
+						"product_name":"MW-E\u011eLENCE-DM-YEN\u0130LEME",
+						"product_available_flag":true,
+						"uniqueId":"1624428",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/mw-entertainment-dm-renewal-d-20060111140304043~331705.jpg",
+						"price":6900,
+						"item_number":"331705"
+					},
+					{
+						"product_name":"BeautyBio Pop N' Pout Party Popper, 3'l\u00fc Dudak Serumu ile",
+						"product_available_flag":true,
+						"uniqueId":"9130206",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/beautybio-pop-n-pout-party-popper-with-3-pack-lip-serum-d-2019100311424941~673146.jpg",
+						"price":4599,
+						"item_number":"673146",
+						"categoryPath":[
+							"G\u00fczellik>Makyaj>Dudaklar>Dudak Setleri",
+							"G\u00fczellik>Cilt Bak\u0131m\u0131>Dudak Balzamlar\u0131 ve Dolgunla\u015ft\u0131r\u0131c\u0131lar",
+							"G\u00fczellik>Makyaj>Kitler ve Paletler",
+							"G\u00fczellik>Makyaj>Dudaklar>Dudak Parlat\u0131c\u0131 ve Dolgunla\u015ft\u0131r\u0131c\u0131",
+							"G\u00fczellik>Cilt Bak\u0131m\u0131>Kitler ve Setler"
+						],
+						"Brand":[
+							"BeautyBio"
+						],
+						"GiftsByRecipient":[
+							"For Her",
+							"For Friends"
+						],
+						"GiftsbyOccasion":[
+							"Valentine's Day"
+						]
+					},
+					{
+						"product_name":"\"Oldu\u011fu Gibi\" South Street Loft 3'l\u00fc Boyal\u0131 Sepet Seti",
+						"product_available_flag":false,
+						"uniqueId":"9695262",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-south-street-loft-set-of-3-painted-baskets-d-20200614092819727~726796.jpg",
+						"price":3499,
+						"item_number":"726796",
+						"Brand":[
+							"South Street Loft"
+						]
+					},
+					{
+						"product_name":"Jay King G\u00fcm\u00fc\u015f Turkuaz ve Varisit Boncuklu Kolye",
+						"product_available_flag":true,
+						"uniqueId":"9451607",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-turquoise-and-variscite-bead-n-d-2020070908491444~710094.jpg",
+						"price":7998,
+						"item_number":"710094",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Turquoise"
+						]
+					},
+					{
+						"product_name":"Signature Club A Rapid Transport C G\u00f6zler i\u00e7in Yo\u011funla\u015ft\u0131r\u0131lm\u0131\u015f Konsantre",
+						"product_available_flag":false,
+						"uniqueId":"1793549",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/signature-club-a-rapid-transport-c-infused-concentrate-d-20130524131904533~266583.jpg",
+						"price":2400,
+						"item_number":"266583",
+						"Brand":[
+							"Signature Club A"
+						]
+					},
+					{
+						"product_name":"Elama Zen K\u0131rm\u0131z\u0131 Mozaik 16 Par\u00e7a Ta\u015f Yemek Tak\u0131m\u0131",
+						"product_available_flag":true,
+						"uniqueId":"9130342",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/elama-zen-red-mozaik-16-piece-stoneware-dinnerware-set-d-2019081615072612~9130342w.jpg",
+						"price":7225,
+						"item_number":"1220864",
+						"categoryPath":[
+							"Mutfak & Yemek>Masa \u00dcst\u00fc & Bar>Yemek Tak\u0131mlar\u0131>Mekan Ayarlar\u0131"
+						]
+					},
+					{
+						"product_name":"Dolce Fil Pelu\u015f Oyuncak Boyunca \u00c7ekin",
+						"product_available_flag":true,
+						"uniqueId":"9630938",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/dolce-pull-along-elephant-plush-toy-d-20200504080003907~9630938w.jpg",
+						"price":2999,
+						"item_number":"1247145",
+						"categoryPath":[
+							"Oyuncaklar ve Oyunlar>Hayvan Doldurulmu\u015f>Yumu\u015fak Pelu\u015f"
+						],
+						"ShopbyAge":[
+							"2-4 Years",
+							"5-7 Years"
+						]
+					},
+					{
+						"product_name":"Playstation 4'\u00fcn En B\u00fcy\u00fck \u0130sabeti Ratchet ve Clank",
+						"product_available_flag":true,
+						"uniqueId":"9456193",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/ratchet-and-clank-greatest-hit-for-playstation-4-d-2020021512502338~9456193w.jpg",
+						"price":1999,
+						"item_number":"1245068",
+						"categoryPath":[
+							"Elektronik>Video Oyunlar\u0131 ve Sistemleri>Video Oyunlar\u0131"
+						],
+						"Brand":[
+							"Sony"
+						],
+						"ConsoleType":[
+							"PS4",
+							"PS4 Slim",
+							"PS4 Pro"
+						]
+					},
+					{
+						"product_name":"Joan Boyce \u0130\u00e7-D\u0131\u015f Pav\u00e9 Halka K\u00fcpeler",
+						"product_available_flag":false,
+						"uniqueId":"1832991",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/joan-boyce-inside-outside-pavandeacute-hoop-earrings-d-2016102217283624~513295_1B4.jpg",
+						"price":1495,
+						"item_number":"513295",
+						"categoryPath":[
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"Brand":[
+							"Joan Boyce"
+						]
+					},
+					{
+						"product_name":"Elama Mellow-Sar\u0131 16 Par\u00e7a Yemek Tak\u0131m\u0131",
+						"product_available_flag":true,
+						"uniqueId":"9130349",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/elama-mellow-yellow-16-piece-dinnerware-set-d-20190816150632567~9130349w.jpg",
+						"price":7225,
+						"item_number":"1220035",
+						"categoryPath":[
+							"Mutfak & Yemek>Masa \u00dcst\u00fc & Bar>Yemek Tak\u0131mlar\u0131>Mekan Ayarlar\u0131"
+						],
+						"Brand":[
+							"Elama"
+						]
+					},
+					{
+						"product_name":"Benefit Kozmetik Ger\u00e7ek Sahte Kirpikler",
+						"product_available_flag":true,
+						"uniqueId":"9631029",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/benefit-cosmetics-real-false-lashes-d-20200504123358673~9631029w_PB0.jpg",
+						"price":1500,
+						"item_number":"1246368",
+						"categoryPath":[
+							"G\u00fczellik>Makyaj>G\u00f6zler>Kirpik Artt\u0131r\u0131c\u0131lar"
+						],
+						"Brand":[
+							"Benefit Cosmetics"
+						]
+					},
+					{
+						"product_name":"Hagen 30 Par\u00e7a Yemek Tak\u0131m\u0131 - 6'l\u0131 Servis - Kare - Beyaz - \u0130nce Seramik - GBX",
+						"product_available_flag":true,
+						"uniqueId":"9456200",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/hagen-30-pc-dinnerware-set-service-for-6-square-white-f-d-20200215125046473~9456200w.jpg",
+						"price":5899,
+						"item_number":"1241052",
+						"categoryPath":[
+							"Mutfak & Yemek>Masa \u00dcst\u00fc & Bar>Yemek Tak\u0131mlar\u0131>Mekan Ayarlar\u0131"
+						]
+					},
+					{
+						"product_name":"Benefit Cosmetics Vanity Flare Mini Maskaral\u0131 G\u00f6z Far\u0131 Paleti",
+						"product_available_flag":true,
+						"uniqueId":"1845961",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/benefit-cosmetics-vanity-flare-eyeshadow-palette-with-m-d-2018110512011724~636321.jpg",
+						"price":2999,
+						"item_number":"636321",
+						"categoryPath":[
+							"G\u00fczellik>Makyaj>Kitler ve Paletler"
+						],
+						"Brand":[
+							"Benefit Cosmetics"
+						],
+						"GiftsByRecipient":[
+							"For Her",
+							"For Friends"
+						],
+						"GiftsbyOccasion":[
+							"Valentine's Day"
+						]
+					},
+					{
+						"product_name":"Elama Petek 6 par\u00e7a 15 oz. Kupa Seti - Turkuaz",
+						"product_available_flag":true,
+						"uniqueId":"9130356",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/elama-honeycomb-6-piece-15-oz-mug-set-turquoise-d-20190905150106407~9130356w.jpg",
+						"price":2475,
+						"item_number":"1220675",
+						"categoryPath":[
+							"Mutfak & Yiyecek>Masa \u00dcst\u00fc & Bar>Bardak>Kahve & \u00c7ay Kupalar\u0131",
+							"Mutfak & Yiyecek>Masa \u00dcst\u00fc & Bar>Yemek Tak\u0131mlar\u0131>Kupalar"
+						],
+						"Brand":[
+							"Elama"
+						]
+					},
+					{
+						"product_name":"TOMS Nahla Ev Terli\u011fi",
+						"product_available_flag":true,
+						"uniqueId":"9631404",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/toms-nahla-house-slipper-d-20201113080246307~721575.jpg",
+						"price":4995,
+						"item_number":"721575",
+						"categoryPath":[
+							"Moda>Ayakkab\u0131>Terlik"
+						],
+						"ShopbyColor":[
+							"Blue",
+							"Pink"
+						],
+						"Brand":[
+							"TOMS"
+						],
+						"Type":[
+							"Slippers"
+						]
+					},
+					{
+						"product_name":"Jay King Som G\u00fcm\u00fc\u015f Sonoran Mavi Turkuaz \u00c7apraz Kolye",
+						"product_available_flag":false,
+						"uniqueId":"9456218",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-sonoran-blue-turquoise-cross-p-d-2020061008335945~710694.jpg",
+						"price":12498,
+						"item_number":"710694",
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Turquoise"
+						]
+					},
+					{
+						"product_name":"Anna Griffin\u00ae Valentine Doily Kesim ve Kabartma Kal\u0131p Seti",
+						"product_available_flag":false,
+						"uniqueId":"1846227",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/anna-griffinandreg-valentine-doily-cut-and-emboss-die-s-d-20181101160419817~641297.jpg",
+						"price":3995,
+						"item_number":"641297",
+						"Brand":[
+							"Anna Griffin",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Elama Kahve Evi 6'l\u0131 12 oz. Standl\u0131 Kupa Seti, Muhtelif Renkler",
+						"product_available_flag":true,
+						"uniqueId":"9130367",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/elama-coffee-house-6-piece-12-oz-mug-set-with-stand-ass-d-2020031112501129~9130367w.jpg",
+						"price":2999,
+						"item_number":"1220747",
+						"categoryPath":[
+							"Mutfak & Yiyecek>Masa \u00dcst\u00fc & Bar>Bardak>Kahve & \u00c7ay Kupalar\u0131",
+							"Mutfak & Yiyecek>Masa \u00dcst\u00fc & Bar>Yemek Tak\u0131mlar\u0131>Kupalar"
+						],
+						"Brand":[
+							"Elama"
+						]
+					},
+					{
+						"product_name":"\u00c7elik Teakettle \u00dczerinde Chantal Vintage Emaye",
+						"product_available_flag":false,
+						"uniqueId":"9631931",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/chantal-vintage-enamel-on-steel-teakettle-d-2020050514225723~9631931w_A5X.jpg",
+						"price":4995,
+						"item_number":"1247091",
+						"Brand":[
+							"Chantal"
+						]
+					},
+					{
+						"product_name":"Jay King Som G\u00fcm\u00fc\u015f Menek\u015fe Kalsedon Kolyeli Kolye",
+						"product_available_flag":true,
+						"uniqueId":"9456250",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-violet-chalcedony-pendant-with-d-2020071410290113~710709.jpg",
+						"price":14750,
+						"item_number":"710709",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Chalcedony"
+						]
+					},
+					{
+						"product_name":"Jay King Uyuyan G\u00fczel Turkuaz Kakma G\u00fcm\u00fc\u015f Y\u0131ld\u0131z K\u00fcpe",
+						"product_available_flag":false,
+						"uniqueId":"1239516",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sleeping-beauty-turquoise-inlay-sterling-silve-d-20170516115051793~540704.jpg",
+						"price":10990,
+						"item_number":"540704",
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Turquoise"
+						]
+					},
+					{
+						"product_name":"Zen Buffetware 16 Par\u00e7a Kare Yemek Tak\u0131m\u0131 - Beyaz",
+						"product_available_flag":true,
+						"uniqueId":"9130392",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/zen-buffetware-16-piece-square-dinnerware-set-white-d-2019081615084288~9130392w.jpg",
+						"price":4850,
+						"item_number":"1220749",
+						"categoryPath":[
+							"Mutfak & Yemek>Masa \u00dcst\u00fc & Bar>Yemek Tak\u0131mlar\u0131>Mekan Ayarlar\u0131"
+						],
+						"Brand":[
+							"Gibson",
+							"Megagoods"
+						]
+					},
+					{
+						"product_name":"\u00c7elik \u00c7aydanl\u0131k \u00dczerine Chantal Loop Emaye",
+						"product_available_flag":true,
+						"uniqueId":"9631938",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/chantal-loop-enamel-on-steel-teakettle-d-20200505142257927~9631938w_FC3.jpg",
+						"price":4995,
+						"item_number":"1247089",
+						"categoryPath":[
+							"Mutfak ve Yiyecek>Kahve, Espresso ve \u00c7ay>Su Is\u0131t\u0131c\u0131lar\u0131 ve \u00c7ay Makineleri"
+						],
+						"ShopbyColor":[
+							"Red"
+						],
+						"Brand":[
+							"Chantal"
+						]
+					},
+					{
+						"product_name":"Jay King Som G\u00fcm\u00fc\u015f Ye\u015fil Opal Damla K\u00fcpe",
+						"product_available_flag":false,
+						"uniqueId":"9456268",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-green-opal-drop-earrings-d-20200714092543433~710735.jpg",
+						"price":9998,
+						"item_number":"710735",
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Opal"
+						]
+					},
+					{
+						"product_name":"PUR Mor G\u00f6zenek Cezaland\u0131r\u0131c\u0131 Maske",
+						"product_available_flag":false,
+						"uniqueId":"1283136",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/pur-purple-pore-punisher-mask-d-2018082310340506~626243.jpg",
+						"price":2600,
+						"item_number":"626243",
+						"categoryPath":[
+							"G\u00fczellik>Cilt Bak\u0131m\u0131>Y\u00fcz Maskeleri"
+						],
+						"Brand":[
+							"PUR"
+						]
+					},
+					{
+						"product_name":"General Store Addlestone 3 adet 10\", 8\" & 6\" Tava Seti - Yard\u0131mc\u0131 Boyutlar - Yuvarlak - Siyah - \u00d6nceden Haz\u0131rlanm\u0131\u015f -",
+						"product_available_flag":false,
+						"uniqueId":"9130399",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/general-store-addlestone-3-pc-10-8-and-6-skillet-set-as-d-20200225175538817~9130399w.jpg",
+						"price":3625,
+						"item_number":"1224868"
+					},
+					{
+						"product_name":"\u00c7elik \u00c7aydanl\u0131k \u00dczerine Chantal Klasik Emaye",
+						"product_available_flag":true,
+						"uniqueId":"9631942",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/chantal-classic-enamel-on-steel-teakettle-d-20200505142301947~9631942w_3EU.jpg",
+						"price":9995,
+						"item_number":"1247087",
+						"categoryPath":[
+							"Mutfak ve Yiyecek>Kahve, Espresso ve \u00c7ay>Su Is\u0131t\u0131c\u0131lar\u0131 ve \u00c7ay Makineleri"
+						],
+						"Brand":[
+							"Chantal"
+						],
+						"ShopbyColor":[
+							"Black"
+						]
+					},
+					{
+						"product_name":"Jay King \u00c7ok Renkli Boncuk Kolye ile Pembe ve Mavi Safir Kolye",
+						"product_available_flag":true,
+						"uniqueId":"9456275",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-pink-and-blue-sapphire-pendant-with-multi-colo-d-202007141029091~710758.jpg",
+						"price":23725,
+						"item_number":"710758",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Sapphire"
+						]
+					},
+					{
+						"product_name":"\"Oldu\u011fu Gibi\" WynneLayers Kap\u00fc\u015fonlu Yaka Kar\u0131\u015f\u0131k Teknik Pan\u00e7o",
+						"product_available_flag":false,
+						"uniqueId":"1348323",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-wynnelayers-cowl-neck-mixed-media-poncho-d-20210215153146837~757999.jpg",
+						"price":2499,
+						"item_number":"757999",
+						"Brand":[
+							"MarlaWynne"
+						]
+					},
+					{
+						"product_name":"Gibson Home 45 Par\u00e7a Sofra Tak\u0131m\u0131 Seti",
+						"product_available_flag":true,
+						"uniqueId":"9130406",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/gibson-home-45-piece-flatware-set-d-2020022517592232~9130406w.jpg",
+						"price":4399,
+						"item_number":"1222851",
+						"categoryPath":[
+							"Mutfak & Yiyecek>Masa \u00dcst\u00fc & Bar>\u00c7atal B\u0131\u00e7ak Tak\u0131m\u0131 & G\u00fcm\u00fc\u015f E\u015fya>\u00c7atal B\u0131\u00e7ak Tak\u0131mlar\u0131"
+						],
+						"Brand":[
+							"Gibson",
+							"Megagoods"
+						]
+					},
+					{
+						"product_name":"TOMS Minik Alpargata Ren Geyi\u011fi Slip-On",
+						"product_available_flag":true,
+						"uniqueId":"9632097",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/toms-tiny-alpargata-reindeer-slip-on-d-2020110307544128~721673.jpg",
+						"price":2300,
+						"item_number":"721673",
+						"categoryPath":[
+							"\u00c7ocuk>Ayakkab\u0131>Spor Ayakkab\u0131 ve Slip-ons"
+						],
+						"Brand":[
+							"TOMS"
+						],
+						"Type":[
+							"Slippers"
+						],
+						"ShopbyColor":[
+							"Animal"
+						]
+					},
+					{
+						"product_name":"Patricia Nash Norcia Deri Fermuarl\u0131 \u00c7apraz \u00c7anta",
+						"product_available_flag":true,
+						"uniqueId":"9747353",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/patricia-nash-norcia-leather-crossbody-with-zip-pouch-d-2020123108163728~732863_PWP.jpg",
+						"price":18000,
+						"item_number":"732863",
+						"categoryPath":[
+							"Moda>El \u00c7antalar\u0131 ve C\u00fczdanlar>\u00c7apraz \u00c7antalar",
+							"Moda>El \u00c7antalar\u0131 ve C\u00fczdanlar>Bez \u00c7antalar"
+						],
+						"Brand":[
+							"Patricia Nash"
+						]
+					},
+					{
+						"product_name":"Yesteryear Ye\u015fim Ye\u015fim ve De\u011ferli Ta\u015f Halka K\u00fcpeler",
+						"product_available_flag":true,
+						"uniqueId":"1428661",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jade-of-yesteryear-jade-and-gemstone-hoop-earrings-d-20190718084648603~674752.jpg",
+						"price":7998,
+						"item_number":"674752",
+						"categoryPath":[
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"ShopbyColor":[
+							"Green"
+						],
+						"Brand":[
+							"Jade of Yesteryear"
+						],
+						"Stone":[
+							"Jade"
+						]
+					},
+					{
+						"product_name":"Elama Signature 12\" 7 Par\u00e7a Tembel Susan Sunucu Seti",
+						"product_available_flag":true,
+						"uniqueId":"9130417",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/elama-signature-12-7-piece-lazy-susan-server-set-d-20190816150729417~9130417w.jpg",
+						"price":2660,
+						"item_number":"1222846",
+						"categoryPath":[
+							"Mutfak & Yiyecek>Masa \u00dcst\u00fc & Bar>Servis Gere\u00e7leri>Meze Sunucular\u0131"
+						],
+						"Brand":[
+							"Elama",
+							"Megagoods"
+						]
+					},
+					{
+						"product_name":"Patricia Nash Empoli Deri Metal Y\u00fcz\u00fck El \u00c7antas\u0131",
+						"product_available_flag":true,
+						"uniqueId":"9632676",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/patricia-nash-empoli-leather-metal-ring-satchel-d-20200828104312473~721732.jpg",
+						"price":16975,
+						"item_number":"721732",
+						"categoryPath":[
+							"Moda>El \u00c7antalar\u0131 ve C\u00fczdanlar>El \u00c7antalar\u0131"
+						],
+						"Brand":[
+							"Patricia Nash"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						],
+						"ShopbyColor":[
+							"Green",
+							"Pattern/Print",
+							"Tan"
+						]
+					},
+					{
+						"product_name":"Bzees Smile Parlak Y\u0131kanabilir Kama Sandalet",
+						"product_available_flag":true,
+						"uniqueId":"9747721",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/bzees-smile-bright-washable-wedge-sandal-d-20210201111406917~732953_097.jpg",
+						"price":6000,
+						"item_number":"732953",
+						"Brand":[
+							"Bzees"
+						],
+						"ShoeStyle":[
+							"Slide"
+						],
+						"ShopbyColor":[
+							"Blue"
+						]
+					},
+					{
+						"product_name":"R\u00fczgar ve Hava Durumu Solar Swirl Spinner",
+						"product_available_flag":true,
+						"uniqueId":"1428768",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/wind-and-weather-solar-swirl-spinner-d-20210203092908253~739757.jpg",
+						"price":2995,
+						"item_number":"739757",
+						"keywords":"signature Club A by Adrienne Lemon Verbena Bath and Shower Gel - 60 Day AutoShip,,",
+						"categoryPath":[
+							"Ana Sayfa>Bah\u00e7e & D\u0131\u015f Mekanlar>Dekor>Aksanlar",
+							"Ana Sayfa>Bah\u00e7e & D\u0131\u015f Mekanlar>Dekor>Ayd\u0131nlatma"
+						],
+						"ShopbyColor":[
+							"Animal"
+						],
+						"Brand":[
+							"Wind & Weather"
+						]
+					},
+					{
+						"product_name":"MUK LUKS 2'li P\u00fcsk\u00fcll\u00fc Terlik \u00c7orap",
+						"product_available_flag":true,
+						"uniqueId":"9136711",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/muk-luks-2-pack-tassel-slipper-sock-d-20191101103736527~673631.jpg",
+						"price":1450,
+						"item_number":"673631",
+						"categoryPath":[
+							"Moda>Ayakkab\u0131>Terlik"
+						],
+						"Type":[
+							"Slippers"
+						],
+						"ShopbyColor":[
+							"Gray/Grey",
+							"Green",
+							"Red"
+						]
+					},
+					{
+						"product_name":"Patricia Nash Dante Deri Petite \u00c7apraz Ask\u0131l\u0131 \u00c7anta",
+						"product_available_flag":false,
+						"uniqueId":"9632744",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/patricia-nash-dante-leather-petite-crossbody-bag-d-20200828104332823~721736.jpg",
+						"price":16900,
+						"item_number":"721736",
+						"Brand":[
+							"Patricia Nash"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						],
+						"GiftsbyOccasion":[
+							"Holiday Gifts"
+						]
+					},
+					{
+						"product_name":"Gimbal Sabitleyici Selfie \u00c7ubu\u011fu Tripod",
+						"product_available_flag":true,
+						"uniqueId":"9747771",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/gimbal-stabilizer-selfie-stick-tripod-d-20200908091749163~732957_100.jpg",
+						"price":4999,
+						"item_number":"732957",
+						"categoryPath":[
+							"Elektronik>Kameralar, Foto\u011fraf ve Video>Lensler ve Aksesuarlar",
+							"Elektronik>Cep Telefonlar\u0131 ve Aksesuarlar\u0131>Cep Telefonu Aksesuarlar\u0131"
+						],
+						"GiftsByRecipient":[
+							"For Her",
+							"For Him",
+							"For Kids & Teens"
+						],
+						"ShopbyColor":[
+							"Black",
+							"White"
+						],
+						"Brand":[
+							"Gimbal"
+						]
+					},
+					{
+						"product_name":"\"Oldu\u011fu Gibi\" Vanderbilt Jeans Ku\u011fu Bask\u0131l\u0131 Ti\u015f\u00f6rt",
+						"product_available_flag":true,
+						"uniqueId":"1428775",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-vanderbilt-jeans-swan-print-t-shirt-d-202010061429229~739885.jpg",
+						"price":2099,
+						"item_number":"739885",
+						"categoryPath":[
+							"Moda>Giyim>\u00dcstler"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						],
+						"GiftsbyOccasion":[
+							"Holiday Gifts"
+						],
+						"Brand":[
+							"Vanderbilt Jeans"
+						],
+						"ShopbyColor":[
+							"Black"
+						],
+						"ShopbyApparelSize":[
+							"L (12-14)"
+						]
+					},
+					{
+						"product_name":"14K Alt\u0131n Cilal\u0131 Dokuma Kubbe Y\u00fcz\u00fck",
+						"product_available_flag":false,
+						"uniqueId":"9136862",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/14k-gold-polished-woven-dome-ring-d-20190515105705307~9136862w.jpg",
+						"price":76495,
+						"item_number":"1217578",
+						"RingStyle":[
+							"Bands"
+						]
+					},
+					{
+						"product_name":"Anna Griffin\u00ae 120 Favori \u00c7i\u00e7ek 3D Etiketler",
+						"product_available_flag":false,
+						"uniqueId":"9633035",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/anna-griffinandreg-120-favorite-floral-3d-stickers-d-2020103011345583~721809.jpg",
+						"price":3037,
+						"item_number":"721809",
+						"Brand":[
+							"Anna Griffin",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Lifesmart 1500 7'si 1 Arada Ah\u015fap Pelet Izgara",
+						"product_available_flag":true,
+						"uniqueId":"9747971",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/lifesmart-1500-7-in-1-wood-pellet-grill-d-2020081018224371~9747971w.jpg",
+						"price":89999,
+						"item_number":"1253289",
+						"categoryPath":[
+							"Mutfak & Yiyecek>Izgaralar>A\u00e7\u0131k Hava Izgaralar\u0131"
+						],
+						"Brand":[
+							"Lifesmart"
+						],
+						"Type":[
+							"Smokers",
+							"Pellet Grill"
+						]
+					},
+					{
+						"product_name":"MW-E\u011eLENCE FAF-YEN\u0130LEME",
+						"product_available_flag":true,
+						"uniqueId":"1621346",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/mw-entertain-faf-renew-d-2006011114030401~214804.jpg",
+						"price":6900,
+						"item_number":"214804"
+					},
+					{
+						"product_name":"14K Alt\u0131n Cilal\u0131 Bypass Y\u00fcz\u00fck",
+						"product_available_flag":true,
+						"uniqueId":"9136897",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/14k-gold-polished-bypass-ring-d-20190515105734753~9136897w_3W3.jpg",
+						"price":34695,
+						"item_number":"1217584",
+						"categoryPath":[
+							"Tak\u0131>Y\u00fcz\u00fckler"
+						],
+						"RingStyle":[
+							"Bands"
+						],
+						"ShopbyColor":[
+							"Metallic"
+						]
+					},
+					{
+						"product_name":"Urbanista Stockholm Plus, \u015earj Kutulu Ger\u00e7ekten Kablosuz Kulakl\u0131k",
+						"product_available_flag":true,
+						"uniqueId":"9633044",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/urbanista-stockholm-plus-truly-wireless-earbuds-with-ch-d-20200828112925197~721863_001.jpg",
+						"price":6999,
+						"item_number":"721863",
+						"categoryPath":[
+							"Elektronik>Ses>Kulakl\u0131klar"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Green",
+							"Metallic",
+							"White"
+						],
+						"HeadphoneType":[
+							"Truly Wireless"
+						]
+					},
+					{
+						"product_name":"Lifesmart 24\" 6's\u0131 1 Arada Kamado Izgara Paketi",
+						"product_available_flag":true,
+						"uniqueId":"9747972",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/lifesmart-24-6-in-1-kamado-grill-package-d-20200810182242053~9747972w.jpg",
+						"price":94999,
+						"item_number":"1253293",
+						"categoryPath":[
+							"Mutfak & Yiyecek>Izgaralar>A\u00e7\u0131k Hava Izgaralar\u0131"
+						],
+						"Brand":[
+							"Lifesmart"
+						],
+						"Type":[
+							"Charcoal Grills"
+						]
+					},
+					{
+						"product_name":"MW-MONEYMASTER MBRSHP PLANI-REN",
+						"product_available_flag":true,
+						"uniqueId":"1621353",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/mw-moneymaster-mbrshp-plan-ren-d-2006011114030398~130470.jpg",
+						"price":4900,
+						"item_number":"130470"
+					},
+					{
+						"product_name":"14K Alt\u0131n Parlak Dokulu Kubbe Y\u00fcz\u00fck",
+						"product_available_flag":true,
+						"uniqueId":"9137048",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/14k-gold-polished-textured-dome-ring-d-20190515135345467~9137048w.jpg",
+						"price":79495,
+						"item_number":"1217893",
+						"categoryPath":[
+							"Tak\u0131>Y\u00fcz\u00fckler"
+						],
+						"RingStyle":[
+							"Bands"
+						]
+					},
+					{
+						"product_name":"IMPO Uluslararas\u0131 Vlossom Elbise Sandalet",
+						"product_available_flag":true,
+						"uniqueId":"9657179",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/impo-international-vlossom-dress-sandal-d-20200520231117743~9657179w.jpg",
+						"price":4999,
+						"item_number":"1248005",
+						"categoryPath":[
+							"Moda>Ayakkab\u0131>Sandalet",
+							"Moda>Ayakkab\u0131>Slaytlar ve Kat\u0131r"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Pink"
+						],
+						"HeelType":[
+							"Block"
+						],
+						"ShoeStyle":[
+							"Dress",
+							"Slide"
+						],
+						"Brand":[
+							"IMPO"
+						]
+					},
+					{
+						"product_name":"Heidi Daus \"Simply Sansasyonel\" Kristal K\u00fcpe",
+						"product_available_flag":true,
+						"uniqueId":"9747989",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/heidi-daus-simply-sensational-crystal-earrings-d-20201012092012303~732964.jpg",
+						"price":6850,
+						"item_number":"732964",
+						"categoryPath":[
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"GiftsbyOccasion":[
+							"Valentine's Day"
+						],
+						"GiftsByRecipient":[
+							"For Friends"
+						],
+						"Brand":[
+							"Heidi Daus"
+						]
+					},
+					{
+						"product_name":"Birkenstock Gizeh Tanga Rahat Sandalet",
+						"product_available_flag":true,
+						"uniqueId":"1835055",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/birkenstock-gizeh-thong-comfort-sandal-d-20170303153647927~537505.jpg",
+						"price":9995,
+						"item_number":"537505",
+						"categoryPath":[
+							"Moda>Ayakkab\u0131>Sandalet"
+						],
+						"Type":[
+							"Sandals"
+						],
+						"HeelType":[
+							"Flat"
+						],
+						"Brand":[
+							"Birkenstock"
+						],
+						"ShopbyColor":[
+							"Tan"
+						],
+						"ShoeStyle":[
+							"Flat",
+							"Thong",
+							"T-Strap"
+						],
+						"UpperMaterial":[
+							"Faux Leather"
+						]
+					},
+					{
+						"product_name":"Colleen Lopez G\u00fcm\u00fc\u015f \u00c7ok Renkli Beril Boncuklu Kolye",
+						"product_available_flag":true,
+						"uniqueId":"9137516",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/colleen-lopez-sterling-silver-multicolor-beryl-beaded-n-d-20190624085210927~673689.jpg",
+						"price":11308,
+						"item_number":"673689",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Brand":[
+							"Colleen Lopez Collection"
+						],
+						"ShopbyColor":[
+							"Green"
+						]
+					},
+					{
+						"product_name":"Soave Oro 14 Ayar Alt\u0131n Elektroform Cilal\u0131 D\u00fc\u011fmeli Vidali K\u00fcpe",
+						"product_available_flag":true,
+						"uniqueId":"9658685",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/soave-oro-14k-gold-electroform-polished-button-stud-ear-d-2020073114201232~723929.jpg",
+						"price":12998,
+						"item_number":"723929",
+						"categoryPath":[
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"ShopbyColor":[
+							"Pink",
+							"White",
+							"Yellow"
+						],
+						"Brand":[
+							"Soave Oro"
+						]
+					},
+					{
+						"product_name":"Heidi Daus \"Klasik Cascade\" \u00c7ok S\u0131ral\u0131 Boncuklu Bileklik",
+						"product_available_flag":true,
+						"uniqueId":"9748022",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/heidi-daus-classic-cascade-multi-row-beaded-bracelet-d-2020100810074643~732978.jpg",
+						"price":20525,
+						"item_number":"732978",
+						"categoryPath":[
+							"Tak\u0131>Bilezikler"
+						],
+						"Brand":[
+							"Heidi Daus"
+						]
+					},
+					{
+						"product_name":"Beauty For Real Nude Lip Gard\u0131rop 5 Par\u00e7a Set",
+						"product_available_flag":true,
+						"uniqueId":"1844615",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/beauty-for-real-nude-lip-wardrobe-5-piece-set-d-20190607081738763~622839.jpg",
+						"price":5500,
+						"item_number":"622839",
+						"categoryPath":[
+							"G\u00fczellik>Makyaj>Kitler ve Paletler",
+							"G\u00fczellik>Makyaj>Dudaklar>Dudak Setleri"
+						],
+						"Brand":[
+							"Beauty For Real"
+						]
+					},
+					{
+						"product_name":"Zadro Melrose LED Bluetooth Makyaj Aynas\u0131",
+						"product_available_flag":true,
+						"uniqueId":"9137948",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/zadro-melrose-led-bluetooth-vanity-mirror-d-2020031907374583~673727.jpg",
+						"price":13181,
+						"item_number":"673727",
+						"categoryPath":[
+							"Ana Sayfa>Banyo>Aynalar",
+							"G\u00fczellik>Aletler ve Aksesuarlar>Makyaj F\u0131r\u00e7alar\u0131 ve Aletleri>Makyaj Aynalar\u0131"
+						],
+						"Brand":[
+							"Zadro"
+						]
+					},
+					{
+						"product_name":"BECCA P\u0131r\u0131lt\u0131l\u0131 Cilt Preslenmi\u015f Fosforlu Kalem ve F\u0131r\u00e7al\u0131 All\u0131k",
+						"product_available_flag":true,
+						"uniqueId":"9658783",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/becca-shimmering-skin-pressed-highlighter-and-blush-wit-d-20200520113511533~9658783w.jpg",
+						"price":5900,
+						"item_number":"1248731",
+						"categoryPath":[
+							"G\u00fczellik>Makyaj>Kitler ve Paletler",
+							"G\u00fczellik>Makyaj>Y\u00fcz>Y\u00fcz Setleri"
+						],
+						"Brand":[
+							"BECCA Cosmetics"
+						]
+					},
+					{
+						"product_name":"\"Oldu\u011fu Gibi\" Rhonda Shear 2'li Dantel Kaplama Kal\u0131pl\u0131 Fincan S\u00fctyen",
+						"product_available_flag":false,
+						"uniqueId":"9748053",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-rhonda-shear-2-pack-lace-overlay-molded-cup-bra-d-20200811090412467~732996.jpg",
+						"price":2699,
+						"item_number":"732996",
+						"Brand":[
+							"Rhonda Shear"
+						]
+					},
+					{
+						"product_name":"Alt\u0131n Hazineler 14 Ayar \u0130talyan Alt\u0131n \u00c7ift Zincirli Fantezi Kolye",
+						"product_available_flag":true,
+						"uniqueId":"1323553",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/golden-treasures-14k-italian-gold-double-strand-fancy-n-d-2020011608410198~696242.jpg",
+						"price":33421,
+						"item_number":"696242",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Brand":[
+							"Golden Treasures"
+						]
+					},
+					{
+						"product_name":"Herkimer Mines \"Elmas\" Kuvars \u00c7ok Ta\u015fl\u0131 A\u00e7\u0131k Man\u015fet Bileklik",
+						"product_available_flag":false,
+						"uniqueId":"9138465",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/herkimer-mines-diamond-quartz-multi-stone-open-cuff-bra-d-20190725083015873~673886.jpg",
+						"price":10513,
+						"item_number":"673886",
+						"Stone":[
+							"Quartz"
+						],
+						"Brand":[
+							"Herkimer Mines"
+						]
+					},
+					{
+						"product_name":"Soave Oro 14K Alt\u0131n Elektroform Cilal\u0131 8-1/4\" Rolo Zincir Bileklik",
+						"product_available_flag":true,
+						"uniqueId":"9658785",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/soave-oro-14k-gold-electroform-polished-8-14-rolo-chain-d-2020073114211478~723963.jpg",
+						"price":37998,
+						"item_number":"723963",
+						"categoryPath":[
+							"Tak\u0131>Bilezikler"
+						],
+						"Brand":[
+							"Soave Oro"
+						]
+					},
+					{
+						"product_name":"HomeCraft \u00c7ift Ocakl\u0131 Ocak",
+						"product_available_flag":true,
+						"uniqueId":"9748171",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/homecraft-double-burner-hot-plate-d-20200811093605007~9748171w.jpg",
+						"price":5499,
+						"item_number":"1264207",
+						"categoryPath":[
+							"Mutfak & Yiyecek>Alet Aletleri>Elektrikli Ocaklar ve Tavalar",
+							"Mutfak & Yiyecek>Alet Aletleri>\u00d6zel Elektrik"
+						]
+					},
+					{
+						"product_name":"M. Asam Magic Finish All\u0131k F\u0131r\u00e7as\u0131",
+						"product_available_flag":true,
+						"uniqueId":"1337300",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/m-asam-magic-finish-blusher-brush-d-20201117095857323~720006.jpg",
+						"price":2350,
+						"item_number":"720006",
+						"categoryPath":[
+							"G\u00fczellik>Makyaj>Makyaj F\u0131r\u00e7alar\u0131 ve Aplikat\u00f6rleri>Y\u00fcz F\u0131r\u00e7alar\u0131"
+						],
+						"BrushType":[
+							"Face"
+						],
+						"Brand":[
+							"M. Asam"
+						]
+					},
+					{
+						"product_name":"2 Dizili Mini LED I\u015f\u0131kl\u0131 K\u0131\u015f Yolu Seti",
+						"product_available_flag":false,
+						"uniqueId":"9138684",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/winter-lane-set-of-2-strings-of-mini-led-lights-d-20191028095433527~673946.jpg",
+						"price":1395,
+						"item_number":"673946",
+						"Brand":[
+							"Winter Lane"
+						]
+					},
+					{
+						"product_name":"18K Beyaz Alt\u0131n .16ctw P\u0131rlanta K\u00fcme Madalyon Kolye",
+						"product_available_flag":true,
+						"uniqueId":"9658817",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/18k-white-gold-16ctw-diamond-cluster-medallion-necklace-d-20200520114752267~9658817w.jpg",
+						"price":159900,
+						"item_number":"1250974",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Stone":[
+							"Diamond"
+						]
+					},
+					{
+						"product_name":"Keds Kickstart Deri Leopar Ba\u011fc\u0131kl\u0131 Spor Ayakkab\u0131",
+						"product_available_flag":true,
+						"uniqueId":"9451608",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/keds-kickstart-leather-leopard-lace-up-sneaker-d-20200818145751437~710095.jpg",
+						"price":6500,
+						"item_number":"710095",
+						"categoryPath":[
+							"Moda>Ayakkab\u0131>Spor Ayakkab\u0131 ve Atletik"
+						],
+						"Brand":[
+							"Keds\u00ae"
+						],
+						"ShoeStyle":[
+							"Lace-Up"
+						],
+						"ShopbyColor":[
+							"Animal"
+						]
+					},
+					{
+						"product_name":"PRAI Pink Orchid Edition Radiant Gemstone Serum ve Krem",
+						"product_available_flag":true,
+						"uniqueId":"1428759",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/prai-pink-orchid-edition-radiant-gemstone-serum-andamp-d-20201228075200113~737012.jpg",
+						"price":7995,
+						"item_number":"737012",
+						"categoryPath":[
+							"G\u00fczellik>Cilt Bak\u0131m\u0131>Kitler ve Setler",
+							"G\u00fczellik>Cilt Bak\u0131m\u0131>Nemlendiriciler>Y\u00fcz Nemlendiricileri",
+							"G\u00fczellik>Cilt Bak\u0131m\u0131>Serumlar>Y\u00fcz"
+						],
+						"Brand":[
+							"PRAI"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						],
+						"GiftsbyOccasion":[
+							"Valentine's Day"
+						]
+					},
+					{
+						"product_name":"IT Cosmetics IT, \u00d6d\u00fcll\u00fc Olmas\u0131 Gerekenler",
+						"product_available_flag":true,
+						"uniqueId":"9139369",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/it-cosmetics-its-your-award-winning-must-haves-d-2019081307465194~673982.jpg",
+						"price":4920,
+						"item_number":"673982",
+						"categoryPath":[
+							"G\u00fczellik>Makyaj>Kitler ve Paletler",
+							"G\u00fczellik>Makyaj>Y\u00fcz>Y\u00fcz Setleri"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						],
+						"Brand":[
+							"IT Cosmetics"
+						]
+					},
+					{
+						"product_name":"14 Ayar Alt\u0131n .10ctw P\u0131rlanta A\u00e7\u0131k Kalp Kolye",
+						"product_available_flag":true,
+						"uniqueId":"9658866",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/14k-gold-10ctw-diamond-open-heart-necklace-d-20200908103918237~9658866w.jpg",
+						"price":84525,
+						"item_number":"1255499",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Brand":[
+							"Delmar Jewelers"
+						],
+						"ShopbyColor":[
+							"Yellow"
+						],
+						"Stone":[
+							"Diamond"
+						]
+					},
+					{
+						"product_name":"\"Oldu\u011fu Gibi\" Baretraps\u00ae Miriam Lazer Kesim Kamal\u0131 Platform Sandalet",
+						"product_available_flag":true,
+						"uniqueId":"9451944",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-baretrapsandreg-miriam-laser-cut-wedge-platform-s-d-2020021212143668~710148.jpg",
+						"price":2699,
+						"item_number":"710148",
+						"categoryPath":[
+							"Moda>Ayakkab\u0131>Sandalet"
+						],
+						"ShoeStyle":[
+							"Wedge"
+						],
+						"Brand":[
+							"Baretraps"
+						],
+						"ShopbyColor":[
+							"Brown"
+						]
+					},
+					{
+						"product_name":"Jay King Som G\u00fcm\u00fc\u015f Pelerin Ametist Boncuklu Kolye",
+						"product_available_flag":true,
+						"uniqueId":"1429309",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-cape-amethyst-bead-necklace-d-20200402073910597~706897.jpg",
+						"price":5700,
+						"item_number":"706897",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Amethyst"
+						]
+					},
+					{
+						"product_name":"14K Alt\u0131n Cilal\u0131 Simli Halka K\u00fcpe",
+						"product_available_flag":true,
+						"uniqueId":"9192775",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/14k-gold-polished-glitter-infused-hoop-earrings-d-2019070810214019~9192775w_100.jpg",
+						"price":103495,
+						"item_number":"1221292",
+						"categoryPath":[
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"ShopbyColor":[
+							"White"
+						]
+					},
+					{
+						"product_name":"G\u00f6rkemli \u00c7elik \u00dc\u00e7l\u00fc Yuvarlak Sedef K\u00fcpe",
+						"product_available_flag":true,
+						"uniqueId":"9378492",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/stately-steel-triple-round-mother-of-pearl-earrings-d-20200109130613227~9378492w_710.jpg",
+						"price":2495,
+						"item_number":"1238891",
+						"categoryPath":[
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"Stone":[
+							"Mother of Pearl"
+						],
+						"Brand":[
+							"Stately Steel"
+						],
+						"ShopbyColor":[
+							"Metallic"
+						]
+					},
+					{
+						"product_name":"Scruffs Termal Ring Yatak - Bordo",
+						"product_available_flag":true,
+						"uniqueId":"9452262",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/scruffs-thermal-ring-bed-burgundy-d-20200212131244943~9452262w.jpg",
+						"price":5499,
+						"item_number":"1242925",
+						"categoryPath":[
+							"Ana Sayfa>Evcil Hayvan Gere\u00e7leri>Yataklar ve \u015eallar"
+						],
+						"Brand":[
+							"Scruffs"
+						]
+					},
+					{
+						"product_name":"Fila Soni Tayt",
+						"product_available_flag":true,
+						"uniqueId":"1429320",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/fila-soni-legging-d-2020030308171665~698503.jpg",
+						"price":4125,
+						"item_number":"698503",
+						"categoryPath":[
+							"Moda>Giyim>Aktivite>Pantolon & Tayt",
+							"Moda>Giyim>G\u00fcnl\u00fck Giyim ve Pijama>G\u00fcnl\u00fck Giyim",
+							"Sa\u011fl\u0131k ve Fitness>Egzersiz ve Fitness>Aktivite Giyim>Giyim"
+						],
+						"ShopbyColor":[
+							"Blue",
+							"Red"
+						],
+						"Brand":[
+							"FILA"
+						],
+						"ShopbyApparelSize":[
+							"L (12-14)"
+						]
+					},
+					{
+						"product_name":"14 Ayar Beyaz Alt\u0131n Parlak ve Dokulu Fantazi Link Kolye",
+						"product_available_flag":true,
+						"uniqueId":"9192792",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/14k-white-gold-polished-and-textured-fancy-link-necklac-d-2019070810215981~9192792w.jpg",
+						"price":240995,
+						"item_number":"1221351",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						]
+					},
+					{
+						"product_name":"Colleen Lopez Siyah Spinel ve Beyaz Zirkon \u00c7ok S\u0131ral\u0131 Y\u00fcz\u00fck",
+						"product_available_flag":true,
+						"uniqueId":"9378559",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/colleen-lopez-black-spinel-and-white-zircon-multi-row-r-d-2020021408161639~700183.jpg",
+						"price":9598,
+						"item_number":"700183",
+						"categoryPath":[
+							"Tak\u0131>Y\u00fcz\u00fckler"
+						],
+						"Brand":[
+							"Colleen Lopez Collection"
+						],
+						"Stone":[
+							"Zircon",
+							"Spinel"
+						],
+						"ShopbyColor":[
+							"Black"
+						]
+					},
+					{
+						"product_name":"Scruffs Expedition Battaniyeler Yast\u0131k Pet Yatak B\u00fcy\u00fck - Zeytin",
+						"product_available_flag":true,
+						"uniqueId":"9452293",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/scruffs-expedition-memory-foam-pillow-pet-bed-large-oli-d-2020021213155687~9452293w.jpg",
+						"price":8099,
+						"item_number":"1240633",
+						"categoryPath":[
+							"Ana Sayfa>Evcil Hayvan Gere\u00e7leri>Yataklar ve \u015eallar"
+						],
+						"Brand":[
+							"Scruffs"
+						]
+					},
+					{
+						"product_name":"Jay King \u00d6r\u00fcmcek Da\u011f Turkuaz Mezun Boncuklu Kolye",
+						"product_available_flag":true,
+						"uniqueId":"1429334",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-spider-mountain-turquoise-graduated-bead-neckl-d-2020121507553464~736159.jpg",
+						"price":15300,
+						"item_number":"736159",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						]
+					},
+					{
+						"product_name":"14 Ayar Alt\u0131n \u0130ki Renkli P\u0131rlanta Kesim Boncuklu Halka Bileklik",
+						"product_available_flag":true,
+						"uniqueId":"9192809",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/14k-gold-two-tone-diamond-cut-beaded-link-bracelet-d-2020061013002725~9192809w.jpg",
+						"price":129995,
+						"item_number":"1221278",
+						"categoryPath":[
+							"Tak\u0131>Bilezikler"
+						]
+					},
+					{
+						"product_name":"TOMS Willow Espadril Dolgulu Sandalet",
+						"product_available_flag":true,
+						"uniqueId":"9378927",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/toms-willow-espadrille-wedge-sandal-d-20200326073735167~700250.jpg",
+						"price":8995,
+						"item_number":"700250",
+						"categoryPath":[
+							"Moda>Ayakkab\u0131>Takozlar",
+							"Moda>Ayakkab\u0131>Sandalet"
+						],
+						"Brand":[
+							"TOMS"
+						],
+						"ShoeStyle":[
+							"Ankle Strap",
+							"Wedge"
+						],
+						"ShopbyColor":[
+							"Blue",
+							"Ivory/Off White"
+						],
+						"HeelType":[
+							"Platform",
+							"Wedge"
+						]
+					},
+					{
+						"product_name":"2 Kuma\u015f Kabak K\u0131\u015f Yolu Seti",
+						"product_available_flag":true,
+						"uniqueId":"9452344",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/winter-lane-set-of-2-fabric-pumpkins-d-20200825091609143~710182.jpg",
+						"price":1495,
+						"item_number":"710182",
+						"categoryPath":[
+							"Ana Sayfa>Tatil>Cad\u0131lar Bayram\u0131 S\u00fcslemeleri>\u0130\u00e7 Mekan",
+							"Ana Sayfa>Tatil>G\u00fcz Hasad\u0131"
+						],
+						"ShopbyColor":[
+							"Black"
+						]
+					},
+					{
+						"product_name":"1.7 fl. oz. 6 Mandalina ve Zencefilli Zambak Eau de Toilette",
+						"product_available_flag":true,
+						"uniqueId":"1034765",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/17-fl-oz-no-6-mandarin-and-ginger-lily-eau-de-toilette-d-2012121716061026~228886.jpg",
+						"price":9000,
+						"item_number":"228886",
+						"categoryPath":[
+							"G\u00fczellik>Kokular>Kad\u0131n>Parf\u00fcm"
+						],
+						"Brand":[
+							"Trish McEvoy"
+						],
+						"Gender":[
+							"Women"
+						],
+						"Scent":[
+							"Floral",
+							"Sweet",
+							"Citrus"
+						]
+					},
+					{
+						"product_name":"CARAVELLE Tasar\u0131m Bulova Kad\u0131n Pembe Alt\u0131n Kristal Saat",
+						"product_available_flag":true,
+						"uniqueId":"9193124",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/caravelle-designed-by-bulova-womens-rose-gold-crystal-w-d-20190802093741633~9193124w.jpg",
+						"price":12500,
+						"item_number":"1222216",
+						"categoryPath":[
+							"Tak\u0131> Saatler"
+						],
+						"Brand":[
+							"Bulova",
+							"Caravelle"
+						],
+						"Gender":[
+							"Women"
+						]
+					},
+					{
+						"product_name":"BeautyBio The Beholder 2'li S\u0131k\u0131la\u015ft\u0131r\u0131c\u0131 G\u00f6z Kremi",
+						"product_available_flag":true,
+						"uniqueId":"9379078",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/beautybio-the-beholder-2-pack-lifting-eye-cream-d-2020011409153326~700269.jpg",
+						"price":6500,
+						"item_number":"700269",
+						"categoryPath":[
+							"G\u00fczellik>Cilt Bak\u0131m\u0131>Kitler ve Setler",
+							"G\u00fczellik>Cilt Bak\u0131m\u0131>G\u00f6z Bak\u0131mlar\u0131>G\u00f6z Kremi"
+						],
+						"Brand":[
+							"BeautyBio"
+						]
+					},
+					{
+						"product_name":"Nadirlikler Turmalinli Kuvars ve Beyaz Zirkon Uzat\u0131lm\u0131\u015f Sallant\u0131l\u0131 K\u00fcpeler",
+						"product_available_flag":true,
+						"uniqueId":"9452379",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/rarities-tourmalinated-quartz-andamp-white-zircon-elong-d-2020041307434567~710212.jpg",
+						"price":11198,
+						"item_number":"710212",
+						"categoryPath":[
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"Brand":[
+							"Rarities Fine Jewelry with Carol Brodie"
+						],
+						"ShopbyColor":[
+							"White"
+						]
+					},
+					{
+						"product_name":"Ye\u015fim ve De\u011ferli Ta\u015f 14K 7-1 / 2\" Bilezik",
+						"product_available_flag":true,
+						"uniqueId":"1080293",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jade-and-gemstone-14k-7-12-bracelet-d-20051130020442033~306320.jpg",
+						"price":13700,
+						"item_number":"306320",
+						"categoryPath":[
+							"Tak\u0131>Bilezikler"
+						],
+						"Stone":[
+							"Jade"
+						],
+						"ShopbyColor":[
+							"Green"
+						]
+					},
+					{
+						"product_name":"Heidi Daus \"Hayalet\" Kristal ve Emaye Pimi",
+						"product_available_flag":false,
+						"uniqueId":"9193143",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/heidi-daus-ghosted-crystal-and-enamel-pin-d-20190910072501413~680177.jpg",
+						"price":15500,
+						"item_number":"680177",
+						"Brand":[
+							"Heidi Daus"
+						]
+					},
+					{
+						"product_name":"BeautyBio GloPRO Pembe Alet 30'lu Haz\u0131rl\u0131k Pedi Kavanozlu",
+						"product_available_flag":true,
+						"uniqueId":"9379227",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/beautybio-glopro-pink-tool-with-30-count-prep-pad-jar-d-2020011507590161~700284.jpg",
+						"price":22350,
+						"item_number":"700284",
+						"categoryPath":[
+							"G\u00fczellik>Makyaj>Ara\u00e7lar ve Aksesuarlar>Ara\u00e7lar",
+							"G\u00fczellik>Ara\u00e7lar ve Aksesuarlar>Cilt Bak\u0131m Aletleri"
+						],
+						"Brand":[
+							"BeautyBio"
+						]
+					},
+					{
+						"product_name":"\"Oldu\u011fu Gibi\" DYI Parlak Bask\u0131l\u0131 Tayt",
+						"product_available_flag":true,
+						"uniqueId":"9452676",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-dyi-high-shine-printed-legging-d-20200212143807207~710233_UHN.jpg",
+						"price":2899,
+						"item_number":"710233",
+						"categoryPath":[
+							"Sa\u011fl\u0131k ve Fitness>Egzersiz ve Fitness>Aktivite Giyim>Giyim",
+							"Moda>Giyim>Aktivite>Pantolon & Tayt"
+						],
+						"ShopbyColor":[
+							"Animal",
+							"Pattern/Print"
+						],
+						"Brand":[
+							"DYI"
+						],
+						"ShopbyApparelSize":[
+							"1X (16W - 18W)",
+							"Plus Size"
+						]
+					},
+					{
+						"product_name":"Le Cadeaux Antiqua Melamin Aile Taba\u011f\u0131",
+						"product_available_flag":false,
+						"uniqueId":"1201757",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/le-cadeaux-antiqua-melamine-family-platter-d-20160614152852203~483714_404.jpg",
+						"price":3137,
+						"item_number":"483714",
+						"RugSize":[
+							"8' x 10'"
+						],
+						"Shape":[
+							"Rectangular"
+						],
+						"RugType":[
+							"Area Rug"
+						],
+						"Brand":[
+							"Le Cadeaux",
+							"Samantha Yanks"
+						],
+						"Technique":[
+							"Pile"
+						]
+					},
+					{
+						"product_name":"Zanaatkar\u0131n Yolda\u015f\u0131 \u0130kizler Biblo Kutusu Boyutlu Kal\u0131plar",
+						"product_available_flag":true,
+						"uniqueId":"9193207",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-gemini-trinket-box-dimensional-dies-d-2019101709360623~680219.jpg",
+						"price":2757,
+						"item_number":"680219",
+						"categoryPath":[
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Kal\u0131p Kesme>Pastalar ve Aksesuarlar",
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Aletler ve Aksesuarlar>Kal\u0131p Kesme ve Aksesuarlar"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"BeautyBio The Perfector Tinted SPF 30 Kozmetik \u00c7antal\u0131",
+						"product_available_flag":true,
+						"uniqueId":"9379228",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/beautybio-the-perfector-tinted-spf-30-with-cosmetic-bag-d-20200115075902293~700287.jpg",
+						"price":5995,
+						"item_number":"700287",
+						"categoryPath":[
+							"G\u00fczellik>Cilt Bak\u0131m\u0131>Kitler ve Setler"
+						],
+						"Brand":[
+							"BeautyBio"
+						]
+					},
+					{
+						"product_name":"Yesteryear Ye\u015fil Ye\u015fim ve Siyah Oniks Boncuklu Kolye",
+						"product_available_flag":true,
+						"uniqueId":"9452980",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jade-of-yesteryear-green-jade-and-black-onyx-beaded-nec-d-20200416072011737~710286.jpg",
+						"price":18750,
+						"item_number":"710286",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"ShopbyColor":[
+							"Green"
+						],
+						"Stone":[
+							"Jade"
+						],
+						"Brand":[
+							"Jade of Yesteryear"
+						]
+					},
+					{
+						"product_name":"\u00c7ok Y\u00fczl\u00fc Nihai Seksten Daha \u0130yi \u00c7antal\u0131 3 Par\u00e7al\u0131 Maskara Seti",
+						"product_available_flag":true,
+						"uniqueId":"1327635",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/too-faced-ultimate-better-than-sex-3-piece-mascara-set-d-202003190740545~703570.jpg",
+						"price":4900,
+						"item_number":"703570",
+						"categoryPath":[
+							"G\u00fczellik>Makyaj>G\u00f6zler>Maskara",
+							"G\u00fczellik>Makyaj>G\u00f6zler>G\u00f6z Setleri"
+						],
+						"Brand":[
+							"Too Faced"
+						],
+						"GiftsbyOccasion":[
+							"Valentine's Day"
+						],
+						"GiftsByRecipient":[
+							"For Her",
+							"For Friends"
+						]
+					},
+					{
+						"product_name":"Crafter's Companion Gemini Bon Bon Box Boyutlu Kal\u0131plar",
+						"product_available_flag":true,
+						"uniqueId":"9193343",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-gemini-bon-bon-box-dimensional-dies-d-2019101709361165~680237.jpg",
+						"price":2573,
+						"item_number":"680237",
+						"categoryPath":[
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Kal\u0131p Kesme>Pastalar ve Aksesuarlar",
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Aletler ve Aksesuarlar>Kal\u0131p Kesme ve Aksesuarlar"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Frezya \u00c7ift \u00c7i\u00e7ek A\u00e7an Pembe - 25 Ampul",
+						"product_available_flag":true,
+						"uniqueId":"9402975",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/freesias-double-blooming-pink-25-bulbs-d-20200103143917477~9402975w.jpg",
+						"price":2299,
+						"item_number":"1239827",
+						"categoryPath":[
+							"Ana Sayfa>Bah\u00e7e & D\u0131\u015f Mekanlar>Bah\u00e7e Merkezi>Bitkiler"
+						],
+						"Brand":[
+							"Van Zyverden"
+						]
+					},
+					{
+						"product_name":"Bebek 10 Y\u0131ld\u0131zlar Hizaland\u0131\u011f\u0131nda 8 Par\u00e7a G\u00f6z Seti",
+						"product_available_flag":true,
+						"uniqueId":"9453112",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/doll-10-8-piece-when-the-stars-align-eye-set-d-20200930103924213~710333.jpg",
+						"price":4560,
+						"item_number":"710333",
+						"categoryPath":[
+							"G\u00fczellik>Makyaj>Kitler ve Paletler",
+							"G\u00fczellik>Makyaj>G\u00f6zler>G\u00f6z Setleri"
+						],
+						"Brand":[
+							"Doll 10"
+						]
+					},
+					{
+						"product_name":"Colleen Lopez Flare Bacak Ponte Pantolon",
+						"product_available_flag":true,
+						"uniqueId":"1332215",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/colleen-lopez-flare-leg-ponte-pant-d-20200824104210967~711432.jpg",
+						"price":5975,
+						"item_number":"711432",
+						"categoryPath":[
+							"Moda>Giyim>Pantolon"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Blue",
+							"Brown",
+							"Gray/Grey"
+						],
+						"Brand":[
+							"Colleen Lopez Collection"
+						],
+						"ShopbyApparelSize":[
+							"XL (16-18)",
+							"Petite"
+						]
+					},
+					{
+						"product_name":"Cepli \"Oldu\u011fu Gibi\" Nina Leonard Mixed-Media Tunik \u00dcst",
+						"product_available_flag":false,
+						"uniqueId":"9194213",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-nina-leonard-mixed-media-tunic-top-with-pockets-d-2019071013525212~680294.jpg",
+						"price":1199,
+						"item_number":"680294",
+						"Brand":[
+							"Nina Leonard"
+						]
+					},
+					{
+						"product_name":"Frezya \u00c7ift \u00c7i\u00e7ek A\u00e7an Lavanta - 25 Ampul",
+						"product_available_flag":true,
+						"uniqueId":"9402976",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/freesias-double-blooming-lavender-25-bulbs-d-2020010314372274~9402976w.jpg",
+						"price":2299,
+						"item_number":"1239825",
+						"categoryPath":[
+							"Ana Sayfa>Bah\u00e7e & D\u0131\u015f Mekanlar>Bah\u00e7e Merkezi>Bitkiler"
+						],
+						"Brand":[
+							"Van Zyverden"
+						]
+					},
+					{
+						"product_name":"Mighty Spark Tamamen Do\u011fal Tavuk K\u00f6ftesi -12'li Paket",
+						"product_available_flag":true,
+						"uniqueId":"10080159",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/mighty-spark-all-natural-chicken-patties-12-pack-d-2019060708181569~674193.jpg",
+						"price":6079,
+						"item_number":"712614",
+						"categoryPath":[
+							"Mutfak & Yiyecek>Yiyecek & \u0130\u00e7ecek>Deniz \u00dcr\u00fcnleri, Et ve K\u00fcmes Hayvanlar\u0131>Tavuk ve Hindi"
+						],
+						"Brand":[
+							"Mighty Spark"
+						]
+					},
+					{
+						"product_name":"\"Oldu\u011fu Gibi\" Anne Burrell 4.3-Quart Yap\u0131\u015fmaz D\u00f6k\u00fcm Al\u00fcminyum G\u00fcve\u00e7 Tavas\u0131",
+						"product_available_flag":false,
+						"uniqueId":"1347506",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-anne-burrell-43-quart-nonstick-cast-aluminum-cass-d-20210126150410713~754278.jpg",
+						"price":3099,
+						"item_number":"754278",
+						"Brand":[
+							"Anne Burrell"
+						]
+					},
+					{
+						"product_name":"Sparkle Sparkle\u00ae M\u00fccevher Temizleyici Stylus Seyahat Seti, Fermuarl\u0131 K\u0131l\u0131fl\u0131",
+						"product_available_flag":true,
+						"uniqueId":"9194947",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/sparkle-sparkleandreg-jewelry-cleaner-stylus-travel-set-d-20191008071939587~680349.jpg",
+						"price":2075,
+						"item_number":"680349",
+						"categoryPath":[
+							"M\u00fccevher>Depolama ve Aksesuarlar"
+						],
+						"ShopbyColor":[
+							"Animal",
+							"Black",
+							"Purple",
+							"Red"
+						],
+						"Brand":[
+							"SparkleSparkle"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						]
+					},
+					{
+						"product_name":"Van Zyverden Cannas Stadt Fellbach Ampuller 5'li Paket",
+						"product_available_flag":true,
+						"uniqueId":"9402990",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/van-zyverden-cannas-stadt-fellbach-bulbs-5-pack-d-20200103143852693~9402990w.jpg",
+						"price":2999,
+						"item_number":"1239807",
+						"categoryPath":[
+							"Ana Sayfa>Bah\u00e7e & D\u0131\u015f Mekanlar>Bah\u00e7e Merkezi>Bitkiler"
+						],
+						"Brand":[
+							"Van Zyverden"
+						]
+					},
+					{
+						"product_name":"Imperial Pearls 14K Alt\u0131n K\u00fclt\u00fcrl\u00fc Tatl\u0131 Su \u0130ncisi 7-1 / 2\" Bilezik",
+						"product_available_flag":true,
+						"uniqueId":"10080170",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/imperial-pearls-14k-gold-cultured-freshwater-pearl-7-12-d-20200120113109453~9122177w_715.jpg",
+						"price":23995,
+						"item_number":"1216781",
+						"categoryPath":[
+							"Tak\u0131>Bilezikler"
+						],
+						"Stone":[
+							"Pearl"
+						],
+						"Brand":[
+							"Imperial Pearls by Josh Bazar"
+						],
+						"ShopbyColor":[
+							"Metallic",
+							"Yellow"
+						]
+					},
+					{
+						"product_name":"Emma Skye Tak\u0131 Tasar\u0131mlar\u0131 U\u011fur B\u00f6ce\u011fi Charm Paslanmaz \u00c7elik Kablo Bileklik Bileklik",
+						"product_available_flag":true,
+						"uniqueId":"1428043",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/emma-skye-jewelry-designs-ladybug-charm-stainless-steel-d-2016051714255583~486083_885.jpg",
+						"price":1495,
+						"item_number":"486083",
+						"categoryPath":[
+							"Tak\u0131>Bilezikler"
+						],
+						"Brand":[
+							"Emma Skye Jewelry Designs"
+						],
+						"ShopbyColor":[
+							"Metallic"
+						]
+					},
+					{
+						"product_name":"Asma Vazoda Neredeyse Do\u011fal 24 in\u00e7 Karpuz Peperomia Yapay Bitki",
+						"product_available_flag":true,
+						"uniqueId":"9195747",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/nearly-natural-24-inwatermelon-peperomia-artificial-pla-d-2019070914522741~9195747w.jpg",
+						"price":5675,
+						"item_number":"1222884",
+						"categoryPath":[
+							"Ana Sayfa>Ev Dekoru>Ev Aksanlar\u0131>Sahte Bitkiler ve \u00c7elenkler"
+						],
+						"Brand":[
+							"Nearly Natural"
+						]
+					},
+					{
+						"product_name":"Van Zyverden Dev Cannas Stuttgart Ampuller 5'li Paket",
+						"product_available_flag":true,
+						"uniqueId":"9402993",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/van-zyverden-giant-cannas-stuttgart-bulbs-5-pack-d-2020010314372521~9402993w.jpg",
+						"price":3299,
+						"item_number":"1239804",
+						"categoryPath":[
+							"Ana Sayfa>Bah\u00e7e & D\u0131\u015f Mekanlar>Bah\u00e7e Merkezi>Bitkiler"
+						],
+						"Brand":[
+							"Van Zyverden"
+						]
+					},
+					{
+						"product_name":"Sevilla Silver\u2122 Alt\u0131n Kaplama Y\u0131lan Zincir Kolye",
+						"product_available_flag":true,
+						"uniqueId":"10080195",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/sevilla-silver-gold-plated-snake-chain-necklace-d-20190607081653107~670034.jpg",
+						"price":5123,
+						"item_number":"670036",
+						"categoryPath":[
+							"Tak\u0131>kolyeler"
+						],
+						"Brand":[
+							"Sevilla Silver"
+						]
+					},
+					{
+						"product_name":"G by Giuliana Jet Set G Cabrio Ceket S\u0131rt \u00c7antas\u0131",
+						"product_available_flag":true,
+						"uniqueId":"1428664",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/g-by-giuliana-jet-set-g-convertible-jacket-backpack-d-2020011308463434~681664_DSH.jpg",
+						"price":4381,
+						"item_number":"681664",
+						"categoryPath":[
+							"Moda>Giyim>Ceket ve D\u0131\u015f Giyim"
+						],
+						"ShopbyApparelSize":[
+							"XS (0-2)"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Blue",
+							"Pink"
+						],
+						"Brand":[
+							"G by GIULIANA"
+						]
+					},
+					{
+						"product_name":"Pure Garden 6' Ye\u015fil G\u00f6vdeli Uzun Yapay Bambu Bitki",
+						"product_available_flag":true,
+						"uniqueId":"9097869",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/pure-garden-6-tall-artificial-bamboo-plant-with-green-t-d-2020032708470192~9097869w.jpg",
+						"price":11999,
+						"item_number":"1242777",
+						"categoryPath":[
+							"Ana Sayfa>Ev Dekoru>Ev Aksanlar\u0131>Sahte Bitkiler ve \u00c7elenkler"
+						],
+						"Brand":[
+							"Pure Garden"
+						]
+					},
+					{
+						"product_name":"Van Zyverden Konteyner Begonya \u00c7ift Pastel Ampuller 5'li Paket",
+						"product_available_flag":true,
+						"uniqueId":"9403007",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/van-zyverden-container-begonias-double-pastel-bulbs-5-p-d-20200103143756133~9403007w.jpg",
+						"price":2699,
+						"item_number":"1239788",
+						"categoryPath":[
+							"Ana Sayfa>Bah\u00e7e & D\u0131\u015f Mekanlar>Bah\u00e7e Merkezi>Bitkiler"
+						],
+						"Brand":[
+							"Van Zyverden"
+						]
+					},
+					{
+						"product_name":"Safavieh Evoke Thatcher Hal\u0131",
+						"product_available_flag":true,
+						"uniqueId":"10080200",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/safavieh-evoke-thatcher-rug-d-20190606131436113~9152375w_019.jpg",
+						"price":14785,
+						"item_number":"1218685",
+						"categoryPath":[
+							"Ana Sayfa>Kilimler"
+						],
+						"ShopbyColor":[
+							"Gray/Grey"
+						],
+						"Brand":[
+							"Safavieh"
+						]
+					},
+					{
+						"product_name":"E Vitaminli Ciltler \u0130\u00e7in Nefertiti Alt\u0131n Patina",
+						"product_available_flag":true,
+						"uniqueId":"1250058",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/nefertiti-golden-patina-for-skin-with-vitamin-e-d-20051130020504893~562939.jpg",
+						"price":3850,
+						"item_number":"562939",
+						"keywords":"bronzer, bronzing powder, signature club a bronzer, SCA bronzer, 562939",
+						"categoryPath":[
+							"G\u00fczellik>Makyaj>Y\u00fcz>Bronzer"
+						],
+						"Brand":[
+							"Signature Club A"
+						],
+						"Type":[
+							"Bronzer"
+						],
+						"Shade":[
+							"Warm"
+						],
+						"SkinTone":[
+							"Fair",
+							"Light",
+							"Medium",
+							"Medium Deep",
+							"Deep"
+						]
+					},
+					{
+						"product_name":"Crafter's Companion Circle ve Kare Yuvalama Kal\u0131plar\u0131",
+						"product_available_flag":true,
+						"uniqueId":"9098078",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-circle-and-square-nesting-dies-d-2019082208441179~670454.jpg",
+						"price":3709,
+						"item_number":"670454",
+						"categoryPath":[
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Kal\u0131p Kesme>Pastalar ve Aksesuarlar",
+							"El Sanatlar\u0131 ve Diki\u015f>Diki\u015f ve Kapitone>Kuma\u015f ve Kuma\u015f Kal\u0131plar\u0131",
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Aletler ve Aksesuarlar>Kal\u0131p Kesme ve Aksesuarlar"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Van Zyverden Begonias \u0130svi\u00e7re Ampulleri 5'li Paket",
+						"product_available_flag":true,
+						"uniqueId":"9403008",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/van-zyverden-begonias-switzerland-bulbs-5-pack-d-20200103143753103~9403008w.jpg",
+						"price":2699,
+						"item_number":"1239787",
+						"categoryPath":[
+							"Ana Sayfa>Bah\u00e7e & D\u0131\u015f Mekanlar>Bah\u00e7e Merkezi>Bitkiler"
+						],
+						"Brand":[
+							"Van Zyverden"
+						]
+					},
+					{
+						"product_name":"Xyliclay\u2122 \u00f6zellikli intelliWHiTE\u00ae Flor\u00fcrs\u00fcz Di\u015f Macunu",
+						"product_available_flag":true,
+						"uniqueId":"10080225",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/intelliwhite-fluoride-free-toothpaste-with-xyliclay-d-2019050911330532~662281.jpg",
+						"price":2050,
+						"item_number":"662275",
+						"categoryPath":[
+							"G\u00fczellik>A\u011f\u0131z Bak\u0131m\u0131>F\u0131r\u00e7alar ve Di\u015f Macunu",
+							"Sa\u011fl\u0131k ve Fitness>Ki\u015fisel Bak\u0131m>A\u011f\u0131z Bak\u0131m\u0131"
+						],
+						"Brand":[
+							"intelliWHiTE\u00ae"
+						]
+					},
+					{
+						"product_name":"Toni Brattin\u2122 Toni Twist Whispy Sa\u00e7 Aksesuar\u0131",
+						"product_available_flag":false,
+						"uniqueId":"1256459",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/toni-brattinand8482-toni-twist-whispy-hair-accessory-d-2005113002045294~577774.jpg",
+						"price":1995,
+						"item_number":"577774"
+					},
+					{
+						"product_name":"BUNN Pour-O-Matic 10 Bardak Damlamas\u0131z S\u00fcrahi",
+						"product_available_flag":true,
+						"uniqueId":"9098212",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/bunn-pour-o-matic-10-cup-drip-free-carafe-d-2019040909263895~9098212w.jpg",
+						"price":1550,
+						"item_number":"1215797",
+						"categoryPath":[
+							"Mutfak & Yiyecek>Alet Aletleri>Kahve & Espresso Makinalar\u0131"
+						],
+						"Brand":[
+							"Bunn"
+						],
+						"Type":[
+							"Pour Over"
+						]
+					},
+					{
+						"product_name":"Bayanlar \u0130\u00e7in Derin \u00d6fori by Calvin Klein 1.7 oz. Eau De Parf\u00fcm Spreyi",
+						"product_available_flag":true,
+						"uniqueId":"9403725",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/deep-euphoria-for-ladies-by-calvin-klein-17-oz-eau-de-p-d-20200106103116277~9403725w.jpg",
+						"price":7700,
+						"item_number":"1237943",
+						"categoryPath":[
+							"G\u00fczellik>Kokular>Kad\u0131n>Parf\u00fcm"
+						],
+						"Brand":[
+							"Calvin Klein"
+						]
+					},
+					{
+						"product_name":"Resmi Lisansl\u0131 NFL Tatil Kazak Ba\u015flang\u0131\u00e7 \u200b\u200bMat\u0131",
+						"product_available_flag":true,
+						"uniqueId":"10080234",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/officially-licensed-nfl-holiday-sweater-starter-mat-d-20201103143957793~9151989w.jpg",
+						"price":2399,
+						"item_number":"1219688",
+						"categoryPath":[
+							"Hayran Ma\u011fazas\u0131>Futbol Hayran Ma\u011fazas\u0131>Cincinnati Bengals"
+						],
+						"Brand":[
+							"Football Fan Shop"
+						]
+					},
+					{
+						"product_name":"Michael Anthony Jewelry\u00ae Som G\u00fcm\u00fc\u015f Elmas Kesim Kaplumba\u011fa Kolye Ucu",
+						"product_available_flag":false,
+						"uniqueId":"1283129",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/michael-anthony-jewelryandreg-sterling-silver-diamond-c-d-20180925114243893~626216.jpg",
+						"price":1645,
+						"item_number":"626216",
+						"Brand":[
+							"Michael Anthony Jewelry"
+						]
+					},
+					{
+						"product_name":"IMUSA 24-Quart Tamale ve Cam Kapakl\u0131 Deniz Mahsulleri Buharl\u0131 Pi\u015firici - G\u00fcm\u00fc\u015f",
+						"product_available_flag":true,
+						"uniqueId":"9098378",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/imusa-24-quart-tamale-and-seafood-steamer-with-glass-li-d-2019040912350266~9098378w.jpg",
+						"price":3411,
+						"item_number":"1215846",
+						"categoryPath":[
+							"Mutfak & Yiyecek>Tencere>Buharl\u0131 Pi\u015firiciler ve Ek Par\u00e7alar"
+						],
+						"Brand":[
+							"IMUSA"
+						]
+					},
+					{
+						"product_name":"Sonsuz \u00d6fori Bayanlar Calvin Klein 4 oz. Eau De Parf\u00fcm Spreyi",
+						"product_available_flag":true,
+						"uniqueId":"9403726",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/endless-euphoria-ladies-by-calvin-klein-4-oz-eau-de-par-d-20200106103152587~9403726w.jpg",
+						"price":9600,
+						"item_number":"1237945",
+						"categoryPath":[
+							"G\u00fczellik>Kokular>Kad\u0131n>Parf\u00fcm"
+						],
+						"Brand":[
+							"Calvin Klein"
+						]
+					},
+					{
+						"product_name":"Safavieh Carter Yatak",
+						"product_available_flag":true,
+						"uniqueId":"10080236",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/safavieh-carter-bed-d-2019050312075355~9130057w_271.jpg",
+						"price":58925,
+						"item_number":"1219393",
+						"categoryPath":[
+							"Ana Sayfa>Mobilya>Yatak Odas\u0131 Mobilyalar\u0131>Yatak ve Karyola \u00c7er\u00e7eveleri"
+						],
+						"Brand":[
+							"Safavieh"
+						],
+						"ShopbyColor":[
+							"Gray/Grey"
+						]
+					},
+					{
+						"product_name":"Y\u00fcz ve G\u00f6zler \u0130\u00e7in Hindistan Cevizi Eritme Temizleme Kremi",
+						"product_available_flag":true,
+						"uniqueId":"1320452",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/coconut-meltdown-cleansing-creme-for-face-and-eyes-d-20051130020549597~691252.jpg",
+						"price":2950,
+						"item_number":"691252",
+						"categoryPath":[
+							"G\u00fczellik>Cilt Bak\u0131m\u0131>Temizleyiciler>Y\u00fcz Y\u0131kama"
+						],
+						"Brand":[
+							"Signature Club A"
+						],
+						"Type":[
+							"Face Cleanser"
+						]
+					},
+					{
+						"product_name":"PRAI 2 Par\u00e7a Ya\u015flanmayan G\u00f6z Ke\u015fif Seti",
+						"product_available_flag":false,
+						"uniqueId":"9098880",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/prai-2-piece-ageless-eye-discovery-set-d-2019061909013945~670666.jpg",
+						"price":2495,
+						"item_number":"670666",
+						"Brand":[
+							"PRAI"
+						]
+					},
+					{
+						"product_name":"Obsession Ladies Calvin Klein 1.7 oz. Eau De Parf\u00fcm Spreyi",
+						"product_available_flag":true,
+						"uniqueId":"9403729",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/obsession-ladies-by-calvin-klein-17-oz-eau-de-parfum-sp-d-20200106103212233~9403729w.jpg",
+						"price":7300,
+						"item_number":"1237956",
+						"categoryPath":[
+							"G\u00fczellik>Kokular>Kad\u0131n>Parf\u00fcm"
+						],
+						"Brand":[
+							"Calvin Klein"
+						]
+					},
+					{
+						"product_name":"Safavieh Kazak Shirley Hal\u0131",
+						"product_available_flag":true,
+						"uniqueId":"10080259",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/safavieh-kazak-shirley-rug-d-20190313153917773~9071928w_404.jpg",
+						"price":9000,
+						"item_number":"1219244",
+						"categoryPath":[
+							"Ana Sayfa>Kilimler"
+						],
+						"Brand":[
+							"Safavieh"
+						],
+						"ShopbyColor":[
+							"Blue"
+						]
+					},
+					{
+						"product_name":"\"Oldu\u011fu Gibi\" S\u0131cak ve Rahat Kapitone Pelu\u015f \u015eerpa Battaniye",
+						"product_available_flag":false,
+						"uniqueId":"1345603",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-warm-andamp-cozy-quilted-plush-sherpa-blanket-d-20201209133333343~748280.jpg",
+						"price":2199,
+						"item_number":"748280",
+						"Brand":[
+							"Warm & Cozy"
+						]
+					},
+					{
+						"product_name":"Yumu\u015fak ve Rahat S\u00fcper Yumu\u015fak Stil ve Rahatl\u0131k Onesie",
+						"product_available_flag":false,
+						"uniqueId":"9100148",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/soft-andamp-cozy-super-soft-style-andamp-comfort-onesie-d-20190924095030147~670902.jpg",
+						"price":2335,
+						"item_number":"670902",
+						"GiftsByRecipient":[
+							"For Her"
+						],
+						"ShopbyColor":[
+							"Blue"
+						],
+						"Brand":[
+							"Warm & Cozy"
+						]
+					},
+					{
+						"product_name":"Anna Griffin\u00ae Tatil Bord\u00fcr \u00c7\u0131kartmalar\u0131 - 64'l\u00fc Set",
+						"product_available_flag":true,
+						"uniqueId":"9695357",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/anna-griffinandreg-holiday-border-stickers-set-of-64-d-2020083109360241~726875.jpg",
+						"price":2023,
+						"item_number":"726875",
+						"categoryPath":[
+							"El Sanatlar\u0131 ve Diki\u015f>Scrapbooking>Malzemeler>\u00c7\u0131kartmalar"
+						],
+						"Brand":[
+							"Anna Griffin",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Safavieh Liman\u0131 Jennifer Hal\u0131",
+						"product_available_flag":true,
+						"uniqueId":"10080261",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/safavieh-harbor-jennifer-rug-d-20190614131543127~9072030w_102.jpg",
+						"price":6200,
+						"item_number":"1219303",
+						"categoryPath":[
+							"Ana Sayfa>Kilimler"
+						],
+						"ShopbyColor":[
+							"Ivory/Off White"
+						],
+						"Brand":[
+							"Safavieh"
+						]
+					},
+					{
+						"product_name":"Natalie Wood Tasar\u0131mlar\u0131 \"G\u00fcney Charm\" Kolye ve K\u00fcpe Seti",
+						"product_available_flag":true,
+						"uniqueId":"1416446",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/natalie-wood-designs-southern-charm-necklace-and-earrin-d-2020073115034616~723423.jpg",
+						"price":3998,
+						"item_number":"723423",
+						"categoryPath":[
+							"Tak\u0131>kolyeler",
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"ShopbyColor":[
+							"Metallic"
+						],
+						"Brand":[
+							"Natalie Wood Designs"
+						]
+					},
+					{
+						"product_name":"Bali RoManse \u0130ki Tonlu G\u00fcm\u00fc\u015f Olu\u015fturma Z\u00fcmr\u00fct \u00c7iftli K\u00fcpe",
+						"product_available_flag":true,
+						"uniqueId":"9102111",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/bali-romanse-two-tone-sterling-silver-created-emerald-d-d-2019041808244666~670941.jpg",
+						"price":21793,
+						"item_number":"670941",
+						"categoryPath":[
+							"M\u00fccevher>K\u00fcpe"
+						],
+						"Brand":[
+							"Bali RoManse by Robert Manse"
+						]
+					},
+					{
+						"product_name":"smartTORQUE\u2122 \u00f6zellikli Ninja\u00ae Foodi\u2122 Power Nutri\u2122 Duo\u00ae Blender",
+						"product_available_flag":true,
+						"uniqueId":"9695387",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/ninjaandreg-foodiandtrade-power-nutriandtrade-duoandreg-d-2020082414101013~726901.jpg",
+						"price":9900,
+						"item_number":"726901",
+						"categoryPath":[
+							"Mutfak & G\u0131da>Alet Aletleri>Blenderlar"
+						],
+						"ShopbyColor":[
+							"Metallic"
+						],
+						"Brand":[
+							"Ninja"
+						]
+					},
+					{
+						"product_name":"Resmi Lisansl\u0131 MLB Mozaik A\u011fac\u0131 Topper",
+						"product_available_flag":true,
+						"uniqueId":"10080268",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/officially-licensed-mlb-mosaic-tree-topper-d-20190606162927557~9155200w.jpg",
+						"price":4000,
+						"item_number":"1219985",
+						"categoryPath":[
+							"Hayran Ma\u011fazas\u0131>Beyzbol Taraftar\u0131 Ma\u011fazas\u0131>Tampa Bay Rays"
+						],
+						"Brand":[
+							"The Memory Company"
+						]
+					},
+					{
+						"product_name":"Kenzie Swanhart'\u0131n B\u00fcy\u00fck Ninja Foodi D\u00fcd\u00fckl\u00fc Tencere Yemek Kitab\u0131 \"Oldu\u011fu Gibi\"",
+						"product_available_flag":true,
+						"uniqueId":"1428695",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-the-big-ninja-foodi-pressure-cooker-cookbook-by-k-d-2020021214491139~710242.jpg",
+						"price":2199,
+						"item_number":"710242",
+						"categoryPath":[
+							"Mutfak ve Yemek>Yemek Kitaplar\u0131"
+						],
+						"Brand":[
+							"Ninja"
+						]
+					},
+					{
+						"product_name":"Bali RoManse \u0130ki Tonlu G\u00fcm\u00fc\u015f Olu\u015fturma Z\u00fcmr\u00fct \u0130kili Y\u00fcz\u00fck",
+						"product_available_flag":true,
+						"uniqueId":"9102113",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/bali-romanse-two-tone-sterling-silver-created-emerald-d-d-20190418082447~670943.jpg",
+						"price":17092,
+						"item_number":"670943",
+						"categoryPath":[
+							"Tak\u0131>Y\u00fcz\u00fckler"
+						],
+						"Brand":[
+							"Bali RoManse by Robert Manse"
+						]
+					},
+					{
+						"product_name":"Clean\nCopper Home Copper Bar",
+						"product_available_flag":true,
+						"uniqueId":"9695389",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/clean-copper-home-copper-bar-d-2020080410301596~726902.jpg",
+						"price":1995,
+						"item_number":"726902",
+						"categoryPath":[
+							"Mutfak & Yiyecek>Depolama & D\u00fczenleme>Evye Aksesuarlar\u0131"
+						],
+						"Brand":[
+							"CopperHome"
+						]
+					},
+					{
+						"product_name":"BergHOFF Gem Yap\u0131\u015fmaz Kapl\u0131 G\u00fcve\u00e7",
+						"product_available_flag":true,
+						"uniqueId":"10080295",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/berghoff-gem-non-stick-covered-casserole-d-20190619101709867~9163908w.jpg",
+						"price":7999,
+						"item_number":"1220107",
+						"categoryPath":[
+							"Mutfak & Yiyecek>F\u0131r\u0131n Gere\u00e7leri>Pi\u015firme Yemekleri ve G\u00fcve\u00e7ler"
+						],
+						"Brand":[
+							"BergHoff"
+						]
+					},
+					{
+						"product_name":"Heidi Daus \"Nefis At\" Boncuklu P\u00fcsk\u00fcl Damla K\u00fcpe",
+						"product_available_flag":false,
+						"uniqueId":"1267816",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/heidi-daus-exquisite-equine-beaded-tassel-drop-earrings-d-20180309181214623~599428.jpg",
+						"price":15045,
+						"item_number":"599428",
+						"Brand":[
+							"Heidi Daus"
+						]
+					},
+					{
+						"product_name":"Birkenstock Mayari F\u0131r\u00e7al\u0131 Sandalet",
+						"product_available_flag":true,
+						"uniqueId":"9232496",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/birkenstock-mayari-brushed-sandal-d-2020040709043443~685069.jpg",
+						"price":9995,
+						"item_number":"685069",
+						"categoryPath":[
+							"Moda>Ayakkab\u0131>Sandalet"
+						],
+						"Brand":[
+							"Birkenstock"
+						],
+						"ShoeStyle":[
+							"Slip-On"
+						],
+						"ShopbyColor":[
+							"Pink"
+						]
+					}
+				]
+			}
+		}
+	}
+}
