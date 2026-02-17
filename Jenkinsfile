@@ -106,6 +106,7 @@ pipeline {
                         
                         // Also check for test methods (not just setup/teardown)
                         def hasFailedTests = false
+                        def failedCount = 0
                         try {
                             def testMethods = sh(
                                 script: "grep '<include name=' ${failedXmlPath} | grep -v 'globalSetUp\\|globalCleanup\\|setUp\\|tearDown\\|ensureContext\\|close' || true",
@@ -113,10 +114,19 @@ pipeline {
                             ).trim()
                             
                             if (testMethods && testMethods.length() > 0) {
-                                hasFailedTests = true
-                                echo "✅ Found failed tests. Rerunning..."
-                                echo "Failed test methods:"
-                                sh "grep '<include name=' ${failedXmlPath} | grep -v 'globalSetUp\\|globalCleanup\\|setUp\\|tearDown\\|ensureContext\\|close' || true"
+                                failedCount = testMethods.split('\n').findAll { it?.trim() }.size()
+                                // Safeguard: if failed XML has too many tests, it may be wrong (e.g. RetryAnalyser bug) - skip rerun to avoid running full suite again
+                                def rerunThreshold = 40
+                                if (failedCount > rerunThreshold) {
+                                    echo "⚠️  RERUN SKIPPED: Failed XML contains ${failedCount} tests (threshold ${rerunThreshold})."
+                                    echo "   This usually means testng-failed.xml is incorrect (e.g. full suite). Rerun would run all tests again."
+                                    echo "   Fix: ensure RetryAnalyser uses per-method retry count; then rerun only real failures."
+                                } else {
+                                    hasFailedTests = true
+                                    echo "✅ Found ${failedCount} failed test(s). Rerunning..."
+                                    echo "Failed test methods:"
+                                    sh "grep '<include name=' ${failedXmlPath} | grep -v 'globalSetUp\\|globalCleanup\\|setUp\\|tearDown\\|ensureContext\\|close' || true"
+                                }
                             } else {
                                 echo "ℹ️  No actual test methods failed (only setup/teardown methods found). Skipping rerun."
                             }
