@@ -120,7 +120,7 @@ public class CampaignCreationPage extends UnbxdCommonPage {
             waitForElementToBeClickable(nextButton, "Next button");
             nextButton.click();
         } catch (org.openqa.selenium.ElementClickInterceptedException e) {
-            ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", nextButton.getElement());
+            ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(nextButton.getElement()));
         }
         awaitForPageToLoad();
         await();

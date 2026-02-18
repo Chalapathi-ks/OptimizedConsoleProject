@@ -319,7 +319,7 @@ public class CommercePageActions extends CommerceSearchPage {
             try {
                 attributeOption.click();
             } catch (ElementClickInterceptedException e) {
-                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", attributeOption.getElement());
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(attributeOption.getElement()));
             }
             await();
             FluentWebElement valueOption = null;
@@ -342,7 +342,7 @@ public class CommercePageActions extends CommerceSearchPage {
             try {
                 valueOption.click();
             } catch (ElementClickInterceptedException e) {
-                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", valueOption.getElement());
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(valueOption.getElement()));
             }
             await();
             categorypathApplyButton.click();

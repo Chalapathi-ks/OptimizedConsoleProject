@@ -103,7 +103,8 @@ public class BrowseFilterTest extends MerchandisingTest {
 
         searchPage.scrollToBottom();
         merchandisingActions.await();
-        merchandisingActions.MerchandisingStrategyEditButton.click();
+        merchandisingActions.waitForElementToBeClickable(merchandisingActions.MerchandisingStrategyEditButton, "Edit");
+        merchandisingActions.safeClick(merchandisingActions.MerchandisingStrategyEditButton);
         fillMerchandisingData(object,UnbxdEnum.FILTER,true);
         searchPage.await();
         searchPage.awaitForPageToLoad();

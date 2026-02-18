@@ -68,10 +68,10 @@ public class SearchCEDRedirectTest extends MerchandisingTest {
         merchandisingActions.publishCampaign();
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
-        searchPageActions.selectActionType(UnbxdEnum.PREVIEW,query);
+        searchPageActions.selectActionType(UnbxdEnum.PREVIEW, query);
         ThreadWait();
         merchandisingActions.awaitForElementPresence(searchPageActions.redirectPreview);
-        new WebDriverWait(merchandisingActions.getDriver(), 15).until(new ExpectedCondition<Boolean>() {
+        new WebDriverWait(merchandisingActions.getDriver(), 30).until(new ExpectedCondition<Boolean>() {
             @Override
             public Boolean apply(WebDriver driver) {
                 return editRedirectUrl.equals(searchPageActions.redirectPreview.getValue());

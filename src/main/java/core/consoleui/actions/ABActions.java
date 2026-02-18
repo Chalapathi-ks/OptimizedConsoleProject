@@ -91,7 +91,7 @@ public class ABActions extends ABTestPage {
         } catch (Exception e) {
             throw new RuntimeException("ab-summary-strategy-box element not found or not visible", e);
         }
-        js.executeScript("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", element);
+        js.executeScript("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", unwrapWebElement(element));
         try { Thread.sleep(300); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
     }
 
@@ -169,7 +169,7 @@ public class ABActions extends ABTestPage {
         } catch (Exception e) {
             throw new RuntimeException("Element not found or not visible: " + cssSelector, e);
         }
-        js.executeScript("arguments[0].scrollIntoView({block: 'end', behavior: 'smooth'});", element);
+        js.executeScript("arguments[0].scrollIntoView({block: 'end', behavior: 'smooth'});", unwrapWebElement(element));
         try { Thread.sleep(300); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
     }
 

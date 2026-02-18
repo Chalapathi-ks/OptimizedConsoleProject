@@ -141,9 +141,9 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         }
 
         // Click first target date
-        ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", targetTile1);
+        ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(targetTile1));
         // Click second target date (hold Ctrl for multiple selection)
-        ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", targetTile2);
+        ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(targetTile2));
         await();
     }
 
@@ -245,9 +245,9 @@ public class MerchandisingActions extends MerchandisingRulesPage {
             if (!opt.isDisplayed()) continue;
             String text = opt.getText().trim();
             if (!text.isEmpty() && text.toLowerCase().contains(searchLower)) {
-                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView({block:'center'});", opt);
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView({block:'center'});", unwrapWebElement(opt));
                 await();
-                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", opt);
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(opt));
                 return;
             }
         }
@@ -367,7 +367,7 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         try {
             nextButton.click();
         } catch (ElementClickInterceptedException e) {
-            ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", nextButton.getElement());
+            ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(nextButton.getElement()));
         }
         awaitForPageToLoad();
         return this;
@@ -427,7 +427,7 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         try {
             pinningDropdown.click();
         } catch (ElementClickInterceptedException e) {
-            ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", pinningDropdown.getElement());
+            ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(pinningDropdown.getElement()));
         }
         await();
         if (pinningDropDownList.size() > 0) {
@@ -436,7 +436,7 @@ public class MerchandisingActions extends MerchandisingRulesPage {
             try {
                 productItem.click();
             } catch (ElementClickInterceptedException e) {
-                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", productItem.getElement());
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(productItem.getElement()));
             }
         } else {
             Assert.fail("PINNING DROPDOWN LIST IS EMPTY");
@@ -640,10 +640,10 @@ public class MerchandisingActions extends MerchandisingRulesPage {
             WebElement to = listOfProductInPreview.get(2).getElement();
             try {
                 ((JavascriptExecutor) getDriver()).executeScript(
-                    "arguments[1].parentNode.insertBefore(arguments[0], arguments[1]);", from, to);
+                    "arguments[1].parentNode.insertBefore(arguments[0], arguments[1]);", unwrapWebElement(from), unwrapWebElement(to));
             } catch (Exception e) {
                 await();
-                new org.openqa.selenium.interactions.Actions(getDriver()).dragAndDrop(from, to).perform();
+                new org.openqa.selenium.interactions.Actions(getDriver()).dragAndDrop(unwrapWebElement(from), unwrapWebElement(to)).perform();
             }
             await();
         }

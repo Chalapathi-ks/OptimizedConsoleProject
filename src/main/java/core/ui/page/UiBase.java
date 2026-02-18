@@ -106,16 +106,37 @@ public class UiBase extends FluentPage {
     }
 
     /** Unwraps proxy so the concrete WebElement can be passed to JS or ExpectedConditions (avoids "illegal type: jdk.proxy2.$Proxy13"). */
-    private WebElement unwrapWebElement(WebElement element) {
+    protected WebElement unwrapWebElement(WebElement element) {
         if (element == null) return null;
-        if (element.getClass().getSimpleName().startsWith("$")) {
+        Class<?> c = element.getClass();
+        if (c.getSimpleName().startsWith("$")) {
             try {
-                Method m = element.getClass().getMethod("getWrappedElement");
+                Method m = c.getMethod("getWrappedElement");
                 Object w = m.invoke(element);
-                if (w instanceof WebElement) return (WebElement) w;
+                if (w instanceof WebElement) return unwrapWebElement((WebElement) w);
             } catch (Exception ignored) { }
+            for (Class<?> iface : c.getInterfaces()) {
+                try {
+                    Method m = iface.getMethod("getWrappedElement");
+                    Object w = m.invoke(element);
+                    if (w instanceof WebElement) return unwrapWebElement((WebElement) w);
+                    break;
+                } catch (Exception ignored) { }
+            }
         }
         return element;
+    }
+
+    /** Returns a concrete WebElement for JS/ExpectedConditions; re-finds by CSS if unwrap still yields a proxy. */
+    protected WebElement getConcreteWebElement(FluentWebElement element) {
+        WebElement w = unwrapWebElement(element.getElement());
+        if (w != null && w.getClass().getSimpleName().startsWith("$")) {
+            try {
+                String css = getCssLocatorForFluent(element);
+                w = getDriver().findElement(By.cssSelector(css));
+            } catch (Exception ignored) { }
+        }
+        return w;
     }
 
     private static String loadAndGetResourceLocation(String fileName) throws URISyntaxException {
@@ -574,8 +595,8 @@ public class UiBase extends FluentPage {
             APPLICATION_LOGS.debug("waiting for " + elemName + "to appear");
             System.out.println("waiting for " + elemName + "to appear");
 
-            if(locator.isEnabled())
-                wait.until(ExpectedConditions.elementToBeClickable(unwrapWebElement(locator.getElement())));
+                if(locator.isEnabled())
+                    wait.until(ExpectedConditions.elementToBeClickable(unwrapWebElement(locator.getElement())));
 
             APPLICATION_LOGS.debug("waited for " + elemName + "to appear");
             System.out.println("waited for " + elemName + "to appear");

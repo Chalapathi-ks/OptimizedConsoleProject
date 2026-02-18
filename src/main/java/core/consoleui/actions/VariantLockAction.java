@@ -55,7 +55,7 @@ public class VariantLockAction extends VariantPage {
                                 "return (rect.top >= 0 && rect.top < windowHeight && " +
                                 "rect.left >= 0 && rect.left < windowWidth && " +
                                 "rect.bottom > 0 && rect.right > 0);",
-                                footerElement.getElement()
+                                unwrapWebElement(footerElement.getElement())
                             );
                             
                             if (isInViewport != null && isInViewport) {
@@ -65,7 +65,7 @@ public class VariantLockAction extends VariantPage {
                                 // Element exists but not in viewport, scroll to it
                                 System.out.println("Footer button found but not in viewport, scrolling to it...");
                                 js.executeScript("arguments[0].scrollIntoView({block: 'center', behavior: 'auto'});", 
-                                                footerElement.getElement());
+                                                unwrapWebElement(footerElement.getElement()));
                                 ThreadWait();
                                 try {
                                     Thread.sleep(800);
@@ -81,7 +81,7 @@ public class VariantLockAction extends VariantPage {
                                     "return (rect.top >= 0 && rect.top < windowHeight && " +
                                     "rect.left >= 0 && rect.left < windowWidth && " +
                                     "rect.bottom > 0 && rect.right > 0);",
-                                    footerElement.getElement()
+                                    unwrapWebElement(footerElement.getElement())
                                 );
                                 
                                 if (isInViewport != null && isInViewport) {
@@ -131,7 +131,7 @@ public class VariantLockAction extends VariantPage {
                         }
                         if (footerElement != null && footerElement.isDisplayed()) {
                             js.executeScript("arguments[0].scrollIntoView({block: 'center', behavior: 'auto'});", 
-                                            footerElement.getElement());
+                                            unwrapWebElement(footerElement.getElement()));
                             ThreadWait();
                             try {
                                 Thread.sleep(1000);
@@ -186,7 +186,7 @@ public class VariantLockAction extends VariantPage {
                 }
                 if (footerElement != null) {
                     js.executeScript("arguments[0].scrollIntoView({block: 'center', behavior: 'auto'});", 
-                                    footerElement.getElement());
+                                    unwrapWebElement(footerElement.getElement()));
                     ThreadWait();
                 }
             } catch (Exception ex) {
@@ -293,7 +293,7 @@ public class VariantLockAction extends VariantPage {
         try {
             awaitTillElementDisplayed(pinningDropdown);
             js.executeScript("arguments[0].scrollIntoView({block: 'center', behavior: 'auto'});", 
-                            pinningDropdown.getElement());
+                            unwrapWebElement(pinningDropdown.getElement()));
             ThreadWait();
             System.out.println("Successfully scrolled to pinning dropdown using FluentWebElement");
         } catch (Exception e) {
