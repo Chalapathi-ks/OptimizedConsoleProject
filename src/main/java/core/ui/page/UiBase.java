@@ -21,6 +21,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 
+import java.lang.reflect.Method;
+
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 
@@ -103,6 +105,19 @@ public class UiBase extends FluentPage {
         return SELENIUM_MINTIMEOUT;
     }
 
+    /** Unwraps proxy so the concrete WebElement can be passed to JS or ExpectedConditions (avoids "illegal type: jdk.proxy2.$Proxy13"). */
+    private WebElement unwrapWebElement(WebElement element) {
+        if (element == null) return null;
+        if (element.getClass().getSimpleName().startsWith("$")) {
+            try {
+                Method m = element.getClass().getMethod("getWrappedElement");
+                Object w = m.invoke(element);
+                if (w instanceof WebElement) return (WebElement) w;
+            } catch (Exception ignored) { }
+        }
+        return element;
+    }
+
     private static String loadAndGetResourceLocation(String fileName) throws URISyntaxException {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         return classLoader.getResource(fileName).toString();
@@ -140,7 +155,7 @@ public class UiBase extends FluentPage {
                 try {
                     value.click();
                 } catch (Exception e) {
-                    ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", value.getElement());
+                    ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(value.getElement()));
                 }
                 break;
             }
@@ -560,7 +575,7 @@ public class UiBase extends FluentPage {
             System.out.println("waiting for " + elemName + "to appear");
 
             if(locator.isEnabled())
-                wait.until(ExpectedConditions.elementToBeClickable(locator.getElement()));
+                wait.until(ExpectedConditions.elementToBeClickable(unwrapWebElement(locator.getElement())));
 
             APPLICATION_LOGS.debug("waited for " + elemName + "to appear");
             System.out.println("waited for " + elemName + "to appear");
@@ -586,7 +601,7 @@ public class UiBase extends FluentPage {
                 System.out.println("waiting for " + elemName + "to appear");
 
                 if(locator.isEnabled())
-                    wait.until(ExpectedConditions.elementToBeClickable(locator.getElement()));
+                    wait.until(ExpectedConditions.elementToBeClickable(unwrapWebElement(locator.getElement())));
 
                 APPLICATION_LOGS.debug("waited for " + elemName + "to appear");
                 System.out.println("waited for " + elemName + "to appear");
@@ -790,7 +805,7 @@ public class UiBase extends FluentPage {
                 // "color: red; border: 2px solid red;");
                 js.executeScript(
                         "arguments[0].setAttribute('style', arguments[1]);",
-                        Locator.getElement(),
+                        unwrapWebElement(Locator.getElement()),
                         "background-color: yellow; outline: 1px solid rgb(136, 255, 136);");
 
             }
@@ -804,7 +819,7 @@ public class UiBase extends FluentPage {
 
     public void scrollUntilVisible(org.fluentlenium.core.domain.FluentWebElement element) {
         try {
-            WebElement webElement = element.getElement();
+            WebElement webElement = unwrapWebElement(element.getElement());
             JavascriptExecutor js = (JavascriptExecutor) getDriver();
 
             // Check if element is already visible
@@ -836,7 +851,7 @@ public class UiBase extends FluentPage {
      */
     public boolean isElementInViewport(org.fluentlenium.core.domain.FluentWebElement element) {
         try {
-            WebElement webElement = element.getElement();
+            WebElement webElement = unwrapWebElement(element.getElement());
             JavascriptExecutor js = (JavascriptExecutor) getDriver();
 
             // Check if element is displayed first
@@ -875,7 +890,7 @@ public class UiBase extends FluentPage {
 
         try {
 
-            js.executeScript("arguments[0].scrollIntoView(true);", locator.getElement());
+            js.executeScript("arguments[0].scrollIntoView(true);", unwrapWebElement(locator.getElement()));
             System.out.println("Scrolled to "+name);
             APPLICATION_LOGS.debug("Scrolled to "+name);
 
@@ -958,7 +973,7 @@ public class UiBase extends FluentPage {
     public void clickUsingJS(FluentWebElement fluentWebElement) {
         JavascriptExecutor ex = (JavascriptExecutor) getDriver();
         try {
-            ex.executeScript("arguments[0].click();", fluentWebElement.getElement());
+            ex.executeScript("arguments[0].click();", unwrapWebElement(fluentWebElement.getElement()));
         } catch (Exception e) {
             try {
                 String css = getCssLocatorForFluent(fluentWebElement);
@@ -1038,11 +1053,11 @@ public class UiBase extends FluentPage {
         } catch (org.openqa.selenium.ElementClickInterceptedException e) {
             // Center into view and retry with JS
             try {
+                WebElement el = unwrapWebElement(element.getElement());
                 ((JavascriptExecutor) getDriver())
-                        .executeScript("arguments[0].scrollIntoView({behavior:'instant',block:'center',inline:'center'});",
-                                element.getElement());
+                        .executeScript("arguments[0].scrollIntoView({behavior:'instant',block:'center',inline:'center'});", el);
                 ThreadWait();
-                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element.getElement());
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", el);
             } catch (Exception ex) {
                 System.err.println("safeClick JS fallback failed: " + ex.getMessage());
                 throw ex;
@@ -1050,7 +1065,7 @@ public class UiBase extends FluentPage {
         } catch (WebDriverException e) {
             // Generic fallback to JS click
             try {
-                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element.getElement());
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(element.getElement()));
             } catch (Exception ex) {
                 System.err.println("safeClick fallback failed: " + ex.getMessage());
                 throw ex;
@@ -1065,7 +1080,7 @@ public class UiBase extends FluentPage {
             element.click();
         } catch (Exception e) {
             // Fallback to JS click
-            ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element.getElement());
+            ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(element.getElement()));
         }
     }
 }
