@@ -683,9 +683,9 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.await();
         if (facetableFieldsActions.getFacetUsingDisplayName(displayName) != null) {
             searchPage.await();
-            click(facetableFieldsPage.deleteFacetIcon);
+            merchandisingActions.safeClick(facetableFieldsPage.deleteFacetIcon);
             facetableFieldsActions.awaitForElementPresence(facetableFieldsPage.deleteConfirmationTab);
-            click(facetableFieldsPage.deleteYes);
+            merchandisingActions.safeClick(facetableFieldsPage.deleteYes);
             searchPage.await();
             Assert.assertTrue(searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess));
         }
@@ -702,7 +702,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         bannerActions.selectFieldRuleAttribute(Attribute);
         bannerActions.selectFieldRuleAttributeValue(value);
         merchandisingActions.await();
-        click(searchPageActions.nextButton);
+        merchandisingActions.safeClick(searchPageActions.nextButton);
         facetableFieldsActions.openCreateFacetForm();
         String facetDisplayName = facetableFieldsActions.fillFacetDetails(testData);
 
@@ -732,11 +732,11 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         Assert.assertTrue(facetFound, "Facet with display name '" + facetDisplayName + "' not found in preview headers");
         int facetLength = facetActions.getFacetLengthListByHeader(facetDisplayName).size();
         Assert.assertEquals(String.valueOf(facetLength), FacetLenght);
-        facetableFieldsActions.editFacetIcon.click();
+        merchandisingActions.safeClick(facetableFieldsActions.editFacetIcon);
         String facetUpdateDisplayName = facetableFieldsActions.fillUpdateFacetDetails(testData);
-        facetableFieldsActions.updateFacet.click();
+        merchandisingActions.safeClick(facetableFieldsActions.updateFacet);
 
-        click(merchandisingActions.fieldRulePublishBtn);
+        merchandisingActions.safeClick(merchandisingActions.fieldRulePublishBtn);
         merchandisingActions.verifySuccessMessage();
         merchandisingActions.await();
         searchPage.await();
@@ -759,7 +759,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         Assert.assertEquals(String.valueOf(f_Lenght), updatedFacetLenght);
         facetActions.disableTheToggle();
 
-        click(merchandisingActions.fieldRulePublishBtn);
+        merchandisingActions.safeClick(merchandisingActions.fieldRulePublishBtn);
         merchandisingActions.verifySuccessMessage();
         merchandisingActions.await();
         goTo(searchPage);

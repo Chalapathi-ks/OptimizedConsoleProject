@@ -397,8 +397,9 @@ public class SegmentTest extends MerchandisingTest {
 
         searchPageActions.selectActionType(UnbxdEnum.EDIT,segmentName);
         ThreadWait();
-        segmenPageActions.selectedCustom.getText().contains(CustAtrribute);
-        segmenPageActions.selectedCustomValue.getText().contains(segmentNameValue);
+        merchandisingActions.awaitForElementPresence(segmenPageActions.findFirst(".custom-attribute-input"));
+        Assert.assertTrue(segmenPageActions.findFirst(".custom-attribute-input").getText().contains(CustAtrribute), "Selected custom attribute mismatch");
+        Assert.assertTrue(segmenPageActions.findFirst(".tag-item").getText().contains(segmentNameValue), "Selected custom value mismatch");
 
         segmenPageActions.selectAndEnterCustomValue(segmentName);
         segmenPageActions.clickOnSave();

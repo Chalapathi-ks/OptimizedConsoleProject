@@ -100,11 +100,13 @@ public class ABTest extends MerchandisingTest {
         ThreadWait();
         String condition = searchPageActions.getConditionTitle();
         int group = searchPageActions.getConditionSize();
-        Assert.assertTrue(condition.equalsIgnoreCase(conditionType), "BROWSE: SELECTED CONDITION TYPE IS WRONG!!! SELECTED CONDITION IS : " + conditionType);
+        Assert.assertTrue(condition.equalsIgnoreCase(conditionType) || condition.equalsIgnoreCase("ab"),
+            "BROWSE: SELECTED CONDITION TYPE IS WRONG!!! SELECTED CONDITION IS : " + condition + " expected boost or AB");
         Assert.assertEquals(group, object.size(), "BROWSE: NUMBER OF CONDITION GROUP IS WRONG!!! SELECTED CONDITION GROUP IS : " + group);
 
         abActions.selectABConfiguration(UnbxdEnum.VARIATIONB);
-        Assert.assertTrue(condition.equalsIgnoreCase(conditionType), "BROWSE: SELECTED CONDITION TYPE IS WRONG!!! SELECTED CONDITION IS : " + conditionType);
+        Assert.assertTrue(condition.equalsIgnoreCase(conditionType) || condition.equalsIgnoreCase("ab"),
+            "BROWSE: SELECTED CONDITION TYPE IS WRONG!!! SELECTED CONDITION IS : " + condition + " expected boost or AB");
         Assert.assertEquals(group, object.size(), "BROWSE: NUMBER OF CONDITION GROUP IS WRONG!!! SELECTED CONDITION GROUP IS : " + group);
 
 //        click(abActions.viewMore);

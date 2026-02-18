@@ -1,7 +1,10 @@
 package core.consoleui.actions;
 
 import org.fluentlenium.core.annotation.Page;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import core.consoleui.page.FacetPage;
@@ -300,10 +303,20 @@ public boolean isFacetToggleActive(String facetName) {
         }
     }
 
+    private static final String SEARCH_ICON_SELECTORS = ".unx-qa-seach-Icon, .unx-qa-search-Icon, .search-icon-medium.unx-qa-seach-Icon";
+
     public void searchForField(String facetDisplayName) {
-        awaitForElementPresence(searchIcon);
+        try {
+            new WebDriverWait(getDriver(), 15).until(
+                ExpectedConditions.presenceOfElementLocated(By.cssSelector(SEARCH_ICON_SELECTORS)));
+        } catch (Exception ignored) { }
         ThreadWait();
-        searchIcon.click();
+        if (find(SEARCH_ICON_SELECTORS).size() > 0) {
+            find(SEARCH_ICON_SELECTORS).get(0).click();
+        } else {
+            awaitForElementPresence(searchIcon);
+            searchIcon.click();
+        }
         ThreadWait();
         searchInputBox.click();
         searchInputBox.clear();

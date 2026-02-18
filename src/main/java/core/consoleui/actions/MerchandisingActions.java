@@ -459,13 +459,37 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         }
     }
 
+    /**
+     * Waits for console preview to load: at least (positionIndex + 1) product cards and pin icons.
+     * Fails the test if not found within timeout.
+     */
+    public void waitForConsolePreviewToLoad(int positionIndex) {
+        int timeoutSeconds = 30;
+        try {
+            new WebDriverWait(getDriver(), timeoutSeconds).until(
+                (ExpectedCondition<Boolean>) d -> getDriver().findElements(By.cssSelector(".product-card")).size() > positionIndex);
+            new WebDriverWait(getDriver(), 15).until(
+                (ExpectedCondition<Boolean>) d -> getDriver().findElements(By.cssSelector(".unpinned-badge")).size() > positionIndex);
+        } catch (Exception e) {
+            Assert.fail("Console preview did not load: no product or pin icon at position " + (positionIndex + 1)
+                + " within " + timeoutSeconds + "s. " + (e.getMessage() != null ? e.getMessage() : ""));
+        }
+    }
+
     public void pinProductFromConsolePreview(String pinningPosition) {
         int i = Integer.parseInt(pinningPosition);
-        if (listOfProductInPreview.size() > 0) {
-            awaitForElementPresence(pinTheProduct.get(i));
-            Helper.mouseOver(listOfProductInPreview.get(i).getElement());
-            pinTheProduct.get(i).click();
+        waitForConsolePreviewToLoad(i);
+        if (listOfProductInPreview.size() <= i) {
+            Assert.fail("Console preview has no product at position " + (i + 1));
         }
+        if (pinTheProduct.size() <= i) {
+            Assert.fail("Console preview has no pin icon at position " + (i + 1));
+        }
+        awaitForElementPresence(pinTheProduct.get(i));
+        scrollUntilVisible(listOfProductInPreview.get(i));
+        Helper.mouseOver(listOfProductInPreview.get(i).getElement());
+        ThreadWait();
+        safeClick(pinTheProduct.get(i));
     }
 
 

@@ -147,6 +147,63 @@ public class UiBase extends FluentPage {
         }
     }
 
+    /**
+     * Select dropdown option by re-resolving the list before click to avoid stale element reference.
+     */
+    public void selectDropDownValueBySelector(String listCssSelector, String searchValue) {
+        String searchLower = searchValue == null ? "" : searchValue.trim().toLowerCase();
+        FluentList<FluentWebElement> list = find(listCssSelector);
+        int matchIndex = findMatchIndex(list, listCssSelector, searchLower);
+        if (matchIndex >= 0) {
+            for (int clickAttempt = 0; clickAttempt < 3; clickAttempt++) {
+                try {
+                    list = find(listCssSelector);
+                    int index = matchIndex >= list.size() ? findMatchIndex(list, listCssSelector, searchLower) : matchIndex;
+                    if (index < 0) break;
+                    matchIndex = index;
+                    FluentWebElement value = list.get(matchIndex);
+                    ThreadWait();
+                    scrollUntilVisible(value);
+                    ThreadWait();
+                    waitForElementToBeClickable(value, "Dropdown option");
+                    list = find(listCssSelector);
+                    index = matchIndex >= list.size() ? findMatchIndex(list, listCssSelector, searchLower) : matchIndex;
+                    if (index < 0) break;
+                    value = list.get(index);
+                    try {
+                        value.click();
+                    } catch (Exception e) {
+                        clickUsingJS(value);
+                    }
+                    return;
+                } catch (StaleElementReferenceException e) {
+                    if (clickAttempt == 2) throw e;
+                    ThreadWait();
+                } catch (IndexOutOfBoundsException e) {
+                    matchIndex = findMatchIndex(find(listCssSelector), listCssSelector, searchLower);
+                    if (matchIndex < 0) throw e;
+                    if (clickAttempt == 2) throw e;
+                    ThreadWait();
+                }
+            }
+        }
+    }
+
+    private int findMatchIndex(FluentList<FluentWebElement> list, String listCssSelector, String searchLower) {
+        for (int i = 0; i < list.size(); i++) {
+            try {
+                String optionText = list.get(i).getText().trim();
+                if (!optionText.isEmpty() && optionText.toLowerCase().contains(searchLower)) {
+                    return i;
+                }
+            } catch (StaleElementReferenceException e) {
+                list = find(listCssSelector);
+                i--;
+            }
+        }
+        return -1;
+    }
+
 
     public Fluent click(FluentDefaultActions fluentObject) {
         FluentWebElement element = (FluentWebElement) fluentObject;
@@ -294,6 +351,26 @@ public class UiBase extends FluentPage {
             return true;
         } catch (Exception e) {
             System.out.println("awaitTillElementHasText is failed for elment ");
+            return false;
+        }
+    }
+
+    /**
+     * Waits up to timeoutSeconds for an element (found by locator) to contain the given substring in its text.
+     * Re-resolves the element on each poll to avoid stale reference.
+     */
+    public boolean waitForElementTextToContain(By locator, String substring, int timeoutSeconds) {
+        try {
+            new WebDriverWait(getDriver(), timeoutSeconds).until((ExpectedCondition<Boolean>) d -> {
+                try {
+                    WebElement el = getDriver().findElement(locator);
+                    return el != null && el.getText().contains(substring);
+                } catch (StaleElementReferenceException e) {
+                    return false;
+                }
+            });
+            return true;
+        } catch (Exception e) {
             return false;
         }
     }

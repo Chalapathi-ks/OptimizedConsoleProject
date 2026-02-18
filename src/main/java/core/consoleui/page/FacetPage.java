@@ -59,7 +59,7 @@ public class FacetPage extends CampaignCreationPage {
     @FindBy(css=".search-input .RCB-form-el")
     public FluentWebElement searchInputBox;
 
-    @FindBy(css=".unx-qa-seach-Icon ")
+    @FindBy(css = ".unx-qa-seach-Icon, .unx-qa-search-Icon, .search-icon-medium.unx-qa-seach-Icon")
     public FluentWebElement searchIcon;
 
     @FindBy(css=".rerank-text.preview-btn")

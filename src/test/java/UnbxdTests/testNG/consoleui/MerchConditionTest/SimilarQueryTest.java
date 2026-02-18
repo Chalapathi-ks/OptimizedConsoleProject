@@ -11,6 +11,7 @@ import core.consoleui.page.BrowsePage;
 import lib.annotation.FileToTest;
 import lib.enums.UnbxdEnum;
 import org.fluentlenium.core.annotation.Page;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
@@ -70,20 +71,20 @@ public class SimilarQueryTest extends MerchandisingTest {
 
         merchandisingActions.listinPageAddMoreQueriesEditIcon();
         merchandisingActions.await();
-         Assert.assertTrue(merchandisingActions.selectedSimilarQueries.getText().contains(similarQuery),"SELECTED SIMILAR QUERY IS NOT SAME");
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(By.cssSelector(".selected-similar-queries"), similarQuery, 15), "SELECTED SIMILAR QUERY IS NOT SAME");
         merchandisingActions.selectSimilarQueryData(similarQueryData);
         Assert.assertTrue(searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess));
 
         searchPageActions.awaitForPageToLoad();
         searchPageActions.awaitForElementPresence(searchPageActions.searchInputBox);
         merchandisingActions.await();
-        Assert.assertTrue(merchandisingActions.similarqueryinListpage.getText().contains(similarQueryData));
-        Assert.assertTrue(merchandisingActions.similarqueryinListpage.getText().contains(similarQuery));
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(By.cssSelector(".single-pill-wrapper"), similarQueryData, 15), "Similar query data not found in list page");
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(By.cssSelector(".single-pill-wrapper"), similarQuery, 15), "Similar query not found in list page");
 
         searchPageActions.selectActionType(UnbxdEnum.EDIT, query);
         merchandisingActions.await();
-        Assert.assertTrue(merchandisingActions.similarQuerySummary.getText().contains(similarQueryData));
-        Assert.assertTrue(merchandisingActions.similarQuerySummary.getText().contains(similarQuery));
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(By.cssSelector(".other-queries-tags-container"), similarQueryData, 15), "Similar query data not in summary");
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(By.cssSelector(".other-queries-tags-container"), similarQuery, 15), "Similar query not in summary");
 
         goTo(searchPage);
         searchPage.await();
@@ -126,20 +127,21 @@ public class SimilarQueryTest extends MerchandisingTest {
         merchandisingActions.await();
 
         merchandisingActions.listinPageAddMoreQueriesEditIcon();
-        Assert.assertEquals(similarQuery,merchandisingActions.selectedSimilarQueries.getText(),"SELECTED SIMILAR QUERY IS NOT SAME");
+        merchandisingActions.await();
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(By.cssSelector(".selected-similar-queries"), similarQuery, 15), "SELECTED SIMILAR QUERY IS NOT SAME");
         merchandisingActions.selectSimilarQueryData(similarQueryData);
         Assert.assertTrue(searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess));
 
         searchPageActions.awaitForPageToLoad();
         searchPageActions.awaitForElementPresence(searchPageActions.searchInputBox);
         merchandisingActions.await();
-        Assert.assertTrue(merchandisingActions.similarqueryinListpage.getText().contains(similarQueryData));
-        Assert.assertTrue(merchandisingActions.similarqueryinListpage.getText().contains(similarQuery));
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(By.cssSelector(".single-pill-wrapper"), similarQueryData, 15), "Similar query data not found in list page");
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(By.cssSelector(".single-pill-wrapper"), similarQuery, 15), "Similar query not found in list page");
 
         searchPageActions.selectActionType(UnbxdEnum.EDIT, query);
         merchandisingActions.await();
-        Assert.assertTrue(merchandisingActions.similarQuerySummary.getText().contains(similarQueryData));
-        Assert.assertTrue(merchandisingActions.similarQuerySummary.getText().contains(similarQuery));
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(By.cssSelector(".other-queries-tags-container"), similarQueryData, 15), "Similar query data not in summary");
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(By.cssSelector(".other-queries-tags-container"), similarQuery, 15), "Similar query not in summary");
 
         goTo(searchPage);
         searchPage.await();
@@ -182,20 +184,21 @@ public class SimilarQueryTest extends MerchandisingTest {
         queryRules.add(query);
 
         merchandisingActions.listinPageAddMoreQueriesEditIcon();
-        Assert.assertEquals(similarQuery,merchandisingActions.selectedSimilarQueries.getText(),"SELECTED SIMILAR QUERY IS NOT SAME");
+        merchandisingActions.await();
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(By.cssSelector(".selected-similar-queries"), similarQuery, 15), "SELECTED SIMILAR QUERY IS NOT SAME");
         merchandisingActions.selectSimilarQueryData(similarQueryData);
         Assert.assertTrue(searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess));
 
         searchPageActions.awaitForPageToLoad();
         searchPageActions.awaitForElementPresence(searchPageActions.searchInputBox);
         merchandisingActions.await();
-        Assert.assertTrue(merchandisingActions.similarqueryinListpage.getText().contains(similarQueryData));
-        Assert.assertTrue(merchandisingActions.similarqueryinListpage.getText().contains(similarQuery));
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(By.cssSelector(".single-pill-wrapper"), similarQueryData, 15), "Similar query data not found in list page");
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(By.cssSelector(".single-pill-wrapper"), similarQuery, 15), "Similar query not found in list page");
 
         searchPageActions.selectActionType(UnbxdEnum.EDIT, query);
         merchandisingActions.await();
-        Assert.assertTrue(merchandisingActions.similarQuerySummary.getText().contains(similarQueryData));
-        Assert.assertTrue(merchandisingActions.similarQuerySummary.getText().contains(similarQuery));
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(By.cssSelector(".other-queries-tags-container"), similarQueryData, 15), "Similar query data not in summary");
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(By.cssSelector(".other-queries-tags-container"), similarQuery, 15), "Similar query not in summary");
 
         goTo(searchPage);
         searchPage.await();
@@ -288,6 +291,7 @@ public class SimilarQueryTest extends MerchandisingTest {
         searchPageActions.selectActionFromMore(UnbxdEnum.STOPPED, query);
         searchPageActions.selectModelWindow();
         Assert.assertTrue(searchPageActions.checkSuccessMessage(), SUCCESS_MESSAGE_FAILURE);
+        searchPage.awaitTillElementDisplayed(searchPageActions.stopCampaign);
         Assert.assertTrue(searchPageActions.stopCampaign.isDisplayed(), "SEARCH: PROMOTION RULE IS NOT IN STOPPED STATE");
 
         searchPageActions.selectActionType(UnbxdEnum.LEFTMORE, query);
@@ -344,6 +348,7 @@ public class SimilarQueryTest extends MerchandisingTest {
         searchPageActions.selectActionFromMore(UnbxdEnum.STOPPED, page);
         searchPageActions.selectModelWindow();
         Assert.assertTrue(searchPageActions.checkSuccessMessage(), SUCCESS_MESSAGE_FAILURE);
+        searchPage.awaitTillElementDisplayed(searchPageActions.stopCampaign);
         Assert.assertTrue(searchPageActions.stopCampaign.isDisplayed(), "SEARCH: PROMOTION RULE IS NOT IN STOPPED STATE");
 
         searchPageActions.selectActionType(UnbxdEnum.LEFTMORE, page);

@@ -11,6 +11,9 @@ import lib.api.UnbxdResponse;
 import lib.enums.UnbxdEnum;
 import lombok.Data;
 import org.fluentlenium.core.domain.FluentWebElement;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.ArrayList;
@@ -122,7 +125,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
 
     public void openCreateFacetForm()
     {
-        click(createNewFacetTab);
+        safeClick(createNewFacetTab);
     }
 
     public void checkSelectedField(String facetAttribute) throws InterruptedException {
@@ -187,7 +190,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
             String order = (String) testData.get("sortOrder");
 
             facetLengthInput.fill().with(facetLength);
-            sortOrderDropDown.click();
+            waitForNodataOverlayThenClickSortOrder();
             ThreadWait();
             selectValueBYMatchingText(order);
         }
@@ -222,7 +225,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
 
         }else {
             String updateOrder = (String) testData.get("updateSortOrder");
-            sortOrderDropDown.click();
+            waitForNodataOverlayThenClickSortOrder();
             ThreadWait();
             selectValueBYMatchingText(updateOrder);
             ThreadWait();
@@ -282,8 +285,17 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
 
     public void updateFacetSortOrder(String order) throws InterruptedException {
         awaitForElementPresence(sortOrderDropDown);
-        sortOrderDropDown.click();
+        waitForNodataOverlayThenClickSortOrder();
         selectValueBYMatchingText(order);
+    }
+
+    private void waitForNodataOverlayThenClickSortOrder() {
+        try {
+            new WebDriverWait(getDriver(), 5).until(
+                ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".nodata-wrapper-dd")));
+        } catch (Exception ignored) { }
+        ThreadWait();
+        safeClick(sortOrderDropDown);
     }
 
     public String getFacetSortOrder()
@@ -302,7 +314,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
     public void saveFacet()
     {
         awaitForElementPresence(saveFacetButton);
-        click(saveFacetButton);
+        safeClick(saveFacetButton);
         threadWait();
     }
 
@@ -359,17 +371,17 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
     public void deleteFacet(String name) throws InterruptedException
     {
         getFacetUsingDisplayName(name);
-        click(deleteFacetIcon);
+        safeClick(deleteFacetIcon);
         awaitForElementPresence(deleteConfirmationTab);
-        click(deleteYes);
+        safeClick(deleteYes);
     }
 
     public void deleteFacet1(String name) throws InterruptedException
     {
         getFacetUsingDisplayName(name);
-        click(deleteFacetIcon);
+        safeClick(deleteFacetIcon);
         awaitForElementPresence(deleteConfirmationTab);
-        click(deleteYes);
+        safeClick(deleteYes);
     }
 
     public String createFacet() throws InterruptedException {

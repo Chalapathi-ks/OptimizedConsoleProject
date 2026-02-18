@@ -9,6 +9,7 @@ import org.fluentlenium.core.annotation.Page;
 import org.fluentlenium.core.domain.FluentList;
 import org.fluentlenium.core.domain.FluentWebElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -238,20 +239,37 @@ public class CampaignCreationPage extends UnbxdCommonPage {
     }
   
     public void selectSegment(String segment) {
-        SSegmentDropDown.click();
-        searchSegment.fill().with(segment);
-        await();
-        selectDropDownValue(segmentDropDownList, segment);
-        await();
-        SSegmentDropDown.click();
+        for (int attempt = 1; attempt <= 3; attempt++) {
+            try {
+                SSegmentDropDown.click();
+                await();
+                searchSegment.fill().with(segment);
+                await();
+                selectDropDownValueBySelector(".browse-dd-item", segment);
+                await();
+                SSegmentDropDown.click();
+                return;
+            } catch (StaleElementReferenceException e) {
+                if (attempt == 3) throw e;
+                await();
+            }
+        }
     }
     public void selectGlobalSegment()  {
-        await();
-        SSegmentDropDown.click();
-        await();
-        selectDropDownValue(segmentDropDownList, "global");
-        await();
-        SSegmentDropDown.click();
+        for (int attempt = 1; attempt <= 3; attempt++) {
+            try {
+                await();
+                SSegmentDropDown.click();
+                await();
+                selectDropDownValueBySelector(".browse-dd-item", "global");
+                await();
+                SSegmentDropDown.click();
+                return;
+            } catch (StaleElementReferenceException e) {
+                if (attempt == 3) throw e;
+                await();
+            }
+        }
     }
 
 

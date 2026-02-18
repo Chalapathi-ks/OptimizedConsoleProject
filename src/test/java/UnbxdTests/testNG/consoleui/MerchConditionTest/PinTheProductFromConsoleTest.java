@@ -59,6 +59,7 @@ public class PinTheProductFromConsoleTest extends MerchandisingTest {
         merchandisingActions.goToLandingPage();
         merchandisingActions.goToSectionInMerchandising(UnbxdEnum.PIN);
         merchandisingActions.pinProductFromConsolePreview(pinningPosition);
+        //merchandisingActions.clickOnApplyButton();
         merchandisingActions.publishCampaign();
 
         merchandisingActions.verifySuccessMessage();
