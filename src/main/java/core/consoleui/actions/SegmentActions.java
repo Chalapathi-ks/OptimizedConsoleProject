@@ -6,9 +6,6 @@ import lib.enums.UnbxdEnum;
 import org.fluentlenium.core.annotation.Page;
 import org.fluentlenium.core.domain.FluentList;
 import org.fluentlenium.core.domain.FluentWebElement;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.Map;
@@ -156,7 +153,7 @@ public class SegmentActions extends SegmentPage {
     public void selectSegmentActionType (UnbxdEnum type, String name) {
         FluentWebElement element = segmentRuleByName(name);
         threadWait();
-        Helper.mouseOver(unwrapWebElement(element.findFirst(searchPageActions.segmentCampaignContainer).getElement()));
+        Helper.mouseOver(element.findFirst(searchPageActions.segmentCampaignContainer).getElement());
 
         switch (type) {
             case PREVIEW:
@@ -234,8 +231,6 @@ public class SegmentActions extends SegmentPage {
         awaitForElementPresence(customAttributeDropdown);
         click(customAttributeDropdown);
         ThreadWait();
-        new WebDriverWait(getDriver(), 15).until(
-            ExpectedConditions.presenceOfElementLocated(By.cssSelector(".RCB-dd-search .RCB-dd-search-ip")));
         findFirst(".RCB-dd-search .RCB-dd-search-ip").fill().with(Value);
         // Find and click the matching option in the dropdown
         FluentList<FluentWebElement> options = find(".RCB-list-item");

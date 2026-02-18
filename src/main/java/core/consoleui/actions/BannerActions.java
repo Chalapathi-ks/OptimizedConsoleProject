@@ -1,8 +1,5 @@
 package core.consoleui.actions;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class BannerActions extends CommercePageActions {
@@ -10,22 +7,17 @@ public class BannerActions extends CommercePageActions {
     public void goToFieldRuleBanner()
     {
         awaitForElementPresence(bannerFieldRuleButton);
-        new WebDriverWait(getDriver(), 15).until(
-            ExpectedConditions.elementToBeClickable(By.cssSelector(".RCB-align-left .banner-field-rule")));
         click(bannerFieldRuleButton);
     }
 
     public void goToQueryRuleBanner()
     {
-        awaitForElementPresence(bannerQueryRuleButton);
-        new WebDriverWait(getDriver(), 15).until(
-            ExpectedConditions.elementToBeClickable(By.cssSelector(".RCB-align-left .banner-query-rule")));
-        click(bannerQueryRuleButton);
+            awaitForElementPresence(bannerQueryRuleButton);
+            click(bannerQueryRuleButton);
     }
 
     public void fillHtmlBanner(String html)
     {
-        awaitForElementPresence(htmlRadioButtonIsSelected);
         awaitForElementPresence(htmlBannerInput);
         threadWait();
         Assert.assertTrue(htmlRadioButtonIsSelected.isSelected(),"Html Radio Button is not selected");
@@ -36,8 +28,6 @@ public class BannerActions extends CommercePageActions {
 
     public void addHtmlBanner(String html)
     {
-        awaitForElementPresence(htmlRadioButton);
-        threadWait();
         click(htmlRadioButton);
         threadWait();
         fillHtmlBanner(html);

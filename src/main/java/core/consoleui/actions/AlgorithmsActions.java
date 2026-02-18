@@ -81,7 +81,7 @@ public class AlgorithmsActions extends AlgorithmsPage {
             } catch (Exception e) {
                 // Fallback: JavaScript click
                 System.out.println("Normal click failed, trying JavaScript click: " + e.getMessage());
-                ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(element));
+                ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element);
                 System.out.println("Bulk download synonyms clicked (JavaScript click)");
             }
 

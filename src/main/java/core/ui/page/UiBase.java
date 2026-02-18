@@ -145,12 +145,12 @@ public class UiBase extends FluentPage {
     }
 
     public String getCssLocatorForFluent(FluentWebElement element) {
+
         String val = element.getElement().toString();
-        int idx = val.toLowerCase().lastIndexOf("selector:");
-        if (idx < 0) return "";
-        val = val.substring(idx + 10).trim();
-        if (val.endsWith("]")) val = val.substring(0, val.length() - 1).trim();
+        val = val.substring(val.toLowerCase().lastIndexOf("selector:") + 10, val.length() - 1).trim();
+
         return val;
+
     }
 
     public void selectByVisibleText(String text, FluentWebElement selectElement) {
@@ -245,18 +245,13 @@ public class UiBase extends FluentPage {
         FluentWebElement element = (FluentWebElement) fluentObject;
         awaitForElementPresence(element);
         try {
-            WebElement toClick = getConcreteWebElement(element);
-            if (toClick != null && !toClick.getClass().getSimpleName().startsWith("$")) {
-                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", toClick);
-                return this;
-            }
-        } catch (Exception ignored) { }
-        try {
             return super.click(fluentObject);
         } catch (WebDriverException e) {
             e.printStackTrace();
         }
+
         return this;
+
     }
 
     public void selectHighlitedValueInDropDown() {
