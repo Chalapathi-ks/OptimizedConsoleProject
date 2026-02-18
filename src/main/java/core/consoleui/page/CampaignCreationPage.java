@@ -13,6 +13,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -242,12 +243,17 @@ public class CampaignCreationPage extends UnbxdCommonPage {
         return calendar.getTime();
     }
   
+    private static final int SEGMENT_DROPDOWN_OPTIONS_WAIT_SEC = 15;
+
     public void selectSegment(String segment) {
         for (int attempt = 1; attempt <= 3; attempt++) {
             try {
                 SSegmentDropDown.click();
                 await();
                 searchSegment.fill().with(segment);
+                await();
+                new WebDriverWait(getDriver(), SEGMENT_DROPDOWN_OPTIONS_WAIT_SEC).until(
+                    ExpectedConditions.presenceOfElementLocated(By.cssSelector(".browse-dd-item")));
                 await();
                 selectDropDownValueBySelector(".browse-dd-item", segment);
                 await();
@@ -264,6 +270,9 @@ public class CampaignCreationPage extends UnbxdCommonPage {
             try {
                 await();
                 SSegmentDropDown.click();
+                await();
+                new WebDriverWait(getDriver(), SEGMENT_DROPDOWN_OPTIONS_WAIT_SEC).until(
+                    ExpectedConditions.presenceOfElementLocated(By.cssSelector(".browse-dd-item")));
                 await();
                 selectDropDownValueBySelector(".browse-dd-item", "global");
                 await();

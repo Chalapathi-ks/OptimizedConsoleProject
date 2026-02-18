@@ -154,50 +154,33 @@ public class ABTest extends MerchandisingTest {
         // Find calendar icon and click it
         if (merchandisingActions.calendarIcon.isDisplayed()) {
             searchPageActions.threadWait();
-            // First scroll down to ensure page content is loaded
             merchandisingActions.scrollDown();
             ThreadWait();
-            // Scroll until calendar icon is visible using JavaScript for better reliability
-            org.openqa.selenium.JavascriptExecutor js = (org.openqa.selenium.JavascriptExecutor) merchandisingActions.getDriver();
-            js.executeScript("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", merchandisingActions.calendarIcon.getElement());
+            merchandisingActions.scrollUntilVisible(merchandisingActions.calendarIcon);
             ThreadWait();
             merchandisingActions.awaitForElementPresence(merchandisingActions.calendarIcon);
             ThreadWait();
-            // Use safeClick to handle click interception
-            try {
-                merchandisingActions.waitForElementToBeClickable(merchandisingActions.calendarIcon, "Calendar icon");
-            merchandisingActions.calendarIcon.click();
-            } catch (org.openqa.selenium.ElementClickInterceptedException e) {
-                // Fallback to JavaScript click if regular click is intercepted
-                js.executeScript("arguments[0].click();", merchandisingActions.calendarIcon.getElement());
-            }
+            merchandisingActions.waitForElementToBeClickable(merchandisingActions.calendarIcon, "Calendar icon");
+            merchandisingActions.safeClick(merchandisingActions.calendarIcon);
             ThreadWait();
             merchandisingActions.upcomingDateSelection();
             ThreadWait();
-            // Scroll until timezone is visible using JavaScript for better reliability
-            js.executeScript("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", merchandisingActions.timezoneDropdown.getElement());
+            merchandisingActions.scrollUntilVisible(merchandisingActions.timezoneDropdown);
             ThreadWait();
             merchandisingActions.awaitForElementPresence(merchandisingActions.timezoneDropdown);
             ThreadWait();
-            merchandisingActions.timeZoneSelection();}
+            merchandisingActions.timeZoneSelection();
+        }
 
-            if (merchandisingActions.calenderApplyButton.isDisplayed()) {
-                // Scroll until apply button is visible using JavaScript for better reliability
-                org.openqa.selenium.JavascriptExecutor js = (org.openqa.selenium.JavascriptExecutor) merchandisingActions.getDriver();
-                js.executeScript("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", merchandisingActions.calenderApplyButton.getElement());
-                ThreadWait();
-                merchandisingActions.awaitForElementPresence(merchandisingActions.calenderApplyButton);
-                ThreadWait();
-                // Use safeClick to handle click interception
-                try {
-                    merchandisingActions.waitForElementToBeClickable(merchandisingActions.calenderApplyButton, "Calendar apply button");
-                    merchandisingActions.calenderApplyButton.click();
-                } catch (org.openqa.selenium.ElementClickInterceptedException e) {
-                    // Fallback to JavaScript click if regular click is intercepted
-                    js.executeScript("arguments[0].click();", merchandisingActions.calenderApplyButton.getElement());
-                }
-                ThreadWait();
-            }
+        if (merchandisingActions.calenderApplyButton.isDisplayed()) {
+            merchandisingActions.scrollUntilVisible(merchandisingActions.calenderApplyButton);
+            ThreadWait();
+            merchandisingActions.awaitForElementPresence(merchandisingActions.calenderApplyButton);
+            ThreadWait();
+            merchandisingActions.waitForElementToBeClickable(merchandisingActions.calenderApplyButton, "Calendar apply button");
+            merchandisingActions.safeClick(merchandisingActions.calenderApplyButton);
+            ThreadWait();
+        }
                 merchandisingActions.clickonNext();
 
         merchandisingActions.goToLandingPage();

@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Single - PinningCreate" verbose="2">
+    <test name="Merch - PinningTest - pinningCreateTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PinningTest">
+                <methods>
+                    <include name="pinningCreateTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

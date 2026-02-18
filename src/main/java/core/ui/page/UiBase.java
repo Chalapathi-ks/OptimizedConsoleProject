@@ -851,7 +851,8 @@ public class UiBase extends FluentPage {
 
     public void scrollUntilVisible(org.fluentlenium.core.domain.FluentWebElement element) {
         try {
-            WebElement webElement = unwrapWebElement(element.getElement());
+            WebElement webElement = getConcreteWebElement(element);
+            if (webElement == null) webElement = unwrapWebElement(element.getElement());
             JavascriptExecutor js = (JavascriptExecutor) getDriver();
 
             // Check if element is already visible
@@ -883,7 +884,8 @@ public class UiBase extends FluentPage {
      */
     public boolean isElementInViewport(org.fluentlenium.core.domain.FluentWebElement element) {
         try {
-            WebElement webElement = unwrapWebElement(element.getElement());
+            WebElement webElement = getConcreteWebElement(element);
+            if (webElement == null) webElement = unwrapWebElement(element.getElement());
             JavascriptExecutor js = (JavascriptExecutor) getDriver();
 
             // Check if element is displayed first

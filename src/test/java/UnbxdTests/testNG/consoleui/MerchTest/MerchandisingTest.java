@@ -437,28 +437,36 @@ public class MerchandisingTest extends BaseTest {
                 } else if (section == UnbxdEnum.PIN) {
                     // Verify pinned product matches the product position in test data
                     boolean foundMatch = false;
-                    
+                    String expectedPosition = String.valueOf(product);
+
+                    // Wait for pinned position to appear (grid/preview can render slower)
+                    for (int waitAttempt = 0; waitAttempt < 20; waitAttempt++) {
+                        if (merchandisingActions.pinnedProductIndex != null && !merchandisingActions.pinnedProductIndex.isEmpty()) {
+                            for (int k = 0; k < merchandisingActions.pinnedProductIndex.size(); k++) {
+                                String pinnedPosition = merchandisingActions.pinnedProductIndex.get(k).getText().trim();
+                                if (pinnedPosition.equals(expectedPosition)) {
+                                    foundMatch = true;
+                                    break;
+                                }
+                            }
+                            if (foundMatch) break;
+                        }
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                            break;
+                        }
+                    }
+
                     // Check if pinnedProductIndex exists and has elements
                     if (merchandisingActions.pinnedProductIndex != null && !merchandisingActions.pinnedProductIndex.isEmpty()) {
-                        for (int k = 0; k < merchandisingActions.pinnedProductIndex.size(); k++) {
-                            String pinnedPosition = merchandisingActions.pinnedProductIndex.get(k).getText();
-                            System.out.println("Found pinned product at position: " + pinnedPosition);
-                            
-                            // Check if the pinned position matches the product in test data
-                            if (pinnedPosition.equals(String.valueOf(product))) {
-                                foundMatch = true;
-                                System.out.println("Pinned product position matches test data: " + product);
-                                
-                                // Verify the pinned text is displayed
-                                searchPage.threadWait();
-                                Assert.assertTrue(merchandisingActions.pinnedProductText.isDisplayed(),
-                                        "PINNED TEXT IS NOT PRESENT AT THE GIVEN POSITION");
-                                break;
-                            }
+                        if (foundMatch) {
+                            searchPage.threadWait();
+                            Assert.assertTrue(merchandisingActions.pinnedProductText.isDisplayed(),
+                                    "PINNED TEXT IS NOT PRESENT AT THE GIVEN POSITION");
                         }
-                        
-                        // Assert that we found a matching product position
-                        Assert.assertTrue(foundMatch, 
+                        Assert.assertTrue(foundMatch,
                                 "PRODUCT IS NOT PINNED AT THE GIVEN POSITION: " + product);
                     } else {
                         System.out.println("No pinned product indexes found to verify");
