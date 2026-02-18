@@ -118,7 +118,7 @@ public class CommerceSearchPage extends ConsoleCommonPage  {
     @FindBy(css=".add-another-rule-action")
     public FluentWebElement Addanothercampaign;
 
-    @FindBy(css=".unx-qa-toastsucess")
+    @FindBy(css = ".unx-qa-toastsucess, .unx-qa-toastsuccess")
     public FluentWebElement ToasterSuccess;
 
     @FindBy(css = "button.RCB-btn.RCB-btn-secondary.RCB-btn-small.unx-qa-sync")

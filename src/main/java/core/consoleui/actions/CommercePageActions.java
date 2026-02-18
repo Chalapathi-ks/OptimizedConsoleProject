@@ -7,9 +7,12 @@ import core.consoleui.page.CommerceSearchPage;
 import lib.enums.UnbxdEnum;
 import org.fluentlenium.core.domain.FluentList;
 import org.fluentlenium.core.domain.FluentWebElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.Map;
@@ -17,6 +20,9 @@ import java.util.Map;
 import static lib.constants.UnbxdErrorConstants.*;
 
 public class CommercePageActions extends CommerceSearchPage {
+
+    private static final int SUCCESS_TOAST_WAIT_SEC = 20;
+    private static final By SUCCESS_TOAST_SELECTOR = By.cssSelector(".unx-qa-toastsucess, .unx-qa-toastsuccess");
 
     MerchandisingActions merchandisingActions;
     CampaignCreationPage campaignCreationPage;
@@ -106,6 +112,12 @@ public class CommercePageActions extends CommerceSearchPage {
         } else {
             System.out.println("Menu icon not found");
         }
+    }
+
+    /** Waits for the success toast to appear in the DOM (e.g. after delete/publish). Call before asserting on ToasterSuccess. */
+    public void awaitForSuccessToastPresence() {
+        new WebDriverWait(getDriver(), SUCCESS_TOAST_WAIT_SEC).until(
+            ExpectedConditions.presenceOfElementLocated(SUCCESS_TOAST_SELECTOR));
     }
 
     public void goToQueryBasedBanner()

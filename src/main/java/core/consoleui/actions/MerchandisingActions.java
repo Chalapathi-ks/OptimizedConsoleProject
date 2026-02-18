@@ -40,7 +40,7 @@ public class MerchandisingActions extends MerchandisingRulesPage {
             await();
             safeClick(saveAsDraftButton);
             waitForLoaderToDisAppear(successMsgPopUp, "STILL PUBLISHING IS IN-PROGRESS");
-            Assert.assertFalse(awaitForElementPresence(saveAsDraftButton), "CAMPAIGN PUBLISHING IS NOT WORKING!!!");
+            Assert.assertTrue(awaitForElementNotDisplayed(saveAsDraftButton), "CAMPAIGN PUBLISHING IS NOT WORKING!!!");
         }
 
     }
@@ -148,10 +148,27 @@ public class MerchandisingActions extends MerchandisingRulesPage {
     }
 
     public void timeZoneSelection(){
-        timezoneDropdown.click();
+        scrollUntilVisible(timezoneDropdown);
+        waitForElementToBeClickable(timezoneDropdown, "Timezone dropdown");
+        try {
+            timezoneDropdown.click();
+        } catch (ElementClickInterceptedException e) {
+            WebElement el = getConcreteWebElement(timezoneDropdown);
+            if (el == null) el = unwrapWebElement(timezoneDropdown.getElement());
+            if (el != null) ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", el);
+        }
         awaitForElementPresence(zoneinput);
         zoneinput.fill().with("kolkata");
-        timezonelist.click();
+        scrollUntilVisible(timezonelist);
+        awaitForElementPresence(timezonelist);
+        waitForElementToBeClickable(timezonelist, "Timezone list option");
+        try {
+            timezonelist.click();
+        } catch (ElementClickInterceptedException e) {
+            WebElement el = getConcreteWebElement(timezonelist);
+            if (el == null) el = unwrapWebElement(timezonelist.getElement());
+            if (el != null) ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", el);
+        }
     }
 
 
@@ -212,21 +229,28 @@ public class MerchandisingActions extends MerchandisingRulesPage {
                     if (value != null && !value.trim().isEmpty()
                             && el.getText().trim().toLowerCase().contains(value.trim().toLowerCase())) {
                         try {
-                            WebElement we = el.getElement();
-                            if (we.isDisplayed() && we.isEnabled()) return we;
+                            WebElement we = getConcreteWebElement(el);
+                            if (we == null) we = unwrapWebElement(el.getElement());
+                            if (we != null && we.isDisplayed() && we.isEnabled()) return we;
                         } catch (Exception ignored) { }
                     }
                 }
                 return null;
             });
             if (optionToSelect != null) {
-                new WebDriverWait(getDriver(), 5).until(ExpectedConditions.elementToBeClickable(optionToSelect));
-                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", optionToSelect);
+                WebElement toClick = unwrapWebElement(optionToSelect);
+                if (toClick == null) toClick = optionToSelect;
+                new WebDriverWait(getDriver(), 5).until(ExpectedConditions.elementToBeClickable(toClick));
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", toClick);
             } else {
                 try {
-                    attributeInput.getElement().sendKeys(Keys.ARROW_DOWN);
-                    await();
-                    attributeInput.getElement().sendKeys(Keys.ENTER);
+                    WebElement inputEl = getConcreteWebElement(attributeInput);
+                    if (inputEl == null) inputEl = unwrapWebElement(attributeInput.getElement());
+                    if (inputEl != null) {
+                        inputEl.sendKeys(Keys.ARROW_DOWN);
+                        await();
+                        inputEl.sendKeys(Keys.ENTER);
+                    }
                 } catch (Exception e) {
                     selectAttributeOptionInOpenDropdown(value);
                 }
@@ -367,7 +391,9 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         try {
             nextButton.click();
         } catch (ElementClickInterceptedException e) {
-            ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(nextButton.getElement()));
+            WebElement el = getConcreteWebElement(nextButton);
+            if (el == null) el = unwrapWebElement(nextButton.getElement());
+            if (el != null) ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", el);
         }
         awaitForPageToLoad();
         return this;
@@ -427,7 +453,9 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         try {
             pinningDropdown.click();
         } catch (ElementClickInterceptedException e) {
-            ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(pinningDropdown.getElement()));
+            WebElement el = getConcreteWebElement(pinningDropdown);
+            if (el == null) el = unwrapWebElement(pinningDropdown.getElement());
+            if (el != null) ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", el);
         }
         await();
         if (pinningDropDownList.size() > 0) {
@@ -436,7 +464,9 @@ public class MerchandisingActions extends MerchandisingRulesPage {
             try {
                 productItem.click();
             } catch (ElementClickInterceptedException e) {
-                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(productItem.getElement()));
+                WebElement el = getConcreteWebElement(productItem);
+                if (el == null) el = unwrapWebElement(productItem.getElement());
+                if (el != null) ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", el);
             }
         } else {
             Assert.fail("PINNING DROPDOWN LIST IS EMPTY");

@@ -2,6 +2,7 @@ package core.ui.page;
 
 import core.ui.actions.CreateSiteActions;
 import core.ui.actions.FeedUploadActions;
+import core.ui.page.FeedUploadPage;
 import lib.EnvironmentConfig;
 import lib.UrlMapper;
 import org.fluentlenium.core.annotation.Page;
@@ -12,7 +13,7 @@ import org.testng.Assert;
 
 import static lib.UrlMapper.WELCOME_PAGE;
 
-public class WelcomePage extends LoginPage{
+public class WelcomePage extends LoginPage {
 
     @Page
     FeedUploadActions feedUploadActions;
@@ -33,13 +34,13 @@ public class WelcomePage extends LoginPage{
 
     public String welcomePageLoader = "welcomePage loader";
 
-    public static By welcomePageText = By.cssSelector("..unx-welcome-text");
+    public static By welcomePageText = By.cssSelector(".unx-welcome-text");
 
 
     public WelcomePage gotoWelcomePage()
     {
         goTo(WELCOME_PAGE.getBaseUrl());
-        waitForLoaderToDisAppear(feedUploadActions.pageLoader,welcomePageLoader);
+        waitForLoaderToDisAppear(FeedUploadPage.pageLoader, welcomePageLoader);
         awaitForElementPresence(welcomeText);
         //Assert.assertEquals(welcomeText.getText(),"Welcome to");
         //Assert.assertTrue(awaitForElementPresence(unbxdLogo));

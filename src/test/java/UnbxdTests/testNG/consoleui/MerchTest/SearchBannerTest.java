@@ -72,6 +72,7 @@ public class SearchBannerTest extends MerchandisingTest {
         searchPageActions.selectActionFromMore(UnbxdEnum.STOPPED,query);
         searchPageActions.selectModelWindow();
         Assert.assertTrue(searchPageActions.checkSuccessMessage(), SUCCESS_MESSAGE_FAILURE);
+        searchPage.awaitTillElementDisplayed(searchPageActions.stopCampaign);
         Assert.assertTrue(searchPageActions.stopCampaign.isDisplayed(),"SEARCH: BANNER RULE IS NOT IN STOPPED STATE");
 
         //duplicate the rule

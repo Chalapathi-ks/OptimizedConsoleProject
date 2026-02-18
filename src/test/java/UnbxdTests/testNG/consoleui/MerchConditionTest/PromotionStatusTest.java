@@ -161,6 +161,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         searchPage.queryRuleByName(query);
         merchandisingActions.await();
         searchPageActions.deleteQueryRule(query);
+        searchPageActions.awaitForSuccessToastPresence();
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
 
     }
@@ -224,10 +225,12 @@ public class PromotionStatusTest extends MerchandisingTest {
         searchPage.queryRuleByName(query);
         merchandisingActions.await();
         searchPageActions.deleteQueryRule(query);
+        searchPageActions.awaitForSuccessToastPresence();
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
 
         searchPage.await();
         searchPageActions.deleteQueryRule(query);
+        searchPageActions.awaitForSuccessToastPresence();
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
 
 
@@ -259,14 +262,8 @@ public class PromotionStatusTest extends MerchandisingTest {
             merchandisingActions.scrollUntilVisible(merchandisingActions.calendarIcon);
             merchandisingActions.awaitForElementPresence(merchandisingActions.calendarIcon);
             merchandisingActions.await();
-            // Use safeClick to handle click interception
-            try {
-                merchandisingActions.waitForElementToBeClickable(merchandisingActions.calendarIcon, "Calendar icon");
-                merchandisingActions.calendarIcon.click();
-            } catch (org.openqa.selenium.ElementClickInterceptedException e) {
-                // Fallback to JavaScript click if regular click is intercepted
-                ((org.openqa.selenium.JavascriptExecutor) merchandisingActions.getDriver()).executeScript("arguments[0].click();", merchandisingActions.calendarIcon.getElement());
-            }
+            merchandisingActions.waitForElementToBeClickable(merchandisingActions.calendarIcon, "Calendar icon");
+            merchandisingActions.safeClick(merchandisingActions.calendarIcon);
             merchandisingActions.await();
             merchandisingActions.upcomingDateSelection();
             // Scroll until timezone is visible and wait for it
@@ -276,18 +273,11 @@ public class PromotionStatusTest extends MerchandisingTest {
             merchandisingActions.timeZoneSelection();
 
             if (merchandisingActions.calenderApplyButton.isDisplayed()) {
-                // Scroll until apply button is visible and wait for it
                 merchandisingActions.scrollUntilVisible(merchandisingActions.calenderApplyButton);
                 merchandisingActions.awaitForElementPresence(merchandisingActions.calenderApplyButton);
                 merchandisingActions.await();
-                // Use safeClick to handle click interception
-                try {
-                    merchandisingActions.waitForElementToBeClickable(merchandisingActions.calenderApplyButton, "Calendar apply button");
-                    merchandisingActions.calenderApplyButton.click();
-                } catch (org.openqa.selenium.ElementClickInterceptedException e) {
-                    // Fallback to JavaScript click if regular click is intercepted
-                    ((org.openqa.selenium.JavascriptExecutor) merchandisingActions.getDriver()).executeScript("arguments[0].click();", merchandisingActions.calenderApplyButton.getElement());
-                }
+                merchandisingActions.waitForElementToBeClickable(merchandisingActions.calenderApplyButton, "Calendar apply button");
+                merchandisingActions.safeClick(merchandisingActions.calenderApplyButton);
                 merchandisingActions.await();
                 merchandisingActions.clickonNext();
 

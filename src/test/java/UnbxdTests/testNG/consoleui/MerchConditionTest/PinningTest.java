@@ -64,7 +64,14 @@ public class  PinningTest extends MerchandisingTest {
         ThreadWait();
         merchandisingActions.clickOnApplyButton();
         ThreadWait();
-        Assert.assertEquals(merchandisingActions.pinnedProductIndex.get(0).getText(),pinningPosition,"PRODUCT IS NOT PINNED AT THE GIVEN POSITION");
+        for (int i = 0; i < 15; i++) {
+            if (merchandisingActions.pinnedProductIndex.size() > 0
+                    && pinningPosition.equals(merchandisingActions.pinnedProductIndex.get(0).getText().trim()))
+                break;
+            try { Thread.sleep(1000); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+        }
+        Assert.assertTrue(merchandisingActions.pinnedProductIndex.size() > 0, "PRODUCT IS NOT PINNED AT THE GIVEN POSITION: pinned list empty");
+        Assert.assertEquals(merchandisingActions.pinnedProductIndex.get(0).getText().trim(), pinningPosition, "PRODUCT IS NOT PINNED AT THE GIVEN POSITION");
         Assert.assertTrue(merchandisingActions.pinnedProductText.isDisplayed(),"PINNED TEXT IS NOT PRESENT AT THE GIVEN POSITION");
 
         merchandisingActions.publishCampaign();

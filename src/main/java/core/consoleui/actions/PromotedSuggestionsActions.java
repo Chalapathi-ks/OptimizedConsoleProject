@@ -138,6 +138,7 @@ public class PromotedSuggestionsActions extends PromotedSuggestionsPage {
         org.openqa.selenium.WebElement yesButton = wait.until(ExpectedConditions.elementToBeClickable(yesButtonSelector));
         yesButton.click();
         // Wait for and verify the success toast
+        awaitForElementPresence(successToast);
         Assert.assertTrue(successToast.isDisplayed(), "Success toast should be visible after delete");
     }
     /**

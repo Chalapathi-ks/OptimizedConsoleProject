@@ -257,6 +257,9 @@ public class MerchandisingTest extends BaseTest {
 
     public void verifyMerchandisingGenericData(JsonArray object, UnbxdEnum section, boolean useUpdatedData) throws InterruptedException {
         searchPage.threadWait();
+        if (section == UnbxdEnum.SLOT && object.size() > 0) {
+            merchandisingActions.awaitForElementPresence(merchandisingActions.MerchandisingStrategySlotAttribute);
+        }
         for(int i=0; i<object.size(); i++) {
             if(i!=0)
                 click(merchandisingActions.addNewGroup);
@@ -322,17 +325,15 @@ public class MerchandisingTest extends BaseTest {
                     String slotCondition = merchandisingActions.MerchandisingStrategySlotCondition.getText();
                     String slotValue = merchandisingActions.MerchandisingStrategySlotValue.getText();
                     
-                    // Check if slot details contain attribute and value
-                    boolean containsSlotAttribute = slotAttribute.contains(attribute);
-                    boolean containsSlotValue = slotValue.contains(value);
+                    // Check if slot details contain attribute and value (case-insensitive for UI display variants)
+                    boolean containsSlotAttribute = slotAttribute.toLowerCase().contains(attribute.toLowerCase());
+                    boolean containsSlotValue = slotValue.toLowerCase().contains(value.toLowerCase());
                     
                     if (containsSlotAttribute && containsSlotValue) {
-                        System.out.println("Slot strategy details contain required elements: " 
-                            + attribute + " " + value);
                         foundMatch = true;
                     }
                 }
-                
+
                 // Assert that we found a match in either boost, filter, or slot
                 Assert.assertTrue(foundMatch, 
                     "Strategy details missing attribute: " + attribute + " or value: " + value);

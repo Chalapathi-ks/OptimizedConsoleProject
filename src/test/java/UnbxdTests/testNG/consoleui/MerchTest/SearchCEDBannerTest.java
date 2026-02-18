@@ -8,6 +8,10 @@ import core.consoleui.actions.MerchandisingActions;
 import core.consoleui.page.BrowsePage;
 import lib.annotation.FileToTest;
 import lib.enums.UnbxdEnum;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.fluentlenium.core.annotation.Page;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -18,6 +22,8 @@ import java.util.Map;
 
 
 public class SearchCEDBannerTest extends MerchandisingTest {
+
+    private static final int WAIT_TIMEOUT_SEC = 20;
 
     List<String> queryRules = new ArrayList<>();
     List<String> pageRules = new ArrayList<>();
@@ -47,7 +53,7 @@ public class SearchCEDBannerTest extends MerchandisingTest {
         String editImg=bannerData.get("editBanner").getAsString();
 
        goTo(searchPage);
-       searchPage.await();
+       searchPageActions.awaitForPageToLoad();
        merchandisingActions.goToSection(UnbxdEnum.BANNER);
        searchPageActions.awaitForPageToLoad();
 
@@ -61,19 +67,13 @@ public class SearchCEDBannerTest extends MerchandisingTest {
         bannerActions.addHtmlBanner(html);
         merchandisingActions.publishCampaign();
         merchandisingActions.verifySuccessMessage();
-        merchandisingActions.await();
         Assert.assertNotNull(searchPage.queryRuleByName(query));
         queryRules.add(query);
-        merchandisingActions.await();
-        merchandisingActions.awaitForPageToLoad();
 
         merchandisingActions.openPreviewAndSwitchTheTab();
         merchandisingActions.awaitForPageToLoad();
-        merchandisingActions.await();
-        String PreviewPage = driver.getCurrentUrl();
-        Assert.assertTrue(PreviewPage.contains("preview"),"Not redirecting to preview page");
-        await();
         merchandisingActions.awaitForElementPresence(merchandisingActions.SearchpreviewOption);
+        Assert.assertTrue(driver.getCurrentUrl().contains("preview"), "Not redirecting to preview page");
 
         merchandisingActions.ClickViewHideInsight();
         searchPage.scrollToBottom();
@@ -82,27 +82,28 @@ public class SearchCEDBannerTest extends MerchandisingTest {
         ((org.openqa.selenium.JavascriptExecutor) driver).executeScript(
             "var modal = document.querySelector('div.preview'); if(modal){modal.scrollTop = modal.scrollHeight;}"
         );
-        merchandisingActions.awaitForElementPresence(bannerActions.bannerExperienceInput);
-        merchandisingActions.awaitForPageToLoad();
-        Assert.assertTrue(bannerActions.bannerExperienceInput.getText().contains(html),"SEARCH:  HTML URL IS NOT SAME AS GIVEN ");
+        new WebDriverWait(merchandisingActions.getDriver(), WAIT_TIMEOUT_SEC).until(
+            (ExpectedCondition<Boolean>) d -> d != null && (
+                d.findElements(By.cssSelector(".border-top.pad-top-10")).size() > 0
+                || d.findElements(By.cssSelector(".card-header.medium-text .banner-html-body")).size() > 0));
+        Assert.assertTrue(bannerActions.bannerExperienceInput.getText().contains(html), "SEARCH:  HTML URL IS NOT SAME AS GIVEN ");
 
         // Edit the rule
         goTo(searchPage);
-        searchPage.await();
+        searchPageActions.awaitForPageToLoad();
         merchandisingActions.goToSection(UnbxdEnum.BANNER);
         searchPageActions.awaitForPageToLoad();
-        searchPageActions.selectActionType(UnbxdEnum.EDIT,query);
-        searchPage.await();
-        merchandisingActions.awaitForElementPresence(searchPageActions.htmlPreview);
+        searchPageActions.selectActionType(UnbxdEnum.EDIT, query);
+        new WebDriverWait(merchandisingActions.getDriver(), WAIT_TIMEOUT_SEC).until(
+            ExpectedConditions.presenceOfElementLocated(By.cssSelector(".banner-rule-textarea")));
         merchandisingActions.scrollUntilVisible(searchPageActions.htmlPreview);
-        Assert.assertTrue(searchPageActions.htmlPreview.getText().contains(html),"SEARCH:  HTML URL IS NOT SAME AS GIVEN ");
+        Assert.assertTrue(searchPageActions.htmlPreview.getText().contains(html), "SEARCH:  HTML URL IS NOT SAME AS GIVEN ");
 
         bannerActions.addImgBanner(editImg);
         merchandisingActions.publishCampaign();
         merchandisingActions.verifySuccessMessage();
         Assert.assertNotNull(searchPage.queryRuleByName(query));
-        merchandisingActions.await();
-        
+
 //        merchandisingActions.openPreviewAndSwitchTheTab();
 //        merchandisingActions.awaitForPageToLoad();
 //        merchandisingActions.await();
@@ -115,21 +116,19 @@ public class SearchCEDBannerTest extends MerchandisingTest {
 //        bannerActions.bannerExperience.isDisplayed();
 
         goTo(searchPage);
-        searchPage.await();
+        searchPageActions.awaitForPageToLoad();
         merchandisingActions.goToSection(UnbxdEnum.BANNER);
         searchPageActions.awaitForPageToLoad();
-        merchandisingActions.await();
-        searchPageActions.selectActionType(UnbxdEnum.PREVIEW,query);
-        searchPage.await();
-        Assert.assertTrue(searchPageActions.bannerInputImgUrl.getValue().contains(editImg),"SEARCH: IMG URL IS NOT SAME AS GIVEN");
+        searchPageActions.selectActionType(UnbxdEnum.PREVIEW, query);
+        merchandisingActions.awaitForElementPresence(searchPageActions.bannerInputImgUrl);
+        Assert.assertTrue(searchPageActions.bannerInputImgUrl.getValue().contains(editImg), "SEARCH: IMG URL IS NOT SAME AS GIVEN");
 
-        searchPage.await();
         goTo(searchPage);
-        searchPage.await();
+        searchPageActions.awaitForPageToLoad();
         merchandisingActions.goToSection(UnbxdEnum.BANNER);
+        searchPageActions.awaitForPageToLoad();
         searchPageActions.deleteQueryRule(query);
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
-        searchPage.await();
 
     }
 

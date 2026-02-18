@@ -6,11 +6,12 @@ import lib.enums.UnbxdEnum;
 import org.fluentlenium.core.annotation.Page;
 import org.fluentlenium.core.domain.FluentList;
 import org.fluentlenium.core.domain.FluentWebElement;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.util.Map;
 
-import static lib.constants.UnbxdErrorConstants.QUERY_RULE_SEARCH_FAILURE;
 import static lib.constants.UnbxdErrorConstants.SUCCESS_MESSAGE_FAILURE;
 
 
@@ -153,7 +154,10 @@ public class SegmentActions extends SegmentPage {
     public void selectSegmentActionType (UnbxdEnum type, String name) {
         FluentWebElement element = segmentRuleByName(name);
         threadWait();
-        Helper.mouseOver(element.findFirst(searchPageActions.segmentCampaignContainer).getElement());
+        FluentWebElement container = element.findFirst(searchPageActions.segmentCampaignContainer);
+        WebElement containerEl = getConcreteWebElement(container);
+        if (containerEl == null) containerEl = unwrapWebElement(container.getElement());
+        if (containerEl != null) Helper.mouseOver(containerEl);
 
         switch (type) {
             case PREVIEW:
@@ -257,7 +261,9 @@ public class SegmentActions extends SegmentPage {
         click(customAttributeTagInput);
         awaitForElementPresence(customAttributeTagInput);
         customAttributeTagInput.fill().with(Value);
-        customAttributeTagInput.getElement().sendKeys(org.openqa.selenium.Keys.ENTER);
+        WebElement inputEl = unwrapWebElement(customAttributeTagInput.getElement());
+        if (inputEl == null) inputEl = getDriver().findElement(org.openqa.selenium.By.cssSelector(".tag-input"));
+        if (inputEl != null) inputEl.sendKeys(Keys.ENTER);
         threadWait();
         return customAttributeTagInput.getAttribute("value");
 

@@ -131,9 +131,11 @@ public class CampaignCreationPage extends UnbxdCommonPage {
             By.cssSelector(".campaign-name-search .RCB-form-el"),
             By.id("ruleName"),
             By.id("ruleNar"),
-            By.cssSelector("input[name=\"Campaign name*\"]")
+            By.cssSelector("input[name=\"Campaign name*\"]"),
+            By.cssSelector(".campaign-name-search input"),
+            By.cssSelector(".RCB-form-el-block input[type='text']")
         };
-        new WebDriverWait(getDriver(), 20).until(new ExpectedCondition<Boolean>() {
+        new WebDriverWait(getDriver(), 30).until(new ExpectedCondition<Boolean>() {
             @Override
             public Boolean apply(WebDriver driver) {
                 for (By by : locators) {
@@ -152,12 +154,14 @@ public class CampaignCreationPage extends UnbxdCommonPage {
             ".campaign-name-search .RCB-form-el",
             "#ruleName",
             "#ruleNar",
-            "input[name=\"Campaign name*\"]"
+            "input[name=\"Campaign name*\"]",
+            ".campaign-name-search input",
+            ".RCB-form-el-block input[type='text']"
         };
         for (String sel : selectors) {
             try {
                 FluentWebElement el = findFirst(sel);
-                if (el.isDisplayed()) return el;
+                if (el != null && el.isDisplayed()) return el;
             } catch (Exception ignored) {
             }
         }
