@@ -220,8 +220,9 @@ public class MerchandisingActions extends MerchandisingRulesPage {
                 return null;
             });
             if (optionToSelect != null) {
-                new WebDriverWait(getDriver(), 5).until(ExpectedConditions.elementToBeClickable(optionToSelect));
-                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", optionToSelect);
+                WebElement concrete = unwrapWebElement(optionToSelect);
+                new WebDriverWait(getDriver(), 5).until(ExpectedConditions.elementToBeClickable(concrete));
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", concrete);
             } else {
                 try {
                     attributeInput.getElement().sendKeys(Keys.ARROW_DOWN);
@@ -487,7 +488,7 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         }
         awaitForElementPresence(pinTheProduct.get(i));
         scrollUntilVisible(listOfProductInPreview.get(i));
-        Helper.mouseOver(listOfProductInPreview.get(i).getElement());
+        Helper.mouseOver(unwrapWebElement(listOfProductInPreview.get(i).getElement()));
         ThreadWait();
         safeClick(pinTheProduct.get(i));
     }
@@ -527,7 +528,7 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         if (merchandisingConditionList.size() > 0) {
             for (int i = 0; i < merchandisingConditionList.size(); i++) {
                 merchandisingConditionList.get(i).find(".action-title").getText().trim().equalsIgnoreCase(condition);
-                Helper.mouseOver(merchandisingConditionList.get(i).getElement());
+                Helper.mouseOver(unwrapWebElement(merchandisingConditionList.get(i).getElement()));
                 awaitForElementPresence(searchPageActions.queryEditButton);
                 click(searchPageActions.queryEditButton);
                 await();

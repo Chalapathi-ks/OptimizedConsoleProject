@@ -436,7 +436,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
     public void openFacetEditWindow(FluentWebElement facet) throws InterruptedException
     {
         Thread.sleep(10000);
-        Helper.mouseOver(facet.getElement());
+        Helper.mouseOver(unwrapWebElement(facet.getElement()));
         ThreadWait();
         click(editFacetIcon);
         awaitForElementPresence(editWindow);

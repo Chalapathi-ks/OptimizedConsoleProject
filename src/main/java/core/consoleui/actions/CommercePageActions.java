@@ -7,9 +7,12 @@ import core.consoleui.page.CommerceSearchPage;
 import lib.enums.UnbxdEnum;
 import org.fluentlenium.core.domain.FluentList;
 import org.fluentlenium.core.domain.FluentWebElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.Map;
@@ -111,12 +114,16 @@ public class CommercePageActions extends CommerceSearchPage {
     public void goToQueryBasedBanner()
     {
         awaitForElementPresence(queryBasedBannerButon);
+        new WebDriverWait(getDriver(), 15).until(
+            ExpectedConditions.elementToBeClickable(By.cssSelector(".merch-header-actions .RCB-btn-primary li:nth-child(1)")));
         click(queryBasedBannerButon);
     }
 
     public void goToFieldRuleBasedBanner()
     {
         awaitForElementPresence(fieldBasedBannerButon);
+        new WebDriverWait(getDriver(), 15).until(
+            ExpectedConditions.elementToBeClickable(By.cssSelector(".merch-header-actions .RCB-btn-primary li:nth-child(2)")));
         click(fieldBasedBannerButon);
     }
 
@@ -224,10 +231,14 @@ public class CommercePageActions extends CommerceSearchPage {
     {
         if (bannerOrFacet==true) {
             awaitForElementPresence(addBannerButton);
+            new WebDriverWait(getDriver(), 15).until(
+                ExpectedConditions.elementToBeClickable(By.cssSelector(".merch-header-actions .add-rule-btn-dropdown, .RCB-btn.RCB-btn-primary.RCB-btn-small")));
             click(addBannerButton);
         }
         else {
             awaitForElementPresence(addRuleButton);
+            new WebDriverWait(getDriver(), 15).until(
+                ExpectedConditions.elementToBeClickable(By.cssSelector(".merch-header-actions .RCB-btn-primary")));
             click(addRuleButton);
             awaitForPageToLoad();
         }
@@ -251,7 +262,8 @@ public class CommercePageActions extends CommerceSearchPage {
 
     public String fillQueryRuleData(String query,String page,String... similarQuiries) throws InterruptedException {
     String queryName=query+System.currentTimeMillis();
-        awaitForElementPresence(newQueryRuleInput);
+        new WebDriverWait(getDriver(), 30).until(
+            ExpectedConditions.presenceOfElementLocated(By.cssSelector(".input-drop-wrapper .side-input .RCB-form-el")));
         await();
        if(query!=null){
            awaitForElementPresence(newQueryRuleInput);

@@ -122,7 +122,14 @@ public class SegmentTest extends MerchandisingTest {
         segmenPageActions.clickOnSave();
         merchandisingActions.verifySuccessMessage();
         searchPage.threadWait();
-        Assert.assertNotNull(segmenPageActions.segmentRuleByName(segmentName));
+        // Wait for segment to appear in list after save (list may refresh with delay)
+        org.fluentlenium.core.domain.FluentWebElement segmentRule = null;
+        for (int i = 0; i < 20; i++) {
+            segmentRule = segmenPageActions.segmentRuleByName(segmentName);
+            if (segmentRule != null) break;
+            try { Thread.sleep(1000); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+        }
+        Assert.assertNotNull(segmentRule, "Segment rule '" + segmentName + "' not found in list after save");
         SegmentRules.add(segmentName);
 
         goTo(searchPage);

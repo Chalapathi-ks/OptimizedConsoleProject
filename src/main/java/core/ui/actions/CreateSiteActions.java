@@ -73,7 +73,7 @@ public class CreateSiteActions extends CreateSitePage {
     public void clearIntercomNotifications()
     {
         await();
-        Helper.mouseOver(intercomSnippet.getElement());
+        Helper.mouseOver(unwrapWebElement(intercomSnippet.getElement()));
         //Thread.sleep(1000);
         if(awaitForElementPresence(intercomClearTab) ==true )
         {

@@ -7,6 +7,8 @@ import org.fluentlenium.core.domain.FluentList;
 import org.fluentlenium.core.domain.FluentWebElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
@@ -203,22 +205,27 @@ public class UnbxdCommonPage extends UiBase {
 
     public void goToSection(UnbxdEnum type) throws InterruptedException {
         ThreadWait();
+        WebDriverWait wait = new WebDriverWait(getDriver(), 15);
         switch(type)
         {
             case PROMOTION:
                 click(promotionSection);
+                wait.until(ExpectedConditions.urlContains("promotions"));
                 Assert.assertTrue(getDriver().getCurrentUrl().contains("promotions"));
                 break;
             case BANNER:
-                click(bannerSection);
-                Assert.assertTrue(getDriver().getCurrentUrl().contains("banners"));
+                awaitForElementPresence(bannerSection);
+                safeClick(bannerSection);
+                ThreadWait();
                 break;
             case FACETS:
                 click(facetSection);
+                wait.until(ExpectedConditions.urlContains("facets"));
                 Assert.assertTrue(getDriver().getCurrentUrl().contains("facets"));
                 break;
             case REDIRECT:
                 click(redirectSection);
+                wait.until(ExpectedConditions.urlContains("redirects"));
                 Assert.assertTrue(getDriver().getCurrentUrl().contains("redirects"));
                 break;
             default:
