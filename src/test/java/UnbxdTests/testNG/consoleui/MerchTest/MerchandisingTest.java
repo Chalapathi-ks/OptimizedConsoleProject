@@ -35,15 +35,14 @@ public class MerchandisingTest extends BaseTest {
     CommercePageActions BrowsePage;
 
 
-    @BeforeClass(groups={"sanity"})
+    @BeforeClass(alwaysRun = true)
     public void setUp() {
         super.setUp();
         this.initFluent(driver);
         initTest();
-        // Set context before navigation
+        // Set context before navigation (required for cookie/session to apply to correct site)
         EnvironmentConfig.unSetContext();
         lib.EnvironmentConfig.setContext(1, 1);
-        // Login is now handled by BaseTest global login mechanism
         goTo(searchPage);
         searchPage.threadWait();
     }

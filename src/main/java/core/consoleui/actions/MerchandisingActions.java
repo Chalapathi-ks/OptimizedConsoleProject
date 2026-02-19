@@ -133,26 +133,15 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         String tomorrowLabel = tomorrow.format(java.time.format.DateTimeFormatter.ofPattern("EEEE, MMMM d, yyyy"));
         String dayAfterLabel = dayAfterTomorrow.format(java.time.format.DateTimeFormatter.ofPattern("EEEE, MMMM d, yyyy"));
 
-        WebElement targetTile1 = null;
-        WebElement targetTile2 = null;
+        String xpath1 = "//abbr[@aria-label='" + tomorrowLabel.replace("'", "\\'") + "']/parent::button";
+        String xpath2 = "//abbr[@aria-label='" + dayAfterLabel.replace("'", "\\'") + "']/parent::button";
 
-        try {
-            // Try direct tomorrow click
-            targetTile1 = getDriver().findElement(By.xpath("//abbr[@aria-label='" + tomorrowLabel + "']/parent::button"));
-            targetTile2 = getDriver().findElement(By.xpath("//abbr[@aria-label='" + dayAfterLabel + "']/parent::button"));
-        } catch (Exception e) {
-            // Fallback to next available days
-            java.util.List<WebElement> tiles = getDriver().findElements(By.cssSelector(".react-calendar__tile:not(.react-calendar__tile--disabled)"));
-            WebElement today = getDriver().findElement(By.cssSelector(".react-calendar__tile--now"));
-            int currentIndex = tiles.indexOf(today);
-            targetTile1 = (currentIndex >= 0 && currentIndex + 1 < tiles.size()) ? tiles.get(currentIndex + 1) : tiles.get(0);
-            targetTile2 = (currentIndex >= 0 && currentIndex + 2 < tiles.size()) ? tiles.get(currentIndex + 2) : tiles.get(1);
-        }
-
-        // Click first target date
-        ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(targetTile1));
-        // Click second target date (hold Ctrl for multiple selection)
-        ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(targetTile2));
+        // Click via JS using XPath evaluated in-browser so we never pass a WebElement proxy to executeScript (avoids jdk.proxy2.$Proxy13)
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        String script = "var el = document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue; if(el) el.click();";
+        js.executeScript(script, xpath1);
+        await();
+        js.executeScript(script, xpath2);
         await();
     }
 

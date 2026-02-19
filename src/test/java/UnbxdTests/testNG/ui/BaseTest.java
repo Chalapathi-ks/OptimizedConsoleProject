@@ -45,9 +45,19 @@ public class BaseTest extends FluentAdapter {
             // Set the automatically initialized LoginActions in GlobalLoginManager
             GlobalLoginManager.setLoginActions(loginActions);
             
-            // 🍪 Use stored cookies from BeforeSuite login
+            // 🍪 Use stored cookies from BeforeSuite login (retry once if file not ready in parallel runs)
             System.out.println("🍪 Attempting to reuse cookies from suite login...");
-            if (GlobalLoginManager.tryCookieReuse(driver)) {
+            boolean reused = GlobalLoginManager.tryCookieReuse(driver);
+            if (!reused) {
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException ie) {
+                    Thread.currentThread().interrupt();
+                }
+                System.out.println("🍪 Retrying cookie reuse after short wait...");
+                reused = GlobalLoginManager.tryCookieReuse(driver);
+            }
+            if (reused) {
                 System.out.println("✅ Successfully reused cookies from suite login");
             } else {
                 System.out.println("⚠️ Cookie reuse failed, performing individual login");

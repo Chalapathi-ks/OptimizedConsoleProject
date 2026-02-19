@@ -260,7 +260,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         merchandisingActions.nextPage();
         merchandisingActions.fillCampaignDataforUpcoming(campaignData);
         merchandisingActions.awaitForElementPresence(merchandisingActions.calendarIcon);
-        if (merchandisingActions.calendarIcon.isDisplayed()) {
+        if (merchandisingActions.isDisplayedSafe(merchandisingActions.calendarIcon)) {
             searchPageActions.await();
             merchandisingActions.scrollUntilVisible(merchandisingActions.calendarIcon);
             merchandisingActions.awaitForElementPresence(merchandisingActions.calendarIcon);
@@ -275,7 +275,7 @@ public class PromotionStatusTest extends MerchandisingTest {
             merchandisingActions.await();
             merchandisingActions.timeZoneSelection();
 
-            if (merchandisingActions.calenderApplyButton.isDisplayed()) {
+            if (merchandisingActions.isDisplayedSafe(merchandisingActions.calenderApplyButton)) {
                 merchandisingActions.scrollUntilVisible(merchandisingActions.calenderApplyButton);
                 merchandisingActions.awaitForElementPresence(merchandisingActions.calenderApplyButton);
                 merchandisingActions.await();
@@ -320,7 +320,7 @@ public class PromotionStatusTest extends MerchandisingTest {
 
         goTo(browsePage);
         searchPage.await();
-        createPromotion(page, false, false);
+        createBrowsePromotion(page, false, false);
 
         JsonArray object = boostJsonObject.get("data").getAsJsonArray();
         Map<String, Object> campaignData = merchandisingActions.getCampaignData("browsePromotionDuplicateTest.json");

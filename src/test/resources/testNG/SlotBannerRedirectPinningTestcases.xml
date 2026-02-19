@@ -1,0 +1,84 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SlotBannerRedirectPinningTests" parallel="tests" thread-count="8" verbose="10" preserve-order="true">
+
+    <!-- SlotTest -->
+    <test name="Merch - SlotTest - slotCreateTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.SlotTest">
+                <methods>
+                    <include name="slotCreateTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- BannerTest methods -->
+    <test name="Merch - SearchBannerTest - duplicateBannerHtmlTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SearchBannerTest">
+                <methods>
+                    <include name="duplicateBannerHtmlTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SearchBannerTest - createAndEditSearchFieldRuleImageBannerTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SearchBannerTest">
+                <methods>
+                    <include name="createAndEditSearchFieldRuleImageBannerTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SearchCEDBannerTest - createAndEditSearchHtmlBannerTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SearchCEDBannerTest">
+                <methods>
+                    <include name="createAndEditSearchHtmlBannerTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- RedirectTest methods -->
+    <test name="Merch - SearchCEDRedirectTest - createEditDeleteRedirectTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SearchCEDRedirectTest">
+                <methods>
+                    <include name="createEditDeleteRedirectTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SearchRedirectTest - stopAndDuplicateRedirectTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.SearchRedirectTest">
+                <methods>
+                    <include name="stopAndDuplicateRedirectTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- PinningTest methods -->
+    <test name="Merch - PinningTest - pinningCreateTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PinningTest">
+                <methods>
+                    <include name="pinningCreateTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - PinningTest - pinTheProductFromConsolePreviewTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PinTheProductFromConsoleTest">
+                <methods>
+                    <include name="pinTheProductFromConsolePreviewTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
