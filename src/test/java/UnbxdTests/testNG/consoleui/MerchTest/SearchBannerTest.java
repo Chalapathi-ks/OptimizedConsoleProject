@@ -164,6 +164,7 @@ public class SearchBannerTest extends MerchandisingTest {
         searchPage.await();
         merchandisingActions.goToSection(UnbxdEnum.BANNER);
         searchPageActions.deleteQueryRule(query);
+        searchPage.await();
         searchPageActions.awaitForSuccessToastPresence();
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
         searchPage.await();

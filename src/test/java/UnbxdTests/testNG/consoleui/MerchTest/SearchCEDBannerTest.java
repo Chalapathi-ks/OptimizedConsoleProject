@@ -44,6 +44,14 @@ public class SearchCEDBannerTest extends MerchandisingTest {
 
     public String page;
 
+    /** Wait for the rule to appear in the list after publish (UI may update asynchronously). */
+    private void awaitForRuleInList(String ruleName) {
+        for (int i = 0; i < 15; i++) {
+            searchPage.await();
+            if (searchPage.queryRuleByName(ruleName) != null) return;
+            try { Thread.sleep(1000); } catch (InterruptedException e) { Thread.currentThread().interrupt(); break; }
+        }
+    }
 
     @FileToTest(value = "/consoleTestData/htmlBanner.json")
     @Test(description = "Verifies the creation and editing of a search banner with HTML content.",groups="sanity",priority = 1,dataProviderClass = ResourceLoader.class, dataProvider = "getTestDataFromFile")
@@ -67,6 +75,8 @@ public class SearchCEDBannerTest extends MerchandisingTest {
         bannerActions.addHtmlBanner(html);
         merchandisingActions.publishCampaign();
         merchandisingActions.verifySuccessMessage();
+        merchandisingActions.await();
+        awaitForRuleInList(query);
         Assert.assertNotNull(searchPage.queryRuleByName(query));
         queryRules.add(query);
 
@@ -102,6 +112,8 @@ public class SearchCEDBannerTest extends MerchandisingTest {
         bannerActions.addImgBanner(editImg);
         merchandisingActions.publishCampaign();
         merchandisingActions.verifySuccessMessage();
+        merchandisingActions.await();
+        awaitForRuleInList(query);
         Assert.assertNotNull(searchPage.queryRuleByName(query));
 
 //        merchandisingActions.openPreviewAndSwitchTheTab();
@@ -128,6 +140,8 @@ public class SearchCEDBannerTest extends MerchandisingTest {
         merchandisingActions.goToSection(UnbxdEnum.BANNER);
         searchPageActions.awaitForPageToLoad();
         searchPageActions.deleteQueryRule(query);
+        searchPage.await();
+        searchPageActions.awaitForSuccessToastPresence();
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
 
     }

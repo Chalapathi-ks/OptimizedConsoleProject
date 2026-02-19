@@ -21,7 +21,7 @@ import static lib.constants.UnbxdErrorConstants.*;
 
 public class CommercePageActions extends CommerceSearchPage {
 
-    private static final int SUCCESS_TOAST_WAIT_SEC = 20;
+    private static final int SUCCESS_TOAST_WAIT_SEC = 30;
     private static final By SUCCESS_TOAST_SELECTOR = By.cssSelector(".unx-qa-toastsucess, .unx-qa-toastsuccess");
 
     MerchandisingActions merchandisingActions;

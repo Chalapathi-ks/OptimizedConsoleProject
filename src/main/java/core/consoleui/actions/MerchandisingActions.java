@@ -136,37 +136,38 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         String xpath1 = "//abbr[@aria-label='" + tomorrowLabel.replace("'", "\\'") + "']/parent::button";
         String xpath2 = "//abbr[@aria-label='" + dayAfterLabel.replace("'", "\\'") + "']/parent::button";
 
-        // Click via JS using XPath evaluated in-browser so we never pass a WebElement proxy to executeScript (avoids jdk.proxy2.$Proxy13)
+        // Click via JS using XPath in-browser only (no WebElement passed = no jdk.proxy2.$Proxy13)
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        String script = "var el = document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue; if(el) el.click();";
-        js.executeScript(script, xpath1);
+        String script = "var el = document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue; if(el) { el.click(); return true; } return false;";
+        Boolean ok1 = (Boolean) js.executeScript(script, xpath1);
         await();
-        js.executeScript(script, xpath2);
+        Boolean ok2 = (Boolean) js.executeScript(script, xpath2);
         await();
+        // Fallback when aria-label format doesn't match (e.g. locale): click next two enabled tiles after today
+        if (!Boolean.TRUE.equals(ok1)) {
+            js.executeScript(
+                "var tiles = document.querySelectorAll('.react-calendar__tile:not(.react-calendar__tile--disabled)');" +
+                "var today = document.querySelector('.react-calendar__tile--now'); var i = today ? [].indexOf.call(tiles, today) : 0;" +
+                "if (i >= 0 && tiles[i+1]) tiles[i+1].click();");
+            await();
+            js.executeScript(
+                "var tiles = document.querySelectorAll('.react-calendar__tile:not(.react-calendar__tile--disabled)');" +
+                "var today = document.querySelector('.react-calendar__tile--now'); var i = today ? [].indexOf.call(tiles, today) : 0;" +
+                "if (i >= 0 && tiles[i+2]) tiles[i+2].click();");
+            await();
+        }
     }
 
     public void timeZoneSelection(){
         scrollUntilVisible(timezoneDropdown);
         waitForElementToBeClickable(timezoneDropdown, "Timezone dropdown");
-        try {
-            timezoneDropdown.click();
-        } catch (ElementClickInterceptedException e) {
-            WebElement el = getConcreteWebElement(timezoneDropdown);
-            if (el == null) el = unwrapWebElement(timezoneDropdown.getElement());
-            if (el != null) ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", el);
-        }
+        clickUsingJS(timezoneDropdown);
         awaitForElementPresence(zoneinput);
         zoneinput.fill().with("kolkata");
         scrollUntilVisible(timezonelist);
         awaitForElementPresence(timezonelist);
         waitForElementToBeClickable(timezonelist, "Timezone list option");
-        try {
-            timezonelist.click();
-        } catch (ElementClickInterceptedException e) {
-            WebElement el = getConcreteWebElement(timezonelist);
-            if (el == null) el = unwrapWebElement(timezonelist.getElement());
-            if (el != null) ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", el);
-        }
+        clickUsingJS(timezonelist);
     }
 
 

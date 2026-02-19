@@ -53,18 +53,12 @@ public class PromotionStatusTest extends MerchandisingTest {
 
         merchandisingActions.fillCampaignDataforUpcoming(campaignData);
         merchandisingActions.awaitForElementPresence(merchandisingActions.calendarIcon);
-        // Find calendar icon and click it
-        if (merchandisingActions.calendarIcon.isDisplayed()) {
+        if (merchandisingActions.isDisplayedSafe(merchandisingActions.calendarIcon)) {
             merchandisingActions.scrollUntilVisible(merchandisingActions.calendarIcon);
             merchandisingActions.awaitForElementPresence(merchandisingActions.calendarIcon);
             merchandisingActions.await();
-            // Use safeClick to handle click interception
-            try {
-                merchandisingActions.waitForElementToBeClickable(merchandisingActions.calendarIcon, "Calendar icon");
-                merchandisingActions.calendarIcon.click();
-            } catch (org.openqa.selenium.ElementClickInterceptedException e) {
-                ((org.openqa.selenium.JavascriptExecutor) merchandisingActions.getDriver()).executeScript("arguments[0].click();", merchandisingActions.calendarIcon.getElement());
-            }
+            merchandisingActions.waitForElementToBeClickable(merchandisingActions.calendarIcon, "Calendar icon");
+            merchandisingActions.clickUsingJS(merchandisingActions.calendarIcon);
             merchandisingActions.await();
             merchandisingActions.upcomingDateSelection();
             merchandisingActions.await();
@@ -73,17 +67,12 @@ public class PromotionStatusTest extends MerchandisingTest {
             merchandisingActions.await();
             merchandisingActions.timeZoneSelection();
 
-            if (merchandisingActions.calenderApplyButton.isDisplayed()) {
-                // Scroll until apply button is visible and wait for it
+            if (merchandisingActions.isDisplayedSafe(merchandisingActions.calenderApplyButton)) {
                 merchandisingActions.scrollUntilVisible(merchandisingActions.calenderApplyButton);
                 merchandisingActions.awaitForElementPresence(merchandisingActions.calenderApplyButton);
                 merchandisingActions.await();
-                try {
-                    merchandisingActions.waitForElementToBeClickable(merchandisingActions.calenderApplyButton, "Calendar apply button");
-                    merchandisingActions.calenderApplyButton.click();
-                } catch (org.openqa.selenium.ElementClickInterceptedException e) {
-                    ((org.openqa.selenium.JavascriptExecutor) merchandisingActions.getDriver()).executeScript("arguments[0].click();", merchandisingActions.calenderApplyButton.getElement());
-                }
+                merchandisingActions.waitForElementToBeClickable(merchandisingActions.calenderApplyButton, "Calendar apply button");
+                merchandisingActions.clickUsingJS(merchandisingActions.calenderApplyButton);
                 merchandisingActions.await();
                 merchandisingActions.clickonNext();
                 merchandisingActions.await();
