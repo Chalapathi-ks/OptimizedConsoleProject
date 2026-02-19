@@ -141,7 +141,7 @@ public class UiBase extends FluentPage {
     }
 
     /** Returns a WebElement safe for executeScript (never a proxy). Re-finds by CSS if el is still a proxy. */
-    private WebElement ensureConcreteForScript(FluentWebElement target, WebElement el) {
+    protected WebElement ensureConcreteForScript(FluentWebElement target, WebElement el) {
         if (el == null) return null;
         if (el.getClass().getSimpleName().startsWith("$")) {
             try {
@@ -298,13 +298,16 @@ public class UiBase extends FluentPage {
     }
     
 
-    public Boolean awaitForElementPresence(final FluentWebElement element) {
+    /** Max wait (seconds) for element presence; avoid long blocks when element never appears. */
+    private static final int AWAIT_PRESENCE_TIMEOUT_SEC = 15;
 
+    public Boolean awaitForElementPresence(final FluentWebElement element) {
         Function<Fluent, FluentWebElement> function = new Function<Fluent, FluentWebElement>() {
             public FluentWebElement apply(Fluent fluent) {
                 try {
                     WebElement el = getConcreteWebElement(element);
                     if (el == null) el = unwrapWebElement(element.getElement());
+                    el = ensureConcreteForScript(element, el);
                     if (el != null && el.isDisplayed())
                         return element;
                 } catch (Exception ignored) { }
@@ -312,21 +315,31 @@ public class UiBase extends FluentPage {
             }
         };
         try {
-            await().atMost(getMaxTimeout()).until(function);
+            await().atMost(AWAIT_PRESENCE_TIMEOUT_SEC).until(function);
         } catch (WebDriverException e) {
             e.printStackTrace();
             return false;
         }
-
         return true;
     }
 
+    /** Waits for page load up to 10s (avoids long block after dashboard before goTo). */
     public Boolean awaitForPageToLoad() {
         try {
-            await().atMost(getMaxTimeout()).withMessage("Waiting for the Page Load is failed").untilPage().isLoaded();
+            await().atMost(10).withMessage("Waiting for the Page Load is failed").untilPage().isLoaded();
             return true;
         } catch (Exception e) {
             System.out.println("Waiting for the Page Load is failed");
+            return false;
+        }
+    }
+
+    /** Short page-load wait (5s max) for cookie reuse / pre-navigation; use when about to navigate away. */
+    public Boolean awaitForPageToLoadQuick() {
+        try {
+            await().atMost(5).untilPage().isLoaded();
+            return true;
+        } catch (Exception e) {
             return false;
         }
     }
@@ -361,6 +374,15 @@ public class UiBase extends FluentPage {
             Thread.sleep(4000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }
+    }
+
+    /** Short stabilization wait (400ms) for UI after scroll/click; use instead of threadWait in hot paths. */
+    protected void shortWait() {
+        try {
+            Thread.sleep(400);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
     }
 
@@ -453,11 +475,10 @@ public class UiBase extends FluentPage {
 
     public void unbxdInputBoxSearch(FluentWebElement element, String name) {
         try {
-            //String campaignName = campaignCreationPage.fillCampaignData();
             awaitForElementPresence(element);
-            threadWait();
+            shortWait();
             element.getElement().sendKeys(name);
-            threadWait();
+            shortWait();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -862,17 +883,15 @@ public class UiBase extends FluentPage {
         try {
             WebElement webElement = getConcreteWebElement(element);
             if (webElement == null) webElement = unwrapWebElement(element.getElement());
+            webElement = ensureConcreteForScript(element, webElement);
+            if (webElement == null) return;
             JavascriptExecutor js = (JavascriptExecutor) getDriver();
-
-            // Check if element is already visible
             if (isElementInViewport(element)) {
                 System.out.println("Element is already visible");
                 return;
             }
-
-            // Scroll to element - center it in viewport
             js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});", webElement);
-            threadWait();
+            shortWait();
 
             // Verify it's now visible
             if (isElementInViewport(element)) {
@@ -895,14 +914,10 @@ public class UiBase extends FluentPage {
         try {
             WebElement webElement = getConcreteWebElement(element);
             if (webElement == null) webElement = unwrapWebElement(element.getElement());
+            webElement = ensureConcreteForScript(element, webElement);
+            if (webElement == null) return false;
             JavascriptExecutor js = (JavascriptExecutor) getDriver();
-
-            // Check if element is displayed first
-            if (!webElement.isDisplayed()) {
-                return false;
-            }
-
-            // Check if element is in viewport using JavaScript
+            if (!webElement.isDisplayed()) return false;
             Boolean isVisible = (Boolean) js.executeScript(
                     "var rect = arguments[0].getBoundingClientRect();" +
                             "return (" +
@@ -913,9 +928,7 @@ public class UiBase extends FluentPage {
                             ");",
                     webElement
             );
-
-            return isVisible;
-
+            return Boolean.TRUE.equals(isVisible);
         } catch (Exception e) {
             System.out.println("Error checking element visibility: " + e.getMessage());
             return false;
@@ -1087,7 +1100,6 @@ public class UiBase extends FluentPage {
     public void safeClick(org.fluentlenium.core.domain.FluentWebElement element) {
         final FluentWebElement target = element;
         try {
-            awaitTillElementDisplayed(target);
             scrollUntilVisible(target);
             waitForElementToBeClickable(target, "element");
             target.click();
@@ -1099,7 +1111,7 @@ public class UiBase extends FluentPage {
                 if (el != null) {
                     ((JavascriptExecutor) getDriver())
                             .executeScript("arguments[0].scrollIntoView({behavior:'instant',block:'center',inline:'center'});", el);
-                    ThreadWait();
+                    shortWait();
                     ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", el);
                 }
             } catch (Exception ex) {
@@ -1118,13 +1130,13 @@ public class UiBase extends FluentPage {
                 throw ex;
             }
         } finally {
-            ThreadWait();
+            shortWait();
         }
     }
 
     private void robustClick(org.fluentlenium.core.domain.FluentWebElement element) {
         try {
-            ThreadWait();
+            shortWait();
             element.click();
         } catch (Exception e) {
             WebElement el = getConcreteWebElement(element);

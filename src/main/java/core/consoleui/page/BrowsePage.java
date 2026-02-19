@@ -12,8 +12,7 @@ public class BrowsePage extends ConsoleCommonPage  {
 
     public String getUrl()
     {
-        awaitForPageToLoad();
-        return  BROWSE_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
+        return BROWSE_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 
 }

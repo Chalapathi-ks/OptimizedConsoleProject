@@ -118,7 +118,6 @@ public class SegmentPage extends ConsoleCommonPage  {
 
     public String getUrl()
     {
-        awaitForPageToLoad();
-        return  SEGMENT_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
+        return SEGMENT_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 }

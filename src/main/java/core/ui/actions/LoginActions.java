@@ -49,11 +49,11 @@ public class LoginActions extends WelcomePage {
 
     private void loginWith(String email,String pwd) {
         goTo(this);
-        awaitForPageToLoad();
+        awaitForPageToLoadQuick();
         try {
-            Thread.sleep(10000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
         Assert.assertTrue(awaitForElementPresence(loginTitle), "Login page is not yet loaded");
         awaitForElementPresence(emailInputBox);

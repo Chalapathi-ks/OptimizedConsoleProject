@@ -82,7 +82,7 @@ public class GlobalLoginManager {
             
             // Navigate to the application URL first
             loginActions.goTo(loginActions);
-            loginActions.awaitForPageToLoad();
+            loginActions.awaitForPageToLoadQuick();
             
             // Try to reuse cookies
             if (!GlobalCookieManager.reuseCookies(driver)) {
@@ -92,7 +92,7 @@ public class GlobalLoginManager {
             
             // Navigate to a protected page to verify session
             loginActions.goTo(loginActions);
-            loginActions.awaitForPageToLoad();
+            loginActions.awaitForPageToLoadQuick();
             
             // Check if session is valid
             if (GlobalCookieManager.isSessionValid(driver)) {

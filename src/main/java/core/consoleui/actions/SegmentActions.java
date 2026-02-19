@@ -43,24 +43,23 @@ public class SegmentActions extends SegmentPage {
     }
 
     public void selectTypeValues(UnbxdEnum type,String segmentvalue) throws InterruptedException {
-        ThreadWait();
-        click(userTypeFilter);
+        shortWait();
+        safeClick(userTypeFilter);
         selectDropDownValue(typeValueList,segmentvalue);
-        ThreadWait();
-        click(userTypeFilter);
-        ThreadWait();
-        click(outsideBox);
-
-
+        shortWait();
+        safeClick(userTypeFilter);
+        shortWait();
+        safeClick(outsideBox);
     }
+
     public void selectDeviceType(UnbxdEnum type,String segmentvalue) throws InterruptedException {
-        ThreadWait();
-        click(deviceTypeFilter);
+        shortWait();
+        safeClick(deviceTypeFilter);
         selectDropDownValue(typeValueList,segmentvalue);
-        ThreadWait();
-        click(deviceTypeFilter);
-        ThreadWait();
-        click(outsideBox);
+        shortWait();
+        safeClick(deviceTypeFilter);
+        shortWait();
+        safeClick(outsideBox);
     }
 
     public void removeSegmentValues(String SegmentType)
@@ -92,14 +91,14 @@ public class SegmentActions extends SegmentPage {
     public FluentWebElement segmentRuleByName(String name) {
         final int maxAttempts = 3;
         for (int attempt = 1; attempt <= maxAttempts; attempt++) {
-            ThreadWait();
+            shortWait();
             awaitForElementPresence(searchPageActions.searchIcon);
             if (searchPageActions.queryRulesList.size() == 0) {
-                if (attempt < maxAttempts) { threadWait(); continue; }
+                if (attempt < maxAttempts) { shortWait(); continue; }
                 return null;
             }
             safeClick(searchPageActions.searchIcon);
-            ThreadWait();
+            shortWait();
             scrollUntilVisible(searchPageActions.searchInputBox);
             safeClick(searchPageActions.searchInputBox);
             searchPageActions.searchInputBox.clear();
@@ -112,7 +111,7 @@ public class SegmentActions extends SegmentPage {
                 } catch (Exception ignored) { }
             }
             if (attempt < maxAttempts)
-                threadWait();
+                shortWait();
         }
         return null;
     }
@@ -123,16 +122,19 @@ public class SegmentActions extends SegmentPage {
             deleteSegmentRule(segmentname);
             searchPageActions.awaitForElementPresence(searchPageActions.addBannerButton);
             ThreadWait();
-            click(searchPageActions.addRuleButton);
-            threadWait();
+            safeClick(searchPageActions.addRuleButton);
+            shortWait();
             fillSegmentName(segmentname);
+            shortWait();
         }else{
             if(searchPageActions.awaitForElementPresence(searchPageActions.addRuleButton));
-            ThreadWait();
-            click(searchPageActions.addRuleButton);
+            shortWait();
+            safeClick(searchPageActions.addRuleButton);
+            shortWait();
             fillSegmentName(segmentname);
+            shortWait();
         }
-
+        awaitForElementPresence(userTypeFilter);
     }
 
 
@@ -245,7 +247,7 @@ public class SegmentActions extends SegmentPage {
         safeClick(customAttributeDropdown);
         ThreadWait();
         FluentWebElement searchInput = null;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             try {
                 searchInput = findFirst(".RCB-dd-search .RCB-dd-search-ip");
                 if (searchInput != null && searchInput.isDisplayed()) break;
@@ -256,7 +258,7 @@ public class SegmentActions extends SegmentPage {
                     if (searchInput != null && searchInput.isDisplayed()) break;
                 } catch (Exception ignored) { }
             }
-            threadWait();
+            shortWait();
         }
         if (searchInput == null)
             searchInput = findFirst(".RCB-dd-search-ip");
@@ -270,7 +272,7 @@ public class SegmentActions extends SegmentPage {
         boolean found = false;
         for (FluentWebElement option : options) {
             if (option.getText().trim().equalsIgnoreCase(Value)) {
-                ThreadWait();
+                shortWait();
                 option.click();
                 found = true;
                 break;
