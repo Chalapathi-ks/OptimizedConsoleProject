@@ -26,7 +26,7 @@ public class SegmentPage extends ConsoleCommonPage  {
     @FindBy(css=".RCB-dd-search-ip")
     public FluentWebElement locationFilter;
 
-    @FindBy(xpath="//*[text()=\"User Type\"]//following::*[contains(@class,\"seg-item-col\")][1]")
+    @FindBy(xpath="//*[contains(normalize-space(text()),'User Type') or contains(normalize-space(text()),'User type')]//following::*[contains(@class,'seg-item-col')][1]")
     public FluentWebElement UserTypeinListingPage;
 
     @FindBy(xpath="//*[text()=\"Add visitor types\"]//following::*[contains(@class,\"RCB-select-arrow\")][1]")

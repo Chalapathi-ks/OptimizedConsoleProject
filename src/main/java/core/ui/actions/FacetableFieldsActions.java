@@ -159,6 +159,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
         selectValueBYMatchingText(facetAttribute);
         await();
         displayNameInput.fill().with(name);
+        awaitForElementPresence(facetEnableToggle);
         if(!checkElementPresence(activeToggle))
         {
             click(facetEnableToggle);
@@ -169,6 +170,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
             click(facetEnableToggle);
             threadWait();
             click(facetEnableToggle);
+            awaitForElementPresence(activeToggle);
             Assert.assertTrue(activeToggle.isDisplayed());
         }
 
@@ -231,6 +233,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
             ThreadWait();
         }
 
+        awaitForElementPresence(facetEnableToggle);
          if(checkElementPresence(activeToggle))
         {
             ThreadWait();

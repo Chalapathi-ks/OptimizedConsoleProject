@@ -98,6 +98,7 @@ public class SearchBannerTest extends MerchandisingTest {
         searchPageActions.deleteQueryRule(query);
         searchPage.await();
         searchPageActions.deleteQueryRule(query);
+        searchPageActions.awaitForSuccessToastPresence();
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
         searchPage.await();
 

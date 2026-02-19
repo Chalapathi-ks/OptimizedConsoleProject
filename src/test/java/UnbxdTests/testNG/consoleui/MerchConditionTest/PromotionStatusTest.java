@@ -193,6 +193,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         merchandisingActions.verifySuccessMessage();
         merchandisingActions.await();
         Assert.assertNotNull(searchPage.queryRuleByName(query));
+        merchandisingActions.awaitForElementPresence(merchandisingActions.activeStatus);
         Assert.assertTrue(merchandisingActions.activeStatus.isDisplayed(),"SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
 
         //Stopped the rule
@@ -218,6 +219,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         merchandisingActions.await();
         searchPage.queryRuleByName(query);
         merchandisingActions.campaignPromotions.getText().contains("copy");
+        merchandisingActions.awaitForElementPresence(merchandisingActions.activeStatus);
         Assert.assertTrue(merchandisingActions.activeStatus.isDisplayed(),"SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
 
         goTo(searchPage);

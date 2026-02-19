@@ -71,10 +71,14 @@ public class SearchCEDRedirectTest extends MerchandisingTest {
         searchPageActions.selectActionType(UnbxdEnum.PREVIEW, query);
         ThreadWait();
         merchandisingActions.awaitForElementPresence(searchPageActions.redirectPreview);
-        new WebDriverWait(merchandisingActions.getDriver(), 30).until(new ExpectedCondition<Boolean>() {
+        new WebDriverWait(merchandisingActions.getDriver(), 60).until(new ExpectedCondition<Boolean>() {
             @Override
             public Boolean apply(WebDriver driver) {
-                return editRedirectUrl.equals(searchPageActions.redirectPreview.getValue());
+                try {
+                    return editRedirectUrl.equals(searchPageActions.redirectPreview.getValue());
+                } catch (Exception e) {
+                    return false;
+                }
             }
         });
         Assert.assertEquals(searchPageActions.redirectPreview.getValue(), editRedirectUrl, "REDIRECT URL IS NOT SAME AS GIVEN");

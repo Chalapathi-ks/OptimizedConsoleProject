@@ -629,10 +629,7 @@ public class UiBase extends FluentPage {
 
     public  void waitForElementToBeClickable(FluentWebElement locator, String elemName, int numOfRetries, int interval) {
 
-        String result = null;
         WebDriverWait wait = new WebDriverWait(getDriver(), interval);
-       // WebDriverWait wait = new WebDriverWait(getDriver(), 15);
-        // FluentWebElement element;
         for (int i = 0; i < numOfRetries; i++) {
         try {
             APPLICATION_LOGS.debug("waiting for " + elemName + "to appear");
@@ -640,6 +637,7 @@ public class UiBase extends FluentPage {
 
                 WebElement el = getConcreteWebElement(locator);
                 if (el == null) el = unwrapWebElement(locator.getElement());
+                el = ensureConcreteForScript(locator, el);
                 if (el != null)
                     wait.until(ExpectedConditions.elementToBeClickable(el));
 
@@ -659,7 +657,6 @@ public class UiBase extends FluentPage {
 
     public  void waitForElementToBeClickable(FluentWebElement locator, String elemName) {
 
-        String result = null;
          WebDriverWait wait = new WebDriverWait(getDriver(), 15);
 
             try {
@@ -668,6 +665,7 @@ public class UiBase extends FluentPage {
 
                 WebElement el = getConcreteWebElement(locator);
                 if (el == null) el = unwrapWebElement(locator.getElement());
+                el = ensureConcreteForScript(locator, el);
                 if (el != null)
                     wait.until(ExpectedConditions.elementToBeClickable(el));
 

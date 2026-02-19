@@ -102,6 +102,8 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         safeClick(similarQueriesAddlabel);
         awaitForElementPresence(applyChanges);
         scrollUntilVisible(applyChanges);
+        waitForElementToBeClickable(applyChanges, "Apply changes (similar queries)", 1, 20);
+        shortWait();
         safeClick(applyChanges);
         await();
     }
