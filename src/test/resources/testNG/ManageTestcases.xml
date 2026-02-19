@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="ManageTestcases" parallel="tests" thread-count="32" verbose="10" preserve-order="true">
+<suite name="ManageTestcases" parallel="tests" thread-count="22" verbose="10" preserve-order="true">
 
     <!-- manageSearchFacetTest methods -->
     <test name="SearchManageTest - manageSearchFacetTest - FacetRanking">

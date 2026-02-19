@@ -244,7 +244,7 @@ public class UiBase extends FluentPage {
 
     public void threadWait() {
         try {
-            Thread.sleep(4000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
