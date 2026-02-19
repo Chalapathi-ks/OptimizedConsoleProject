@@ -10,13 +10,19 @@ import org.testng.ITestResult;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.apache.commons.io.FileUtils;
 
 public class ExtentTestNGITestListener implements ITestListener {
 
     private static ExtentReports extent = ExtentManager.createInstance("extent.html");
-    private static ThreadLocal<ExtentTest> parentTest = new ThreadLocal();
-    private static ThreadLocal<ExtentTest> test = new ThreadLocal();
+    private static ThreadLocal<ExtentTest> parentTest = new ThreadLocal<>();
+    private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
+    /** Parent test per context so we can set end time in onFinish (avoids 0h 0m 0s at suite level). */
+    private static final Map<String, ExtentTest> parentByContextName = new ConcurrentHashMap<>();
 
     ExtentTest parent, subChild;
     ITestContext context;
@@ -33,6 +39,7 @@ public class ExtentTestNGITestListener implements ITestListener {
         try {
             if (parentTest.get() != null) {
                 ExtentTest child = parentTest.get().createNode(" Test " + iTestResult.getMethod().getMethodName(), iTestResult.getMethod().getDescription());
+                setTestTimes(child, iTestResult);
                 test.set(child);
                 appendTestInfoInReport(Status.PASS, iTestResult);
             }
@@ -46,6 +53,7 @@ public class ExtentTestNGITestListener implements ITestListener {
         try {
             if (parentTest.get() != null) {
                 ExtentTest child = parentTest.get().createNode("Test :" + iTestResult.getMethod().getMethodName(), iTestResult.getMethod().getDescription());
+                setTestTimes(child, iTestResult);
                 test.set(child);
                 appendTestInfoInReport(Status.FAIL, iTestResult);
             }
@@ -59,11 +67,26 @@ public class ExtentTestNGITestListener implements ITestListener {
         try {
             if (parentTest.get() != null) {
                 ExtentTest child = parentTest.get().createNode("Test :" + iTestResult.getMethod().getMethodName(), iTestResult.getMethod().getDescription());
+                setTestTimes(child, iTestResult);
                 test.set(child);
                 appendTestInfoInReport(Status.SKIP, iTestResult);
             }
         } catch (Exception e) {
             System.err.println("Error in onTestSkipped: " + e.getMessage());
+        }
+    }
+
+    /** Sets start/end time from TestNG result so report shows actual test execution duration. */
+    private static void setTestTimes(ExtentTest extentTest, ITestResult iTestResult) {
+        try {
+            long startMs = iTestResult.getStartMillis();
+            long endMs = iTestResult.getEndMillis();
+            if (extentTest.getModel() != null) {
+                if (startMs > 0) extentTest.getModel().setStartTime(new Date(startMs));
+                if (endMs > 0) extentTest.getModel().setEndTime(new Date(endMs));
+            }
+        } catch (Exception e) {
+            System.err.println("Could not set test times in report: " + e.getMessage());
         }
     }
 
@@ -75,12 +98,22 @@ public class ExtentTestNGITestListener implements ITestListener {
     @Override
     public  synchronized void onStart(ITestContext iTestContext) {
         this.context = iTestContext;
-        parent = extent.createTest(context.getName());
+        parent = extent.createTest(iTestContext.getName());
         parentTest.set(parent);
+        parentByContextName.put(iTestContext.getName(), parent);
     }
 
     @Override
     public synchronized void onFinish(ITestContext iTestContext) {
+        ExtentTest contextParent = parentByContextName.remove(iTestContext.getName());
+        if (contextParent != null) {
+            try {
+                if (contextParent.getModel() != null)
+                    contextParent.getModel().setEndTime(new Date());
+            } catch (Exception e) {
+                System.err.println("Could not set parent test end time: " + e.getMessage());
+            }
+        }
         extent.flush();
         // Ensure Extent_Report exists and copy the HTML to a stable location for Jenkins artifact publishing
         try {

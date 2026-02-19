@@ -90,20 +90,29 @@ public class SegmentActions extends SegmentPage {
     }
 
     public FluentWebElement segmentRuleByName(String name) {
-        ThreadWait();
-        awaitForElementPresence(searchPageActions.searchIcon);
-        if (searchPageActions.queryRulesList.size() == 0)
-            return null;
-        click(searchPageActions.searchIcon);
-        ThreadWait();
-        searchPageActions.searchInputBox.click();
-        searchPageActions.searchInputBox.clear();
-        unbxdInputBoxSearch(searchPageActions.searchInputBox, name);
-        await();
-        for (FluentWebElement e : searchPageActions.queryRulesList) {
-            if (searchPageActions.getQueryNameFromQueryRule(e).trim().contains(name)) {
-                return e;
+        final int maxAttempts = 3;
+        for (int attempt = 1; attempt <= maxAttempts; attempt++) {
+            ThreadWait();
+            awaitForElementPresence(searchPageActions.searchIcon);
+            if (searchPageActions.queryRulesList.size() == 0) {
+                if (attempt < maxAttempts) { threadWait(); continue; }
+                return null;
             }
+            safeClick(searchPageActions.searchIcon);
+            ThreadWait();
+            scrollUntilVisible(searchPageActions.searchInputBox);
+            safeClick(searchPageActions.searchInputBox);
+            searchPageActions.searchInputBox.clear();
+            unbxdInputBoxSearch(searchPageActions.searchInputBox, name);
+            await();
+            for (FluentWebElement e : searchPageActions.queryRulesList) {
+                try {
+                    if (searchPageActions.getQueryNameFromQueryRule(e).trim().contains(name))
+                        return e;
+                } catch (Exception ignored) { }
+            }
+            if (attempt < maxAttempts)
+                threadWait();
         }
         return null;
     }
@@ -233,9 +242,29 @@ public class SegmentActions extends SegmentPage {
         // Click on the custom attribute dropdown
         ThreadWait();
         awaitForElementPresence(customAttributeDropdown);
-        click(customAttributeDropdown);
+        safeClick(customAttributeDropdown);
         ThreadWait();
-        findFirst(".RCB-dd-search .RCB-dd-search-ip").fill().with(Value);
+        FluentWebElement searchInput = null;
+        for (int i = 0; i < 5; i++) {
+            try {
+                searchInput = findFirst(".RCB-dd-search .RCB-dd-search-ip");
+                if (searchInput != null && searchInput.isDisplayed()) break;
+            } catch (Exception ignored) { }
+            if (searchInput == null || !searchInput.isDisplayed()) {
+                try {
+                    searchInput = findFirst(".RCB-dd-search-ip");
+                    if (searchInput != null && searchInput.isDisplayed()) break;
+                } catch (Exception ignored) { }
+            }
+            threadWait();
+        }
+        if (searchInput == null)
+            searchInput = findFirst(".RCB-dd-search-ip");
+        if (searchInput == null)
+            throw new RuntimeException("Could not find custom attribute dropdown search input (.RCB-dd-search .RCB-dd-search-ip or .RCB-dd-search-ip)");
+        awaitForElementPresence(searchInput);
+        scrollUntilVisible(searchInput);
+        searchInput.fill().with(Value);
         // Find and click the matching option in the dropdown
         FluentList<FluentWebElement> options = find(".RCB-list-item");
         boolean found = false;

@@ -98,7 +98,7 @@ public class CampaignCreationPage extends UnbxdCommonPage {
         await();
         FluentWebElement nameInput = getCampaignNameInput();
         scrollUntilVisible(nameInput);
-        nameInput.click();
+        safeClick(nameInput);
         await();
         nameInput.fill().with(campaignName);
         awaitForElementPresence(moreOptionLink);
@@ -175,12 +175,12 @@ public class CampaignCreationPage extends UnbxdCommonPage {
         await();
         FluentWebElement nameInput = getCampaignNameInput();
         scrollUntilVisible(nameInput);
-        nameInput.click();
+        safeClick(nameInput);
         await();
         nameInput.fill().with(campaignName);
-        awaitForElementPresence(moreOptionLink);
+        /*awaitForElementPresence(moreOptionLink);
         await();
-        click(moreOptionLink);
+        click(moreOptionLink);*/
         await();
 
         awaitTillElementDisplayed(nextButton);

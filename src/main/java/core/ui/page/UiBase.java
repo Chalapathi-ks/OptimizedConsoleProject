@@ -140,6 +140,20 @@ public class UiBase extends FluentPage {
         return w;
     }
 
+    /** Returns a WebElement safe for executeScript (never a proxy). Re-finds by CSS if el is still a proxy. */
+    private WebElement ensureConcreteForScript(FluentWebElement target, WebElement el) {
+        if (el == null) return null;
+        if (el.getClass().getSimpleName().startsWith("$")) {
+            try {
+                String css = getCssLocatorForFluent(target);
+                if (css != null && !css.isEmpty())
+                    return getDriver().findElement(By.cssSelector(css));
+            } catch (Exception ignored) { }
+            return null;
+        }
+        return el;
+    }
+
     private static String loadAndGetResourceLocation(String fileName) throws URISyntaxException {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         return classLoader.getResource(fileName).toString();
@@ -249,11 +263,7 @@ public class UiBase extends FluentPage {
     public org.fluentlenium.core.Fluent click(org.fluentlenium.core.action.FluentDefaultActions fluentObject) {
         FluentWebElement element = (FluentWebElement) fluentObject;
         awaitForElementPresence(element);
-        try {
-            return super.click(fluentObject);
-        } catch (WebDriverException e) {
-            e.printStackTrace();
-        }
+        safeClick(element);
         return this;
     }
 
@@ -292,9 +302,12 @@ public class UiBase extends FluentPage {
 
         Function<Fluent, FluentWebElement> function = new Function<Fluent, FluentWebElement>() {
             public FluentWebElement apply(Fluent fluent) {
-                if (element.isDisplayed()) {
-                    return element;
-                }
+                try {
+                    WebElement el = getConcreteWebElement(element);
+                    if (el == null) el = unwrapWebElement(element.getElement());
+                    if (el != null && el.isDisplayed())
+                        return element;
+                } catch (Exception ignored) { }
                 return null;
             }
         };
@@ -598,12 +611,10 @@ public class UiBase extends FluentPage {
             APPLICATION_LOGS.debug("waiting for " + elemName + "to appear");
             System.out.println("waiting for " + elemName + "to appear");
 
-                if (locator.isEnabled()) {
-                    WebElement el = getConcreteWebElement(locator);
-                    if (el == null) el = unwrapWebElement(locator.getElement());
-                    if (el != null)
-                        wait.until(ExpectedConditions.elementToBeClickable(el));
-                }
+                WebElement el = getConcreteWebElement(locator);
+                if (el == null) el = unwrapWebElement(locator.getElement());
+                if (el != null)
+                    wait.until(ExpectedConditions.elementToBeClickable(el));
 
             APPLICATION_LOGS.debug("waited for " + elemName + "to appear");
             System.out.println("waited for " + elemName + "to appear");
@@ -628,12 +639,10 @@ public class UiBase extends FluentPage {
                 APPLICATION_LOGS.debug("waiting for " + elemName + "to appear");
                 System.out.println("waiting for " + elemName + "to appear");
 
-                if (locator.isEnabled()) {
-                    WebElement el = getConcreteWebElement(locator);
-                    if (el == null) el = unwrapWebElement(locator.getElement());
-                    if (el != null)
-                        wait.until(ExpectedConditions.elementToBeClickable(el));
-                }
+                WebElement el = getConcreteWebElement(locator);
+                if (el == null) el = unwrapWebElement(locator.getElement());
+                if (el != null)
+                    wait.until(ExpectedConditions.elementToBeClickable(el));
 
                 APPLICATION_LOGS.debug("waited for " + elemName + "to appear");
                 System.out.println("waited for " + elemName + "to appear");
@@ -1086,6 +1095,7 @@ public class UiBase extends FluentPage {
             try {
                 WebElement el = getConcreteWebElement(target);
                 if (el == null) el = unwrapWebElement(target.getElement());
+                el = ensureConcreteForScript(target, el);
                 if (el != null) {
                     ((JavascriptExecutor) getDriver())
                             .executeScript("arguments[0].scrollIntoView({behavior:'instant',block:'center',inline:'center'});", el);
@@ -1100,6 +1110,7 @@ public class UiBase extends FluentPage {
             try {
                 WebElement el = getConcreteWebElement(target);
                 if (el == null) el = unwrapWebElement(target.getElement());
+                el = ensureConcreteForScript(target, el);
                 if (el != null)
                     ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", el);
             } catch (Exception ex) {
@@ -1118,6 +1129,7 @@ public class UiBase extends FluentPage {
         } catch (Exception e) {
             WebElement el = getConcreteWebElement(element);
             if (el == null) el = unwrapWebElement(element.getElement());
+            el = ensureConcreteForScript(element, el);
             if (el != null)
                 ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", el);
         }

@@ -89,13 +89,17 @@ public class MerchandisingActions extends MerchandisingRulesPage {
 
     public void selectSimilarQueryData(String similarQuery){
         awaitForElementPresence(applysameRuletomoreAIsuggestedqueries);
-        click(applysameRuletomoreAIsuggestedqueries);
+        scrollUntilVisible(applysameRuletomoreAIsuggestedqueries);
+        safeClick(applysameRuletomoreAIsuggestedqueries);
         awaitForElementPresence(similarQueriesInput);
+        scrollUntilVisible(similarQueriesInput);
         similarQueriesInput.fill().with(similarQuery);
         awaitForElementPresence(similarQueriesAddlabel);
-        click(similarQueriesAddlabel);
+        scrollUntilVisible(similarQueriesAddlabel);
+        safeClick(similarQueriesAddlabel);
         awaitForElementPresence(applyChanges);
-        applyChanges.click();
+        scrollUntilVisible(applyChanges);
+        safeClick(applyChanges);
         await();
     }
 
@@ -182,26 +186,30 @@ public class MerchandisingActions extends MerchandisingRulesPage {
     }
 
     public void fillSortOrPinRowValues(int group, UnbxdEnum type, int index, String key, String value, int product) throws InterruptedException {
-        FluentWebElement row, attributeElement, valueElement;
-        FluentWebElement rowGroup;
-        rowGroup = getGroup(type).get(group);
-        row = rowGroup.find(pinSortRuleGroups).get(index);
-
-        attributeElement = row.findFirst(sortAttribute);
-        if (type == UnbxdEnum.SORT) {
-            valueElement = row.findFirst(SortOrder);
-            selectAttribute(key, attributeElement);
-        } else {
-            valueElement = row.findFirst(pinPosition);
-            selectPinningProduct(product);
+        for (int attempt = 0; attempt < 3; attempt++) {
+            try {
+                FluentWebElement rowGroup = getGroup(type).get(group);
+                FluentWebElement row = rowGroup.find(pinSortRuleGroups).get(index);
+                FluentWebElement attributeElement = row.findFirst(sortAttribute);
+                FluentWebElement valueElement;
+                if (type == UnbxdEnum.SORT) {
+                    valueElement = row.findFirst(SortOrder);
+                    selectAttribute(key, attributeElement);
+                } else {
+                    valueElement = row.findFirst(pinPosition);
+                    selectPinningProduct(product);
+                }
+                if (type == UnbxdEnum.SORT) {
+                    selectSortAttribute(value, valueElement);
+                } else {
+                    selectValue(value, valueElement);
+                }
+                await();
+                return;
+            } catch (org.openqa.selenium.StaleElementReferenceException e) {
+                await();
+            }
         }
-
-        if (type == UnbxdEnum.SORT) {
-            selectSortAttribute(value, valueElement);
-        } else {
-            selectValue(value, valueElement);
-        }
-        await();
     }
 
     public void selectBoostValue(FluentWebElement slider) {

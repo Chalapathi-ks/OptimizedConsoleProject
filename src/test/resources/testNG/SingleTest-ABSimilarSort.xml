@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Single - AB, SimilarQuery, Sort" verbose="2">
+    <test name="Merch - ABTest - abUpcomingCreateAndEditTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.ABTest.ABTest">
+                <methods>
+                    <include name="abUpcomingCreateAndEditTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SimilarQueryTest - similarQueryTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.SimilarQueryTest">
+                <methods>
+                    <include name="similarQueryTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - SortTest - sortTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.SortTest">
+                <methods>
+                    <include name="sortTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

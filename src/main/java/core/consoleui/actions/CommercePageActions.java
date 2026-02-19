@@ -236,11 +236,13 @@ public class CommercePageActions extends CommerceSearchPage {
     {
         if (bannerOrFacet==true) {
             awaitForElementPresence(addBannerButton);
-            click(addBannerButton);
+            scrollUntilVisible(addBannerButton);
+            safeClick(addBannerButton);
         }
         else {
             awaitForElementPresence(addRuleButton);
-            click(addRuleButton);
+            scrollUntilVisible(addRuleButton);
+            safeClick(addRuleButton);
             awaitForPageToLoad();
         }
     }
@@ -268,6 +270,8 @@ public class CommercePageActions extends CommerceSearchPage {
        if(query!=null){
            awaitForElementPresence(newQueryRuleInput);
            Assert.assertTrue(awaitForElementPresence(newQueryRuleInput),"SEARCH CAMPAIGN CREATION PAGE IS NOT LOADED");
+           scrollUntilVisible(newQueryRuleInput);
+           safeClick(newQueryRuleInput);
            newQueryRuleInput.fill().with(queryName);
        }else if(page!=null) {
            //fillPageName(); dnt forget

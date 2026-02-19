@@ -385,33 +385,32 @@ public class MerchandisingTest extends BaseTest {
                 System.out.println("Verifying with " + (useUpdatedData ? "updated" : "original") + " data");
                 
                 if (section == UnbxdEnum.SORT) {
-                    // Wait for sort elements to be present and try multiple locators
+                    // Wait for sort elements to be present; retry on stale reference
                     boolean sortElementFound = false;
                     String sortAttribute = "";
                     String sortValue = "";
-                    
-                    // Try the primary locator first
-                    if (merchandisingActions.MerchandisingStrategySortAttribute.isDisplayed()) {
-                        sortAttribute = merchandisingActions.MerchandisingStrategySortAttribute.getText();
-                        sortValue = merchandisingActions.MerchandisingStrategySortValue.getText();
-                        sortElementFound = true;
-                    } else {
-                        // Try alternative locators if primary fails
+                    for (int sortAttempt = 0; sortAttempt < 3 && !sortElementFound; sortAttempt++) {
                         try {
-                            // Wait a bit for elements to load
-                            UiBase.ThreadWait();
-                            
-                            // Try to find sort elements using alternative approach
                             if (merchandisingActions.MerchandisingStrategySortAttribute.isDisplayed()) {
                                 sortAttribute = merchandisingActions.MerchandisingStrategySortAttribute.getText();
                                 sortValue = merchandisingActions.MerchandisingStrategySortValue.getText();
                                 sortElementFound = true;
+                            } else if (sortAttempt > 0) {
+                                UiBase.ThreadWait();
+                                if (merchandisingActions.MerchandisingStrategySortAttribute.isDisplayed()) {
+                                    sortAttribute = merchandisingActions.MerchandisingStrategySortAttribute.getText();
+                                    sortValue = merchandisingActions.MerchandisingStrategySortValue.getText();
+                                    sortElementFound = true;
+                                }
                             }
+                        } catch (org.openqa.selenium.StaleElementReferenceException e) {
+                            searchPage.threadWait();
                         } catch (Exception e) {
-                            System.out.println("Sort elements not found with primary locator, trying alternative approach");
+                            if (sortAttempt == 0) {
+                                UiBase.ThreadWait();
+                            }
                         }
                     }
-                    
                     if (sortElementFound) {
                         // Check if details contain attribute and value
                         boolean containsAttribute = sortAttribute.contains(attribute);
