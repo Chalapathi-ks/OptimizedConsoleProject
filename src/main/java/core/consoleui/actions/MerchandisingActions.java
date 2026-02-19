@@ -27,7 +27,8 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         safeClick(publishButton);
         waitForLoaderToDisAppear(successMsgPopUp, "STILL PUBLISHING IS IN-PROGRESS");
         await();
-        Assert.assertFalse(awaitForElementPresence(publishButton), "CAMPAIGN PUBLISHING IS NOT WORKING!!!");
+        shortWait();
+        Assert.assertTrue(isElementInvisible(successMsgPopUp, 15), "CAMPAIGN PUBLISHING IS NOT WORKING!!!");
     }
 
     public void publishGlobalRule() throws InterruptedException {
@@ -35,12 +36,14 @@ public class MerchandisingActions extends MerchandisingRulesPage {
             await();
             safeClick(publishButton);
             waitForLoaderToDisAppear(successMsgPopUp, "STILL PUBLISHING IS IN-PROGRESS");
-            Assert.assertFalse(awaitForElementPresence(publishButton), "CAMPAIGN PUBLISHING IS NOT WORKING!!!");
+            await();
+            shortWait();
+            Assert.assertTrue(isElementInvisible(successMsgPopUp, 15), "CAMPAIGN PUBLISHING IS NOT WORKING!!!");
         } else {
             await();
             safeClick(saveAsDraftButton);
             waitForLoaderToDisAppear(successMsgPopUp, "STILL PUBLISHING IS IN-PROGRESS");
-            Assert.assertTrue(awaitForElementNotDisplayed(saveAsDraftButton), "CAMPAIGN PUBLISHING IS NOT WORKING!!!");
+            Assert.assertTrue(isElementInvisible(successMsgPopUp, 15), "CAMPAIGN PUBLISHING IS NOT WORKING!!!");
         }
 
     }

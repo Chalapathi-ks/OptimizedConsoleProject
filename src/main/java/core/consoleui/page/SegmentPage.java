@@ -20,7 +20,7 @@ public class SegmentPage extends ConsoleCommonPage  {
     @FindBy(xpath="//*[text()=\"User type\"]//following::*[contains(@class,\"new-summary-tag\")][1]")
     public FluentWebElement segmentUserTypeValues;
 
-    @FindBy(xpath="//*[text()=\"Device\"]//following::*[contains(@class,\"new-summary-tag\")][1]")
+    @FindBy(xpath="//*[normalize-space(text())=\"Device\" or normalize-space(text())=\"Devices\"]//following::*[contains(@class,\"new-summary-tag\")][1]")
     public FluentWebElement segmentDeviceTypeValues;
 
     @FindBy(css=".RCB-dd-search-ip")

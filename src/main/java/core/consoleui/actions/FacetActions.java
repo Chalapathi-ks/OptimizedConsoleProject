@@ -439,57 +439,45 @@ public boolean isFacetToggleActive(String facetName) {
         awaitForElementPresence(facetPageActions.facetFilterIcon);
         click(facetPageActions.facetFilterIcon);
         ThreadWait();
-
-
+        awaitForElementPresence(facetPageActions.textFilterOption);
     }
 
 
 
     public void applyTextAndEnabledFilter() {
-
-        // 3. Select text filter
-        if (awaitForElementPresence(facetPageActions.textFilterOption)) {
-            click(facetPageActions.textFilterOption);
-            ThreadWait();
-        } else {
-            System.out.println("Text filter option not found");
-            return;
+        scrollUntilVisible(facetPageActions.textFilterOption);
+        if (!awaitForElementPresence(facetPageActions.textFilterOption)) {
+            Assert.fail("Text filter option not found - filter panel may not have opened");
         }
+        safeClick(facetPageActions.textFilterOption);
+        shortWait();
 
-        // 4. Click on enabled filter
-        if (awaitForElementPresence(facetPageActions.enabledFilterOption)) {
-            click(facetPageActions.enabledFilterOption);
-            ThreadWait();
-        } else {
-            System.out.println("Enabled filter option not found");
-            return;
+        if (!awaitForElementPresence(facetPageActions.enabledFilterOption)) {
+            Assert.fail("Enabled filter option not found");
         }
-
+        safeClick(facetPageActions.enabledFilterOption);
+        shortWait();
     }
-        public void applyRangeAndDisabledFilter(){
-        if (awaitForElementPresence(facetPageActions.rangeFilterOption)) {
-            click(facetPageActions.rangeFilterOption);
-            ThreadWait();
-        } else {
-            System.out.println("rangeFilterOption filter option not found");
-            return;
+    public void applyRangeAndDisabledFilter() {
+        scrollUntilVisible(facetPageActions.rangeFilterOption);
+        if (!awaitForElementPresence(facetPageActions.rangeFilterOption)) {
+            Assert.fail("Range filter option not found - filter panel may not have opened");
         }
+        safeClick(facetPageActions.rangeFilterOption);
+        shortWait();
 
-        if (awaitForElementPresence(facetPageActions.disabledFilterOption)) {
-            click(facetPageActions.disabledFilterOption);
-            ThreadWait();
-        } else {
-            System.out.println("disabledFilterOption filter option not found");
-            return;
+        if (!awaitForElementPresence(facetPageActions.disabledFilterOption)) {
+            Assert.fail("Disabled filter option not found");
         }
-
+        safeClick(facetPageActions.disabledFilterOption);
+        shortWait();
     }
 
     public void ApplyFilterButton() {
         awaitForElementPresence(facetPageActions.applyFilterButton);
-        click(facetPageActions.applyFilterButton);
-        ThreadWait();
-
+        scrollUntilVisible(facetPageActions.applyFilterButton);
+        safeClick(facetPageActions.applyFilterButton);
+        shortWait();
     }
 
 public boolean verifyTextFilterAndEnabledFilter(String Facet_TypeText) {
@@ -593,11 +581,10 @@ public boolean verifyTextFilterAndEnabledFilter(String Facet_TypeText) {
 
 
     public void verifyAppliedFilter(String status, String type) {
-        awaitForElementPresence(facetPageActions.typeFacetHeader);
-       facetPageActions.typeFacetHeader.getText().contains(status);
-       facetPageActions.typeFacetHeader.getText().contains(type);
-
-
+        shortWait();
+        Assert.assertTrue(awaitForElementPresence(facetPageActions.typeFacetHeader), "Selected filters list (.RCB-list.selected-filters-list) did not appear after applying filter. Ensure filter was applied (text/enabled or range/disabled).");
+        Assert.assertTrue(facetPageActions.typeFacetHeader.getText().contains(status), "Applied filter did not show status: " + status);
+        Assert.assertTrue(facetPageActions.typeFacetHeader.getText().contains(type), "Applied filter did not show type: " + type);
     }
 
     public void verifyAppliedFilterIsNotPresent() {

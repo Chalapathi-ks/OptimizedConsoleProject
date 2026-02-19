@@ -302,25 +302,22 @@ public class UiBase extends FluentPage {
     private static final int AWAIT_PRESENCE_TIMEOUT_SEC = 15;
 
     public Boolean awaitForElementPresence(final FluentWebElement element) {
-        Function<Fluent, FluentWebElement> function = new Function<Fluent, FluentWebElement>() {
-            public FluentWebElement apply(Fluent fluent) {
-                try {
-                    WebElement el = getConcreteWebElement(element);
-                    if (el == null) el = unwrapWebElement(element.getElement());
-                    el = ensureConcreteForScript(element, el);
-                    if (el != null && el.isDisplayed())
-                        return element;
-                } catch (Exception ignored) { }
-                return null;
-            }
-        };
         try {
-            await().atMost(AWAIT_PRESENCE_TIMEOUT_SEC).until(function);
+            WebDriverWait wait = new WebDriverWait(getDriver(), AWAIT_PRESENCE_TIMEOUT_SEC);
+            wait.until((ExpectedCondition<Boolean>) driver -> {
+                try {
+                    return element.isDisplayed();
+                } catch (NoSuchElementException | StaleElementReferenceException e) {
+                    return false;
+                }
+            });
+            return true;
+        } catch (TimeoutException e) {
+            return false;
         } catch (WebDriverException e) {
             e.printStackTrace();
             return false;
         }
-        return true;
     }
 
     /** Waits for page load up to 10s (avoids long block after dashboard before goTo). */
@@ -351,16 +348,21 @@ public class UiBase extends FluentPage {
     }
 
     public Boolean awaitForElementNotDisplayed(final FluentWebElement element) {
+        return awaitForElementNotDisplayed(element, getMaxTimeout() / 1000);
+    }
+
+    /** Wait for element to become not displayed; timeoutSeconds used on grid where UI can be slower. */
+    public Boolean awaitForElementNotDisplayed(final FluentWebElement element, int timeoutSeconds) {
         Function<Fluent, FluentWebElement> isNotDisplayedFunction = new Function<Fluent, FluentWebElement>() {
             public FluentWebElement apply(Fluent fluent) {
-                if (!element.isDisplayed()) {
-                    return element;
-                }
+                try {
+                    if (!element.isDisplayed()) return element;
+                } catch (Exception ignored) { }
                 return null;
             }
         };
         try {
-            await().atMost(getMaxTimeout()).until(isNotDisplayedFunction);
+            await().atMost(timeoutSeconds).until(isNotDisplayedFunction);
             return true;
         } catch (WebDriverException e) {
             System.out.println("awaitForElementNotDisplayed is failed for element . Exception is : " + e.getMessage());
@@ -368,6 +370,15 @@ public class UiBase extends FluentPage {
         }
     }
 
+    /** Returns true when the element is invisible or not present (e.g. publish loader gone). Use this to assert success instead of button visibility. */
+    public boolean isElementInvisible(By locator, int timeoutSeconds) {
+        try {
+            new WebDriverWait(getDriver(), timeoutSeconds).until(ExpectedConditions.invisibilityOfElementLocated(locator));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
     public void threadWait() {
         try {
@@ -462,15 +473,10 @@ public class UiBase extends FluentPage {
 
     public boolean checkElementPresence(FluentWebElement element) {
         try {
-
-            if (element.isDisplayed())
-                return true;
-            else
-                return false;
-        } catch (NoSuchElementException e) {
+            return element.isDisplayed();
+        } catch (NoSuchElementException | StaleElementReferenceException e) {
             return false;
         }
-
     }
 
     public void unbxdInputBoxSearch(FluentWebElement element, String name) {

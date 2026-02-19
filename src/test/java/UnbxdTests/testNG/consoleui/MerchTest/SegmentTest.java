@@ -81,15 +81,19 @@ public class SegmentTest extends MerchandisingTest {
 
         searchPageActions.selectActionType(UnbxdEnum.EDIT,segmentName);
         ThreadWait();
+        segmenPageActions.awaitForElementPresence(segmenPageActions.segmentUserTypeValues);
+        segmenPageActions.awaitForElementPresence(segmenPageActions.segmentDeviceTypeValues);
         segmenPageActions.segmentUserTypeValues.getText().contains(userTypeNew);
         segmenPageActions.segmentDeviceTypeValues.getText().contains(segmentDeviceType);
 
         segmenPageActions.removeSegmentValues(userTypeNew);
         segmenPageActions.selectTypeValues(UnbxdEnum.USERTYPE,userTypeRepeat);
+        segmenPageActions.awaitForElementPresence(segmenPageActions.segmentUserTypeValues);
         segmenPageActions.segmentUserTypeValues.getText().contains(userTypeRepeat);
         segmenPageActions.clickOnSave();
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
+        segmenPageActions.awaitForElementPresence(segmenPageActions.UserTypeinListingPage);
         segmenPageActions.UserTypeinListingPage.getText().contains(userTypeRepeat);
 
         goTo(segmentPage);
@@ -290,15 +294,19 @@ public class SegmentTest extends MerchandisingTest {
 
         searchPageActions.selectActionType(UnbxdEnum.EDIT,segmentName);
         ThreadWait();
+        segmenPageActions.awaitForElementPresence(segmenPageActions.segmentUserTypeValues);
+        segmenPageActions.awaitForElementPresence(segmenPageActions.segmentDeviceTypeValues);
         segmenPageActions.segmentUserTypeValues.getText().contains(userTypeNew);
         segmenPageActions.segmentDeviceTypeValues.getText().contains(segmentDeviceType);
 
         segmenPageActions.removeSegmentValues(userTypeNew);
         segmenPageActions.selectTypeValues(UnbxdEnum.USERTYPE,userTypeRepeat);
+        segmenPageActions.awaitForElementPresence(segmenPageActions.segmentUserTypeValues);
         segmenPageActions.segmentUserTypeValues.getText().contains(userTypeRepeat);
         segmenPageActions.clickOnSave();
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
+        segmenPageActions.awaitForElementPresence(segmenPageActions.UserTypeinListingPage);
         segmenPageActions.UserTypeinListingPage.getText().contains(userTypeRepeat);
 
         //Delete
