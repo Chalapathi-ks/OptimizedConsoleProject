@@ -2,7 +2,7 @@
 <suite name="MerchandizingTests " parallel="tests" thread-count="30" verbose="10" preserve-order="true">
 
 
-<!--     ABTest methods - commented to run only Promotions
+<!--     ABTest methods -->
     <test name="Merch - ABTest - abCreateAndPreviewTest">
         <classes>
             <class name="UnbxdTests.testNG.consoleui.ABTest.ABTest">
@@ -40,6 +40,7 @@
         </classes>
     </test>
 
+<!--     FilterTest methods -->
     <test name="Merch - FilterTest - filtersTest">
         <classes>
             <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.FilterTest">
@@ -49,9 +50,8 @@
             </class>
         </classes>
     </test>
--->
 
-<!--     PromotionStatusTest methods (ONLY THESE RUN) -->
+<!--     PromotionStatusTest methods -->
     <test name="Merch - PromotionStatusTest - UpcomingStatusTest">
         <classes>
             <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PromotionStatusTest">
@@ -98,7 +98,7 @@
         </classes>
     </test>
 
-    <!-- Rest of suite commented to run only Promotions
+    <!-- SlotTest methods -->
     <test name="Merch - SlotTest - slotCreateTest">
         <classes>
             <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.SlotTest">
@@ -579,6 +579,6 @@
             </class>
         </classes>
     </test>
-    -->
+
 
 </suite>

@@ -1,0 +1,50 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PromotionTests" parallel="tests" thread-count="5" verbose="10" preserve-order="true">
+
+    <test name="Merch - PromotionStatusTest - UpcomingStatusTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PromotionStatusTest">
+                <methods>
+                    <include name="UpcomingStatusTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - PromotionStatusTest - promotionActiveAndStopStatusTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PromotionStatusTest">
+                <methods>
+                    <include name="promotionActiveAndStopStatusTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - PromotionStatusTest - promotionStoppedDuplicateTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PromotionStatusTest">
+                <methods>
+                    <include name="promotionStoppedDuplicateTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - PromotionStatusTest - browseUpcomingStatusTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PromotionStatusTest">
+                <methods>
+                    <include name="browseUpcomingStatusTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merch - PromotionStatusTest - browsePromotionDuplicateTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PromotionStatusTest">
+                <methods>
+                    <include name="browsePromotionDuplicateTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
