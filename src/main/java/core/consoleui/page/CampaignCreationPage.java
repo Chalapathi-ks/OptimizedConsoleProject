@@ -143,7 +143,7 @@ public class CampaignCreationPage extends UnbxdCommonPage {
 //        campaignDescription.fill().with((String) campaignData.get("CampaignDescription"));
 
         awaitTillElementDisplayed(nextButton);
-        Thread.sleep(10000);
+        threadWait();
         nextButton.click();
         awaitForPageToLoad();
         threadWait();
@@ -170,7 +170,7 @@ public class CampaignCreationPage extends UnbxdCommonPage {
 //        campaignDescription.fill().with((String) campaignData.get("CampaignDescription"));
 
         awaitTillElementDisplayed(nextButton);
-        Thread.sleep(10000);
+        threadWait();
         nextButton.click();
         awaitForPageToLoad();
         threadWait();

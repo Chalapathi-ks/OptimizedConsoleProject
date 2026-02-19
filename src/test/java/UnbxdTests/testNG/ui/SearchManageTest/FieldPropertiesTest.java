@@ -276,7 +276,7 @@ public class FieldPropertiesTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        searchPage.threadWait();
         createPromotion(query,false,false);
         ThreadWait();
         merchandisingActions.selectAttributeValue(FieldName);
@@ -316,7 +316,7 @@ public class FieldPropertiesTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        searchPage.threadWait();
         createPromotion(query,false,false);
         ThreadWait();
         merchandisingActions.selectAttributeValue(FieldName);
@@ -541,7 +541,7 @@ public class FieldPropertiesTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        searchPage.threadWait();
         createPromotion(query,false,false);
         ThreadWait();
         merchandisingActions.selectAttributeValue(FieldName);
@@ -570,7 +570,7 @@ public class FieldPropertiesTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        searchPage.threadWait();
         createPromotion(query,false,false);
         ThreadWait();
         merchandisingActions.selectAttributeValue(FieldName);

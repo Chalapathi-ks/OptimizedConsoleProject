@@ -21,28 +21,28 @@ public class MerchandisingActions extends MerchandisingRulesPage {
     CommercePageActions searchPageActions;
 
     public void publishCampaign() throws InterruptedException {
-        Thread.sleep(7000);
+        ThreadWait();
         awaitForElementPresence(publishButton);
         safeClick(publishButton);
         waitForLoaderToDisAppear(successMsgPopUp, "STILL PUBLISHING IS IN-PROGRESS");
-        Thread.sleep(7000);
+        ThreadWait();
         await();
         Assert.assertFalse(awaitForElementPresence(publishButton), "CAMPAIGN PUBLISHING IS NOT WORKING!!!");
     }
 
     public void publishGlobalRule() throws InterruptedException {
-        Thread.sleep(7000);
+        ThreadWait();
         if (awaitForElementPresence(publishButton) == true) {
             await();
             safeClick(publishButton);
             waitForLoaderToDisAppear(successMsgPopUp, "STILL PUBLISHING IS IN-PROGRESS");
-            Thread.sleep(7000);
+            ThreadWait();
             Assert.assertFalse(awaitForElementPresence(publishButton), "CAMPAIGN PUBLISHING IS NOT WORKING!!!");
         } else {
             await();
             safeClick(saveAsDraftButton);
             waitForLoaderToDisAppear(successMsgPopUp, "STILL PUBLISHING IS IN-PROGRESS");
-            Thread.sleep(10000);
+            ThreadWait();
             Assert.assertFalse(awaitForElementPresence(saveAsDraftButton), "CAMPAIGN PUBLISHING IS NOT WORKING!!!");
         }
 
@@ -110,7 +110,7 @@ public class MerchandisingActions extends MerchandisingRulesPage {
     public String selectAISuggestedSimilarQueryData() throws InterruptedException {
         awaitForElementPresence(applysameRuletomoreAIsuggestedqueries);
         click(applysameRuletomoreAIsuggestedqueries);
-        Thread.sleep(8000);
+        ThreadWait();
         awaitForElementPresence(AiSuggestedList.get(1));
         AiSuggestedList.get(1).click();
         threadWait();
@@ -206,14 +206,14 @@ public class MerchandisingActions extends MerchandisingRulesPage {
     public void selectAttribute(String value, FluentWebElement attribute) throws InterruptedException {
         ThreadWait();
         attribute.find(".RCB-select-arrow").click();
-        Thread.sleep(3000);
+        ThreadWait();
         if (attributeDropDownList.size() > 0) {
             attributeInput.clear();
             ThreadWait();
             attributeInput.fill().with(value);
-            Thread.sleep(3000);
+            ThreadWait();
             selectDropDownValue(attributeDropDownList, value);
-            Thread.sleep(3000);
+            ThreadWait();
         } else {
             Assert.fail("ATTRIBUTE DROPDOWN LIST IS EMPTY!!!");
         }
@@ -221,7 +221,7 @@ public class MerchandisingActions extends MerchandisingRulesPage {
 
     public void selectAttributeValue(String value) throws InterruptedException {
         AttributeDropDown.click();
-        Thread.sleep(3000);
+        ThreadWait();
             attributeInput.clear();
             attributeInput.fill().with(value);
             ThreadWait();
@@ -284,7 +284,7 @@ public class MerchandisingActions extends MerchandisingRulesPage {
             if (element.getText().trim().contains(section.getLabel())) {
                 ThreadWait();
                 safeClick(element);
-                Thread.sleep(5000);
+                threadWait();
                 awaitTillElementDisplayed(publishButton);
                 break;
             }

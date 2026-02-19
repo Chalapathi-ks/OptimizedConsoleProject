@@ -317,7 +317,7 @@ public class CommercePageActions extends CommerceSearchPage {
             }
             threadWait();
             categorypathApplyButton.click();
-            Thread.sleep(5000);
+            threadWait();
         }
 
     }

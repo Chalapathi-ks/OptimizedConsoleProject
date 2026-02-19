@@ -121,6 +121,11 @@ public class ExtentTestNGITestListener implements ITestListener {
             return;
         }
         
+        // Calculate and log execution time
+        long executionTime = iTestResult.getEndMillis() - iTestResult.getStartMillis();
+        String formattedTime = formatExecutionTime(executionTime);
+        test.get().info("Execution Time: " + formattedTime);
+        
         if (testStatus.equals(Status.FAIL)) {
             try {
                 String destinationPath = Helper.getScreenShot(iTestResult.getMethod().getMethodName());
@@ -161,6 +166,30 @@ public class ExtentTestNGITestListener implements ITestListener {
         }
         if (testStatus.equals(Status.PASS)) {
             test.get().pass("Test passed successfully");
+        }
+    }
+
+    /**
+     * Formats execution time from milliseconds to a human-readable format
+     * @param milliseconds Execution time in milliseconds
+     * @return Formatted time string (e.g., "2.5 seconds", "1m 30s", "45ms")
+     */
+    private String formatExecutionTime(long milliseconds) {
+        if (milliseconds < 1000) {
+            return milliseconds + "ms";
+        } else if (milliseconds < 60000) {
+            // Less than 1 minute - show seconds with 2 decimal places
+            double seconds = milliseconds / 1000.0;
+            return String.format("%.2f seconds", seconds);
+        } else {
+            // 1 minute or more - show minutes and seconds
+            long minutes = milliseconds / 60000;
+            long seconds = (milliseconds % 60000) / 1000;
+            if (seconds > 0) {
+                return String.format("%dm %ds", minutes, seconds);
+            } else {
+                return String.format("%dm", minutes);
+            }
         }
     }
 
