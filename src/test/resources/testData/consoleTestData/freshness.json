@@ -1,0 +1,20 @@
+{
+  "testData":[
+    {
+      "query": "fresh",
+      "attribute": "Date_iso",
+      "value": "10",
+      "data": [
+        {
+          "rows": [
+            {
+              "attribute": "Date_iso",
+              "value": "10"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

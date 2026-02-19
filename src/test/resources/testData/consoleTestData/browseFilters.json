@@ -1,0 +1,26 @@
+{
+  "testData":[
+    {
+      "page": "Accent Table",
+      "data": [
+
+        {
+          "rows": [
+            {
+              "Browse_Attribute": "Item_Type",
+              "Browse_Value": "Accent Table",
+
+              "attribute": "availability",
+              "condition": "Does not contain",
+              "value": "degree",
+
+              "updatedAttribute": "extracted_color",
+              "updatedCondition": "Does not contain",
+              "updatedValue": "val"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

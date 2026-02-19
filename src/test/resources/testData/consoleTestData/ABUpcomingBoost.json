@@ -1,0 +1,30 @@
+{
+  "testData": [
+    {
+      "page": "ABBrowseupcoming",
+      "VariationA":60,
+      "VariationB":40,
+      "timZone":"kol",
+      "winnerDecidedBy": "Click Rate",
+      "data": [
+        {
+          "rows": [
+            {
+              "Browse_Attribute": "categoryPath2",
+              "Browse_Value": "benches",
+
+              "attribute": "availability",
+              "condition": "Does not contain",
+              "value": "degree",
+
+              "updatedAttribute": "extracted_color",
+              "updatedCondition": "Does not contain",
+              "updatedValue": "val"
+            }
+          ]
+        }
+
+      ]
+    }
+  ]
+}

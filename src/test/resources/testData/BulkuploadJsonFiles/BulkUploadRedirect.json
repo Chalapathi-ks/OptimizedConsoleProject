@@ -1,0 +1,9 @@
+{
+  "testData": [
+    {
+      "RedirectQueryRule": "Redirect1",
+      "RedirectQueryRule1": "Redirect2"
+
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+---
+applicationUrl: https://console.unbxd.io
+baseUrl: https://console-apac.unbxd.io
+services:
+  - name: solr
+    url: http://docker-fsd2.unbxd.io:8900
+  - name: brewer
+    url: http://docker-fsd2.unbxd.io:8901
+  - name: groot
+    url: http://docker-fsd2.unbxd.io:8903
+  - name: gimli
+    url: http://docker-fsd2.unbxd.io:8904
+  - name: asterix
+    url: http://docker-fsd2.unbxd.io:6339
+  - name: feed
+    url: http://feed-apac.unbxd.io
+  - name: ether
+    url: http://docker-fsd2.unbxd.io:2205
+  - name: mysql
+    url: docker-fsd.unbxd.io:3306
+  - name: console
+    url: https://console-apac.unbxd.io
+
+
+sites:
+  - siteKey: ss-unbxd-aapac-unbxdQATestSiteFireflinkApacSite39581727083706
+    apiKey: 8ee0b25a644502e7fc50412fc6fe72a9
+    secretKey: 1065344535fd2295e7a9506b2e57e355
+    statusById: faf3324d-c8f8-4bf0-89a0-c98eabf2b724
+    siteId: 2009
+    region: APAC Customer Sites
+    id: 3
+
+  - siteKey: ss-unbxd-aapac-unbxdQATestSiteFireflinkApacSite39581727083706
+    apiKey: 8ee0b25a644502e7fc50412fc6fe72a9
+    secretKey: 1065344535fd2295e7a9506b2e57e355
+    statusById: faf3324d-c8f8-4bf0-89a0-c98eabf2b724
+    siteId: 2008
+    region: APAC Customer Sites
+    id: 2
+
+  - siteKey: ss-unbxd-aapac-unbxdQATestSiteFireflinkApacSite39581727083706
+    apiKey: 8ee0b25a644502e7fc50412fc6fe72a9
+    secretKey: 1065344535fd2295e7a9506b2e57e355
+    statusById: faf3324d-c8f8-4bf0-89a0-c98eabf2b724
+    siteId: 1978
+    region: APAC Customer Sites
+    id: 1
+
+users:
+  - id: 2
+    email: AutomationSeleniumApac@yopmail.com
+    password: Password@123
+
+  - id: 1
+    email: AutomationSeleniumApac@yopmail.com
+    password: Password@123
+    deleteSiteSsoIdKeyValue: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjpudWxsLCJleHBpcnkiOiIyMDIxLTA0LTEzIDA5OjIxOjE2IFVUQyIsImVtYWlsIjoicHJvZGF6MUB5b3BtYWlsLmNvbSIsInJlZ2lvbnMiOnsidXMiOnsicmVmX3VzZXJfaWQiOjgxODAwfSwiYXUiOnsicmVmX3VzZXJfaWQiOjk0M30sInVrIjp7InJlZl91c2VyX2lkIjo5MjN9LCJzZyI6eyJyZWZfdXNlcl9pZCI6MTE2NH19fQ.nSwcIlR1i9XfKgxCi0yQxbGmipapcTSM4OROoFgyWR8
+
+  - id: 3
+    email: AutomationSeleniumApac@yopmail.com
+    password: Password@123

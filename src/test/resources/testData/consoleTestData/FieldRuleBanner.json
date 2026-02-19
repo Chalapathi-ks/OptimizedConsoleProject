@@ -1,0 +1,26 @@
+{
+  "testData":[
+    {
+      "Attribute": "categoryPath",
+      "Value": "kids-bedroom",
+      "data": "https://images.express.com/is/image/expressfashion/0027_09393654_0904?cache=on",
+      "editBanner": "https://www.lulus.com/images/product/xlarge/4952550_999802.jpg",
+      "FacetRange": "1",
+      "facet length": "3",
+      "sort order":"Alphabetical (A-Z)",
+      "range start": "0",
+      "range end": "450",
+      "range gap": "5",
+
+
+      "facetDisplayName": "piece_code",
+      "facetName": "piece_code",
+      "facetLength": "5",
+      "sortOrder": "Alphabetical (A-Z)",
+
+      "updatedFacetDisplayName": "piece_cod",
+      "updatedfacetLength": "4",
+      "updateSortOrder": "Product Count"
+    }
+  ]
+}

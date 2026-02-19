@@ -1,0 +1,3524 @@
+{
+	"feed":{
+		"catalog":{
+			"schema":[
+				{
+					"fieldName":"Brand",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"BrushType",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"ConsoleType",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"Gender",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"GiftsByRecipient",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"GiftsbyOccasion",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"HeadphoneType",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"HeelType",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"RAM",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"RingStyle",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"RugSize",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"RugType",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"Scent",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"Shade",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"Shape",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"ShoeStyle",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"ShopbyAge",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"ShopbyApparelSize",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"ShopbyColor",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"SkinTone",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"SkinType",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"Stone",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"Technique",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"Type",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"UpperMaterial",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"categoryPath",
+					"dataType":"path",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"categoryPathId",
+					"dataType":"text",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"price",
+					"dataType":"decimal",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"product_available_flag",
+					"dataType":"text",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"product_image_url",
+					"dataType":"link",
+					"multiValue":true,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"product_name",
+					"dataType":"text",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"sku",
+					"dataType":"sku",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"item_number",
+					"dataType":"sku",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"keywords",
+					"dataType":"text",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"price",
+					"dataType":"decimal",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				},
+				{
+					"fieldName":"uniqueId",
+					"dataType":"text",
+					"multiValue":false,
+					"autoSuggest":false,
+					"isVariant":false
+				}
+			],
+			"add":{
+				"items":[
+					{
+						"product_name":"Sellos de personaxes de Nadal de Annabel Spenceley de Crafter's Companion",
+						"product_available_flag":true,
+						"uniqueId":"9654456",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-annabel-spenceley-christmas-characte-d-2020080511174824~723795.jpg",
+						"price":1556,
+						"item_number":"723795",
+						"categoryPath":[
+							"Artesan\u00eda e costura> Scrapbooking> Estampaci\u00f3n> Limpar selos"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Jay King Crazy Lace Agate and Elephant Skin Opal Bead Necklace",
+						"product_available_flag":true,
+						"uniqueId":"9717293",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-crazy-lace-agate-and-elephant-skin-opal-bead-n-d-20200924080953213~730153.jpg",
+						"price":12650,
+						"item_number":"730153",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						]
+					},
+					{
+						"product_name":"Pendentes de bot\u00f3n con acento de cristal Heidi Daus \"Lux Rhapsody\"",
+						"product_available_flag":false,
+						"uniqueId":"1174514",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/heidi-daus-lux-rhapsody-crystal-accented-button-earring-d-20151013155736047~444958.jpg",
+						"price":8995,
+						"item_number":"444958",
+						"categoryPath":[
+							"Xoias> Pendentes"
+						],
+						"Brand":[
+							"Heidi Daus"
+						]
+					},
+					{
+						"product_name":"Dylusions de Dyan Reaveley Colling Stamp Collections 8.5X7 - Mini Me",
+						"product_available_flag":true,
+						"uniqueId":"9096365",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/dyan-reaveleys-dylusions-cling-stamp-collections-85x7-m-d-2019040515042875~9096365w.jpg",
+						"price":2524,
+						"item_number":"1218479",
+						"categoryPath":[
+							"Artesan\u00eda e costura> Scrapbooking> Estampaci\u00f3n> Sellos de goma"
+						],
+						"Brand":[
+							"Dylusions"
+						]
+					},
+					{
+						"product_name":"Cristina Sabatini Gargantilla babero de cadea de prata esterlina dourada",
+						"product_available_flag":true,
+						"uniqueId":"9655558",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/cristina-sabatini-gold-tone-sterling-silver-rose-chain-d-2020082109035794~723846.jpg",
+						"price":29998,
+						"item_number":"723846",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Brand":[
+							"Cristina Sabatini"
+						]
+					},
+					{
+						"product_name":"Barnie's Coffee Cremoso Buttery Caramelo Vainas de servizo \u00fanico",
+						"product_available_flag":true,
+						"uniqueId":"9717295",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/barnies-coffee-creamy-buttery-caramel-single-serve-pods-d-20200803103517033~730155.jpg",
+						"price":3341,
+						"item_number":"730155",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Alimentos e bebidas> Bebidas> Caf\u00e9"
+						],
+						"Brand":[
+							"Barnie's Coffee and Tea"
+						]
+					},
+					{
+						"product_name":"Colleen Lopez Pendentes de gota de peridoto e circ\u00f3n branco de 3,14 quilates",
+						"product_available_flag":true,
+						"uniqueId":"1270935",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/colleen-lopez-314ct-peridot-and-white-zircon-drop-earri-d-20180406152214847~605237.jpg",
+						"price":10040,
+						"item_number":"605237",
+						"categoryPath":[
+							"Xoias> Pendentes"
+						],
+						"Brand":[
+							"Colleen Lopez Collection"
+						]
+					},
+					{
+						"product_name":"Dylusions de Dyan Reaveley Colling Stamp Collections 8.5X7 - Risas",
+						"product_available_flag":false,
+						"uniqueId":"9096372",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/dyan-reaveleys-dylusions-cling-stamp-collections-85x7-l-d-2019040515040558~9096372w.jpg",
+						"price":2524,
+						"item_number":"1218476",
+						"Brand":[
+							"Dylusions"
+						]
+					},
+					{
+						"product_name":"Pulseira de manguito Mistica en prata esterlina Cristina Sabatini",
+						"product_available_flag":true,
+						"uniqueId":"9655577",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/cristina-sabatini-gold-tone-sterling-silver-mistica-cuf-d-20210121093221763~723853.jpg",
+						"price":23375,
+						"item_number":"723853",
+						"categoryPath":[
+							"Xoias> Pulseiras"
+						],
+						"Brand":[
+							"Cristina Sabatini"
+						]
+					},
+					{
+						"product_name":"Collar de contas graduado en prata esterlina Jay King, verde e branco",
+						"product_available_flag":true,
+						"uniqueId":"9717310",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-green-and-white-agate-graduate-d-2020100108512331~730164.jpg",
+						"price":9975,
+						"item_number":"730164",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Agate"
+						]
+					},
+					{
+						"product_name":"Nina Leonard T\u00fanica su\u00e9ter de pata de gallo con petos",
+						"product_available_flag":false,
+						"uniqueId":"1315264",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/nina-leonard-houndstooth-sweater-tunic-with-pockets-d-2019122308270227~682324.jpg",
+						"price":3168,
+						"item_number":"682324",
+						"Brand":[
+							"Nina Leonard"
+						]
+					},
+					{
+						"product_name":"M. Asam\u00ae VINO GOLD\u00ae 2.02 fl. oz. Soro de 2 fases",
+						"product_available_flag":true,
+						"uniqueId":"9096399",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/m-asamandreg-vino-goldandreg-202-fl-oz-2-phase-serum-d-20191118093835~670259.jpg",
+						"price":4999,
+						"item_number":"670259",
+						"categoryPath":[
+							"Beleza> Coidado coa pel> Soro> Cara"
+						],
+						"Brand":[
+							"M. Asam"
+						],
+						"SkinType":[
+							"Dry",
+							"Combination",
+							"Oily",
+							"Normal"
+						]
+					},
+					{
+						"product_name":"Crafter's Companion Gemini Christmas Joy 2-Sided Die Set",
+						"product_available_flag":true,
+						"uniqueId":"9655794",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-gemini-christmas-joy-2-sided-die-set-d-2020072810345705~723875.jpg",
+						"price":2571,
+						"item_number":"723875",
+						"categoryPath":[
+							"Artesan\u00eda e costura> Scrapbooking> troquelado> troqueles e accesorios",
+							"Artesan\u00eda e costura> Scrapbooking> Ferramentas e accesorios> Corte e accesorios"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Pendentes de ca\u00edda de zafiro multicolor Jay King de prata esterlina",
+						"product_available_flag":true,
+						"uniqueId":"9717312",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-multi-color-sapphire-drop-earr-d-20201001085121973~730177.jpg",
+						"price":18450,
+						"item_number":"730177",
+						"categoryPath":[
+							"Xoias> Pendentes"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Sapphire"
+						]
+					},
+					{
+						"product_name":"Crafter's Companion Good Luck Curved Sentiments Edge'able Dies",
+						"product_available_flag":true,
+						"uniqueId":"1329495",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-good-luck-curved-sentiments-edgeable-d-20201019080150113~706724.jpg",
+						"price":1795,
+						"item_number":"706724",
+						"categoryPath":[
+							"Artesan\u00eda e costura> Scrapbooking> Ferramentas e accesorios> Corte e accesorios",
+							"Artesan\u00eda e costura> Scrapbooking> troquelado> troqueles e accesorios"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Crafter's Companion Gemini Elements Wraparound Dies - Agasallos",
+						"product_available_flag":true,
+						"uniqueId":"9097769",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-gemini-elements-wraparound-dies-gift-d-202010200739595~670371.jpg",
+						"price":1795,
+						"item_number":"670371",
+						"categoryPath":[
+							"Artesan\u00eda e costura> Scrapbooking> troquelado> troqueles e accesorios",
+							"Artesan\u00eda e costura> Scrapbooking> Ferramentas e accesorios> Corte e accesorios"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Conxunto de Crafter's Gemini Noel",
+						"product_available_flag":true,
+						"uniqueId":"9655892",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-gemini-noel-2-sided-holiday-die-set-d-20200728100444043~723880.jpg",
+						"price":2571,
+						"item_number":"723880",
+						"categoryPath":[
+							"Artesan\u00eda e costura> Scrapbooking> troquelado> troqueles e accesorios",
+							"Artesan\u00eda e costura> Scrapbooking> Ferramentas e accesorios> Corte e accesorios"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Colgante de pedra Jaying Amazonite e Parrot Wing Stone",
+						"product_available_flag":true,
+						"uniqueId":"9717344",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-amazonite-and-parrot-wing-stone-pendant-with-n-d-2020100108512382~730198.jpg",
+						"price":19975,
+						"item_number":"730198",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Amazonite"
+						]
+					},
+					{
+						"product_name":"Set de 7 utensilios de coci\u00f1a StackMaster de Bell & Howell",
+						"product_available_flag":true,
+						"uniqueId":"1334073",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/bell-andamp-howell-7-piece-stackmaster-cookware-set-d-2021012608434011~714354.jpg",
+						"price":6995,
+						"item_number":"714354",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Utensilios de coci\u00f1a> tixolas e sartenes",
+							"Coci\u00f1a e comida> Utensilios de coci\u00f1a> Stock e multipots",
+							"Coci\u00f1a e Alimentaci\u00f3n> Utensilios de coci\u00f1a> Salsas",
+							"Coci\u00f1a e Alimentaci\u00f3n> Utensilios de coci\u00f1a> Conxuntos de utensilios de coci\u00f1a"
+						],
+						"Brand":[
+							"Bell + Howell"
+						],
+						"ShopbyColor":[
+							"Ivory/Off White"
+						]
+					},
+					{
+						"product_name":"Coroa de follas artificiais de interior de 18 \"de xard\u00edn puro",
+						"product_available_flag":true,
+						"uniqueId":"9097867",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/pure-garden-18-indoor-artificial-microphylla-leaf-wreat-d-20200327084705567~9097867w.jpg",
+						"price":2894,
+						"item_number":"1242775",
+						"categoryPath":[
+							"Inicio> Decoraci\u00f3n do fogar> Acentos para o fogar> Plantas e coroas de imitaci\u00f3n"
+						],
+						"Brand":[
+							"Pure Garden"
+						]
+					},
+					{
+						"product_name":"Sandalia Soul Naturalizer Nifty Wedge Thong",
+						"product_available_flag":true,
+						"uniqueId":"9656211",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/soul-naturalizer-nifty-wedge-thong-sandal-d-20200720085603547~723887.jpg",
+						"price":5600,
+						"item_number":"723887",
+						"categoryPath":[
+							"Moda> Zapatos> Sandalias",
+							"Moda> Zapatos> Cu\u00f1as"
+						],
+						"HeelType":[
+							"Wedge"
+						],
+						"ShopbyColor":[
+							"Animal",
+							"Black",
+							"Tan",
+							"White"
+						],
+						"ShoeStyle":[
+							"Thong",
+							"Wedge"
+						],
+						"Brand":[
+							"SOUL Naturalizer"
+						]
+					},
+					{
+						"product_name":"Jay King Prata esterlina Azure Peaks Turquesa Collar de contas",
+						"product_available_flag":true,
+						"uniqueId":"9450872",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-azure-peaks-turquoise-bead-nec-d-20200714102851847~709941.jpg",
+						"price":9198,
+						"item_number":"709941",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Stone":[
+							"Turquoise"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						]
+					},
+					{
+						"product_name":"Bolsa de coiro Patricia Nash Benvenuto",
+						"product_available_flag":false,
+						"uniqueId":"1334175",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/patricia-nash-benvenuto-leather-tote-d-20200708082601087~714576_59D.jpg",
+						"price":24900,
+						"item_number":"714576",
+						"Brand":[
+							"Patricia Nash"
+						]
+					},
+					{
+						"product_name":"Pendentes Jay Stud de prata esterlina redonda de 10 mm",
+						"product_available_flag":true,
+						"uniqueId":"9127541",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-10mm-round-amethyst-stud-earri-d-20190620073657007~672610.jpg",
+						"price":3480,
+						"item_number":"672610",
+						"categoryPath":[
+							"Xoias> Pendentes"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Amethyst"
+						]
+					},
+					{
+						"product_name":"Bomba de cu\u00f1a Soul Naturalizer Glimmer",
+						"product_available_flag":true,
+						"uniqueId":"9656460",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/soul-naturalizer-glimmer-wedge-pump-d-2020072008571963~723897_USM.jpg",
+						"price":4239,
+						"item_number":"723897",
+						"categoryPath":[
+							"Moda> Zapatos> Cu\u00f1as"
+						],
+						"ShoeStyle":[
+							"Slip-On",
+							"Wedge",
+							"Pump"
+						],
+						"Brand":[
+							"SOUL Naturalizer"
+						],
+						"HeelType":[
+							"Wedge"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Gray/Grey"
+						]
+					},
+					{
+						"product_name":"Collar de perlas de cristal e cabeza de cola de Heidi Daus",
+						"product_available_flag":true,
+						"uniqueId":"9451190",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/heidi-daus-zebra-head-and-tail-crystal-beaded-necklace-d-20200330072655577~709996.jpg",
+						"price":17200,
+						"item_number":"709996",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Brand":[
+							"Heidi Daus"
+						]
+					},
+					{
+						"product_name":"\"Como est\u00e1\" Samantha Brown Croco-Embossed Hardside Underseat Bag",
+						"product_available_flag":false,
+						"uniqueId":"1338455",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-samantha-brown-croco-embossed-hardside-underseat-d-20200519163625843~723911.jpg",
+						"price":7299,
+						"item_number":"723911",
+						"Brand":[
+							"Samantha Brown"
+						],
+						"Type":[
+							"Carry-On",
+							"Hardside",
+							"Wheeled Luggage"
+						]
+					},
+					{
+						"product_name":"Gravadora de voz dixital Olympus VP-10",
+						"product_available_flag":true,
+						"uniqueId":"9128109",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/olympus-vp-10-digital-voice-recorder-d-2019043017120426~9128109w.jpg",
+						"price":10499,
+						"item_number":"1225688",
+						"categoryPath":[
+							"Electr\u00f3nica> Audio> Altofalantes"
+						],
+						"Brand":[
+							"Olympus"
+						]
+					},
+					{
+						"product_name":"Crafter's Companion, coci\u00f1a de Santa, coci\u00f1a e matriz",
+						"product_available_flag":false,
+						"uniqueId":"9656745",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-santas-kitchen-baking-stamp-and-die-d-20200914082032413~723917.jpg",
+						"price":3037,
+						"item_number":"723917",
+						"Brand":[
+							"Crafter's Companion",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Pendentes de gota cadrados graduados en aceiro se\u00f1orial",
+						"product_available_flag":true,
+						"uniqueId":"9451222",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/stately-steel-graduated-square-drop-earrings-d-20200219152445377~9451222w.jpg",
+						"price":2895,
+						"item_number":"1241835",
+						"categoryPath":[
+							"Xoias> Pendentes"
+						],
+						"Brand":[
+							"Stately Steel"
+						]
+					},
+					{
+						"product_name":"\"As Is\" G de Giuliana Hacci Jersey de cuello alto",
+						"product_available_flag":true,
+						"uniqueId":"1345307",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-g-by-giuliana-hacci-knit-turtleneck-d-20201202154947153~747334_638.jpg",
+						"price":2199,
+						"item_number":"747334",
+						"categoryPath":[
+							"Moda> Roupa> Tops"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Gray/Grey",
+							"Green",
+							"Red"
+						],
+						"ShopbyApparelSize":[
+							"XS (0-2)"
+						],
+						"Brand":[
+							"G by GIULIANA"
+						]
+					},
+					{
+						"product_name":"Pendentes de pedra de orqu\u00eddea vermella Gongshan de prata esterlina Jay",
+						"product_available_flag":true,
+						"uniqueId":"9128820",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-sterling-silver-king-gongshan-red-orchid-stone-earr-d-20190628093357357~672794.jpg",
+						"price":3100,
+						"item_number":"672794",
+						"categoryPath":[
+							"Xoias> Pendentes"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						]
+					},
+					{
+						"product_name":"Calendario de advento de Crafter's Companion 2020",
+						"product_available_flag":true,
+						"uniqueId":"9694117",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-2020-advent-calendar-d-20200904095837297~726725.jpg",
+						"price":1795,
+						"item_number":"726725",
+						"categoryPath":[
+							"Artesan\u00eda e costura> Scrapbooking> Ferramentas e accesorios> Corte e accesorios",
+							"Artesan\u00eda e costura> Scrapbooking> troquelado> troqueles e accesorios"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Anel recortable de estrela de aceiro",
+						"product_available_flag":true,
+						"uniqueId":"9451225",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/stately-steel-star-cutout-ring-d-202002191524498~9451225w.jpg",
+						"price":1995,
+						"item_number":"1241841",
+						"categoryPath":[
+							"Xoias> Aneis"
+						],
+						"Brand":[
+							"Stately Steel"
+						],
+						"ShopbyColor":[
+							"Metallic"
+						]
+					},
+					{
+						"product_name":"Bandexa de almacenamento Ultimate Spectrum Noir",
+						"product_available_flag":true,
+						"uniqueId":"1347647",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/spectrum-noir-ultimate-pen-storage-tray-d-20210209092800757~754973.jpg",
+						"price":3995,
+						"item_number":"754973",
+						"categoryPath":[
+							"Artesan\u00eda e costura> Almacenamento de artesan\u00eda> Organizadores e bandexas de artesan\u00eda"
+						],
+						"Brand":[
+							"Crafts & Sewing",
+							"Spectrum Noir"
+						]
+					},
+					{
+						"product_name":"Pure Relief by\nPure Enrichment XXL Ultra-Wide Heating Pad",
+						"product_available_flag":false,
+						"uniqueId":"9129138",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/pure-relief-by-pure-enrichment-xxl-ultra-wide-heating-p-d-20190502114609283~672865.jpg",
+						"price":4962,
+						"item_number":"672865",
+						"keywords":"pure enrichment",
+						"Brand":[
+							"Pure Enrichment"
+						]
+					},
+					{
+						"product_name":"BLACK + DECKER BUFK12W 1.2 P\u00e9s c\u00fabicos Congelador vertical compacto",
+						"product_available_flag":true,
+						"uniqueId":"9694119",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/blackdecker-bufk12w-12-cubic-ft-compact-upright-freezer-d-20210302115704763~9694119w.jpg",
+						"price":23995,
+						"item_number":"1253026",
+						"categoryPath":[
+							"Inicio> Electrodom\u00e9sticos> Frigor\u00edficos e conxeladores",
+							"Coci\u00f1a e alimentaci\u00f3n> Electrodom\u00e9sticos> Frigor\u00edficos e conxeladores"
+						],
+						"Brand":[
+							"Black & Decker\u00ae"
+						]
+					},
+					{
+						"product_name":"Pulseira oval cepillada de dobre ton de aceiro se\u00f1orial",
+						"product_available_flag":true,
+						"uniqueId":"9451239",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/stately-steel-two-tone-brushed-oval-bracelet-d-20200225110609553~9451239w.jpg",
+						"price":4495,
+						"item_number":"1241843",
+						"categoryPath":[
+							"Xoias> Pulseiras"
+						],
+						"Brand":[
+							"Stately Steel"
+						]
+					},
+					{
+						"product_name":"Collar de perlas de obsidiana negra de Jay King",
+						"product_available_flag":true,
+						"uniqueId":"1315307",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-black-obsidian-beaded-necklace-d-20190925094636237~682449.jpg",
+						"price":5700,
+						"item_number":"682449",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						]
+					},
+					{
+						"product_name":"Pulseira de coiro aut\u00e9ntico pintada a man de Anuschka",
+						"product_available_flag":true,
+						"uniqueId":"9129145",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/anuschka-handpainted-genuine-leather-wristlet-d-2019110408421738~672867.jpg",
+						"price":5440,
+						"item_number":"672867",
+						"keywords":"ANIMAL BUTTERFLY TAN\nTRIBAL POPOURRI\nSIN CITY",
+						"categoryPath":[
+							"Moda> Bolsos e carteiras> Carteiras e pulseiras para mulleres"
+						],
+						"Brand":[
+							"Anuschka"
+						],
+						"ShopbyColor":[
+							"Pattern/Print"
+						]
+					},
+					{
+						"product_name":"Chaco Canyon Prata esterlina Kingman Turquoise Star Statement Ring",
+						"product_available_flag":false,
+						"uniqueId":"9694153",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/chaco-canyon-sterling-silver-kingman-turquoise-star-sta-d-20200619155937783~726745.jpg",
+						"price":13851,
+						"item_number":"726745",
+						"Brand":[
+							"Chaco Canyon Southwest Jewelry"
+						],
+						"RingStyle":[
+							"Gemstone"
+						],
+						"Stone":[
+							"Turquoise"
+						]
+					},
+					{
+						"product_name":"Pulseira el\u00e1stica oval cepillada de dobre ton de aceiro se\u00f1orial",
+						"product_available_flag":true,
+						"uniqueId":"9451240",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/stately-steel-two-tone-brushed-oval-stretch-bracelet-d-20200219152446203~9451240w.jpg",
+						"price":3995,
+						"item_number":"1241845",
+						"categoryPath":[
+							"Xoias> Pulseiras"
+						],
+						"Brand":[
+							"Stately Steel"
+						]
+					},
+					{
+						"product_name":"Anel de prata esterlina Bali RoManse e \u00f3palo et\u00edope de 18 quilates",
+						"product_available_flag":true,
+						"uniqueId":"1347170",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/bali-romanse-sterling-silver-and-18k-ethiopian-opal-3-s-d-2021030309164617~753227.jpg",
+						"price":24950,
+						"item_number":"753227",
+						"categoryPath":[
+							"Xoias> Aneis"
+						],
+						"Brand":[
+							"Bali RoManse by Robert Manse"
+						]
+					},
+					{
+						"product_name":"Camiseta de colleen Lopez con bufanda de cadros",
+						"product_available_flag":true,
+						"uniqueId":"9129270",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/colleen-lopez-drop-shoulder-sweater-top-with-plaid-scar-d-20191007095619607~672942.jpg",
+						"price":6300,
+						"item_number":"672942",
+						"categoryPath":[
+							"Moda> Roupa> Xerseis"
+						],
+						"Brand":[
+							"Colleen Lopez Collection"
+						],
+						"ShopbyApparelSize":[
+							"1X (16W - 18W)",
+							"Plus Size"
+						],
+						"ShoeStyle":[
+							"Moto"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Blue",
+							"Gray/Grey",
+							"Green",
+							"Ivory/Off White"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						]
+					},
+					{
+						"product_name":"Inserci\u00f3ns de troquelado 3D \"Armario - Amor\" de Crafter",
+						"product_available_flag":true,
+						"uniqueId":"9694194",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-armoire-love-3d-die-inserts-d-2020091412164335~726761.jpg",
+						"price":2195,
+						"item_number":"726761",
+						"categoryPath":[
+							"Artesan\u00eda e costura> Scrapbooking> troquelado> troqueles e accesorios",
+							"Artesan\u00eda e costura> Scrapbooking> Ferramentas e accesorios> Corte e accesorios"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Mochila convertible IMAN Global Chic en imitaci\u00f3n de coiro",
+						"product_available_flag":true,
+						"uniqueId":"9451307",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/iman-global-chic-faux-leather-convertible-backpack-d-20200626085726483~710040_304.jpg",
+						"price":5070,
+						"item_number":"710040",
+						"categoryPath":[
+							"Moda> Bolsos e carteiras> Mochilas"
+						],
+						"Brand":[
+							"IMAN"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Blue",
+							"Green",
+							"Pink",
+							"Tan",
+							"White"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						]
+					},
+					{
+						"product_name":"Anel de prata esterlina de Bali RoManse e anel de banda de pedras preciosas de Tulang Naga de 18 quilates",
+						"product_available_flag":true,
+						"uniqueId":"1428660",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/bali-romanse-sterling-silver-and-18k-tulang-naga-gemsto-d-2019061107544419~668298.jpg",
+						"price":5126,
+						"item_number":"668298",
+						"categoryPath":[
+							"Xoias> Aneis"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Metallic",
+							"Pink",
+							"White"
+						],
+						"Brand":[
+							"Bali RoManse by Robert Manse"
+						]
+					},
+					{
+						"product_name":"Abrigo de pel sint\u00e9tica Patchwork de Colleen Lopez",
+						"product_available_flag":true,
+						"uniqueId":"9129531",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/colleen-lopez-patchwork-faux-fur-coat-d-2019100108225256~672990.jpg",
+						"price":3640,
+						"item_number":"672990",
+						"categoryPath":[
+							"Moda> Roupa> Chaquetas e roupa exterior"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						],
+						"ShopbyColor":[
+							"Animal",
+							"Black"
+						],
+						"Brand":[
+							"Colleen Lopez Collection"
+						],
+						"ShopbyApparelSize":[
+							"3X (24W - 26W)",
+							"Plus Size"
+						]
+					},
+					{
+						"product_name":"Crafter's Companion Gemini Nesting Die Kit con almacenamento",
+						"product_available_flag":true,
+						"uniqueId":"9694328",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-gemini-nesting-die-kit-with-storage-d-20200904095839787~726771.jpg",
+						"price":12574,
+						"item_number":"726771",
+						"categoryPath":[
+							"Artesan\u00eda e costura> Scrapbooking> Ferramentas e accesorios> Corte e accesorios",
+							"Artesan\u00eda e costura> Scrapbooking> troquelado> troqueles e accesorios",
+							"Artesan\u00eda e costura> Almacenamento de artesan\u00eda> Maletas e bolsas de transporte"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Zapatilla deportiva Keds Chillax",
+						"product_available_flag":true,
+						"uniqueId":"9451475",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/keds-chillax-slip-on-sneaker-d-20200813102911653~710074_203.jpg",
+						"price":5000,
+						"item_number":"710074",
+						"categoryPath":[
+							"Moda> Zapatos> Zapatillas e Athletic"
+						],
+						"Brand":[
+							"Keds\u00ae"
+						],
+						"ShoeStyle":[
+							"Slip-On"
+						],
+						"ShopbyColor":[
+							"Tan",
+							"White"
+						]
+					},
+					{
+						"product_name":"Pantal\u00f3n de punto f\u00e1cil Antthony Boss Lady Stretch Knit",
+						"product_available_flag":true,
+						"uniqueId":"1428717",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/antthony-boss-lady-stretch-knit-easy-fit-pant-d-20200901084231123~717009_710.jpg",
+						"price":4250,
+						"item_number":"717009",
+						"keywords":"Antthony Boss Lady Stretch Knit Easy Fit Pant,,Muhammad Ali and Joe Frazier Autographed Picture Frame,,",
+						"categoryPath":[
+							"Moda> Roupa> Pantal\u00f3ns"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Blue",
+							"Brown",
+							"Green",
+							"Metallic",
+							"Red"
+						],
+						"Brand":[
+							"Antthony Design Originals"
+						],
+						"ShopbyApparelSize":[
+							"XL (16-18)",
+							"Petite"
+						]
+					},
+					{
+						"product_name":"Port\u00e1til HP 17,3 \u201dAMD A9 de 8 GB, disco duro de 1 TB con port\u00e1til Windows 10",
+						"product_available_flag":false,
+						"uniqueId":"9129770",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/hp-173andrdquo-amd-a9-8gb-ram-1tb-hdd-windows-10-laptop-d-20190606120407587~9129770w.jpg",
+						"price":59999,
+						"item_number":"1220764",
+						"Brand":[
+							"HP"
+						],
+						"RAM":[
+							"8 GB"
+						]
+					},
+					{
+						"product_name":"Cord\u00f3n de extensi\u00f3n \"Como est\u00e1\" Sun Joe\u00ae de interior e exterior de 25 'con 5 tomas",
+						"product_available_flag":false,
+						"uniqueId":"9695230",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-sun-joeandreg-indooroutdoor-25-extension-cord-wit-d-20200614092615993~726791.jpg",
+						"price":1799,
+						"item_number":"726791",
+						"categoryPath":[
+							"Inicio> Xard\u00edn e aire libre> Equipos e ferramentas de exterior> Accesorios de ferramentas de exterior"
+						],
+						"Brand":[
+							"Sun Joe"
+						],
+						"ShopbyColor":[
+							"Green"
+						]
+					},
+					{
+						"product_name":"Pendentes de gota lineais de prata esterlina Jay King",
+						"product_available_flag":true,
+						"uniqueId":"9451576",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-blue-topaz-bead-linear-drop-ea-d-2020071409252673~710081.jpg",
+						"price":5275,
+						"item_number":"710081",
+						"categoryPath":[
+							"Xoias> Pendentes"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Topaz"
+						]
+					},
+					{
+						"product_name":"MW-ENTRETENEMENTO-DM-RENOVACI\u00d3N",
+						"product_available_flag":true,
+						"uniqueId":"1624428",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/mw-entertainment-dm-renewal-d-20060111140304043~331705.jpg",
+						"price":6900,
+						"item_number":"331705"
+					},
+					{
+						"product_name":"BeautyBio Pop N 'Pout Party Popper con soro de labios de 3 paquetes",
+						"product_available_flag":true,
+						"uniqueId":"9130206",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/beautybio-pop-n-pout-party-popper-with-3-pack-lip-serum-d-2019100311424941~673146.jpg",
+						"price":4599,
+						"item_number":"673146",
+						"categoryPath":[
+							"Beleza> Maquillaxe> Beizos> Set de beizos",
+							"Beleza> Coidado coa pel> B\u00e1lsamos labiais e plumpers",
+							"Beleza> Maquillaxe> Kits e paletas",
+							"Beleza> Maquillaxe> Beizos> Brillo de labios e plumpers",
+							"Beleza> Coidado coa pel> Kits e xogos"
+						],
+						"Brand":[
+							"BeautyBio"
+						],
+						"GiftsByRecipient":[
+							"For Her",
+							"For Friends"
+						],
+						"GiftsbyOccasion":[
+							"Valentine's Day"
+						]
+					},
+					{
+						"product_name":"\"Como est\u00e1\" South Street Loft Set de 3 cestas pintadas",
+						"product_available_flag":false,
+						"uniqueId":"9695262",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-south-street-loft-set-of-3-painted-baskets-d-20200614092819727~726796.jpg",
+						"price":3499,
+						"item_number":"726796",
+						"Brand":[
+							"South Street Loft"
+						]
+					},
+					{
+						"product_name":"Collar Jay King de prata esterlina turquesa e variscita",
+						"product_available_flag":true,
+						"uniqueId":"9451607",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-turquoise-and-variscite-bead-n-d-2020070908491444~710094.jpg",
+						"price":7998,
+						"item_number":"710094",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Turquoise"
+						]
+					},
+					{
+						"product_name":"Signature Club A Transporte r\u00e1pido C Concentrado infuso para ollos",
+						"product_available_flag":false,
+						"uniqueId":"1793549",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/signature-club-a-rapid-transport-c-infused-concentrate-d-20130524131904533~266583.jpg",
+						"price":2400,
+						"item_number":"266583",
+						"Brand":[
+							"Signature Club A"
+						]
+					},
+					{
+						"product_name":"Elama Zen Red Mozaik Set de 16 pezas de gres",
+						"product_available_flag":true,
+						"uniqueId":"9130342",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/elama-zen-red-mozaik-16-piece-stoneware-dinnerware-set-d-2019081615072612~9130342w.jpg",
+						"price":7225,
+						"item_number":"1220864",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Mesa de mesa e barra> Conxuntos de vaixelas> Configuraci\u00f3n do lugar"
+						]
+					},
+					{
+						"product_name":"Dolce Pull Along Elephant Peluche",
+						"product_available_flag":true,
+						"uniqueId":"9630938",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/dolce-pull-along-elephant-plush-toy-d-20200504080003907~9630938w.jpg",
+						"price":2999,
+						"item_number":"1247145",
+						"categoryPath":[
+							"Xoguetes e xogos> Animais de peluche> Peluche suave"
+						],
+						"ShopbyAge":[
+							"2-4 Years",
+							"5-7 Years"
+						]
+					},
+					{
+						"product_name":"Ratchet and Clank mellor \u00e9xito para Playstation 4",
+						"product_available_flag":true,
+						"uniqueId":"9456193",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/ratchet-and-clank-greatest-hit-for-playstation-4-d-2020021512502338~9456193w.jpg",
+						"price":1999,
+						"item_number":"1245068",
+						"categoryPath":[
+							"Electr\u00f3nica> Videoxogos e sistemas> Videoxogos"
+						],
+						"Brand":[
+							"Sony"
+						],
+						"ConsoleType":[
+							"PS4",
+							"PS4 Slim",
+							"PS4 Pro"
+						]
+					},
+					{
+						"product_name":"Joan Boyce Inside-Outside Pav\u00e9 Hoop Pendentes",
+						"product_available_flag":false,
+						"uniqueId":"1832991",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/joan-boyce-inside-outside-pavandeacute-hoop-earrings-d-2016102217283624~513295_1B4.jpg",
+						"price":1495,
+						"item_number":"513295",
+						"categoryPath":[
+							"Xoias> Pendentes"
+						],
+						"Brand":[
+							"Joan Boyce"
+						]
+					},
+					{
+						"product_name":"Set de vaixelas Elama Mellow-Yellow de 16 pezas",
+						"product_available_flag":true,
+						"uniqueId":"9130349",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/elama-mellow-yellow-16-piece-dinnerware-set-d-20190816150632567~9130349w.jpg",
+						"price":7225,
+						"item_number":"1220035",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Mesa de mesa e barra> Conxuntos de vaixelas> Configuraci\u00f3n do lugar"
+						],
+						"Brand":[
+							"Elama"
+						]
+					},
+					{
+						"product_name":"Beneficia Cosm\u00e9ticos Falso pestanas reais",
+						"product_available_flag":true,
+						"uniqueId":"9631029",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/benefit-cosmetics-real-false-lashes-d-20200504123358673~9631029w_PB0.jpg",
+						"price":1500,
+						"item_number":"1246368",
+						"categoryPath":[
+							"Beleza> Maquillaxe> Ollos> Potenciadores de pestanas"
+						],
+						"Brand":[
+							"Benefit Cosmetics"
+						]
+					},
+					{
+						"product_name":"Hagen Set de vaixelas de 30 unidades - Servizo para 6 - Cadrado - Branco - Cer\u00e1mica fina - GBX",
+						"product_available_flag":true,
+						"uniqueId":"9456200",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/hagen-30-pc-dinnerware-set-service-for-6-square-white-f-d-20200215125046473~9456200w.jpg",
+						"price":5899,
+						"item_number":"1241052",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Mesa de mesa e barra> Conxuntos de vaixelas> Configuraci\u00f3n do lugar"
+						]
+					},
+					{
+						"product_name":"Benefit Cosmetics Paleta de sombra de ollos Vanity Flare con mini r\u00edmel",
+						"product_available_flag":true,
+						"uniqueId":"1845961",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/benefit-cosmetics-vanity-flare-eyeshadow-palette-with-m-d-2018110512011724~636321.jpg",
+						"price":2999,
+						"item_number":"636321",
+						"categoryPath":[
+							"Beleza> Maquillaxe> Kits e paletas"
+						],
+						"Brand":[
+							"Benefit Cosmetics"
+						],
+						"GiftsByRecipient":[
+							"For Her",
+							"For Friends"
+						],
+						"GiftsbyOccasion":[
+							"Valentine's Day"
+						]
+					},
+					{
+						"product_name":"Elama Honeycomb 6 pezas 15 oz. Set de cuncas - turquesa",
+						"product_available_flag":true,
+						"uniqueId":"9130356",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/elama-honeycomb-6-piece-15-oz-mug-set-turquoise-d-20190905150106407~9130356w.jpg",
+						"price":2475,
+						"item_number":"1220675",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Mesa de mesa e barra> Utensilios para bebida> Tazas de caf\u00e9 e t\u00e9",
+							"Coci\u00f1a e comida> Mesa de mesa e barra> Conxuntos de vaixelas> Tazas"
+						],
+						"Brand":[
+							"Elama"
+						]
+					},
+					{
+						"product_name":"Zapatilla TOMS Nahla House",
+						"product_available_flag":true,
+						"uniqueId":"9631404",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/toms-nahla-house-slipper-d-20201113080246307~721575.jpg",
+						"price":4995,
+						"item_number":"721575",
+						"categoryPath":[
+							"Moda> Zapatos> Zapatillas"
+						],
+						"ShopbyColor":[
+							"Blue",
+							"Pink"
+						],
+						"Brand":[
+							"TOMS"
+						],
+						"Type":[
+							"Slippers"
+						]
+					},
+					{
+						"product_name":"Colgante Jay King de prata esterlina azul turquesa sonora",
+						"product_available_flag":false,
+						"uniqueId":"9456218",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-sonoran-blue-turquoise-cross-p-d-2020061008335945~710694.jpg",
+						"price":12498,
+						"item_number":"710694",
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Turquoise"
+						]
+					},
+					{
+						"product_name":"Anna Griffin\u00ae Valentine Doily Cut and Emboss Die Set",
+						"product_available_flag":false,
+						"uniqueId":"1846227",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/anna-griffinandreg-valentine-doily-cut-and-emboss-die-s-d-20181101160419817~641297.jpg",
+						"price":3995,
+						"item_number":"641297",
+						"Brand":[
+							"Anna Griffin",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Elama Coffee House 6 unidades 12 oz. Set de cuncas con soporte, cores variadas",
+						"product_available_flag":true,
+						"uniqueId":"9130367",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/elama-coffee-house-6-piece-12-oz-mug-set-with-stand-ass-d-2020031112501129~9130367w.jpg",
+						"price":2999,
+						"item_number":"1220747",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Mesa de mesa e barra> Utensilios para bebida> Tazas de caf\u00e9 e t\u00e9",
+							"Coci\u00f1a e comida> Mesa de mesa e barra> Conxuntos de vaixelas> Tazas"
+						],
+						"Brand":[
+							"Elama"
+						]
+					},
+					{
+						"product_name":"Esmalte vintage Chantal sobre teca de aceiro",
+						"product_available_flag":false,
+						"uniqueId":"9631931",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/chantal-vintage-enamel-on-steel-teakettle-d-2020050514225723~9631931w_A5X.jpg",
+						"price":4995,
+						"item_number":"1247091",
+						"Brand":[
+							"Chantal"
+						]
+					},
+					{
+						"product_name":"Colgante de calcedonia violeta de prata esterlina Jay King con colar",
+						"product_available_flag":true,
+						"uniqueId":"9456250",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-violet-chalcedony-pendant-with-d-2020071410290113~710709.jpg",
+						"price":14750,
+						"item_number":"710709",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Chalcedony"
+						]
+					},
+					{
+						"product_name":"Pendentes de estrela de prata esterlina incrustados en cor turquesa de Jay King",
+						"product_available_flag":false,
+						"uniqueId":"1239516",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sleeping-beauty-turquoise-inlay-sterling-silve-d-20170516115051793~540704.jpg",
+						"price":10990,
+						"item_number":"540704",
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Turquoise"
+						]
+					},
+					{
+						"product_name":"Set de vaixelas cadradas de 16 pezas Buffetware Zen - branco",
+						"product_available_flag":true,
+						"uniqueId":"9130392",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/zen-buffetware-16-piece-square-dinnerware-set-white-d-2019081615084288~9130392w.jpg",
+						"price":4850,
+						"item_number":"1220749",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Mesa de mesa e barra> Conxuntos de vaixelas> Configuraci\u00f3n do lugar"
+						],
+						"Brand":[
+							"Gibson",
+							"Megagoods"
+						]
+					},
+					{
+						"product_name":"Lot Chantal Loop On Steel Teakettle",
+						"product_available_flag":true,
+						"uniqueId":"9631938",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/chantal-loop-enamel-on-steel-teakettle-d-20200505142257927~9631938w_FC3.jpg",
+						"price":4995,
+						"item_number":"1247089",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Caf\u00e9, caf\u00e9 espresso e t\u00e9> Chaleiras e cafeteiras"
+						],
+						"ShopbyColor":[
+							"Red"
+						],
+						"Brand":[
+							"Chantal"
+						]
+					},
+					{
+						"product_name":"Pendentes de gota de \u00f3palo verde prata esterlina Jay King",
+						"product_available_flag":false,
+						"uniqueId":"9456268",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-green-opal-drop-earrings-d-20200714092543433~710735.jpg",
+						"price":9998,
+						"item_number":"710735",
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Opal"
+						]
+					},
+					{
+						"product_name":"PUR M\u00e1scara de castigo de poros roxos",
+						"product_available_flag":false,
+						"uniqueId":"1283136",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/pur-purple-pore-punisher-mask-d-2018082310340506~626243.jpg",
+						"price":2600,
+						"item_number":"626243",
+						"categoryPath":[
+							"Beleza> Coidado coa pel> M\u00e1scaras faciais"
+						],
+						"Brand":[
+							"PUR"
+						]
+					},
+					{
+						"product_name":"Tenda xeral Addlestone 3 unidades 10 \", 8\" e 6 \"Set de tarteiras - Tama\u00f1os - Redondos - Negro - Pretemporada -",
+						"product_available_flag":false,
+						"uniqueId":"9130399",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/general-store-addlestone-3-pc-10-8-and-6-skillet-set-as-d-20200225175538817~9130399w.jpg",
+						"price":3625,
+						"item_number":"1224868"
+					},
+					{
+						"product_name":"Esmalte cl\u00e1sico Chantal sobre teca de aceiro",
+						"product_available_flag":true,
+						"uniqueId":"9631942",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/chantal-classic-enamel-on-steel-teakettle-d-20200505142301947~9631942w_3EU.jpg",
+						"price":9995,
+						"item_number":"1247087",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Caf\u00e9, caf\u00e9 espresso e t\u00e9> Chaleiras e cafeteiras"
+						],
+						"Brand":[
+							"Chantal"
+						],
+						"ShopbyColor":[
+							"Black"
+						]
+					},
+					{
+						"product_name":"Colgante Jay King de zafiro rosa e azul con colar de contas multicolores",
+						"product_available_flag":true,
+						"uniqueId":"9456275",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-pink-and-blue-sapphire-pendant-with-multi-colo-d-202007141029091~710758.jpg",
+						"price":23725,
+						"item_number":"710758",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Sapphire"
+						]
+					},
+					{
+						"product_name":"Poncho WynneLayers \"Tal como \u00e9\" con pescozo mixto",
+						"product_available_flag":false,
+						"uniqueId":"1348323",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-wynnelayers-cowl-neck-mixed-media-poncho-d-20210215153146837~757999.jpg",
+						"price":2499,
+						"item_number":"757999",
+						"Brand":[
+							"MarlaWynne"
+						]
+					},
+					{
+						"product_name":"Set de cubertos Gibson Home de 45 pezas",
+						"product_available_flag":true,
+						"uniqueId":"9130406",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/gibson-home-45-piece-flatware-set-d-2020022517592232~9130406w.jpg",
+						"price":4399,
+						"item_number":"1222851",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Mesa de mesa e barra> Cubertos e cubertos> Conxuntos de cubertos"
+						],
+						"Brand":[
+							"Gibson",
+							"Megagoods"
+						]
+					},
+					{
+						"product_name":"TOMS Tiny Alpargata Reindeer Slip-On",
+						"product_available_flag":true,
+						"uniqueId":"9632097",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/toms-tiny-alpargata-reindeer-slip-on-d-2020110307544128~721673.jpg",
+						"price":2300,
+						"item_number":"721673",
+						"categoryPath":[
+							"Nenos> Zapatos> Zapatillas e slip-ons"
+						],
+						"Brand":[
+							"TOMS"
+						],
+						"Type":[
+							"Slippers"
+						],
+						"ShopbyColor":[
+							"Animal"
+						]
+					},
+					{
+						"product_name":"Patricia Nash Norcia Bandolera de coiro con bolsa con cremalleira",
+						"product_available_flag":true,
+						"uniqueId":"9747353",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/patricia-nash-norcia-leather-crossbody-with-zip-pouch-d-2020123108163728~732863_PWP.jpg",
+						"price":18000,
+						"item_number":"732863",
+						"categoryPath":[
+							"Moda> Bolsos e carteiras> Bolsos bandolera",
+							"Moda> Bolsos e carteiras> Bolsas"
+						],
+						"Brand":[
+							"Patricia Nash"
+						]
+					},
+					{
+						"product_name":"Pendentes de aros de xade e pedras preciosas",
+						"product_available_flag":true,
+						"uniqueId":"1428661",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jade-of-yesteryear-jade-and-gemstone-hoop-earrings-d-20190718084648603~674752.jpg",
+						"price":7998,
+						"item_number":"674752",
+						"categoryPath":[
+							"Xoias> Pendentes"
+						],
+						"ShopbyColor":[
+							"Green"
+						],
+						"Brand":[
+							"Jade of Yesteryear"
+						],
+						"Stone":[
+							"Jade"
+						]
+					},
+					{
+						"product_name":"Elama Signature Set de 12 \"Lazy Susan de 7 pezas",
+						"product_available_flag":true,
+						"uniqueId":"9130417",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/elama-signature-12-7-piece-lazy-susan-server-set-d-20190816150729417~9130417w.jpg",
+						"price":2660,
+						"item_number":"1222846",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Mesa de mesa e barra> Utensilios> Servidores de aperitivos"
+						],
+						"Brand":[
+							"Elama",
+							"Megagoods"
+						]
+					},
+					{
+						"product_name":"Cartera Patricia Nash Empoli de coiro de metal",
+						"product_available_flag":true,
+						"uniqueId":"9632676",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/patricia-nash-empoli-leather-metal-ring-satchel-d-20200828104312473~721732.jpg",
+						"price":16975,
+						"item_number":"721732",
+						"categoryPath":[
+							"Moda> Bolsos e carteiras> Maletas"
+						],
+						"Brand":[
+							"Patricia Nash"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						],
+						"ShopbyColor":[
+							"Green",
+							"Pattern/Print",
+							"Tan"
+						]
+					},
+					{
+						"product_name":"Bzees Smile Sandalia de cu\u00f1a lavable brillante",
+						"product_available_flag":true,
+						"uniqueId":"9747721",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/bzees-smile-bright-washable-wedge-sandal-d-20210201111406917~732953_097.jpg",
+						"price":6000,
+						"item_number":"732953",
+						"Brand":[
+							"Bzees"
+						],
+						"ShoeStyle":[
+							"Slide"
+						],
+						"ShopbyColor":[
+							"Blue"
+						]
+					},
+					{
+						"product_name":"Xirador solar de vento e tempo",
+						"product_available_flag":true,
+						"uniqueId":"1428768",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/wind-and-weather-solar-swirl-spinner-d-20210203092908253~739757.jpg",
+						"price":2995,
+						"item_number":"739757",
+						"keywords":"signature Club A by Adrienne Lemon Verbena Bath and Shower Gel - 60 Day AutoShip,,",
+						"categoryPath":[
+							"Inicio> Xard\u00edn e aire libre> Decoraci\u00f3n> Acentos",
+							"Inicio> Xard\u00edn e aire libre> Decoraci\u00f3n> Iluminaci\u00f3n"
+						],
+						"ShopbyColor":[
+							"Animal"
+						],
+						"Brand":[
+							"Wind & Weather"
+						]
+					},
+					{
+						"product_name":"Calcet\u00edn MUK LUKS con paquete de 2 borlas",
+						"product_available_flag":true,
+						"uniqueId":"9136711",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/muk-luks-2-pack-tassel-slipper-sock-d-20191101103736527~673631.jpg",
+						"price":1450,
+						"item_number":"673631",
+						"categoryPath":[
+							"Moda> Zapatos> Zapatillas"
+						],
+						"Type":[
+							"Slippers"
+						],
+						"ShopbyColor":[
+							"Gray/Grey",
+							"Green",
+							"Red"
+						]
+					},
+					{
+						"product_name":"Bolso bandolera pequena de coiro Patricia Nash Dante",
+						"product_available_flag":false,
+						"uniqueId":"9632744",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/patricia-nash-dante-leather-petite-crossbody-bag-d-20200828104332823~721736.jpg",
+						"price":16900,
+						"item_number":"721736",
+						"Brand":[
+							"Patricia Nash"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						],
+						"GiftsbyOccasion":[
+							"Holiday Gifts"
+						]
+					},
+					{
+						"product_name":"Estabilizador card\u00e1n Selfie Stick Tr\u00edpode",
+						"product_available_flag":true,
+						"uniqueId":"9747771",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/gimbal-stabilizer-selfie-stick-tripod-d-20200908091749163~732957_100.jpg",
+						"price":4999,
+						"item_number":"732957",
+						"categoryPath":[
+							"Electr\u00f3nica> C\u00e1maras, foto e v\u00eddeo> Lentes e accesorios",
+							"Electr\u00f3nica> Accesorios e tel\u00e9fonos m\u00f3biles> Accesorios para tel\u00e9fonos m\u00f3biles"
+						],
+						"GiftsByRecipient":[
+							"For Her",
+							"For Him",
+							"For Kids & Teens"
+						],
+						"ShopbyColor":[
+							"Black",
+							"White"
+						],
+						"Brand":[
+							"Gimbal"
+						]
+					},
+					{
+						"product_name":"Camiseta con estampado de cisne Vanderbilt Jeans \"As Is\"",
+						"product_available_flag":true,
+						"uniqueId":"1428775",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-vanderbilt-jeans-swan-print-t-shirt-d-202010061429229~739885.jpg",
+						"price":2099,
+						"item_number":"739885",
+						"categoryPath":[
+							"Moda> Roupa> Tops"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						],
+						"GiftsbyOccasion":[
+							"Holiday Gifts"
+						],
+						"Brand":[
+							"Vanderbilt Jeans"
+						],
+						"ShopbyColor":[
+							"Black"
+						],
+						"ShopbyApparelSize":[
+							"L (12-14)"
+						]
+					},
+					{
+						"product_name":"Anel de c\u00fapula tecida pulida de ouro de 14 quilates",
+						"product_available_flag":false,
+						"uniqueId":"9136862",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/14k-gold-polished-woven-dome-ring-d-20190515105705307~9136862w.jpg",
+						"price":76495,
+						"item_number":"1217578",
+						"RingStyle":[
+							"Bands"
+						]
+					},
+					{
+						"product_name":"Anna Griffin\u00ae 120 adhesivos florais 3D favoritos",
+						"product_available_flag":false,
+						"uniqueId":"9633035",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/anna-griffinandreg-120-favorite-floral-3d-stickers-d-2020103011345583~721809.jpg",
+						"price":3037,
+						"item_number":"721809",
+						"Brand":[
+							"Anna Griffin",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Reixa de pellets de madeira Lifesmart 1500 7 en 1",
+						"product_available_flag":true,
+						"uniqueId":"9747971",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/lifesmart-1500-7-in-1-wood-pellet-grill-d-2020081018224371~9747971w.jpg",
+						"price":89999,
+						"item_number":"1253289",
+						"categoryPath":[
+							"Coci\u00f1a e Alimentaci\u00f3n> Reixas> Reixas ao aire libre"
+						],
+						"Brand":[
+							"Lifesmart"
+						],
+						"Type":[
+							"Smokers",
+							"Pellet Grill"
+						]
+					},
+					{
+						"product_name":"MW-ENTERTAIN FAF-RENOVE",
+						"product_available_flag":true,
+						"uniqueId":"1621346",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/mw-entertain-faf-renew-d-2006011114030401~214804.jpg",
+						"price":6900,
+						"item_number":"214804"
+					},
+					{
+						"product_name":"Anel de derivaci\u00f3n pulido de ouro de 14 quilates",
+						"product_available_flag":true,
+						"uniqueId":"9136897",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/14k-gold-polished-bypass-ring-d-20190515105734753~9136897w_3W3.jpg",
+						"price":34695,
+						"item_number":"1217584",
+						"categoryPath":[
+							"Xoias> Aneis"
+						],
+						"RingStyle":[
+							"Bands"
+						],
+						"ShopbyColor":[
+							"Metallic"
+						]
+					},
+					{
+						"product_name":"Urbanista Stockholm Plus Auriculares realmente inal\u00e1mbricos con estuche de carga",
+						"product_available_flag":true,
+						"uniqueId":"9633044",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/urbanista-stockholm-plus-truly-wireless-earbuds-with-ch-d-20200828112925197~721863_001.jpg",
+						"price":6999,
+						"item_number":"721863",
+						"categoryPath":[
+							"Electr\u00f3nica> Audio> Auriculares"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Green",
+							"Metallic",
+							"White"
+						],
+						"HeadphoneType":[
+							"Truly Wireless"
+						]
+					},
+					{
+						"product_name":"Paquete de parrilla Kames de 6 \"en 1 de Lifesmart",
+						"product_available_flag":true,
+						"uniqueId":"9747972",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/lifesmart-24-6-in-1-kamado-grill-package-d-20200810182242053~9747972w.jpg",
+						"price":94999,
+						"item_number":"1253293",
+						"categoryPath":[
+							"Coci\u00f1a e Alimentaci\u00f3n> Reixas> Reixas ao aire libre"
+						],
+						"Brand":[
+							"Lifesmart"
+						],
+						"Type":[
+							"Charcoal Grills"
+						]
+					},
+					{
+						"product_name":"MW-MONEYMASTER MBRSHP PLAN-REN",
+						"product_available_flag":true,
+						"uniqueId":"1621353",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/mw-moneymaster-mbrshp-plan-ren-d-2006011114030398~130470.jpg",
+						"price":4900,
+						"item_number":"130470"
+					},
+					{
+						"product_name":"Anel de c\u00fapula con textura pulida de ouro de 14 quilates",
+						"product_available_flag":true,
+						"uniqueId":"9137048",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/14k-gold-polished-textured-dome-ring-d-20190515135345467~9137048w.jpg",
+						"price":79495,
+						"item_number":"1217893",
+						"categoryPath":[
+							"Xoias> Aneis"
+						],
+						"RingStyle":[
+							"Bands"
+						]
+					},
+					{
+						"product_name":"Sandalia de vestir IMPO International Vlossom",
+						"product_available_flag":true,
+						"uniqueId":"9657179",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/impo-international-vlossom-dress-sandal-d-20200520231117743~9657179w.jpg",
+						"price":4999,
+						"item_number":"1248005",
+						"categoryPath":[
+							"Moda> Zapatos> Sandalias",
+							"Moda> Zapatos> Diapositivas e mulas"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Pink"
+						],
+						"HeelType":[
+							"Block"
+						],
+						"ShoeStyle":[
+							"Dress",
+							"Slide"
+						],
+						"Brand":[
+							"IMPO"
+						]
+					},
+					{
+						"product_name":"Pendentes de cristal \"Simplemente sensacionais\" de Heidi Daus",
+						"product_available_flag":true,
+						"uniqueId":"9747989",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/heidi-daus-simply-sensational-crystal-earrings-d-20201012092012303~732964.jpg",
+						"price":6850,
+						"item_number":"732964",
+						"categoryPath":[
+							"Xoias> Pendentes"
+						],
+						"GiftsbyOccasion":[
+							"Valentine's Day"
+						],
+						"GiftsByRecipient":[
+							"For Friends"
+						],
+						"Brand":[
+							"Heidi Daus"
+						]
+					},
+					{
+						"product_name":"Sandalia Birkenstock Gizeh Thong Comfort",
+						"product_available_flag":true,
+						"uniqueId":"1835055",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/birkenstock-gizeh-thong-comfort-sandal-d-20170303153647927~537505.jpg",
+						"price":9995,
+						"item_number":"537505",
+						"categoryPath":[
+							"Moda> Zapatos> Sandalias"
+						],
+						"Type":[
+							"Sandals"
+						],
+						"HeelType":[
+							"Flat"
+						],
+						"Brand":[
+							"Birkenstock"
+						],
+						"ShopbyColor":[
+							"Tan"
+						],
+						"ShoeStyle":[
+							"Flat",
+							"Thong",
+							"T-Strap"
+						],
+						"UpperMaterial":[
+							"Faux Leather"
+						]
+					},
+					{
+						"product_name":"Colleen Lopez Pendente de prata esterlina multicolor en berilo",
+						"product_available_flag":true,
+						"uniqueId":"9137516",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/colleen-lopez-sterling-silver-multicolor-beryl-beaded-n-d-20190624085210927~673689.jpg",
+						"price":11308,
+						"item_number":"673689",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Brand":[
+							"Colleen Lopez Collection"
+						],
+						"ShopbyColor":[
+							"Green"
+						]
+					},
+					{
+						"product_name":"Soave Oro Pendentes con bot\u00f3ns pulidos de electroforma de ouro de 14 quilates",
+						"product_available_flag":true,
+						"uniqueId":"9658685",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/soave-oro-14k-gold-electroform-polished-button-stud-ear-d-2020073114201232~723929.jpg",
+						"price":12998,
+						"item_number":"723929",
+						"categoryPath":[
+							"Xoias> Pendentes"
+						],
+						"ShopbyColor":[
+							"Pink",
+							"White",
+							"Yellow"
+						],
+						"Brand":[
+							"Soave Oro"
+						]
+					},
+					{
+						"product_name":"Heidi Daus \"Classic Cascade\" Pulseira de contas con varias filas",
+						"product_available_flag":true,
+						"uniqueId":"9748022",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/heidi-daus-classic-cascade-multi-row-beaded-bracelet-d-2020100810074643~732978.jpg",
+						"price":20525,
+						"item_number":"732978",
+						"categoryPath":[
+							"Xoias> Pulseiras"
+						],
+						"Brand":[
+							"Heidi Daus"
+						]
+					},
+					{
+						"product_name":"Beauty for Real Nude Set de 5 pezas de armario para labios desnudos",
+						"product_available_flag":true,
+						"uniqueId":"1844615",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/beauty-for-real-nude-lip-wardrobe-5-piece-set-d-20190607081738763~622839.jpg",
+						"price":5500,
+						"item_number":"622839",
+						"categoryPath":[
+							"Beleza> Maquillaxe> Kits e paletas",
+							"Beleza> Maquillaxe> Beizos> Set de beizos"
+						],
+						"Brand":[
+							"Beauty For Real"
+						]
+					},
+					{
+						"product_name":"Zadro Melrose LED espello de vanidade Bluetooth",
+						"product_available_flag":true,
+						"uniqueId":"9137948",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/zadro-melrose-led-bluetooth-vanity-mirror-d-2020031907374583~673727.jpg",
+						"price":13181,
+						"item_number":"673727",
+						"categoryPath":[
+							"Inicio> Ba\u00f1o> Espellos",
+							"Beleza> Ferramentas e accesorios> Cepillos e ferramentas de maquillaxe> Espellos de maquillaxe"
+						],
+						"Brand":[
+							"Zadro"
+						]
+					},
+					{
+						"product_name":"Marcador prensado de pel brillante de BECCA e Rubor con pincel",
+						"product_available_flag":true,
+						"uniqueId":"9658783",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/becca-shimmering-skin-pressed-highlighter-and-blush-wit-d-20200520113511533~9658783w.jpg",
+						"price":5900,
+						"item_number":"1248731",
+						"categoryPath":[
+							"Beleza> Maquillaxe> Kits e paletas",
+							"Beleza> Maquillaxe> Cara> Conxuntos faciais"
+						],
+						"Brand":[
+							"BECCA Cosmetics"
+						]
+					},
+					{
+						"product_name":"\"As Is\" Rhonda Shear Paquete de 2 sujetadores de copa moldeada de encaje",
+						"product_available_flag":false,
+						"uniqueId":"9748053",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-rhonda-shear-2-pack-lace-overlay-molded-cup-bra-d-20200811090412467~732996.jpg",
+						"price":2699,
+						"item_number":"732996",
+						"Brand":[
+							"Rhonda Shear"
+						]
+					},
+					{
+						"product_name":"Golden Treasures 14 quilates de ouro italiano de dobre f\u00edo",
+						"product_available_flag":true,
+						"uniqueId":"1323553",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/golden-treasures-14k-italian-gold-double-strand-fancy-n-d-2020011608410198~696242.jpg",
+						"price":33421,
+						"item_number":"696242",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Brand":[
+							"Golden Treasures"
+						]
+					},
+					{
+						"product_name":"Herkimer Mines \"Diamond\" Quartz Pulseira aberta multi-pedra",
+						"product_available_flag":false,
+						"uniqueId":"9138465",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/herkimer-mines-diamond-quartz-multi-stone-open-cuff-bra-d-20190725083015873~673886.jpg",
+						"price":10513,
+						"item_number":"673886",
+						"Stone":[
+							"Quartz"
+						],
+						"Brand":[
+							"Herkimer Mines"
+						]
+					},
+					{
+						"product_name":"Soave Oro Pulseira de cadea Rolo de 8-1 / 4 \"electroforma de ouro de 14 quilates",
+						"product_available_flag":true,
+						"uniqueId":"9658785",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/soave-oro-14k-gold-electroform-polished-8-14-rolo-chain-d-2020073114211478~723963.jpg",
+						"price":37998,
+						"item_number":"723963",
+						"categoryPath":[
+							"Xoias> Pulseiras"
+						],
+						"Brand":[
+							"Soave Oro"
+						]
+					},
+					{
+						"product_name":"Plato quente HomeCraft de dobre queimador",
+						"product_available_flag":true,
+						"uniqueId":"9748171",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/homecraft-double-burner-hot-plate-d-20200811093605007~9748171w.jpg",
+						"price":5499,
+						"item_number":"1264207",
+						"categoryPath":[
+							"Coci\u00f1a e Alimentaci\u00f3n> Electrodom\u00e9sticos> Queimadores el\u00e9ctricos",
+							"Coci\u00f1a e Alimentaci\u00f3n> Electrodom\u00e9sticos> Electricidade especial"
+						]
+					},
+					{
+						"product_name":"Cepillo de rubor acabado m\u00e1xico M. Asam",
+						"product_available_flag":true,
+						"uniqueId":"1337300",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/m-asam-magic-finish-blusher-brush-d-20201117095857323~720006.jpg",
+						"price":2350,
+						"item_number":"720006",
+						"categoryPath":[
+							"Beleza> Maquillaxe> Cepillos e aplicadores de maquillaxe> Cepillos para a cara"
+						],
+						"BrushType":[
+							"Face"
+						],
+						"Brand":[
+							"M. Asam"
+						]
+					},
+					{
+						"product_name":"Winter Lane Set de 2 cordas de mini luces LED",
+						"product_available_flag":false,
+						"uniqueId":"9138684",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/winter-lane-set-of-2-strings-of-mini-led-lights-d-20191028095433527~673946.jpg",
+						"price":1395,
+						"item_number":"673946",
+						"Brand":[
+							"Winter Lane"
+						]
+					},
+					{
+						"product_name":"Pendente de medall\u00f3ns de ouro branco de 18 quilates .16 quilates",
+						"product_available_flag":true,
+						"uniqueId":"9658817",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/18k-white-gold-16ctw-diamond-cluster-medallion-necklace-d-20200520114752267~9658817w.jpg",
+						"price":159900,
+						"item_number":"1250974",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Stone":[
+							"Diamond"
+						]
+					},
+					{
+						"product_name":"Zapatilla de deporte Keds Kickstart con cord\u00f3n leopardo",
+						"product_available_flag":true,
+						"uniqueId":"9451608",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/keds-kickstart-leather-leopard-lace-up-sneaker-d-20200818145751437~710095.jpg",
+						"price":6500,
+						"item_number":"710095",
+						"categoryPath":[
+							"Moda> Zapatos> Zapatillas e Athletic"
+						],
+						"Brand":[
+							"Keds\u00ae"
+						],
+						"ShoeStyle":[
+							"Lace-Up"
+						],
+						"ShopbyColor":[
+							"Animal"
+						]
+					},
+					{
+						"product_name":"PRAI Pink Orchid Edition S\u00e9rum e crema de pedras preciosas radiantes",
+						"product_available_flag":true,
+						"uniqueId":"1428759",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/prai-pink-orchid-edition-radiant-gemstone-serum-andamp-d-20201228075200113~737012.jpg",
+						"price":7995,
+						"item_number":"737012",
+						"categoryPath":[
+							"Beleza> Coidado coa pel> Kits e xogos",
+							"Beleza> Coidado coa pel> Hidratantes> Hidratantes faciais",
+							"Beleza> Coidado coa pel> Soro> Cara"
+						],
+						"Brand":[
+							"PRAI"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						],
+						"GiftsbyOccasion":[
+							"Valentine's Day"
+						]
+					},
+					{
+						"product_name":"IT Cosmetics \u00c9 o teu imprescindible premio",
+						"product_available_flag":true,
+						"uniqueId":"9139369",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/it-cosmetics-its-your-award-winning-must-haves-d-2019081307465194~673982.jpg",
+						"price":4920,
+						"item_number":"673982",
+						"categoryPath":[
+							"Beleza> Maquillaxe> Kits e paletas",
+							"Beleza> Maquillaxe> Cara> Conxuntos faciais"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						],
+						"Brand":[
+							"IT Cosmetics"
+						]
+					},
+					{
+						"product_name":"Pendente de coraz\u00f3n aberto de diamantes de 10 quilates .10 quilates",
+						"product_available_flag":true,
+						"uniqueId":"9658866",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/14k-gold-10ctw-diamond-open-heart-necklace-d-20200908103918237~9658866w.jpg",
+						"price":84525,
+						"item_number":"1255499",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Brand":[
+							"Delmar Jewelers"
+						],
+						"ShopbyColor":[
+							"Yellow"
+						],
+						"Stone":[
+							"Diamond"
+						]
+					},
+					{
+						"product_name":"Sandalia \"Tal como \u00e9\" Baretraps\u00ae Miriam, plataforma con cu\u00f1a e corte l\u00e1ser",
+						"product_available_flag":true,
+						"uniqueId":"9451944",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-baretrapsandreg-miriam-laser-cut-wedge-platform-s-d-2020021212143668~710148.jpg",
+						"price":2699,
+						"item_number":"710148",
+						"categoryPath":[
+							"Moda> Zapatos> Sandalias"
+						],
+						"ShoeStyle":[
+							"Wedge"
+						],
+						"Brand":[
+							"Baretraps"
+						],
+						"ShopbyColor":[
+							"Brown"
+						]
+					},
+					{
+						"product_name":"Collar de perlas de amatista de cabo de prata esterlina Jay King",
+						"product_available_flag":true,
+						"uniqueId":"1429309",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-sterling-silver-cape-amethyst-bead-necklace-d-20200402073910597~706897.jpg",
+						"price":5700,
+						"item_number":"706897",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						],
+						"Stone":[
+							"Amethyst"
+						]
+					},
+					{
+						"product_name":"Pendentes de aro con purpurina de ouro de 14 quilates",
+						"product_available_flag":true,
+						"uniqueId":"9192775",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/14k-gold-polished-glitter-infused-hoop-earrings-d-2019070810214019~9192775w_100.jpg",
+						"price":103495,
+						"item_number":"1221292",
+						"categoryPath":[
+							"Xoias> Pendentes"
+						],
+						"ShopbyColor":[
+							"White"
+						]
+					},
+					{
+						"product_name":"Pendentes de nacre tripla de aceiro se\u00f1orial",
+						"product_available_flag":true,
+						"uniqueId":"9378492",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/stately-steel-triple-round-mother-of-pearl-earrings-d-20200109130613227~9378492w_710.jpg",
+						"price":2495,
+						"item_number":"1238891",
+						"categoryPath":[
+							"Xoias> Pendentes"
+						],
+						"Stone":[
+							"Mother of Pearl"
+						],
+						"Brand":[
+							"Stately Steel"
+						],
+						"ShopbyColor":[
+							"Metallic"
+						]
+					},
+					{
+						"product_name":"Cama anel t\u00e9rmica Scruffs - Borgo\u00f1a",
+						"product_available_flag":true,
+						"uniqueId":"9452262",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/scruffs-thermal-ring-bed-burgundy-d-20200212131244943~9452262w.jpg",
+						"price":5499,
+						"item_number":"1242925",
+						"categoryPath":[
+							"Inicio> Artigos para mascotas> Camas e colch\u00f3ns"
+						],
+						"Brand":[
+							"Scruffs"
+						]
+					},
+					{
+						"product_name":"Fila Soni Legging",
+						"product_available_flag":true,
+						"uniqueId":"1429320",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/fila-soni-legging-d-2020030308171665~698503.jpg",
+						"price":4125,
+						"item_number":"698503",
+						"categoryPath":[
+							"Moda> Roupa> Roupa activa> Pantal\u00f3ns e polainas",
+							"Moda> Roupa> Roupa de sal\u00f3n e roupa de durmir> Roupa de sal\u00f3n",
+							"Sa\u00fade e fitness> Exercicio e fitness> Roupa activa> Roupa"
+						],
+						"ShopbyColor":[
+							"Blue",
+							"Red"
+						],
+						"Brand":[
+							"FILA"
+						],
+						"ShopbyApparelSize":[
+							"L (12-14)"
+						]
+					},
+					{
+						"product_name":"Pendente de ouro branco de 14 quilates pulido e texturado",
+						"product_available_flag":true,
+						"uniqueId":"9192792",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/14k-white-gold-polished-and-textured-fancy-link-necklac-d-2019070810215981~9192792w.jpg",
+						"price":240995,
+						"item_number":"1221351",
+						"categoryPath":[
+							"Xoias> Colares"
+						]
+					},
+					{
+						"product_name":"Anel de varias filas de espinela negra e circ\u00f3n branco de Colleen Lopez",
+						"product_available_flag":true,
+						"uniqueId":"9378559",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/colleen-lopez-black-spinel-and-white-zircon-multi-row-r-d-2020021408161639~700183.jpg",
+						"price":9598,
+						"item_number":"700183",
+						"categoryPath":[
+							"Xoias> Aneis"
+						],
+						"Brand":[
+							"Colleen Lopez Collection"
+						],
+						"Stone":[
+							"Zircon",
+							"Spinel"
+						],
+						"ShopbyColor":[
+							"Black"
+						]
+					},
+					{
+						"product_name":"Scruffs Expedition Memory Foam Pillow Bed Large - Olive",
+						"product_available_flag":true,
+						"uniqueId":"9452293",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/scruffs-expedition-memory-foam-pillow-pet-bed-large-oli-d-2020021213155687~9452293w.jpg",
+						"price":8099,
+						"item_number":"1240633",
+						"categoryPath":[
+							"Inicio> Artigos para mascotas> Camas e colch\u00f3ns"
+						],
+						"Brand":[
+							"Scruffs"
+						]
+					},
+					{
+						"product_name":"Jay King Spider Mountain Turquoise Collar de abalorios graduado",
+						"product_available_flag":true,
+						"uniqueId":"1429334",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jay-king-spider-mountain-turquoise-graduated-bead-neckl-d-2020121507553464~736159.jpg",
+						"price":15300,
+						"item_number":"736159",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Brand":[
+							"Mine Finds by Jay King"
+						]
+					},
+					{
+						"product_name":"Pulseira de eslab\u00f3ns de ouro de dous tons de 14 quilates",
+						"product_available_flag":true,
+						"uniqueId":"9192809",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/14k-gold-two-tone-diamond-cut-beaded-link-bracelet-d-2020061013002725~9192809w.jpg",
+						"price":129995,
+						"item_number":"1221278",
+						"categoryPath":[
+							"Xoias> Pulseiras"
+						]
+					},
+					{
+						"product_name":"Sandalia de cu\u00f1a TOMS Willow Espadrille",
+						"product_available_flag":true,
+						"uniqueId":"9378927",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/toms-willow-espadrille-wedge-sandal-d-20200326073735167~700250.jpg",
+						"price":8995,
+						"item_number":"700250",
+						"categoryPath":[
+							"Moda> Zapatos> Cu\u00f1as",
+							"Moda> Zapatos> Sandalias"
+						],
+						"Brand":[
+							"TOMS"
+						],
+						"ShoeStyle":[
+							"Ankle Strap",
+							"Wedge"
+						],
+						"ShopbyColor":[
+							"Blue",
+							"Ivory/Off White"
+						],
+						"HeelType":[
+							"Platform",
+							"Wedge"
+						]
+					},
+					{
+						"product_name":"Winter Lane Set de 2 cabazas de tecido",
+						"product_available_flag":true,
+						"uniqueId":"9452344",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/winter-lane-set-of-2-fabric-pumpkins-d-20200825091609143~710182.jpg",
+						"price":1495,
+						"item_number":"710182",
+						"categoryPath":[
+							"Inicio> Vacaci\u00f3ns> Decoraci\u00f3ns de Halloween> Interior",
+							"Inicio> Vacaci\u00f3ns> Colleita de outono"
+						],
+						"ShopbyColor":[
+							"Black"
+						]
+					},
+					{
+						"product_name":"1,7 fl. oz. N \u00ba 6 Eau de Toilette Mandarina e Ginger Lily",
+						"product_available_flag":true,
+						"uniqueId":"1034765",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/17-fl-oz-no-6-mandarin-and-ginger-lily-eau-de-toilette-d-2012121716061026~228886.jpg",
+						"price":9000,
+						"item_number":"228886",
+						"categoryPath":[
+							"Beleza> Perfumes> Muller> Perfume"
+						],
+						"Brand":[
+							"Trish McEvoy"
+						],
+						"Gender":[
+							"Women"
+						],
+						"Scent":[
+							"Floral",
+							"Sweet",
+							"Citrus"
+						]
+					},
+					{
+						"product_name":"CARAVELLE Dese\u00f1ado por Bulova Reloxo de ouro rosa de cristal",
+						"product_available_flag":true,
+						"uniqueId":"9193124",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/caravelle-designed-by-bulova-womens-rose-gold-crystal-w-d-20190802093741633~9193124w.jpg",
+						"price":12500,
+						"item_number":"1222216",
+						"categoryPath":[
+							"Xoias> Reloxos"
+						],
+						"Brand":[
+							"Bulova",
+							"Caravelle"
+						],
+						"Gender":[
+							"Women"
+						]
+					},
+					{
+						"product_name":"BeautyBio The Beholder Crema levante para os ollos",
+						"product_available_flag":true,
+						"uniqueId":"9379078",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/beautybio-the-beholder-2-pack-lifting-eye-cream-d-2020011409153326~700269.jpg",
+						"price":6500,
+						"item_number":"700269",
+						"categoryPath":[
+							"Beleza> Coidado coa pel> Kits e xogos",
+							"Beleza> Coidado coa pel> Tratamentos para os ollos> Crema para os ollos"
+						],
+						"Brand":[
+							"BeautyBio"
+						]
+					},
+					{
+						"product_name":"Pendentes colgantes alargados de cuarzo turmalinado e circ\u00f3n branco",
+						"product_available_flag":true,
+						"uniqueId":"9452379",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/rarities-tourmalinated-quartz-andamp-white-zircon-elong-d-2020041307434567~710212.jpg",
+						"price":11198,
+						"item_number":"710212",
+						"categoryPath":[
+							"Xoias> Pendentes"
+						],
+						"Brand":[
+							"Rarities Fine Jewelry with Carol Brodie"
+						],
+						"ShopbyColor":[
+							"White"
+						]
+					},
+					{
+						"product_name":"Pulseira Jade e Gemstone 14K 7-1 / 2 \"",
+						"product_available_flag":true,
+						"uniqueId":"1080293",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jade-and-gemstone-14k-7-12-bracelet-d-20051130020442033~306320.jpg",
+						"price":13700,
+						"item_number":"306320",
+						"categoryPath":[
+							"Xoias> Pulseiras"
+						],
+						"Stone":[
+							"Jade"
+						],
+						"ShopbyColor":[
+							"Green"
+						]
+					},
+					{
+						"product_name":"Pin de cristal e esmalte de Heidi Daus",
+						"product_available_flag":false,
+						"uniqueId":"9193143",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/heidi-daus-ghosted-crystal-and-enamel-pin-d-20190910072501413~680177.jpg",
+						"price":15500,
+						"item_number":"680177",
+						"Brand":[
+							"Heidi Daus"
+						]
+					},
+					{
+						"product_name":"Ferramenta rosa BeautyBio GloPRO con tarro de preparaci\u00f3n de 30 contas",
+						"product_available_flag":true,
+						"uniqueId":"9379227",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/beautybio-glopro-pink-tool-with-30-count-prep-pad-jar-d-2020011507590161~700284.jpg",
+						"price":22350,
+						"item_number":"700284",
+						"categoryPath":[
+							"Beleza> Maquillaxe> Ferramentas e accesorios> Ferramentas",
+							"Beleza> Ferramentas e accesorios> Ferramentas para o coidado da pel"
+						],
+						"Brand":[
+							"BeautyBio"
+						]
+					},
+					{
+						"product_name":"Legging impreso DYI de alto brillo \"Tal como \u00e9\"",
+						"product_available_flag":true,
+						"uniqueId":"9452676",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-dyi-high-shine-printed-legging-d-20200212143807207~710233_UHN.jpg",
+						"price":2899,
+						"item_number":"710233",
+						"categoryPath":[
+							"Sa\u00fade e fitness> Exercicio e fitness> Roupa activa> Roupa",
+							"Moda> Roupa> Roupa activa> Pantal\u00f3ns e polainas"
+						],
+						"ShopbyColor":[
+							"Animal",
+							"Pattern/Print"
+						],
+						"Brand":[
+							"DYI"
+						],
+						"ShopbyApparelSize":[
+							"1X (16W - 18W)",
+							"Plus Size"
+						]
+					},
+					{
+						"product_name":"Plato Le Cadeaux Antiqua Melamine Family",
+						"product_available_flag":false,
+						"uniqueId":"1201757",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/le-cadeaux-antiqua-melamine-family-platter-d-20160614152852203~483714_404.jpg",
+						"price":3137,
+						"item_number":"483714",
+						"RugSize":[
+							"8' x 10'"
+						],
+						"Shape":[
+							"Rectangular"
+						],
+						"RugType":[
+							"Area Rug"
+						],
+						"Brand":[
+							"Le Cadeaux",
+							"Samantha Yanks"
+						],
+						"Technique":[
+							"Pile"
+						]
+					},
+					{
+						"product_name":"Matrices dimensionais da caixa de baratijas Gemini Companion de Crafter",
+						"product_available_flag":true,
+						"uniqueId":"9193207",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-gemini-trinket-box-dimensional-dies-d-2019101709360623~680219.jpg",
+						"price":2757,
+						"item_number":"680219",
+						"categoryPath":[
+							"Artesan\u00eda e costura> Scrapbooking> troquelado> troqueles e accesorios",
+							"Artesan\u00eda e costura> Scrapbooking> Ferramentas e accesorios> Corte e accesorios"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"BeautyBio The Perfector Tinted SPF 30 con bolsa cosm\u00e9tica",
+						"product_available_flag":true,
+						"uniqueId":"9379228",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/beautybio-the-perfector-tinted-spf-30-with-cosmetic-bag-d-20200115075902293~700287.jpg",
+						"price":5995,
+						"item_number":"700287",
+						"categoryPath":[
+							"Beleza> Coidado coa pel> Kits e xogos"
+						],
+						"Brand":[
+							"BeautyBio"
+						]
+					},
+					{
+						"product_name":"Xade de outrora Jade verde e colar de perlas de \u00f3nix negro",
+						"product_available_flag":true,
+						"uniqueId":"9452980",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/jade-of-yesteryear-green-jade-and-black-onyx-beaded-nec-d-20200416072011737~710286.jpg",
+						"price":18750,
+						"item_number":"710286",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"ShopbyColor":[
+							"Green"
+						],
+						"Stone":[
+							"Jade"
+						],
+						"Brand":[
+							"Jade of Yesteryear"
+						]
+					},
+					{
+						"product_name":"Conxunto de mascara de 3 pezas Too Faced Ultimate Better Than Sex",
+						"product_available_flag":true,
+						"uniqueId":"1327635",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/too-faced-ultimate-better-than-sex-3-piece-mascara-set-d-202003190740545~703570.jpg",
+						"price":4900,
+						"item_number":"703570",
+						"categoryPath":[
+							"Beleza> Maquillaxe> Ollos> R\u00edmel",
+							"Beleza> Maquillaxe> Ollos> Conxuntos para os ollos"
+						],
+						"Brand":[
+							"Too Faced"
+						],
+						"GiftsbyOccasion":[
+							"Valentine's Day"
+						],
+						"GiftsByRecipient":[
+							"For Her",
+							"For Friends"
+						]
+					},
+					{
+						"product_name":"Crafter's Companion Gemini Bon Bon Box Dimensional Dies",
+						"product_available_flag":true,
+						"uniqueId":"9193343",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-gemini-bon-bon-box-dimensional-dies-d-2019101709361165~680237.jpg",
+						"price":2573,
+						"item_number":"680237",
+						"categoryPath":[
+							"Artesan\u00eda e costura> Scrapbooking> troquelado> troqueles e accesorios",
+							"Artesan\u00eda e costura> Scrapbooking> Ferramentas e accesorios> Corte e accesorios"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Freesias Pink Blooming Pink - 25 l\u00e1mpadas",
+						"product_available_flag":true,
+						"uniqueId":"9402975",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/freesias-double-blooming-pink-25-bulbs-d-20200103143917477~9402975w.jpg",
+						"price":2299,
+						"item_number":"1239827",
+						"categoryPath":[
+							"Inicio> Xard\u00edn e aire libre> Garden Center> Plantas"
+						],
+						"Brand":[
+							"Van Zyverden"
+						]
+					},
+					{
+						"product_name":"Doll 10 8 pezas Cando as estrelas ali\u00f1an os ollos",
+						"product_available_flag":true,
+						"uniqueId":"9453112",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/doll-10-8-piece-when-the-stars-align-eye-set-d-20200930103924213~710333.jpg",
+						"price":4560,
+						"item_number":"710333",
+						"categoryPath":[
+							"Beleza> Maquillaxe> Kits e paletas",
+							"Beleza> Maquillaxe> Ollos> Conxuntos para os ollos"
+						],
+						"Brand":[
+							"Doll 10"
+						]
+					},
+					{
+						"product_name":"Colleen Lopez Pantal\u00f3n Ponte Flare-Leg",
+						"product_available_flag":true,
+						"uniqueId":"1332215",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/colleen-lopez-flare-leg-ponte-pant-d-20200824104210967~711432.jpg",
+						"price":5975,
+						"item_number":"711432",
+						"categoryPath":[
+							"Moda> Roupa> Pantal\u00f3ns"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Blue",
+							"Brown",
+							"Gray/Grey"
+						],
+						"Brand":[
+							"Colleen Lopez Collection"
+						],
+						"ShopbyApparelSize":[
+							"XL (16-18)",
+							"Petite"
+						]
+					},
+					{
+						"product_name":"Top de t\u00fanica mixta con petos Nina Leonard \"As Is\"",
+						"product_available_flag":false,
+						"uniqueId":"9194213",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-nina-leonard-mixed-media-tunic-top-with-pockets-d-2019071013525212~680294.jpg",
+						"price":1199,
+						"item_number":"680294",
+						"Brand":[
+							"Nina Leonard"
+						]
+					},
+					{
+						"product_name":"Freesias Lavanda Dobre Flor - 25 L\u00e1mpadas",
+						"product_available_flag":true,
+						"uniqueId":"9402976",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/freesias-double-blooming-lavender-25-bulbs-d-2020010314372274~9402976w.jpg",
+						"price":2299,
+						"item_number":"1239825",
+						"categoryPath":[
+							"Inicio> Xard\u00edn e aire libre> Garden Center> Plantas"
+						],
+						"Brand":[
+							"Van Zyverden"
+						]
+					},
+					{
+						"product_name":"Mighty Spark Todas as empanadas de polo naturais-paquete de 12",
+						"product_available_flag":true,
+						"uniqueId":"10080159",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/mighty-spark-all-natural-chicken-patties-12-pack-d-2019060708181569~674193.jpg",
+						"price":6079,
+						"item_number":"712614",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Alimentos e bebidas> Marisco, carne e aves> Polo e pavo"
+						],
+						"Brand":[
+							"Mighty Spark"
+						]
+					},
+					{
+						"product_name":"\"As Is\" Anne Burrell Cacerola de aluminio fundido antiadherente de 4,3 cuartos",
+						"product_available_flag":false,
+						"uniqueId":"1347506",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-anne-burrell-43-quart-nonstick-cast-aluminum-cass-d-20210126150410713~754278.jpg",
+						"price":3099,
+						"item_number":"754278",
+						"Brand":[
+							"Anne Burrell"
+						]
+					},
+					{
+						"product_name":"Sparkle Sparkle\u00ae Set de viaxes con l\u00e1piz para limpador de xoias con funda con cremalleira",
+						"product_available_flag":true,
+						"uniqueId":"9194947",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/sparkle-sparkleandreg-jewelry-cleaner-stylus-travel-set-d-20191008071939587~680349.jpg",
+						"price":2075,
+						"item_number":"680349",
+						"categoryPath":[
+							"Xoias> Almacenamento e accesorios"
+						],
+						"ShopbyColor":[
+							"Animal",
+							"Black",
+							"Purple",
+							"Red"
+						],
+						"Brand":[
+							"SparkleSparkle"
+						],
+						"GiftsByRecipient":[
+							"For Her"
+						]
+					},
+					{
+						"product_name":"Van Zyverden Cannas Stadt Fellbach Bombillas 5 unidades",
+						"product_available_flag":true,
+						"uniqueId":"9402990",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/van-zyverden-cannas-stadt-fellbach-bulbs-5-pack-d-20200103143852693~9402990w.jpg",
+						"price":2999,
+						"item_number":"1239807",
+						"categoryPath":[
+							"Inicio> Xard\u00edn e aire libre> Garden Center> Plantas"
+						],
+						"Brand":[
+							"Van Zyverden"
+						]
+					},
+					{
+						"product_name":"Perlas Imperiais Pulseira de auga doce cultivada en ouro de 14 quilates 7-1 / 2 \"",
+						"product_available_flag":true,
+						"uniqueId":"10080170",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/imperial-pearls-14k-gold-cultured-freshwater-pearl-7-12-d-20200120113109453~9122177w_715.jpg",
+						"price":23995,
+						"item_number":"1216781",
+						"categoryPath":[
+							"Xoias> Pulseiras"
+						],
+						"Stone":[
+							"Pearl"
+						],
+						"Brand":[
+							"Imperial Pearls by Josh Bazar"
+						],
+						"ShopbyColor":[
+							"Metallic",
+							"Yellow"
+						]
+					},
+					{
+						"product_name":"Emma Skye Jewelry Designs Charm Ladybug Charm Pulseira de cable de aceiro inoxidable",
+						"product_available_flag":true,
+						"uniqueId":"1428043",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/emma-skye-jewelry-designs-ladybug-charm-stainless-steel-d-2016051714255583~486083_885.jpg",
+						"price":1495,
+						"item_number":"486083",
+						"categoryPath":[
+							"Xoias> Pulseiras"
+						],
+						"Brand":[
+							"Emma Skye Jewelry Designs"
+						],
+						"ShopbyColor":[
+							"Metallic"
+						]
+					},
+					{
+						"product_name":"Planta artificial de sand\u00eda Peperomia case natural de 24 pulgadas en florero colgado",
+						"product_available_flag":true,
+						"uniqueId":"9195747",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/nearly-natural-24-inwatermelon-peperomia-artificial-pla-d-2019070914522741~9195747w.jpg",
+						"price":5675,
+						"item_number":"1222884",
+						"categoryPath":[
+							"Inicio> Decoraci\u00f3n do fogar> Acentos para o fogar> Plantas e coroas de imitaci\u00f3n"
+						],
+						"Brand":[
+							"Nearly Natural"
+						]
+					},
+					{
+						"product_name":"Van Zyverden Giant Cannas Stuttgart Bulbs 5 unidades",
+						"product_available_flag":true,
+						"uniqueId":"9402993",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/van-zyverden-giant-cannas-stuttgart-bulbs-5-pack-d-2020010314372521~9402993w.jpg",
+						"price":3299,
+						"item_number":"1239804",
+						"categoryPath":[
+							"Inicio> Xard\u00edn e aire libre> Garden Center> Plantas"
+						],
+						"Brand":[
+							"Van Zyverden"
+						]
+					},
+					{
+						"product_name":"Collar de cadea de serpe chapado en ouro prata Sevilla \u2122",
+						"product_available_flag":true,
+						"uniqueId":"10080195",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/sevilla-silver-gold-plated-snake-chain-necklace-d-20190607081653107~670034.jpg",
+						"price":5123,
+						"item_number":"670036",
+						"categoryPath":[
+							"Xoias> Colares"
+						],
+						"Brand":[
+							"Sevilla Silver"
+						]
+					},
+					{
+						"product_name":"Mochila G by Giuliana Jet Set G Convertible Jacket",
+						"product_available_flag":true,
+						"uniqueId":"1428664",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/g-by-giuliana-jet-set-g-convertible-jacket-backpack-d-2020011308463434~681664_DSH.jpg",
+						"price":4381,
+						"item_number":"681664",
+						"categoryPath":[
+							"Moda> Roupa> Chaquetas e roupa exterior"
+						],
+						"ShopbyApparelSize":[
+							"XS (0-2)"
+						],
+						"ShopbyColor":[
+							"Black",
+							"Blue",
+							"Pink"
+						],
+						"Brand":[
+							"G by GIULIANA"
+						]
+					},
+					{
+						"product_name":"Planta de bamb\u00fa artificial de 6 'de alto xard\u00edn puro con maleteiro verde",
+						"product_available_flag":true,
+						"uniqueId":"9097869",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/pure-garden-6-tall-artificial-bamboo-plant-with-green-t-d-2020032708470192~9097869w.jpg",
+						"price":11999,
+						"item_number":"1242777",
+						"categoryPath":[
+							"Inicio> Decoraci\u00f3n do fogar> Acentos para o fogar> Plantas e coroas de imitaci\u00f3n"
+						],
+						"Brand":[
+							"Pure Garden"
+						]
+					},
+					{
+						"product_name":"Van Zyverden Contenedor Begonias Bombillas dobres pastel paquete de 5",
+						"product_available_flag":true,
+						"uniqueId":"9403007",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/van-zyverden-container-begonias-double-pastel-bulbs-5-p-d-20200103143756133~9403007w.jpg",
+						"price":2699,
+						"item_number":"1239788",
+						"categoryPath":[
+							"Inicio> Xard\u00edn e aire libre> Garden Center> Plantas"
+						],
+						"Brand":[
+							"Van Zyverden"
+						]
+					},
+					{
+						"product_name":"Safavieh Evoke Thatcher Alfombra",
+						"product_available_flag":true,
+						"uniqueId":"10080200",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/safavieh-evoke-thatcher-rug-d-20190606131436113~9152375w_019.jpg",
+						"price":14785,
+						"item_number":"1218685",
+						"categoryPath":[
+							"Inicio> Alfombras"
+						],
+						"ShopbyColor":[
+							"Gray/Grey"
+						],
+						"Brand":[
+							"Safavieh"
+						]
+					},
+					{
+						"product_name":"Nefertiti P\u00e1tina dourada para pel con vitamina E",
+						"product_available_flag":true,
+						"uniqueId":"1250058",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/nefertiti-golden-patina-for-skin-with-vitamin-e-d-20051130020504893~562939.jpg",
+						"price":3850,
+						"item_number":"562939",
+						"keywords":"bronzer, bronzing powder, signature club a bronzer, SCA bronzer, 562939",
+						"categoryPath":[
+							"Beleza> Maquillaxe> Cara> Bronzer"
+						],
+						"Brand":[
+							"Signature Club A"
+						],
+						"Type":[
+							"Bronzer"
+						],
+						"Shade":[
+							"Warm"
+						],
+						"SkinTone":[
+							"Fair",
+							"Light",
+							"Medium",
+							"Medium Deep",
+							"Deep"
+						]
+					},
+					{
+						"product_name":"Morre o c\u00edrculo de acompa\u00f1ante de Crafter e o anidamento cadrado",
+						"product_available_flag":true,
+						"uniqueId":"9098078",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/crafters-companion-circle-and-square-nesting-dies-d-2019082208441179~670454.jpg",
+						"price":3709,
+						"item_number":"670454",
+						"categoryPath":[
+							"Artesan\u00eda e costura> Scrapbooking> troquelado> troqueles e accesorios",
+							"Artesan\u00eda e costura> Costura e acolchado> Matrices de tecido e tecido",
+							"Artesan\u00eda e costura> Scrapbooking> Ferramentas e accesorios> Corte e accesorios"
+						],
+						"Brand":[
+							"Crafter's Companion",
+							"Scrapbooking",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Van Zyverden Begonias Switzerland Bulbs Pack de 5 unidades",
+						"product_available_flag":true,
+						"uniqueId":"9403008",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/van-zyverden-begonias-switzerland-bulbs-5-pack-d-20200103143753103~9403008w.jpg",
+						"price":2699,
+						"item_number":"1239787",
+						"categoryPath":[
+							"Inicio> Xard\u00edn e aire libre> Garden Center> Plantas"
+						],
+						"Brand":[
+							"Van Zyverden"
+						]
+					},
+					{
+						"product_name":"Pasta de dentes intelliWHiTE\u00ae sen fluoruro con Xyliclay \u2122",
+						"product_available_flag":true,
+						"uniqueId":"10080225",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/intelliwhite-fluoride-free-toothpaste-with-xyliclay-d-2019050911330532~662281.jpg",
+						"price":2050,
+						"item_number":"662275",
+						"categoryPath":[
+							"Beleza> Coidados orais> Cepillos e pasta de dentes",
+							"Sa\u00fade e fitness> Coidados persoais> Coidados orais"
+						],
+						"Brand":[
+							"intelliWHiTE\u00ae"
+						]
+					},
+					{
+						"product_name":"Toni Brattin \u2122 Toni Twist Whispy Hair Accessory",
+						"product_available_flag":false,
+						"uniqueId":"1256459",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/toni-brattinand8482-toni-twist-whispy-hair-accessory-d-2005113002045294~577774.jpg",
+						"price":1995,
+						"item_number":"577774"
+					},
+					{
+						"product_name":"BUNN Pour-O-Matic Carafe sen goteo de 10 cuncas",
+						"product_available_flag":true,
+						"uniqueId":"9098212",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/bunn-pour-o-matic-10-cup-drip-free-carafe-d-2019040909263895~9098212w.jpg",
+						"price":1550,
+						"item_number":"1215797",
+						"categoryPath":[
+							"Coci\u00f1a e alimentaci\u00f3n> Electrodom\u00e9sticos> Cafeteiras e caf\u00e9s"
+						],
+						"Brand":[
+							"Bunn"
+						],
+						"Type":[
+							"Pour Over"
+						]
+					},
+					{
+						"product_name":"Deep Euphoria for Ladies de Calvin Klein 1.7 oz. Eau De Parfum Spray",
+						"product_available_flag":true,
+						"uniqueId":"9403725",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/deep-euphoria-for-ladies-by-calvin-klein-17-oz-eau-de-p-d-20200106103116277~9403725w.jpg",
+						"price":7700,
+						"item_number":"1237943",
+						"categoryPath":[
+							"Beleza> Perfumes> Muller> Perfume"
+						],
+						"Brand":[
+							"Calvin Klein"
+						]
+					},
+					{
+						"product_name":"Estera de inicio do su\u00e9ter de vacaci\u00f3ns da NFL con licenza oficial",
+						"product_available_flag":true,
+						"uniqueId":"10080234",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/officially-licensed-nfl-holiday-sweater-starter-mat-d-20201103143957793~9151989w.jpg",
+						"price":2399,
+						"item_number":"1219688",
+						"categoryPath":[
+							"Tenda de fans> Tenda de fans de f\u00fatbol> Cincinnati Bengals"
+						],
+						"Brand":[
+							"Football Fan Shop"
+						]
+					},
+					{
+						"product_name":"Colgante de tartarugas de prata esterlina Michael Anthony Jewelry\u00ae",
+						"product_available_flag":false,
+						"uniqueId":"1283129",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/michael-anthony-jewelryandreg-sterling-silver-diamond-c-d-20180925114243893~626216.jpg",
+						"price":1645,
+						"item_number":"626216",
+						"Brand":[
+							"Michael Anthony Jewelry"
+						]
+					},
+					{
+						"product_name":"Vapor de 24 cuartos e marisco IMUSA con tapa de vidro - prata",
+						"product_available_flag":true,
+						"uniqueId":"9098378",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/imusa-24-quart-tamale-and-seafood-steamer-with-glass-li-d-2019040912350266~9098378w.jpg",
+						"price":3411,
+						"item_number":"1215846",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Utensilios de coci\u00f1a> Vapores e inserci\u00f3ns"
+						],
+						"Brand":[
+							"IMUSA"
+						]
+					},
+					{
+						"product_name":"Endless Euphoria Ladies By Calvin Klein 4 oz. Eau De Parfum Spray",
+						"product_available_flag":true,
+						"uniqueId":"9403726",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/endless-euphoria-ladies-by-calvin-klein-4-oz-eau-de-par-d-20200106103152587~9403726w.jpg",
+						"price":9600,
+						"item_number":"1237945",
+						"categoryPath":[
+							"Beleza> Perfumes> Muller> Perfume"
+						],
+						"Brand":[
+							"Calvin Klein"
+						]
+					},
+					{
+						"product_name":"Safavieh Carter Bed",
+						"product_available_flag":true,
+						"uniqueId":"10080236",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/safavieh-carter-bed-d-2019050312075355~9130057w_271.jpg",
+						"price":58925,
+						"item_number":"1219393",
+						"categoryPath":[
+							"Inicio> Mobles> Mobles para dormitorios> Camas e marcos de camas"
+						],
+						"Brand":[
+							"Safavieh"
+						],
+						"ShopbyColor":[
+							"Gray/Grey"
+						]
+					},
+					{
+						"product_name":"Crema de limpeza para o rostro e os ollos",
+						"product_available_flag":true,
+						"uniqueId":"1320452",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/coconut-meltdown-cleansing-creme-for-face-and-eyes-d-20051130020549597~691252.jpg",
+						"price":2950,
+						"item_number":"691252",
+						"categoryPath":[
+							"Beleza> Coidado da pel> Limpadores> Lavado facial"
+						],
+						"Brand":[
+							"Signature Club A"
+						],
+						"Type":[
+							"Face Cleanser"
+						]
+					},
+					{
+						"product_name":"PRAI Set de descubrimento de ollos sen idade de 2 pezas",
+						"product_available_flag":false,
+						"uniqueId":"9098880",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/prai-2-piece-ageless-eye-discovery-set-d-2019061909013945~670666.jpg",
+						"price":2495,
+						"item_number":"670666",
+						"Brand":[
+							"PRAI"
+						]
+					},
+					{
+						"product_name":"Obsession Ladies de Calvin Klein 1.7 oz. Eau De Parfum Spray",
+						"product_available_flag":true,
+						"uniqueId":"9403729",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/obsession-ladies-by-calvin-klein-17-oz-eau-de-parfum-sp-d-20200106103212233~9403729w.jpg",
+						"price":7300,
+						"item_number":"1237956",
+						"categoryPath":[
+							"Beleza> Perfumes> Muller> Perfume"
+						],
+						"Brand":[
+							"Calvin Klein"
+						]
+					},
+					{
+						"product_name":"Tapete Safavieh Kazak Shirley",
+						"product_available_flag":true,
+						"uniqueId":"10080259",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/safavieh-kazak-shirley-rug-d-20190313153917773~9071928w_404.jpg",
+						"price":9000,
+						"item_number":"1219244",
+						"categoryPath":[
+							"Inicio> Alfombras"
+						],
+						"Brand":[
+							"Safavieh"
+						],
+						"ShopbyColor":[
+							"Blue"
+						]
+					},
+					{
+						"product_name":"Manta Sherpa de felpa acolchada, c\u00e1lida e acolledora",
+						"product_available_flag":false,
+						"uniqueId":"1345603",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-warm-andamp-cozy-quilted-plush-sherpa-blanket-d-20201209133333343~748280.jpg",
+						"price":2199,
+						"item_number":"748280",
+						"Brand":[
+							"Warm & Cozy"
+						]
+					},
+					{
+						"product_name":"Suave e acolledor Estilo s\u00faper suave e c\u00f3modo",
+						"product_available_flag":false,
+						"uniqueId":"9100148",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/soft-andamp-cozy-super-soft-style-andamp-comfort-onesie-d-20190924095030147~670902.jpg",
+						"price":2335,
+						"item_number":"670902",
+						"GiftsByRecipient":[
+							"For Her"
+						],
+						"ShopbyColor":[
+							"Blue"
+						],
+						"Brand":[
+							"Warm & Cozy"
+						]
+					},
+					{
+						"product_name":"Adhesivos de fronteira Anna Griffin\u00ae: xogo de 64",
+						"product_available_flag":true,
+						"uniqueId":"9695357",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/anna-griffinandreg-holiday-border-stickers-set-of-64-d-2020083109360241~726875.jpg",
+						"price":2023,
+						"item_number":"726875",
+						"categoryPath":[
+							"Artesan\u00eda e costura> Scrapbooking> Material> Adhesivos"
+						],
+						"Brand":[
+							"Anna Griffin",
+							"Crafts & Sewing"
+						]
+					},
+					{
+						"product_name":"Alfombra Jennifer Safavieh Harbor",
+						"product_available_flag":true,
+						"uniqueId":"10080261",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/safavieh-harbor-jennifer-rug-d-20190614131543127~9072030w_102.jpg",
+						"price":6200,
+						"item_number":"1219303",
+						"categoryPath":[
+							"Inicio> Alfombras"
+						],
+						"ShopbyColor":[
+							"Ivory/Off White"
+						],
+						"Brand":[
+							"Safavieh"
+						]
+					},
+					{
+						"product_name":"Conxunto de colar e pendentes \"Encanto do Sur\" de Natalie Wood",
+						"product_available_flag":true,
+						"uniqueId":"1416446",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/natalie-wood-designs-southern-charm-necklace-and-earrin-d-2020073115034616~723423.jpg",
+						"price":3998,
+						"item_number":"723423",
+						"categoryPath":[
+							"Xoias> Colares",
+							"Xoias> Pendentes"
+						],
+						"ShopbyColor":[
+							"Metallic"
+						],
+						"Brand":[
+							"Natalie Wood Designs"
+						]
+					},
+					{
+						"product_name":"Pendentes dobles esmeralda de Bali RoManse de dous tons",
+						"product_available_flag":true,
+						"uniqueId":"9102111",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/bali-romanse-two-tone-sterling-silver-created-emerald-d-d-2019041808244666~670941.jpg",
+						"price":21793,
+						"item_number":"670941",
+						"categoryPath":[
+							"Xoias> Pendentes"
+						],
+						"Brand":[
+							"Bali RoManse by Robert Manse"
+						]
+					},
+					{
+						"product_name":"Batidora Ninja\u00ae Foodi \u2122 Power Nutri \u2122 Duo\u00ae con smartTORQUE \u2122",
+						"product_available_flag":true,
+						"uniqueId":"9695387",
+						"product_image_url":"https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/ninjaandreg-foodiandtrade-power-nutriandtrade-duoandreg-d-2020082414101013~726901.jpg",
+						"price":9900,
+						"item_number":"726901",
+						"categoryPath":[
+							"Coci\u00f1a e Alimentaci\u00f3n> Electrodom\u00e9sticos> Batidores"
+						],
+						"ShopbyColor":[
+							"Metallic"
+						],
+						"Brand":[
+							"Ninja"
+						]
+					},
+					{
+						"product_name":"Topper de \u00e1rbore de mosaico con licenza oficial MLB",
+						"product_available_flag":true,
+						"uniqueId":"10080268",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/officially-licensed-mlb-mosaic-tree-topper-d-20190606162927557~9155200w.jpg",
+						"price":4000,
+						"item_number":"1219985",
+						"categoryPath":[
+							"Tenda de fans> Tenda de fans de b\u00e9isbol> Tampa Bay Rays"
+						],
+						"Brand":[
+							"The Memory Company"
+						]
+					},
+					{
+						"product_name":"\"Como \u00e9\" O libro de receitas da coci\u00f1a a presi\u00f3n Ninja Big Foodi de Kenzie Swanhart",
+						"product_available_flag":true,
+						"uniqueId":"1428695",
+						"product_image_url":"https://i03.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/as-is-the-big-ninja-foodi-pressure-cooker-cookbook-by-k-d-2020021214491139~710242.jpg",
+						"price":2199,
+						"item_number":"710242",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Libros de coci\u00f1a"
+						],
+						"Brand":[
+							"Ninja"
+						]
+					},
+					{
+						"product_name":"Bali RoManse Anillo de dobre esmeralda creado en prata esterlina de dous tons",
+						"product_available_flag":true,
+						"uniqueId":"9102113",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/bali-romanse-two-tone-sterling-silver-created-emerald-d-d-20190418082447~670943.jpg",
+						"price":17092,
+						"item_number":"670943",
+						"categoryPath":[
+							"Xoias> Aneis"
+						],
+						"Brand":[
+							"Bali RoManse by Robert Manse"
+						]
+					},
+					{
+						"product_name":"Clean\nCopper Home Copper Bar",
+						"product_available_flag":true,
+						"uniqueId":"9695389",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/clean-copper-home-copper-bar-d-2020080410301596~726902.jpg",
+						"price":1995,
+						"item_number":"726902",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Almacenamento e organizaci\u00f3n> Accesorios para lavabo"
+						],
+						"Brand":[
+							"CopperHome"
+						]
+					},
+					{
+						"product_name":"Cazola cuberta antiadherente BergHOFF Gem",
+						"product_available_flag":true,
+						"uniqueId":"10080295",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/berghoff-gem-non-stick-covered-casserole-d-20190619101709867~9163908w.jpg",
+						"price":7999,
+						"item_number":"1220107",
+						"categoryPath":[
+							"Coci\u00f1a e comida> Utensilios para forno> Pratos e cazolas"
+						],
+						"Brand":[
+							"BergHoff"
+						]
+					},
+					{
+						"product_name":"Heidi Daus \"Exquisite Equine\" Beaded Borla Pendentes",
+						"product_available_flag":false,
+						"uniqueId":"1267816",
+						"product_image_url":"https://i04.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/heidi-daus-exquisite-equine-beaded-tassel-drop-earrings-d-20180309181214623~599428.jpg",
+						"price":15045,
+						"item_number":"599428",
+						"Brand":[
+							"Heidi Daus"
+						]
+					},
+					{
+						"product_name":"Sandalia cepillada Birkenstock Mayari",
+						"product_available_flag":true,
+						"uniqueId":"9232496",
+						"product_image_url":"https://i01.hsncdn.com/is/image/HomeShoppingNetwork/prodgrid230/birkenstock-mayari-brushed-sandal-d-2020040709043443~685069.jpg",
+						"price":9995,
+						"item_number":"685069",
+						"categoryPath":[
+							"Moda> Zapatos> Sandalias"
+						],
+						"Brand":[
+							"Birkenstock"
+						],
+						"ShoeStyle":[
+							"Slip-On"
+						],
+						"ShopbyColor":[
+							"Pink"
+						]
+					}
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="ManageTestcases" parallel="tests" thread-count="21" verbose="10" preserve-order="false">
+
+    <!-- Bulk Upload Tests - Each in separate browser -->
+    <test name="AlgorithmBulkUploadTest - uploadFilePhrases">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest.uploadFilePhrases"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmBulkUploadTest - uploadFileConcepts">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest.uploadFileConcepts"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmBulkUploadTest - uploadFileStemming">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest.uploadFileStemming"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmBulkUploadTest - uploadFileSynonyms">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest.uploadFileSynonyms"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmBulkUploadTest - uploadFileStopWords">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest.uploadFileStopWords"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmBulkUploadTest - bulkDownloadPhrases">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest.bulkDownloadPhrases"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmBulkUploadTest - bulkdownloadConcepts">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest.bulkdownloadConcepts"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmBulkUploadTest - Bulkdownloadstemming">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest.Bulkdownloadstemming"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmBulkUploadTest - bulkDownloadSynonyms">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest.bulkDownloadSynonyms"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmBulkUploadTest - bulkdownloadStopWords">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest.bulkdownloadStopWords"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmBulkUploadTest - downloadSamplePhrases">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest.downloadSamplePhrases"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmBulkUploadTest - downloadSampleConcepts">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest.downloadSampleConcepts"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmBulkUploadTest - downloadSampleStemmingFile">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest.downloadSampleStemmingFile"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmBulkUploadTest - downloadSampleStopWords">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest.downloadSampleStopWords"/>
+        </classes>
+    </test>
+
+    <test name="AlgorithmBulkUploadTest - downloadSmpleSynonyms">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest.downloadSmpleSynonyms"/>
+        </classes>
+    </test>
+
+    <!-- Individual Merchandising Bulk Upload Tests - Each in separate browser -->
+    <test name="MerchBulkUploadTest - uploadPromotionsBulkSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.uploadPromotionsBulkSearch"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - uploadFieldRulesBulkSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.uploadFieldRulesBulkSearch"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - uploadBulkBannersSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.uploadBulkBannersSearch"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - uploadBulkBannersBrowse">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.uploadBulkBannersBrowse"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - uploadFieldRulesBulkBrowse">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.uploadFieldRulesBulkBrowse"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - uploadPromotionsBulkBrowse">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.uploadPromotionsBulkBrowse"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - uploadRedirectsBulkSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.uploadRedirectsBulkSearch"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - promotiosExporttoEmailBrowse">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.promotiosExporttoEmailBrowse"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - downloadSampleBannersBrowse">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.downloadSampleBannersBrowse"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - downloadSamplePromotionsBrowse">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.downloadSamplePromotionsBrowse"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - RedirectsExporttoEmailSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.RedirectsExporttoEmailSearch"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - downloadSamplePromotionsSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.downloadSamplePromotionsSearch"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - downloadSampleRedirectsSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.downloadSampleRedirectsSearch"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - BannersExporttoEmailBrowse">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.BannersExporttoEmailBrowse"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - fieldRulesExporttoEmailSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.fieldRulesExporttoEmailSearch"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - downloadSampleBannersSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.downloadSampleBannersSearch"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - promotionsExporttoEmailSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.promotionsExporttoEmailSearch"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - downloadSampleFieldRuleSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.downloadSampleFieldRuleSearch"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - fieldRulesExporttoEmailBrowse">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.fieldRulesExporttoEmailBrowse"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - downloadSampleFieldRuleBrowse">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.downloadSampleFieldRuleBrowse"/>
+        </classes>
+    </test>
+
+    <test name="MerchBulkUploadTest - BannersExporttoEmailSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchBulkUpload.BannersExporttoEmailSearch"/>
+        </classes>
+    </test>
+
+    <test name="CollectionsTest - CollectionsTestSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.Collections.CollectionsTestSearch"/>
+        </classes>
+    </test>
+
+    <test name="CollectionsTest - CollectionsTestBrowse">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.Collections.CollectionsTestBrowse"/>
+        </classes>
+    </test>
+
+    <test name="CollectionsTest - CollectionsuploadFileSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.Collections.CollectionsuploadFileSearch"/>
+        </classes>
+    </test>
+
+    <test name="CollectionsTest - CollectionsuplodFileBrowse">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.Collections.CollectionsuplodFileBrowse"/>
+        </classes>
+    </test>
+
+    <test name="CollectionsTest - downloadSampleCollectionsSearch">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.Collections.downloadSampleCollectionsSearch"/>
+        </classes>
+    </test>
+
+    <test name="CollectionsTest - donwloadSampleCollectionsBrowse">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.Collections.donwloadSampleCollectionsBrowse"/>
+        </classes>
+    </test>
+</suite>

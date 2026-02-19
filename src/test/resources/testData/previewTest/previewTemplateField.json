@@ -1,0 +1,25 @@
+{
+  "testData": [
+    {
+      "template": "TEMPLATE_7",
+      "mapField": "sku",
+      "value": "sku",
+      "verifyField": "PREVIEW_SKU",
+      "verifyAppliedTemplate": "Template 7 Applied"
+    },
+    {
+      "template": "TEMPLATE_1",
+      "mapField": "title",
+      "value": "title",
+      "verifyField": "PREVIEW_TITLE",
+      "verifyAppliedTemplate": "Template 1 Applied"
+    },
+    {
+      "template": "TEMPLATE_3",
+      "mapField": "badges",
+      "value": "brand",
+      "verifyField": "PREVIEW_BADGES",
+      "verifyAppliedTemplate": "Template 3 Applied"
+    }
+  ]
+}

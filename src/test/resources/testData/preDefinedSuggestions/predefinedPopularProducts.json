@@ -1,0 +1,9 @@
+{
+  "testData": [
+    {
+      "preDefinedFields": ["product_name", "product_name", "price", "product_image_url"],
+      "suggestionSection" : "POPULAR_PRODUCTS"
+    }
+
+  ]
+}

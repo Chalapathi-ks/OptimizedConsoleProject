@@ -1,0 +1,15 @@
+{
+  "testData": [
+    {
+      "url": "http://unbxd-pimento.s3.amazonaws.com/caae41585be5a97bd387bd985199c4f5/imports/sftpFiles/1589201110744_1589201108809_SingleProduct.csv",
+      "UniqueId" : "UniqueId",
+      "AdapterName" : "autoTestAdapter",
+      "noOfProducts" : "1",
+      "feedUploadStatus" : "INDEXED",
+      "uploader" : "PIM_UPLOAD"
+    }
+
+
+  ]
+}
+

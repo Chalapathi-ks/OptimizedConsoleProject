@@ -1,0 +1,18 @@
+{
+  "testData": [
+    {
+      "facetDisplayName": "auto3",
+      "facetName": "discount",
+      "facetLength": "12",
+      "rangeStart":"2",
+      "rangeStop":"8",
+      "rangeGap":"2",
+
+      "updatedFacetDisplayName": "auto4",
+      "updatedFacetLength": "10",
+      "updatedRangeStart":"5",
+      "updatedRangeStop":"9",
+      "updatedRangeGap":"3"
+    }
+  ]
+}

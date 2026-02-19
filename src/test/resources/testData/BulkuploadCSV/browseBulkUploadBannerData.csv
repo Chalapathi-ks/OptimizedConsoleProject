@@ -1,0 +1,5 @@
+RuleType,Page,Attribute,Value,CampaignName,StartDate,EndDate,Description,TimeZone,Segments,IsMarketingCampaign,ImageUrl,RedirectBannerUrl,Html
+page,Banner1,,,AutoTest1663234817677 copy,,15/09/2097 00:00:00,Testing Automation Campaign,Etc/UTC,global,false,,,https://images.express.com/is/image/expressfashion/0027_09393654_0904?cache=on
+page,Banner2,,,AutoTest1665052418238 copy,,06/10/2097 00:00:00,Testing Automation Campaign,Etc/UTC,global,false,,,https://images.express.com/is/image/expressfashion/0027_09393654_0904?cache=on
+field,page1,brand,Lulus,brand brand: Lulus,06/10/2022 00:00:00,06/10/2097 00:00:00,,Etc/UTC,"",false,,,https://www.lulus.com/images/product/xlarge/4952550_999802.jpg
+field,page2,brand,LUSH,pageBanner2 brand: LUSH,24/02/2023 00:00:00,24/02/2098 00:00:00,,Etc/UTC,"",false,https://www.lulus.com/images/product/xlarge/4952550_999802.jpg,https://www.lulus.com/images/product/xlarge/4952550_999802.jpg,

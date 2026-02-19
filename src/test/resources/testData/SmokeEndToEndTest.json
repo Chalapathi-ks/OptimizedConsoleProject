@@ -1,0 +1,21 @@
+{
+  "testData": [
+    {
+      "mappedfields": ["sku","title","imageUrl","price","availability","categoryPath"],
+      "fields" : ["SKU","Title","Image URL","Price","Availability","categoryPath"],
+      "searchableFields": ["type","catlevel3Name","catlevel4Name"],
+      "ExpectedSearchWeight" : "High",
+      "pageCount" : "100",
+      "preDefinedKeywords": ["category","color","color + category"],
+      "keywordSuggestionSection" : "KEYWORD",
+      "preDefinedInFields": ["category"],
+      "infieldSuggestionSection" : "INFIELD",
+      "preDefinedPopularProducts": ["title","title","price","imageUrl","productImage"],
+      "popularProductSuggestionSection" : "POPULAR_PRODUCTS"
+
+
+
+
+    }
+  ]
+}

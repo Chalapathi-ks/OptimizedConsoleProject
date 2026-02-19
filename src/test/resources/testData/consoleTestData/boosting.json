@@ -1,0 +1,25 @@
+{
+  "testData":[
+    {
+      "query": "TestAutomationBoostForSearch",
+      "similarQuery": "TitleSim",
+      "similarQueryData": "Simquery",
+      "data": [
+        {
+          "rows": [
+            {
+              "attribute": "availability",
+              "condition": "Does not contain",
+              "value": "degree",
+
+              "updatedAttribute": "extracted_color",
+              "updatedCondition": "Does not contain",
+              "updatedValue": "val"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

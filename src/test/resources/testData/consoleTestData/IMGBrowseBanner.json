@@ -1,0 +1,10 @@
+{
+  "testData":[
+    {
+      "page": "TestAutomationBanner",
+      "data": "https://images.express.com/is/image/expressfashion/0027_09393654_0904?cache=on",
+      "editBanner": "https://www.lulus.com/images/product/xlarge/4952550_999802.jpg",
+      "RedirectURl": "https://www.lulus.com/images/product/xlarge/4952550_999802.jpg"
+    }
+  ]
+}

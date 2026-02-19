@@ -1,0 +1,10 @@
+{
+  "testData": [
+    {
+      "userName": "automationTest",
+      "email" : "qa1@gmail.com",
+      "password": "password",
+      "region" : "US"
+    }
+  ]
+}

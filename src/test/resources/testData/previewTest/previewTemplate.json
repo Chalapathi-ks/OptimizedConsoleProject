@@ -1,0 +1,36 @@
+{
+  "testData": [
+    {
+      "template": "TEMPLATE_1",
+      "verifyAppliedTemplate": "Template 1 Applied"
+    },
+    {
+      "template": "TEMPLATE_2",
+      "verifyAppliedTemplate": "Template 2 Applied"
+    },
+    {
+      "template": "TEMPLATE_3",
+      "verifyAppliedTemplate": "Template 3 Applied"
+    },
+    {
+      "template": "TEMPLATE_4",
+      "verifyAppliedTemplate": "Template 4 Applied"
+    },
+    {
+      "template": "TEMPLATE_5",
+      "verifyAppliedTemplate": "Template 5 Applied"
+    },
+    {
+      "template": "TEMPLATE_6",
+      "verifyAppliedTemplate": "Template 6 Applied"
+    },
+    {
+      "template": "TEMPLATE_7",
+      "verifyAppliedTemplate": "Template 7 Applied"
+    },
+    {
+      "template": "TEMPLATE_8",
+      "verifyAppliedTemplate": "Template 8 Applied"
+    }
+  ]
+}

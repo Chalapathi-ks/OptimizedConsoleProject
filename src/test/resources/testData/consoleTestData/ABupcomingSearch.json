@@ -1,0 +1,26 @@
+{
+  "testData": [
+    {
+      "query": "ABuopcomingSearch",
+      "VariationA":60,
+      "VariationB":40,
+      "timZone":"kol",
+      "winnerDecidedBy": "Click Rate",
+      "data": [
+        {
+          "rows": [
+            {
+              "attribute": "availability",
+              "condition": "Does not contain",
+              "value": "degree",
+
+              "updatedAttribute": "extracted_color",
+              "updatedCondition": "Does not contain",
+              "updatedValue": "val"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "testData":[
+    {
+      "parentFieldValueTitle": "Title *",
+      "varientFieldValueTitle": "title",
+
+      "parentFieldValuePrice": "Price",
+      "varientFieldValuePrice": "price",
+
+
+      "parentFieldValueTitleEdit": "brand",
+      "varientFieldValueTitleEdit": "brand",
+
+      "parentFieldValuePriceEdit": "v_price",
+      "varientFieldValuePriceEdit": "discount"
+    }
+  ]
+}

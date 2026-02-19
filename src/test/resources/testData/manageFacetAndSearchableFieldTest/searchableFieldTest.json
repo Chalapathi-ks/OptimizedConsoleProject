@@ -1,0 +1,12 @@
+{
+  "testData": [
+    {
+      "attributeName": "name",
+      "attributeName1": "color",
+      "productCoveragePercentage" : "100%",
+      "editWeight" : "High",
+      "colorEditWeight": "High",
+      "pageCount" : "100"
+    }
+  ]
+}

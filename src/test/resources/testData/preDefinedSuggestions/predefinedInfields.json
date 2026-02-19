@@ -1,0 +1,9 @@
+{
+  "testData": [
+    {
+      "preDefinedFields": ["Brand"],
+      "suggestionSection" : "INFIELD"
+    }
+
+  ]
+}

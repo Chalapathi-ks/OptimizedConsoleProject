@@ -1,0 +1,16 @@
+{
+  "testData": [
+    {
+      "facet":"brand",
+      "facet_value": "lulus",
+      "facet1":"brand",
+      "facet_value1":"lush"
+    },
+    {
+      "facet":"brand",
+      "facet_value":"lulus",
+      "facet1":"categoryName",
+      "facet_value1": "dresses"
+    }
+  ]
+}

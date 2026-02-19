@@ -1,0 +1,24 @@
+{
+  "testData":[
+    {
+      "page": "Black",
+      "pinningPosition": "1",
+      "data": [
+        {
+          "rows": [
+            {
+              "Browse_Attribute": "Color_Family",
+              "Browse_Value": "Black",
+
+              "product":"1",
+              "value": "1",
+
+              "updatedProduct":"2",
+              "updatedValue": "2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

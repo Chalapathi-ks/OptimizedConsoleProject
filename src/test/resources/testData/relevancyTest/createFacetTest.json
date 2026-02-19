@@ -1,0 +1,20 @@
+{
+  "testData": [
+    {
+      "facetDisplayName": "auto1",
+      "facetName": "brand",
+      "facetLength": "12",
+      "sortOrder": "Alphabetical (A-Z)",
+      "facetDisplayValue" : "Disabled"
+    }/*,
+    {
+      "facetDisplayName": "auto2",
+      "facetName": "cost",
+      "facetLength": "12",
+      "rangeStart":"2",
+      "rangeStop":"8",
+      "rangeGap":"2",
+      "facetDisplayValue" : "Disabled"
+    }*/
+  ]
+}

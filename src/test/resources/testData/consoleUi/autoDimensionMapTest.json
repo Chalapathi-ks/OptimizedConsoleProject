@@ -1,0 +1,9 @@
+{
+  "testData": [
+    {
+      "mappedfields": ["sku","price"],
+      "fields" : ["SKU","Price"]
+    }
+
+  ]
+}

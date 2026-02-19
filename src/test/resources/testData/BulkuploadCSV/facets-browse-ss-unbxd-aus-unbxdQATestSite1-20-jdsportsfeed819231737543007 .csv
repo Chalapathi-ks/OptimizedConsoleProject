@@ -1,0 +1,3 @@
+Page,Attribute,Value,FacetField,FacetType,FacetLength,SortOrder,CustomPinningValues,RangeStart,RangeEnd,RangeGap
+ALL,availability,true,availability,text,5,ascending_alphabets,,,,
+ALL,availability,true,noOfReviews,text,5,product_count,,,,

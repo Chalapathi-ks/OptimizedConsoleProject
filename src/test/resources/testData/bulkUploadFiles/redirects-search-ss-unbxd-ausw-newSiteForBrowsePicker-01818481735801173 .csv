@@ -1,0 +1,7 @@
+Query,SimilarQuery,CampaignName,StartDate,EndDate,Description,TimeZone,Segments,Redirect
+redirect,"Redirect url,Redirect service,Redirect manager,301 redirect,reddy,all 5",test 1,02/04/2025 06:54:00,02/04/2100 00:00:00,,Etc/UTC,global,youtube.com
+Sin (-x) = – Sin x,"Cos(x) = –cos x,Tan(x) = –tan x,Cot( x) = cot(x),Sin θ",test 3,02/04/2025 06:55:00,02/04/2100 00:00:00,,Etc/UTC,global,https://byjus.com/maths/trigonometry/
+"The unit circle aids in measuring cos, sin, and tan angles as its center is at origin and radius is","Unit circle properties,Trigonometric functions in unit circle,sin²θ + cos²θ = 1,cot 2θ = (cot²θ – 1) / 2 cot θ,tan 2θ = 2 tan θ / (1 – tan²θ)",test 4,02/04/2025 00:00:00,02/04/2100 00:00:00,,Etc/UTC,global,"The unit circle aids in measuring cos, sin, and tan angles as its center is at origin and radius is"
+TestAutomationRedirect1750058070606,"",AutoTest1750058074346,16/06/2025 00:00:00,16/06/2100 00:00:00,,Etc/UTC,global,https://stackoverflow.co/
+TestAutomationSimilarQuery1750066143651,"TitleSim,Simquery",AutoTest1750066168294,16/06/2025 00:00:00,16/06/2100 00:00:00,,Etc/UTC,global,https://stackoverflow.co/
+upcoming red,"",test,19/06/2025 00:00:00,20/06/2025 23:59:00,,Asia/Kolkata,global,d

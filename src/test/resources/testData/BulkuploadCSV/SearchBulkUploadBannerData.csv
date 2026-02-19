@@ -1,0 +1,5 @@
+RuleType,Query,SimilarQuery,Attribute,Value,CampaignName,StartDate,EndDate,Description,TimeZone,Devices,ImageUrl,RedirectBannerUrl,Html
+query,Banner1,,,,kk,,21/02/2098 00:00:00,,Etc/UTC,"desktop browser,tablet browser,mobile browser,android app,ios app,windows app",,,mm
+query,Banner2,,,,kk,,21/02/2098 00:00:00,,Etc/UTC,"desktop browser,tablet browser,mobile browser,android app,ios app,windows app",,,mm
+field,,"",brand,LUSH,ALL brand: LUSH,23/02/2023 00:00:00,23/02/2098 00:00:00,,Etc/UTC,"desktop browser,tablet browser,mobile browser,android app,ios app,windows app",,,hkb
+field,,"",brand,Lulus,ALL brand: Lulus,23/02/2023 00:00:00,23/02/2098 00:00:00,,Etc/UTC,"desktop browser,tablet browser,mobile browser,android app,ios app,windows app",https://console-anz.unbxd.io/ss/,,

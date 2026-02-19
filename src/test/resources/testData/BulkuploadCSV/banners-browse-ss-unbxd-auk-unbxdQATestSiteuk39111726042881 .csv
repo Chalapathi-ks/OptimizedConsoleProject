@@ -1,0 +1,4 @@
+RuleType,Page,Attribute,Value,CampaignName,StartDate,EndDate,Description,TimeZone,Segments,IsMarketingCampaign,ImageUrl,RedirectBannerUrl,Html
+page,active,,,active,23/01/2025 00:00:00,23/01/2100 00:00:00,,Etc/UTC,global,false,https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQRcNhZ55ix_vidEN5hK228FhyQhxPIvJdqjsao9pKXVgoMplf07k7ZsPiv7eqCcflFRVRLud-AoALCM3TwL_HgGp9qDgjR5cH_f02wPXA,,
+page,upcoming,,,upcoming,24/01/2025 00:00:00,25/01/2025 23:59:00,,Asia/Kolkata,global,false,https://console-uk.unbxd.io/ss/category-pages/merchandising/commerce-browse/1360/banners,,
+page,expired,,,expired,23/01/2025 18:15:00,23/01/2025 18:56:00,,Asia/Kolkata,global,false,https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQRcNhZ55ix_vidEN5hK228FhyQhxPIvJdqjsao9pKXVgoMplf07k7ZsPiv7eqCcflFRVRLud-AoALCM3TwL_HgGp9qDgjR5cH_f02wPXA,,

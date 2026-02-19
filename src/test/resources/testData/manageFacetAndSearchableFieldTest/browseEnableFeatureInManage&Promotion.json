@@ -1,0 +1,24 @@
+
+{
+  "testData":[
+    {
+      "query": "Acacia",
+      "fieldName": "Lamp_Type",
+      "featureMerchandisable": "Merchandisable",
+      "featureFacetable": "Facetable",
+      "featureAutosuggest":"AutoSuggest",
+      "featureFieldRule":"Field Rule",
+      "suggestionSection" : "KEYWORD",
+      "data": [
+        {
+          "rows": [
+            {
+              "Browse_Attribute": "Material",
+              "Browse_Value": "Acacia"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

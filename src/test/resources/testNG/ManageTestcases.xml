@@ -1,0 +1,317 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="ManageTestcases" parallel="tests" thread-count="32" verbose="10" preserve-order="true">
+
+    <!-- manageSearchFacetTest methods -->
+    <test name="SearchManageTest - manageSearchFacetTest - FacetRanking">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.manageSearchFacetTest">
+                <methods>
+                    <include name="FacetRanking"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SearchManageTest - manageSearchFacetTest - createUpdateDeleteFacetTest">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.manageSearchFacetTest">
+                <methods>
+                    <include name="createUpdateDeleteFacetTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SearchManageTest - manageSearchFacetTest - createUpdateDeleteRangeFacetTest">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.manageSearchFacetTest">
+                <methods>
+                    <include name="createUpdateDeleteRangeFacetTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SearchManageTest - manageSearchFacetTest - BrowseFacetRanking">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.manageSearchFacetTest">
+                <methods>
+                    <include name="BrowseFacetRanking"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SearchManageTest - manageSearchFacetTest - browseCreateUpdateDeleteFacetTest">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.manageSearchFacetTest">
+                <methods>
+                    <include name="browseCreateUpdateDeleteFacetTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SearchManageTest - manageSearchFacetTest - browseCreateUpdateDeleteRangeFacetTest">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.manageSearchFacetTest">
+                <methods>
+                    <include name="browseCreateUpdateDeleteRangeFacetTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- DimensionMappingTest methods -->
+    <test name="SearchManageTest - DimensionMappingTest - dimensionMappingUpdate">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.DimensionMappingTest">
+                <methods>
+                    <include name="dimensionMappingUpdate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ProductCardMappingTest methods -->
+    <test name="SearchManageTest - ProductCardMappingTest - configureProductCardMappingTest">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.ProductCardMappingTest">
+                <methods>
+                    <include name="configureProductCardMappingTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- MerasurementSearchTest methods -->
+    <test name="SearchManageTest - MerasurementSearchTest - configureMeasurementSearchTest">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.MerasurementSearchTest">
+                <methods>
+                    <include name="configureMeasurementSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!--    <test name="SearchManageTest - VectorSearchTest">-->
+<!--        <classes>-->
+<!--            <class name="UnbxdTests.testNG.ui.SearchManageTest.VectorSearchTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <!-- FieldPropertiesTest methods -->
+    <test name="SearchManageTest - FieldPropertiesTest - bulkEnableAndDisableFieldFeatures">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.FieldPropertiesTest">
+                <methods>
+                    <include name="bulkEnableAndDisableFieldFeatures"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SearchManageTest - FieldPropertiesTest - EnableAndDisableFieldFeatures">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.FieldPropertiesTest">
+                <methods>
+                    <include name="EnableAndDisableFieldFeatures"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SearchManageTest - FieldPropertiesTest - EnableFieldFeaturesAndcheckInManageFacetAndPromotion">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.FieldPropertiesTest">
+                <methods>
+                    <include name="EnableFieldFeaturesAndcheckInManageFacetAndPromotion"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SearchManageTest - FieldPropertiesTest - EnableFieldFeaturesAndcheckInFieldRuleAndAutosuggest">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.FieldPropertiesTest">
+                <methods>
+                    <include name="EnableFieldFeaturesAndcheckInFieldRuleAndAutosuggest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SearchManageTest - FieldPropertiesTest - BrowsebulkEnableAndDisableFieldFeatures">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.FieldPropertiesTest">
+                <methods>
+                    <include name="BrowsebulkEnableAndDisableFieldFeatures"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SearchManageTest - FieldPropertiesTest - BrowseEnableAndDisableFieldFeatures">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.FieldPropertiesTest">
+                <methods>
+                    <include name="BrowseEnableAndDisableFieldFeatures"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SearchManageTest - FieldPropertiesTest - BrowseEnableFieldFeaturesAndcheckInManageFacetAndPromotion">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.FieldPropertiesTest">
+                <methods>
+                    <include name="BrowseEnableFieldFeaturesAndcheckInManageFacetAndPromotion"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SearchManageTest - FieldPropertiesTest - BrowseEnableFieldFeaturesAndcheckInFieldRule">
+        <classes>
+            <class name="UnbxdTests.testNG.ui.SearchManageTest.FieldPropertiesTest">
+                <methods>
+                    <include name="BrowseEnableFieldFeaturesAndcheckInFieldRule"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Individual Algorithm Tests - Each in separate browser -->
+    <test name="AlgorithmTest - ConceptsTest - createConceptsTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmTest.ConceptsTest">
+                <methods>
+                    <include name="createConceptsTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AlgorithmTest - PhrasesTest - createEditDeletePhraseTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmTest.PhrasesTest">
+                <methods>
+                    <include name="createEditDeletePhraseTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AlgorithmTest - StemmingTest - createStemmingTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmTest.StemmingTest">
+                <methods>
+                    <include name="createStemmingTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AlgorithmTest - StopWordsTest - createStopWord">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmTest.StopWordsTest">
+                <methods>
+                    <include name="createStopWord"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AlgorithmTest - SynonymsTest - createSynonymTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.AlgorithmTest.SynonymsTest">
+                <methods>
+                    <include name="createSynonymTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- VariantLockTest methods -->
+<!--    <test name="Merch - SearchVariantPinningTest - searchGlobalVariantPinningTest">-->
+<!--        <classes>-->
+<!--            <class name="UnbxdTests.testNG.consoleui.variantLockTest.searchVariantPinning">-->
+<!--                <methods>-->
+<!--                    <include name="searchGlobalVariantPinningTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Merch - SearchVariantPinningTest - searchVariantPinningCreateEditDeleteTest">-->
+<!--        <classes>-->
+<!--            <class name="UnbxdTests.testNG.consoleui.variantLockTest.searchVariantPinning">-->
+<!--                <methods>-->
+<!--                    <include name="searchVariantPinningCreateEditDeleteTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Merch - SearchVariantPinningTest - searchVariantPinningWithSyncTest">-->
+<!--        <classes>-->
+<!--            <class name="UnbxdTests.testNG.consoleui.variantLockTest.searchVariantPinning">-->
+<!--                <methods>-->
+<!--                    <include name="searchVariantPinningWithSyncTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Merch - SearchVariantPinningTest - searchVariantPinningWithPendingSyncTest">-->
+<!--        <classes>-->
+<!--            <class name="UnbxdTests.testNG.consoleui.variantLockTest.searchVariantPinning">-->
+<!--                <methods>-->
+<!--                    <include name="searchVariantPinningWithPendingSyncTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Merch - SearchVariantPinningTest - searchVariantPinningABPendingSyncTest">-->
+<!--        <classes>-->
+<!--            <class name="UnbxdTests.testNG.consoleui.variantLockTest.searchVariantPinning">-->
+<!--                <methods>-->
+<!--                    <include name="searchVariantPinningABPendingSyncTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Merch - BrowseVariantPinningTest - browseGlobalVariantPinningTest">-->
+<!--        <classes>-->
+<!--            <class name="UnbxdTests.testNG.consoleui.variantLockTest.browseVariantPinning">-->
+<!--                <methods>-->
+<!--                    <include name="browseGlobalVariantPinningTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Merch - BrowseVariantPinningTest - browseVariantPinningCreateEditDeleteTest">-->
+<!--        <classes>-->
+<!--            <class name="UnbxdTests.testNG.consoleui.variantLockTest.browseVariantPinning">-->
+<!--                <methods>-->
+<!--                    <include name="browseVariantPinningCreateEditDeleteTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Merch - BrowseVariantPinningTest - browseVariantPinningWithSyncTest">-->
+<!--        <classes>-->
+<!--            <class name="UnbxdTests.testNG.consoleui.variantLockTest.browseVariantPinning">-->
+<!--                <methods>-->
+<!--                    <include name="browseVariantPinningWithSyncTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Merch - BrowseVariantPinningTest - browseVariantPinningWithPendingSyncTest">-->
+<!--        <classes>-->
+<!--            <class name="UnbxdTests.testNG.consoleui.variantLockTest.browseVariantPinning">-->
+<!--                <methods>-->
+<!--                    <include name="browseVariantPinningWithPendingSyncTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Merch - BrowseVariantPinningTest - browseVariantPinningABPendingSyncTest">-->
+<!--        <classes>-->
+<!--            <class name="UnbxdTests.testNG.consoleui.variantLockTest.browseVariantPinning">-->
+<!--                <methods>-->
+<!--                    <include name="browseVariantPinningABPendingSyncTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+
+</suite>

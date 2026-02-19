@@ -1,0 +1,26 @@
+{
+  "testData":[
+    {
+      "page": "area-rugs",
+      "data": [
+
+        {
+          "rows": [
+            {
+              "Browse_Attribute": "categoryPath2",
+              "Browse_Value": "area-rugs",
+
+              "attribute": "availability",
+              "condition": "Does not contain",
+              "value": "degree",
+
+              "updatedAttribute": "extracted_color",
+              "updatedCondition": "Does not contain",
+              "updatedValue": "val"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

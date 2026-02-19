@@ -1,0 +1,9 @@
+{
+  "testData": [
+    {
+      "promotedSuggestionTerm": "BSuggestionTerm1",
+      "timezone": "Kolkata",
+      "editpromotedSuggestionTerm": "BSuggestionTerm2"
+    }
+  ]
+}

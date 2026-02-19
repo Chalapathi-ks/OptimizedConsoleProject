@@ -1,0 +1,19 @@
+{
+  "testData": [
+    {
+      "siteName": "multisite",
+      "env": "Dev",
+      "vertical": "Electronics",
+      "platform": null,
+      "lang": "English"
+    }
+    /*,
+    {
+      "siteName": "AutoTestSite2",
+      "env": "Prod",
+      "vertical": "Autoparts",
+      "platform": "Hybris",
+      "lang": "English"
+    }*/
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "testData":[
+    {
+      "fieldName1": "Title *",
+      "fieldValue1": "title",
+
+      "fieldName2": "Price",
+      "fieldValue2": "price",
+
+      "fieldValue1Edit" : "brand",
+      "fieldValue2Edit" : "discount"
+
+    }
+  ]
+}

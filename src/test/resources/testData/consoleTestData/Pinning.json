@@ -1,0 +1,22 @@
+{
+  "testData":[
+    {
+      "query": "TestAutomationPinning",
+      "pinningPosition": "1",
+      "updatedPinningPosition": "2",
+      "data": [
+        {
+          "rows": [
+            {
+              "product":"1",
+              "value": "1",
+
+              "updatedProduct":"2",
+              "updatedValue": "2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

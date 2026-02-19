@@ -1,0 +1,29 @@
+{
+  "testData":[
+    {
+      "page": "Ash",
+      "Slot":"slot",
+      "StartRange": "1",
+      "EndRange": "2",
+      "data": [
+        {
+          "rows": [
+            {
+              "Browse_Attribute": "Color_Family",
+              "Browse_Value": "Ash",
+
+              "attribute": "availability",
+              "condition": "Does not contain",
+              "value": "degree",
+
+              "updatedAttribute": "extracted_color",
+              "updatedCondition": "Does not contain",
+              "updatedValue": "val"
+
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

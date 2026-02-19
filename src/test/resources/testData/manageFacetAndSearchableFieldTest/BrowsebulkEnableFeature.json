@@ -1,0 +1,23 @@
+
+{
+  "testData":[
+    {
+      "query": "Merchandisable",
+      "fieldName": "Waterproof",
+      "featureMerchandisable": "Merchandisable",
+      "featureFacetable": "Facetable",
+      "featureAutosuggest":"AutoSuggest",
+      "featureFieldRule":"Field Rule",
+      "suggestionSection" : "KEYWORD",
+      "data": [
+        {
+          "rows": [
+            {
+              "attribute": "detail_codes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

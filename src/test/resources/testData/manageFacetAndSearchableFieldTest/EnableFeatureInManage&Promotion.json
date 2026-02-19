@@ -1,0 +1,23 @@
+
+{
+  "testData":[
+    {
+      "query": "Merchandisable",
+      "fieldName": "extracted_keyword",
+      "featureMerchandisable": "Merchandisable",
+      "featureFacetable": "Facetable",
+      "featureAutosuggest":"AutoSuggest",
+      "featureFieldRule":"Field Rule",
+      "suggestionSection" : "KEYWORD",
+      "data": [
+        {
+          "rows": [
+            {
+              "attribute": "extracted_keyword"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
