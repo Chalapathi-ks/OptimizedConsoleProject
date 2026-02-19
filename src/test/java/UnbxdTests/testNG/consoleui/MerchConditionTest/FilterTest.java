@@ -70,6 +70,10 @@ public class FilterTest extends MerchandisingTest {
         merchandisingActions.openPreviewAndSwitchTheTab();
         merchandisingActions.awaitForPageToLoad();
         ThreadWait();
+        long deadline = System.currentTimeMillis() + 20000;
+        while (System.currentTimeMillis() < deadline && !driver.getCurrentUrl().contains("preview")) {
+            ThreadWait();
+        }
         String previewPage = driver.getCurrentUrl();
         Assert.assertTrue(previewPage.contains("preview"),"Not redirecting to preview page");
         merchandisingActions.awaitForElementPresence(merchandisingActions.SearchpreviewOption);
@@ -110,6 +114,10 @@ public class FilterTest extends MerchandisingTest {
         merchandisingActions.openPreviewAndSwitchTheTab();
         merchandisingActions.awaitForPageToLoad();
         ThreadWait();
+        long deadline2 = System.currentTimeMillis() + 20000;
+        while (System.currentTimeMillis() < deadline2 && !driver.getCurrentUrl().contains("preview")) {
+            ThreadWait();
+        }
         String previewpage = driver.getCurrentUrl();
         Assert.assertTrue(previewpage.contains("preview"),"Not redirecting to preview page");
         merchandisingActions.awaitForElementPresence(merchandisingActions.SearchpreviewOption);
@@ -135,6 +143,7 @@ public class FilterTest extends MerchandisingTest {
         searchPage.queryRuleByName(query);
         ThreadWait();
         searchPageActions.deleteQueryRule(query);
+        searchPageActions.awaitForSuccessToastPresence();
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
         searchPage.threadWait();
 

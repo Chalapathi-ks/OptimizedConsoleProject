@@ -479,6 +479,19 @@ public class UiBase extends FluentPage {
         }
     }
 
+    /** Checks display using a concrete WebElement to avoid jdk.proxy2.$Proxy13 errors when passing FluentWebElement to Selenium/JS. */
+    public boolean isDisplayedSafe(FluentWebElement element) {
+        if (!awaitForElementPresence(element)) return false;
+        WebElement w = getConcreteWebElement(element);
+        if (w == null) w = unwrapWebElement(element.getElement());
+        w = ensureConcreteForScript(element, w);
+        try {
+            return w != null && w.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public void unbxdInputBoxSearch(FluentWebElement element, String name) {
         try {
             awaitForElementPresence(element);
@@ -1032,16 +1045,23 @@ public class UiBase extends FluentPage {
 
     public void clickUsingJS(FluentWebElement fluentWebElement) {
         JavascriptExecutor ex = (JavascriptExecutor) getDriver();
+        WebElement el = getConcreteWebElement(fluentWebElement);
+        if (el == null) el = unwrapWebElement(fluentWebElement.getElement());
+        el = ensureConcreteForScript(fluentWebElement, el);
         try {
-            ex.executeScript("arguments[0].click();", unwrapWebElement(fluentWebElement.getElement()));
-        } catch (Exception e) {
-            try {
-                String css = getCssLocatorForFluent(fluentWebElement);
+            if (el != null) {
+                ex.executeScript("arguments[0].click();", el);
+                return;
+            }
+        } catch (Exception ignored) { }
+        try {
+            String css = getCssLocatorForFluent(fluentWebElement);
+            if (css != null && !css.isEmpty()) {
                 WebElement concrete = getDriver().findElement(By.cssSelector(css));
                 ex.executeScript("arguments[0].click();", concrete);
-            } catch (Exception inner) {
-                throw e;
             }
+        } catch (Exception inner) {
+            throw new RuntimeException("clickUsingJS failed", inner);
         }
     }
 

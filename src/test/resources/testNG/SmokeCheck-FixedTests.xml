@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SmokeCheck - Fixed tests" verbose="2">
+    <test name="PromotionStatus - promotionActiveAndStopStatusTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PromotionStatusTest">
+                <methods><include name="promotionActiveAndStopStatusTest"/></methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Pinning - pinningCreateTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.PinningTest">
+                <methods><include name="pinningCreateTest"/></methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Filter - filtersTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchConditionTest.FilterTest">
+                <methods><include name="filtersTest"/></methods>
+            </class>
+        </classes>
+    </test>
+    <test name="FieldRuleFacet - createAndEditSearchFieldRuleFacetTest">
+        <classes>
+            <class name="UnbxdTests.testNG.consoleui.MerchTest.FieldRuleFacetTest">
+                <methods><include name="createAndEditSearchFieldRuleFacetTest"/></methods>
+            </class>
+        </classes>
+    </test>
+</suite>

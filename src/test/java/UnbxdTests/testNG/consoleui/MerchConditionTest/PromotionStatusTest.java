@@ -95,13 +95,14 @@ public class PromotionStatusTest extends MerchandisingTest {
                     Assert.assertNotNull(searchPage.queryRuleByName(query));
                     queryRules.add(query);
                     merchandisingActions.await();
-                    Assert.assertTrue(merchandisingActions.upcomingStatus.isDisplayed(), "SEARCH: PROMOTION RULE IS NOT IN UPCOMING STATE");
+                    Assert.assertTrue(merchandisingActions.isDisplayedSafe(merchandisingActions.upcomingStatus), "SEARCH: PROMOTION RULE IS NOT IN UPCOMING STATE");
 
                 goTo(searchPage);
                 searchPage.await();
                 searchPage.queryRuleByName(query);
                 searchPage.await();
                 searchPageActions.deleteQueryRule(query);
+                searchPageActions.awaitForSuccessToastPresence();
                 searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
 
 
@@ -146,7 +147,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         merchandisingActions.await();
         // Wait for status badge to appear (with retry logic)
         merchandisingActions.awaitTillElementDisplayed(merchandisingActions.activeStatus);
-        Assert.assertTrue(merchandisingActions.activeStatus.isDisplayed(), "SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
+        Assert.assertTrue(merchandisingActions.isDisplayedSafe(merchandisingActions.activeStatus), "SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
 
         //Stopped the rule
         searchPageActions.selectActionType(UnbxdEnum.MORE, query);
@@ -154,7 +155,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         searchPageActions.selectModelWindow();
         Assert.assertTrue(searchPageActions.checkSuccessMessage(), SUCCESS_MESSAGE_FAILURE);
         merchandisingActions.await();
-        Assert.assertTrue(searchPageActions.stopCampaign.isDisplayed(), "SEARCH: PROMOTION RULE IS NOT IN STOPPED STATE");
+        Assert.assertTrue(merchandisingActions.isDisplayedSafe(searchPageActions.stopCampaign), "SEARCH: PROMOTION RULE IS NOT IN STOPPED STATE");
 
         goTo(searchPage);
         searchPage.await();
@@ -194,7 +195,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         merchandisingActions.await();
         Assert.assertNotNull(searchPage.queryRuleByName(query));
         merchandisingActions.awaitForElementPresence(merchandisingActions.activeStatus);
-        Assert.assertTrue(merchandisingActions.activeStatus.isDisplayed(),"SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
+        Assert.assertTrue(merchandisingActions.isDisplayedSafe(merchandisingActions.activeStatus), "SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
 
         //Stopped the rule
         searchPageActions.selectActionType(UnbxdEnum.MORE,query);
@@ -202,7 +203,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         searchPageActions.selectModelWindow();
         Assert.assertTrue(searchPageActions.checkSuccessMessage(), SUCCESS_MESSAGE_FAILURE);
         merchandisingActions.awaitTillElementDisplayed(searchPageActions.stopCampaign);
-        Assert.assertTrue(searchPageActions.stopCampaign.isDisplayed(),"SEARCH: PROMOTION RULE IS NOT IN STOPPED STATE");
+        Assert.assertTrue(merchandisingActions.isDisplayedSafe(searchPageActions.stopCampaign), "SEARCH: PROMOTION RULE IS NOT IN STOPPED STATE");
 
         //Duplicate the rule
         searchPageActions.awaitForPageToLoad();
@@ -220,7 +221,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         searchPage.queryRuleByName(query);
         merchandisingActions.campaignPromotions.getText().contains("copy");
         merchandisingActions.awaitForElementPresence(merchandisingActions.activeStatus);
-        Assert.assertTrue(merchandisingActions.activeStatus.isDisplayed(),"SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
+        Assert.assertTrue(merchandisingActions.isDisplayedSafe(merchandisingActions.activeStatus), "SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
 
         goTo(searchPage);
         searchPage.await();
@@ -293,15 +294,17 @@ public class PromotionStatusTest extends MerchandisingTest {
                 Assert.assertNotNull(searchPage.queryRuleByName(page));
                 pageRules.add(page);
                 merchandisingActions.await();
-                Assert.assertTrue(merchandisingActions.upcomingStatus.isDisplayed(), "SEARCH: PROMOTION RULE IS NOT IN UPCOMING STATE");
+                Assert.assertTrue(merchandisingActions.isDisplayedSafe(merchandisingActions.upcomingStatus), "SEARCH: PROMOTION RULE IS NOT IN UPCOMING STATE");
 
                 goTo(browsePage);
                 searchPage.await();
                 searchPage.queryRuleByName(page);
+                searchPageActions.awaitForSuccessToastPresence();
                 searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
 
                 merchandisingActions.await();
                 searchPageActions.deleteQueryRule(page);
+                searchPageActions.awaitForSuccessToastPresence();
                 searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
 
             }
@@ -336,7 +339,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         merchandisingActions.await();
         Assert.assertNotNull(searchPage.queryRuleByName(page));
         pageRules.add(page);
-        Assert.assertTrue(merchandisingActions.activeStatus.isDisplayed(),"SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
+        Assert.assertTrue(merchandisingActions.isDisplayedSafe(merchandisingActions.activeStatus), "SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
 
         //Stopped the rule
         searchPageActions.selectActionType(UnbxdEnum.MORE,page);
@@ -344,7 +347,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         searchPageActions.selectModelWindow();
         Assert.assertTrue(searchPageActions.checkSuccessMessage(), SUCCESS_MESSAGE_FAILURE);
         merchandisingActions.awaitTillElementDisplayed(searchPageActions.stopCampaign);
-        Assert.assertTrue(searchPageActions.stopCampaign.isDisplayed(),"SEARCH: PROMOTION RULE IS NOT IN STOPPED STATE");
+        Assert.assertTrue(merchandisingActions.isDisplayedSafe(searchPageActions.stopCampaign), "SEARCH: PROMOTION RULE IS NOT IN STOPPED STATE");
 
         //Duplicate the rule
         searchPageActions.awaitForPageToLoad();
@@ -361,17 +364,19 @@ public class PromotionStatusTest extends MerchandisingTest {
         merchandisingActions.await();
         searchPage.queryRuleByName(page);
         merchandisingActions.campaignPromotions.getText().contains("copy");
-        Assert.assertTrue(merchandisingActions.activeStatus.isDisplayed(),"SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
+        Assert.assertTrue(merchandisingActions.isDisplayedSafe(merchandisingActions.activeStatus), "SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
 
         goTo(browsePage);
         searchPage.await();
         searchPage.queryRuleByName(page);
         merchandisingActions.await();
         searchPageActions.deleteQueryRule(page);
+        searchPageActions.awaitForSuccessToastPresence();
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
 
         searchPage.await();
         searchPageActions.deleteQueryRule(page);
+        searchPageActions.awaitForSuccessToastPresence();
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
         searchPage.await();
 

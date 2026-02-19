@@ -85,9 +85,14 @@ public class  PinningTest extends MerchandisingTest {
         merchandisingActions.openPreviewAndSwitchTheTab();
         merchandisingActions.awaitForPageToLoad();
         ThreadWait();
+        long deadline = System.currentTimeMillis() + 20000;
+        while (System.currentTimeMillis() < deadline && !driver.getCurrentUrl().contains("preview")) {
+            ThreadWait();
+        }
         String previewPage = driver.getCurrentUrl();
         Assert.assertTrue(previewPage.contains("preview"),"Not redirecting to preview page");
         merchandisingActions.awaitForElementPresence(merchandisingActions.SearchpreviewOption);
+        merchandisingActions.awaitForElementPresence(merchandisingActions.showingResultinPreview);
         ThreadWait();
         Assert.assertTrue(merchandisingActions.showingResultinPreview.getText().contains(query));
 
@@ -123,10 +128,15 @@ public class  PinningTest extends MerchandisingTest {
         merchandisingActions.openPreviewAndSwitchTheTab();
         merchandisingActions.awaitForPageToLoad();
         ThreadWait();
+        long deadline2 = System.currentTimeMillis() + 20000;
+        while (System.currentTimeMillis() < deadline2 && !driver.getCurrentUrl().contains("preview")) {
+            ThreadWait();
+        }
         String previewpage = driver.getCurrentUrl();
         ThreadWait();
         Assert.assertTrue(previewpage.contains("preview"),"Not redirecting to preview page");
         merchandisingActions.awaitForElementPresence(merchandisingActions.SearchpreviewOption);
+        merchandisingActions.awaitForElementPresence(merchandisingActions.showingResultinPreview);
         Assert.assertTrue(merchandisingActions.showingResultinPreview.getText().contains(query));
 
         merchandisingActions.ClickViewHideInsight();
@@ -153,6 +163,7 @@ public class  PinningTest extends MerchandisingTest {
         searchPage.queryRuleByName(query);
         ThreadWait();
         searchPageActions.deleteQueryRule(query);
+        searchPageActions.awaitForSuccessToastPresence();
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
         searchPage.threadWait();
 

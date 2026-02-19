@@ -76,17 +76,20 @@ public class SearchRedirectTest extends MerchandisingTest {
         bannerActions.awaitForElementPresence(merchandisingActions.publishButton);
         click(merchandisingActions.publishButton);
         merchandisingActions.await();
+        searchPageActions.awaitForSuccessToastPresence();
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
 
         goTo(searchPage);
         searchPage.await();
         merchandisingActions.goToSection(UnbxdEnum.REDIRECT);
         searchPageActions.deleteQueryRule(query);
+        searchPageActions.awaitForSuccessToastPresence();
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
 
         searchPage.await();
         searchPage.await();
         searchPageActions.deleteQueryRule(query);
+        searchPageActions.awaitForSuccessToastPresence();
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
         searchPage.await();
 

@@ -158,6 +158,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
         ThreadWait();
         selectValueBYMatchingText(facetAttribute);
         await();
+        awaitForElementPresence(displayNameInput);
         displayNameInput.fill().with(name);
         awaitForElementPresence(facetEnableToggle);
         if(!checkElementPresence(activeToggle))
@@ -203,6 +204,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
     public String fillUpdateFacetDetails(Map<String, Object> testData) throws InterruptedException {
         String updateName = (String) testData.get("updatedFacetDisplayName");
         String updatefacetLength = (String) testData.get("updatedfacetLength");
+        awaitForElementPresence(displayNameInput);
         displayNameInput.click();
         displayNameInput.clear();
         displayNameInput.fill().with(updateName);
