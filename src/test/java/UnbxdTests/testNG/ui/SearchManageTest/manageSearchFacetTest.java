@@ -94,6 +94,7 @@ public class manageSearchFacetTest extends BaseTest {
         testData.put("updatedFacetDisplayName", displayUpdateName);
 
         goTo(manageSearchFacetAndSearchFieldPage);//Manage
+        searchPage.threadWait();
         searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         searchPage.awaitForElementPresence(manageSearchFacetAndSearchFieldPage.searchManageFacetSection);
