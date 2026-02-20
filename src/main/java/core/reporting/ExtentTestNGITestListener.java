@@ -2,7 +2,6 @@ package core.reporting;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import lib.Helper;
 import org.testng.ITestContext;
@@ -11,42 +10,36 @@ import org.testng.ITestResult;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.apache.commons.io.FileUtils;
 
 public class ExtentTestNGITestListener implements ITestListener {
 
     private static ExtentReports extent = ExtentManager.createInstance("extent.html");
-    private static ThreadLocal<ExtentTest> test = new ThreadLocal();
+    private static ThreadLocal<ExtentTest> parentTest = new ThreadLocal<>();
+    private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
+    private static final Map<String, ExtentTest> parentByContextName = new ConcurrentHashMap<>();
 
+    ExtentTest parent, subChild;
     ITestContext context;
 
 
     @Override
     public synchronized void onTestStart(ITestResult iTestResult) {
-        // Create a top-level test entry for each test method (not as a child node)
-        try {
-            String testName = iTestResult.getMethod().getMethodName();
-            String className = iTestResult.getTestClass().getName();
-            // Extract just the class name without package
-            String simpleClassName = className.substring(className.lastIndexOf('.') + 1);
-            // Create test name as: ClassName - MethodName
-            String fullTestName = simpleClassName + " - " + testName;
-            String description = iTestResult.getMethod().getDescription();
-            if (description == null || description.isEmpty()) {
-                description = "Test method: " + testName;
-            }
-            ExtentTest testEntry = extent.createTest(fullTestName, description);
-            test.set(testEntry);
-        } catch (Exception e) {
-            System.err.println("Error in onTestStart: " + e.getMessage());
-            e.printStackTrace();
-        }
+
+
     }
 
     @Override
     public synchronized void onTestSuccess(ITestResult iTestResult) {
         try {
-            if (test.get() != null) {
+            if (parentTest.get() != null) {
+                ExtentTest child = parentTest.get().createNode(" Test " + iTestResult.getMethod().getMethodName(), iTestResult.getMethod().getDescription());
+                setTestTimes(child, iTestResult);
+                test.set(child);
                 appendTestInfoInReport(Status.PASS, iTestResult);
             }
         } catch (Exception e) {
@@ -57,7 +50,10 @@ public class ExtentTestNGITestListener implements ITestListener {
     @Override
     public synchronized void onTestFailure(ITestResult iTestResult) {
         try {
-            if (test.get() != null) {
+            if (parentTest.get() != null) {
+                ExtentTest child = parentTest.get().createNode("Test :" + iTestResult.getMethod().getMethodName(), iTestResult.getMethod().getDescription());
+                setTestTimes(child, iTestResult);
+                test.set(child);
                 appendTestInfoInReport(Status.FAIL, iTestResult);
             }
         } catch (Exception e) {
@@ -68,11 +64,27 @@ public class ExtentTestNGITestListener implements ITestListener {
     @Override
     public synchronized void onTestSkipped(ITestResult iTestResult) {
         try {
-            if (test.get() != null) {
+            if (parentTest.get() != null) {
+                ExtentTest child = parentTest.get().createNode("Test :" + iTestResult.getMethod().getMethodName(), iTestResult.getMethod().getDescription());
+                setTestTimes(child, iTestResult);
+                test.set(child);
                 appendTestInfoInReport(Status.SKIP, iTestResult);
             }
         } catch (Exception e) {
             System.err.println("Error in onTestSkipped: " + e.getMessage());
+        }
+    }
+
+    private static void setTestTimes(ExtentTest extentTest, ITestResult iTestResult) {
+        try {
+            long startMs = iTestResult.getStartMillis();
+            long endMs = iTestResult.getEndMillis();
+            if (extentTest.getModel() != null) {
+                if (startMs > 0) extentTest.getModel().setStartTime(new Date(startMs));
+                if (endMs > 0) extentTest.getModel().setEndTime(new Date(endMs));
+            }
+        } catch (Exception e) {
+            System.err.println("Could not set test times in report: " + e.getMessage());
         }
     }
 
@@ -84,13 +96,23 @@ public class ExtentTestNGITestListener implements ITestListener {
     @Override
     public  synchronized void onStart(ITestContext iTestContext) {
         this.context = iTestContext;
-        // No need to create parent test - each test method will be a top-level entry
+        parent = extent.createTest(iTestContext.getName());
+        parentTest.set(parent);
+        parentByContextName.put(iTestContext.getName(), parent);
     }
 
     @Override
     public synchronized void onFinish(ITestContext iTestContext) {
+        ExtentTest contextParent = parentByContextName.remove(iTestContext.getName());
+        if (contextParent != null) {
+            try {
+                if (contextParent.getModel() != null)
+                    contextParent.getModel().setEndTime(new Date());
+            } catch (Exception e) {
+                System.err.println("Could not set parent test end time: " + e.getMessage());
+            }
+        }
         extent.flush();
-        // Ensure Extent_Report exists and copy the HTML to a stable location for Jenkins artifact publishing
         try {
             File reportDir = new File("Extent_Report");
             if (!reportDir.exists()) {
@@ -101,7 +123,6 @@ public class ExtentTestNGITestListener implements ITestListener {
                 File dstHtml = new File(reportDir, "index.html");
                 FileUtils.copyFile(srcHtml, dstHtml);
             } else {
-                // fallback to default TestNG extent location if any future change moves it
                 File alt = new File("test-output/ExtentReport.html");
                 if (alt.exists()) {
                     File dstHtml = new File(reportDir, "index.html");
@@ -122,15 +143,10 @@ public class ExtentTestNGITestListener implements ITestListener {
             return;
         }
         
-        // Calculate execution time
-        long executionTime = iTestResult.getEndMillis() - iTestResult.getStartMillis();
-        String executionTimeFormatted = formatExecutionTime(executionTime);
-        
         if (testStatus.equals(Status.FAIL)) {
             try {
                 String destinationPath = Helper.getScreenShot(iTestResult.getMethod().getMethodName());
                 if (destinationPath != null && new File(destinationPath).exists()) {
-                    // Copy screenshot into Extent_Report/screenshots and use a relative path to avoid broken images in Jenkins artifacts
                     File src = new File(destinationPath);
                     File reportDir = new File("Extent_Report");
                     if (!reportDir.exists()) {
@@ -148,7 +164,6 @@ public class ExtentTestNGITestListener implements ITestListener {
                         test.get().addScreenCaptureFromPath(relativePath, "Failure Screenshot");
                     } catch (IOException copyEx) {
                         System.err.println("Failed to copy screenshot into report directory: " + copyEx.getMessage());
-                        // Fallback to original path
                         test.get().addScreenCaptureFromPath(destinationPath, "Failure Screenshot");
                     }
                 }
@@ -158,51 +173,11 @@ public class ExtentTestNGITestListener implements ITestListener {
             if (iTestResult.getThrowable() != null) {
                 test.get().log(testStatus, "Failure Reason : " + iTestResult.getThrowable().getMessage());
             }
-            test.get().log(testStatus, "Execution Time: " + executionTimeFormatted);
         }
         if (testStatus.equals(Status.SKIP)) {
             if (iTestResult.getThrowable() != null) {
                 test.get().log(testStatus, "Skipped Reason: " + iTestResult.getThrowable().getMessage());
             }
-            test.get().log(testStatus, "Execution Time: " + executionTimeFormatted);
-        }
-        if (testStatus.equals(Status.PASS)) {
-            test.get().pass("Test passed successfully");
-            test.get().log(Status.PASS, "Execution Time: " + executionTimeFormatted);
-        }
-    }
-    
-    /**
-     * Formats execution time in a human-readable format
-     * @param milliseconds Execution time in milliseconds
-     * @return Formatted string (e.g., "2.5s", "1m 30s", "2h 15m")
-     */
-    private String formatExecutionTime(long milliseconds) {
-        if (milliseconds < 1000) {
-            return milliseconds + "ms";
-        }
-        
-        long seconds = milliseconds / 1000;
-        if (seconds < 60) {
-            return String.format("%.2fs", seconds);
-        }
-        
-        long minutes = seconds / 60;
-        long remainingSeconds = seconds % 60;
-        if (minutes < 60) {
-            if (remainingSeconds > 0) {
-                return String.format("%dm %ds", minutes, remainingSeconds);
-            } else {
-                return String.format("%dm", minutes);
-            }
-        }
-        
-        long hours = minutes / 60;
-        long remainingMinutes = minutes % 60;
-        if (remainingMinutes > 0) {
-            return String.format("%dh %dm", hours, remainingMinutes);
-        } else {
-            return String.format("%dh", hours);
         }
     }
 
