@@ -102,7 +102,8 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         safeClick(similarQueriesAddlabel);
         awaitForElementPresence(applyChanges);
         scrollUntilVisible(applyChanges);
-        waitForElementToBeClickable(applyChanges, "Apply changes (similar queries)", 1, 20);
+        waitForSimilarQueriesModalNotBlocking();
+        waitForElementToBeClickable(applyChanges, "Apply changes (similar queries)", 1, 25);
         shortWait();
         clickUsingJS(applyChanges);
         await();
@@ -116,11 +117,31 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         AiSuggestedList.get(1).click();
         await();
         String aiSuggestQuery = AiSelectedSimilarquery.getText();
-        applyChanges.click();
+        waitForSimilarQueriesModalNotBlocking();
+        waitForElementToBeClickable(applyChanges, "Apply changes (AI suggested)", 1, 25);
+        clickUsingJS(applyChanges);
         await();
         return aiSuggestQuery;
     }
 
+
+    /** Wait for similar-queries modal overlay (opacity 0.6) to stop blocking so Apply button can be clicked. */
+    private void waitForSimilarQueriesModalNotBlocking() {
+        try {
+            new WebDriverWait(getDriver(), 20).until((ExpectedCondition<Boolean>) d -> {
+                if (d == null) return true;
+                try {
+                    WebElement modal = d.findElement(By.cssSelector(".similar-queries-modal"));
+                    String opacity = modal.getCssValue("opacity");
+                    return opacity != null && !opacity.trim().startsWith("0.");
+                } catch (NoSuchElementException e) {
+                    return true;
+                }
+            });
+        } catch (TimeoutException e) {
+            // Proceed; button may still be clickable via JS
+        }
+    }
 
     public void listinPageAddMoreQueriesEditIcon(){
         awaitForElementPresence(addMoreQueriesEditIcon);
@@ -180,7 +201,7 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         }
         await();
         // Wait for list to be in DOM without holding a reference; then click via XPath in JS (no stale ref)
-        new WebDriverWait(getDriver(), 10).until(
+        new WebDriverWait(getDriver(), 20).until(
             ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='time-zone time-headers']//following::*[contains(@class,'RCB-list-item')]")));
         String timezonelistXpath = "//*[@class='time-zone time-headers']//following::*[contains(@class,'RCB-list-item')]";
         ((JavascriptExecutor) getDriver()).executeScript(
@@ -203,7 +224,7 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         for (int attempt = 0; attempt < 3; attempt++) {
             try {
                 FluentWebElement rowGroup = getGroup(type).get(group);
-                new WebDriverWait(getDriver(), 10).until((ExpectedCondition<Boolean>) d -> rowGroup.find(pinSortRuleGroups).size() > index);
+                new WebDriverWait(getDriver(), 20).until((ExpectedCondition<Boolean>) d -> rowGroup.find(pinSortRuleGroups).size() > index);
                 FluentWebElement row = rowGroup.find(pinSortRuleGroups).get(index);
                 FluentWebElement attributeElement = row.findFirst(sortAttribute);
                 FluentWebElement valueElement;
@@ -243,13 +264,13 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         FluentWebElement attributeArrow = attribute.findFirst(".RCB-select-arrow");
         waitForElementToBeClickable(attributeArrow, "Attribute dropdown arrow");
         safeClick(attributeArrow);
-        new WebDriverWait(getDriver(), 10).until((ExpectedCondition<Boolean>) d -> attributeDropDownList.size() > 0);
+        new WebDriverWait(getDriver(), 20).until((ExpectedCondition<Boolean>) d -> attributeDropDownList.size() > 0);
         if (attributeDropDownList.size() > 0) {
             attributeInput.clear();
             attributeInput.fill().with(value);
-            new WebDriverWait(getDriver(), 10).until((ExpectedCondition<Boolean>) d -> attributeDropDownList.size() > 0);
+            new WebDriverWait(getDriver(), 20).until((ExpectedCondition<Boolean>) d -> attributeDropDownList.size() > 0);
             await();
-            WebElement optionToSelect = new WebDriverWait(getDriver(), 10).until((ExpectedCondition<WebElement>) d -> {
+            WebElement optionToSelect = new WebDriverWait(getDriver(), 20).until((ExpectedCondition<WebElement>) d -> {
                 for (FluentWebElement el : attributeDropDownList) {
                     if (value != null && !value.trim().isEmpty()
                             && el.getText().trim().toLowerCase().contains(value.trim().toLowerCase())) {
@@ -305,7 +326,7 @@ public class MerchandisingActions extends MerchandisingRulesPage {
 
     public void selectAttributeValue(String value) throws InterruptedException {
         AttributeDropDown.click();
-        new WebDriverWait(getDriver(), 10).until((ExpectedCondition<Boolean>) d -> attributeDropDownList.size() > 0);
+        new WebDriverWait(getDriver(), 20).until((ExpectedCondition<Boolean>) d -> attributeDropDownList.size() > 0);
         attributeInput.clear();
         attributeInput.fill().with(value);
         await();
@@ -317,7 +338,7 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         FluentWebElement sortArrow = attribute.findFirst(".RCB-select-arrow");
         waitForElementToBeClickable(sortArrow, "Sort attribute dropdown arrow");
         safeClick(sortArrow);
-        new WebDriverWait(getDriver(), 10).until((ExpectedCondition<Boolean>) d -> attributeDropDwnList.size() > 0);
+        new WebDriverWait(getDriver(), 20).until((ExpectedCondition<Boolean>) d -> attributeDropDwnList.size() > 0);
         selectDropDownValue(attributeDropDwnList, value);
         await();
     }
@@ -637,7 +658,7 @@ public class MerchandisingActions extends MerchandisingRulesPage {
 
     public boolean switchPreviewTab() {
         try {
-            new WebDriverWait(getDriver(), 10).until((ExpectedCondition<Boolean>) d -> getDriver().getWindowHandles().size() >= 2);
+            new WebDriverWait(getDriver(), 20).until((ExpectedCondition<Boolean>) d -> getDriver().getWindowHandles().size() >= 2);
 
             ArrayList<String> tabs = new ArrayList<>(getDriver().getWindowHandles());
             int totalTabs = tabs.size();

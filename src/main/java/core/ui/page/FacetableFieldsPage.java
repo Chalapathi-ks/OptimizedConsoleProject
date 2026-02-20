@@ -109,6 +109,8 @@ public class FacetableFieldsPage extends RelevancyPage {
     @FindBy(css=".new-facet-container .RCB-btn")
     public FluentWebElement saveFacetButton;
 
+    /** By for explicit wait before click (remote can render late). */
+    public static final By UPDATE_FACET_BUTTON_BY = By.xpath("//*[contains(text(),'Update facet') or contains(text(),'Update Facet')]");
     @FindBy(xpath="//*[contains(text(),'Update facet')]")
     public FluentWebElement updateFacet;
     @FindBy(css=".search-input-box .RCB-form-el")

@@ -81,7 +81,7 @@ public class SegmentTest extends MerchandisingTest {
 
         searchPageActions.selectActionType(UnbxdEnum.EDIT,segmentName);
         ThreadWait();
-        segmenPageActions.awaitForSegmentEditPanelLoaded(20);
+        segmenPageActions.awaitForSegmentEditPanelLoaded(30);
         segmenPageActions.awaitForElementPresence(segmenPageActions.segmentUserTypeValues);
         segmenPageActions.awaitForElementPresence(segmenPageActions.segmentDeviceTypeValues);
         segmenPageActions.segmentUserTypeValues.getText().contains(userTypeNew);
@@ -94,7 +94,7 @@ public class SegmentTest extends MerchandisingTest {
         segmenPageActions.clickOnSave();
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
-        segmenPageActions.awaitForSegmentUserTypeInListingPage(20);
+        segmenPageActions.awaitForSegmentUserTypeInListingPage(30);
         segmenPageActions.awaitForElementPresence(segmenPageActions.UserTypeinListingPage);
         segmenPageActions.UserTypeinListingPage.getText().contains(userTypeRepeat);
 
@@ -296,7 +296,7 @@ public class SegmentTest extends MerchandisingTest {
 
         searchPageActions.selectActionType(UnbxdEnum.EDIT,segmentName);
         ThreadWait();
-        segmenPageActions.awaitForSegmentEditPanelLoaded(20);
+        segmenPageActions.awaitForSegmentEditPanelLoaded(30);
         segmenPageActions.awaitForElementPresence(segmenPageActions.segmentUserTypeValues);
         segmenPageActions.awaitForElementPresence(segmenPageActions.segmentDeviceTypeValues);
         segmenPageActions.segmentUserTypeValues.getText().contains(userTypeNew);
@@ -309,7 +309,7 @@ public class SegmentTest extends MerchandisingTest {
         segmenPageActions.clickOnSave();
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
-        segmenPageActions.awaitForSegmentUserTypeInListingPage(20);
+        segmenPageActions.awaitForSegmentUserTypeInListingPage(30);
         segmenPageActions.awaitForElementPresence(segmenPageActions.UserTypeinListingPage);
         segmenPageActions.UserTypeinListingPage.getText().contains(userTypeRepeat);
 

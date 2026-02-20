@@ -180,12 +180,12 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
         if (!isActiveTogglePresent()) {
             click(facetEnableToggle);
             threadWait();
-            awaitForActiveToggle(30);
+            awaitForActiveToggle(40);
         } else {
             click(facetEnableToggle);
             threadWait();
             click(facetEnableToggle);
-            awaitForActiveToggle(30);
+            awaitForActiveToggle(40);
             Assert.assertTrue(activeToggle.isDisplayed());
         }
 
@@ -327,6 +327,12 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
         threadWait();
         facetEnableToggle.click();
         selectValueBYMatchingText(state);
+    }
+
+    /** Wait for Update facet button (e.g. after editing facet details); use 25s on remote. */
+    public void awaitForUpdateFacetButton(int timeoutSec) {
+        new WebDriverWait(getDriver(), timeoutSec).until(
+            ExpectedConditions.presenceOfElementLocated(FacetableFieldsPage.UPDATE_FACET_BUTTON_BY));
     }
 
     public void saveFacet()

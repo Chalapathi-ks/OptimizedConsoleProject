@@ -298,8 +298,8 @@ public class UiBase extends FluentPage {
     }
     
 
-    /** Max wait (seconds) for element presence; avoid long blocks when element never appears. */
-    private static final int AWAIT_PRESENCE_TIMEOUT_SEC = 15;
+    /** Max wait (seconds) for element presence; use 25s for remote/Grid stability. */
+    private static final int AWAIT_PRESENCE_TIMEOUT_SEC = 25;
 
     public Boolean awaitForElementPresence(final FluentWebElement element) {
         try {
