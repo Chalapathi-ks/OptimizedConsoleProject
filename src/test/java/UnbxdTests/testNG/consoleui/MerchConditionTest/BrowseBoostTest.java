@@ -9,7 +9,7 @@ import core.consoleui.actions.CommercePageActions;
 import core.consoleui.page.BrowsePage;
 import lib.annotation.FileToTest;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
@@ -68,7 +68,7 @@ public class BrowseBoostTest extends MerchandisingTest {
 
         merchandisingActions.openPreviewAndSwitchTheTab();
         merchandisingActions.awaitForPageToLoad();
-        Thread.sleep(9000);
+        Thread.sleep(4000);
         String previewPage = driver.getCurrentUrl();
         Assert.assertTrue(previewPage.contains("preview"),"Not redirecting to preview page");
         ThreadWait();

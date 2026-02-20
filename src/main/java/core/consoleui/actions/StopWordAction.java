@@ -2,7 +2,7 @@ package core.consoleui.actions;
 
 import static lib.UrlMapper.STOP_WORD;
 
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 
 import core.consoleui.page.StopWordPage;
 

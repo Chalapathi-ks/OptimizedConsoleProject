@@ -2,7 +2,7 @@ package core.consoleui.actions;
 
 import core.consoleui.page.ConceptsPage;
 import lib.constants.UnbxdErrorConstants;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -15,7 +15,7 @@ public class ConceptsActions extends ConceptsPage {
     {
         String keyword = "autokeyword" + System.currentTimeMillis();
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         awaitForElementPresence(synonymCreationButton);
         click(synonymCreationButton);
         awaitForElementPresence(synonymCreateWindow);
@@ -70,7 +70,7 @@ public class ConceptsActions extends ConceptsPage {
         awaitForElementPresence(itemLists);
         for (int i = 0; i < itemList.size(); i++) {
             if (itemList.get(i).getText().trim().equals(name)) {
-                Thread.sleep(10000);
+                Thread.sleep(5000);
                 return itemList.get(i);
             }
         }

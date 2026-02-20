@@ -3,8 +3,8 @@ package core.consoleui.page;
 import core.ui.page.UiBase;
 import lib.EnvironmentConfig;
 import static lib.UrlMapper.SYNONYMS;
-import org.fluentlenium.core.domain.FluentList;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentList;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class SynonymsPage extends UiBase {

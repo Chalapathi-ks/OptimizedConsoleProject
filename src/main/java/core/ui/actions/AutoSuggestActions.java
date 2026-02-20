@@ -3,7 +3,7 @@ package core.ui.actions;
 import core.ui.page.AutoSuggestPage;
 import lib.Config;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 
 import java.util.ArrayList;
 import java.util.List;

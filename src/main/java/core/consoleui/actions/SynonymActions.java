@@ -2,7 +2,7 @@ package core.consoleui.actions;
 
 import core.consoleui.page.SynonymsPage;
 import lib.constants.UnbxdErrorConstants;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 
 import static lib.constants.UnbxdErrorConstants.SUCCESS_MESSAGE_FAILURE;
@@ -12,11 +12,11 @@ public class SynonymActions extends SynonymsPage {
 
 public String createSynonym(String synonym, String uni, String bi) throws InterruptedException
 {
-    Thread.sleep(10000);
+    Thread.sleep(5000);
     awaitForElementPresence(synonymCreationButton);
     click(synonymCreationButton);
     awaitForElementPresence(synonymCreateWindow);
-    Thread.sleep(3000);
+    Thread.sleep(1500);
     Assert.assertTrue(awaitForElementPresence(synonymCreateWindow));
 
     synonymInput.fill().with(synonym);

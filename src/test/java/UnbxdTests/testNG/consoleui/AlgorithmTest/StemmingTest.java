@@ -3,8 +3,8 @@ package UnbxdTests.testNG.consoleui.AlgorithmTest;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.fluentlenium.core.annotation.Page;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.Page;
+import lib.compat.FluentWebElement;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;

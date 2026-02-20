@@ -7,7 +7,7 @@ import core.ui.actions.LoginActions;
 import core.ui.components.CreateSiteComponent;
 import lib.Helper;
 import lib.annotation.FileToTest;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.openqa.selenium.Cookie;
 import org.testng.Assert;
 import org.testng.annotations.*;

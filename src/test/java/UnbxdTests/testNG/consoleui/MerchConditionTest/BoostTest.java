@@ -9,7 +9,7 @@ import core.consoleui.actions.CommercePageActions;
 import core.consoleui.page.BrowsePage;
 import lib.annotation.FileToTest;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;

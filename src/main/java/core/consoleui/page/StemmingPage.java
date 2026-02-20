@@ -3,8 +3,8 @@ package core.consoleui.page;
 import core.ui.page.UiBase;
 import lib.EnvironmentConfig;
 import static lib.UrlMapper.STEMMING;
-import org.fluentlenium.core.annotation.Page;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.Page;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class StemmingPage extends UiBase {

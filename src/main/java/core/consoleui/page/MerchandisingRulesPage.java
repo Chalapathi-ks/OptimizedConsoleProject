@@ -3,8 +3,8 @@ package core.consoleui.page;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import lib.Helper;
-import org.fluentlenium.core.domain.FluentList;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentList;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.io.File;

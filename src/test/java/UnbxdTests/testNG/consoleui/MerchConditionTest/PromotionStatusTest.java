@@ -9,8 +9,8 @@ import core.consoleui.actions.CommercePageActions;
 import core.consoleui.page.BrowsePage;
 import lib.annotation.FileToTest;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.Page;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
@@ -53,7 +53,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         Map<String, Object> campaignData = merchandisingActions.getCampaignData("boosting.json");
 
         merchandisingActions.fillCampaignDataforUpcoming(campaignData);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         // Find calendar icon and click it
         if (merchandisingActions.calendarIcon.isDisplayed()) {
             // Scroll until calendar icon is visible and wait for it
@@ -209,7 +209,7 @@ public class PromotionStatusTest extends MerchandisingTest {
 
         //Duplicate the rule
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
         searchPageActions.selectActionType(UnbxdEnum.MORE,query);
         searchPageActions.selectActionFromMore(UnbxdEnum.DUPLICATE,query);
         searchPageActions.awaitForPageToLoad();
@@ -257,7 +257,7 @@ public class PromotionStatusTest extends MerchandisingTest {
 
         searchPageActions.fillPageName(object);
         merchandisingActions.fillCampaignDataforUpcoming(campaignData);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         // Find calendar icon and click it
         if (merchandisingActions.calendarIcon.isDisplayed()) {
             searchPageActions.threadWait();
@@ -360,7 +360,7 @@ public class PromotionStatusTest extends MerchandisingTest {
 
         //Duplicate the rule
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
         searchPageActions.selectActionType(UnbxdEnum.MORE,page);
         searchPageActions.selectActionFromMore(UnbxdEnum.DUPLICATE,page);
         searchPageActions.awaitForPageToLoad();

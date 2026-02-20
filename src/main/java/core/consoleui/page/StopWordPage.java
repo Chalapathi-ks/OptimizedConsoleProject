@@ -1,6 +1,6 @@
 package core.consoleui.page;
 
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 
 import lib.EnvironmentConfig;
 import static lib.UrlMapper.STOP_WORD;

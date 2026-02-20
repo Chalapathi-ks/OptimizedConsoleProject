@@ -3,7 +3,7 @@ package core.ui.actions;
 import core.ui.page.RelevancyPage;
 import core.ui.page.UiBase;
 import lib.Config;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -35,6 +35,6 @@ public class QueryUploadActions extends RelevancyPage {
         waitForLoaderToDisAppear(facetableFieldsActions.relevancyPageLoader, facetableFieldsActions.relevancePageLoader);
         facetableFieldsActions.waitForElementAppear(searchableFieldActions.applyAiRecButton, facetableFieldsActions.relevancePageLoader, Config.getIntValueForProperty("indexing.numOfRetries"), Config.getIntValueForProperty("indexing.wait.time"));
         Assert.assertEquals(searchableFieldActions.applyAiRec.getText(),"Apply configurations");
-        Thread.sleep(100000);
+        Thread.sleep(30000);
     }
 }

@@ -2,8 +2,8 @@ package core.consoleui.page;
 import core.consoleui.actions.ContentActions;
 import lib.EnvironmentConfig;
 import static lib.UrlMapper.VECTOR_SEARCH;
-import org.fluentlenium.core.domain.FluentList;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentList;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class VectorSearchPage extends ContentActions {

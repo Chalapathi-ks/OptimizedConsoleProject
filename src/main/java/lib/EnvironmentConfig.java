@@ -5,6 +5,8 @@ import lib.config.Context;
 import lib.config.UnbxdService;
 import org.testng.Assert;
 import org.yaml.snakeyaml.Yaml;
+import org.yaml.snakeyaml.constructor.Constructor;
+import org.yaml.snakeyaml.LoaderOptions;
 
 import java.io.InputStream;
 
@@ -20,7 +22,9 @@ public class EnvironmentConfig {
     public static void loadConfig() throws Exception {
         if(configuration==null)
         {
-            Yaml yaml = new Yaml();
+            LoaderOptions loaderOptions = new LoaderOptions();
+            loaderOptions.setAllowDuplicateKeys(true);
+            Yaml yaml = new Yaml(new Constructor(Configuration.class, loaderOptions));
             // Resolve profile: system property first, then config.properties. No fallback.
             String resolvedProfile = System.getProperty("env.profile");
             if (resolvedProfile == null || resolvedProfile.trim().isEmpty()) {

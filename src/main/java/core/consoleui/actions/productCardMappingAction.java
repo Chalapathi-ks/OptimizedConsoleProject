@@ -1,7 +1,7 @@
 package core.consoleui.actions;
 
 import core.consoleui.page.productCardMappingPage;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 
 public class productCardMappingAction extends productCardMappingPage {
    

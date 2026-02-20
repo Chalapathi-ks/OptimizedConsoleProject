@@ -8,12 +8,12 @@ import lib.BrowserInitializer;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.log4j.Logger;
-import org.fluentlenium.core.Fluent;
-import org.fluentlenium.core.FluentPage;
-import org.fluentlenium.core.action.FluentDefaultActions;
-import org.fluentlenium.core.annotation.Page;
-import org.fluentlenium.core.domain.FluentList;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.Fluent;
+import lib.compat.PageBase;
+import lib.compat.FluentDefaultActions;
+import lib.compat.Page;
+import lib.compat.FluentList;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.JavascriptExecutor;
@@ -22,13 +22,18 @@ import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 
 import java.net.URISyntaxException;
+import java.time.Duration;
 import java.util.ArrayList;
 
 import static lib.constants.UnbxdConstants.SELENIUM_MAXTIMEOUT;
 import static lib.constants.UnbxdConstants.SELENIUM_MINTIMEOUT;
+import static lib.constants.UnbxdConstants.WAIT_LOADER_SECONDS;
+import static lib.constants.UnbxdConstants.WAIT_ELEMENT_APPEAR_SECONDS;
+import static lib.constants.UnbxdConstants.WAIT_ELEMENT_LOAD_SECONDS;
+import static lib.constants.UnbxdConstants.WAIT_ELEMENT_DISAPPEAR_SECONDS;
 
 
-public class UiBase extends FluentPage {
+public class UiBase extends PageBase {
     @Page
     CampaignCreationPage campaignCreationPage;
     public static Logger APPLICATION_LOGS = Logger.getLogger("Manasa");
@@ -172,7 +177,7 @@ public class UiBase extends FluentPage {
         for (FluentWebElement e : find(".RCB-list-item")) {
             threadWait();
             if (e.getText().trim().equalsIgnoreCase(value)) {
-               Thread.sleep(4000);
+               Thread.sleep(2000);
                 e.click();
                 break;
             }
@@ -244,7 +249,7 @@ public class UiBase extends FluentPage {
 
     public void threadWait() {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -252,7 +257,7 @@ public class UiBase extends FluentPage {
 
     public void threadWaitForBackendVerification() {
         try {
-            Thread.sleep(50000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -352,7 +357,7 @@ public class UiBase extends FluentPage {
 
     public void waitForLoaderToDisAppear(By locator, String name) {
         String result = null;
-        WebDriverWait wait = new WebDriverWait(getDriver(), 300);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(WAIT_LOADER_SECONDS));
         // FluentWebElement element;
         try {
             APPLICATION_LOGS.debug("waiting for " + name + " to disappear");
@@ -379,7 +384,7 @@ public class UiBase extends FluentPage {
 
 
         //String result = null;
-        WebDriverWait wait = new WebDriverWait(getDriver(), 180);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(WAIT_LOADER_SECONDS));
         // FluentWebElement element;
         try {
             APPLICATION_LOGS.debug("waiting for " + name + " to disappear");
@@ -406,7 +411,7 @@ public class UiBase extends FluentPage {
 
     public void waitForElementAppear(By locator, String name, int numOfRetries, int interval) {
         //String result = null;
-        WebDriverWait wait = new WebDriverWait(getDriver(), interval);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(interval));
         // FluentWebElement element;
         for (int i = 0; i < numOfRetries; i++) {
             try {
@@ -436,7 +441,7 @@ public class UiBase extends FluentPage {
 
     public void waitForElementToAppear(By locator, String name) {
         //String result = null;
-        WebDriverWait wait = new WebDriverWait(getDriver(), 180);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(WAIT_ELEMENT_APPEAR_SECONDS));
         // FluentWebElement element;
         try {
             APPLICATION_LOGS.debug("waiting for " + name + " to appear");
@@ -469,8 +474,8 @@ public class UiBase extends FluentPage {
     public  void waitForElementToBeClickable(FluentWebElement locator, String elemName, int numOfRetries, int interval) {
 
         String result = null;
-        WebDriverWait wait = new WebDriverWait(getDriver(), interval);
-       // WebDriverWait wait = new WebDriverWait(getDriver(), 15);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(interval));
+       // WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(15));
         // FluentWebElement element;
         for (int i = 0; i < numOfRetries; i++) {
         try {
@@ -497,7 +502,7 @@ public class UiBase extends FluentPage {
     public  void waitForElementToBeClickable(FluentWebElement locator, String elemName) {
 
         String result = null;
-         WebDriverWait wait = new WebDriverWait(getDriver(), 15);
+         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(15));
 
             try {
                 APPLICATION_LOGS.debug("waiting for " + elemName + "to appear");
@@ -577,8 +582,7 @@ public class UiBase extends FluentPage {
 
         try {
             if(locator.isEnabled()){
-                // Waits for 60 seconds
-                Wait<WebDriver> wait = new WebDriverWait(getDriver(), 60);
+                Wait<WebDriver> wait = new WebDriverWait(getDriver(), Duration.ofSeconds(WAIT_ELEMENT_LOAD_SECONDS));
                 // Wait until the element is located on the page
                 @SuppressWarnings("unused")
 
@@ -595,7 +599,7 @@ public class UiBase extends FluentPage {
         }
         catch (StaleElementReferenceException staleException) {
             System.out.println("Caught Stale element exception for " +eleName + "+...Retrying...");
-            Wait<WebDriver> wait = new WebDriverWait(getDriver(), 30);
+            Wait<WebDriver> wait = new WebDriverWait(getDriver(), Duration.ofSeconds(15));
             wait.until(visibilityOfElementLocated(locator));
         }
         catch (Throwable waitForElementException) {
@@ -683,7 +687,7 @@ public class UiBase extends FluentPage {
 
     public static void ThreadWait() {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -720,7 +724,7 @@ public class UiBase extends FluentPage {
 
     }
 
-    public void scrollUntilVisible(org.fluentlenium.core.domain.FluentWebElement element) {
+    public void scrollUntilVisible(FluentWebElement element) {
         try {
             WebElement webElement = element.getElement();
             JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -752,7 +756,7 @@ public class UiBase extends FluentPage {
      * @param element FluentWebElement to check
      * @return true if visible, false otherwise
      */
-    public boolean isElementInViewport(org.fluentlenium.core.domain.FluentWebElement element) {
+    public boolean isElementInViewport(FluentWebElement element) {
         try {
             WebElement webElement = element.getElement();
             JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -821,7 +825,7 @@ public class UiBase extends FluentPage {
                 js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
                 try {
                     // A short pause to allow content to load.
-                    Thread.sleep(2500);
+                    Thread.sleep(1500);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
@@ -924,7 +928,7 @@ public class UiBase extends FluentPage {
     public void waitForElementToDisappear(FluentWebElement element) throws InterruptedException {
         try {
             System.out.println("Waiting for element to disappear");
-            WebDriverWait wait = new WebDriverWait(getDriver(), getMaxTimeout());
+            WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(WAIT_ELEMENT_DISAPPEAR_SECONDS));
             
             // Use the getCssLocatorForFluent method to get a reliable CSS selector
             String cssSelector = getCssLocatorForFluent(element);
@@ -945,7 +949,7 @@ public class UiBase extends FluentPage {
      * waiting for it to be clickable, and falling back to a JavaScript click
      * if a standard click is intercepted.
      */
-    public void safeClick(org.fluentlenium.core.domain.FluentWebElement element) {
+    public void safeClick(FluentWebElement element) {
         try {
             // Ensure present and visible
             awaitTillElementDisplayed(element);
@@ -978,7 +982,7 @@ public class UiBase extends FluentPage {
         ThreadWait();
     }
 
-    private void robustClick(org.fluentlenium.core.domain.FluentWebElement element) {
+    private void robustClick(FluentWebElement element) {
         try {
             ThreadWait();
             element.click();

@@ -1,8 +1,8 @@
 package core.consoleui.actions;
 import core.consoleui.page.FieldPropertiesPage;
 import core.consoleui.page.searchableFieldsAndFacetsPage;
-import org.fluentlenium.core.annotation.Page;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.Page;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.By;
 import org.testng.Assert;

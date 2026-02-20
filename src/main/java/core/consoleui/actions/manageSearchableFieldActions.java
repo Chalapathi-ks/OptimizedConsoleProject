@@ -1,7 +1,7 @@
 package core.consoleui.actions;
 import core.consoleui.page.searchableFieldsAndFacetsPage;
 import core.ui.page.SearchableFieldsPage;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.Assert;
 
 public class manageSearchableFieldActions extends searchableFieldsAndFacetsPage {

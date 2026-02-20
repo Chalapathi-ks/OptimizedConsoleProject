@@ -5,7 +5,7 @@ import core.ui.actions.FeedUploadActions;
 import core.ui.page.UiBase;
 import lib.Config;
 import org.apache.commons.lang.RandomStringUtils;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.Assert;
 
 public class CreateSiteComponent extends UiBase{

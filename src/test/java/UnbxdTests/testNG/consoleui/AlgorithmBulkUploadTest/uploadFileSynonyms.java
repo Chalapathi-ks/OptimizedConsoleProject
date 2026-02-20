@@ -2,7 +2,7 @@ package UnbxdTests.testNG.consoleui.AlgorithmBulkUploadTest;
 
 import UnbxdTests.testNG.consoleui.MerchBulkUpload.uploadTest;
 import core.consoleui.actions.AlgorithmsActions;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.annotations.Test;
 import UnbxdTests.testNG.consoleui.MerchTest.MerchandisingTest;
 import org.testng.annotations.AfterClass;

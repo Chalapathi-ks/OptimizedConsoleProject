@@ -11,7 +11,7 @@ import core.ui.actions.LoginActions;
 import lib.Helper;
 import lib.annotation.FileToTest;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;

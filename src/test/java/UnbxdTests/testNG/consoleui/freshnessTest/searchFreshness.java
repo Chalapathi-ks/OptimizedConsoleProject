@@ -11,7 +11,7 @@ import core.consoleui.page.BrowsePage;
 import lib.EnvironmentConfig;
 import lib.annotation.FileToTest;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

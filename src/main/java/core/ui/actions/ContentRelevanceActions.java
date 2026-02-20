@@ -1,7 +1,7 @@
 package core.ui.actions;
 
 import core.ui.page.contentRelevancePage;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 
 public class ContentRelevanceActions extends contentRelevancePage {
 

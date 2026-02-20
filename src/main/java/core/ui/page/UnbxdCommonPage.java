@@ -2,9 +2,9 @@ package core.ui.page;
 
 import core.ui.actions.PreviewActions;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
-import org.fluentlenium.core.domain.FluentList;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.Page;
+import lib.compat.FluentList;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

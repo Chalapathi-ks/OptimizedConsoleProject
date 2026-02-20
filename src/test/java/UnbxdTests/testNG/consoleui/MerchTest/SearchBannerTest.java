@@ -8,7 +8,7 @@ import core.consoleui.actions.MerchandisingActions;
 import core.consoleui.page.BrowsePage;
 import lib.annotation.FileToTest;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -51,7 +51,7 @@ public class SearchBannerTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.BANNER);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
 
         //create the rule
         createPromotion(query,true,true);
@@ -61,9 +61,9 @@ public class SearchBannerTest extends MerchandisingTest {
         searchPageActions.fillQueryRuleData(query,null);
         merchandisingActions.fillCampaignData(campaignData);
         bannerActions.addHtmlBanner(html);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         bannerActions.awaitForElementPresence(merchandisingActions.publishButton);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         click(merchandisingActions.publishButton);
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
@@ -79,7 +79,7 @@ public class SearchBannerTest extends MerchandisingTest {
 
         //duplicate the rule
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         searchPageActions.selectActionType(UnbxdEnum.MORE,query);
         searchPageActions.selectActionFromMore(UnbxdEnum.DUPLICATE,query);
         searchPageActions.awaitForPageToLoad();
@@ -121,7 +121,7 @@ public class SearchBannerTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.BANNER);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
 
         //create the rule
         String ImgUrl= bannerData.get("data").getAsString();

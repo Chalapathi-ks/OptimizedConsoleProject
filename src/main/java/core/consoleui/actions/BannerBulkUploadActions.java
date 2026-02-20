@@ -1,7 +1,7 @@
 package core.consoleui.actions;
 
 import core.consoleui.page.BannerBulkUploadPage;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 
 public class BannerBulkUploadActions extends BannerBulkUploadPage {
 

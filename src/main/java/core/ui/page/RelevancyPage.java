@@ -2,7 +2,7 @@ package core.ui.page;
 
 import lib.EnvironmentConfig;
 import lib.UrlMapper;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class RelevancyPage extends UiBase {

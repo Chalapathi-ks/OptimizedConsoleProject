@@ -2,8 +2,8 @@ package core.consoleui.page;
 
 import core.ui.page.UnbxdCommonPage;
 import lib.EnvironmentConfig;
-import org.fluentlenium.core.domain.FluentList;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentList;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 import static lib.UrlMapper.SEARCH_AUTOSUGGEST_PAGE;

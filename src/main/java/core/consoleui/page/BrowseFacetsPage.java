@@ -2,7 +2,7 @@ package core.consoleui.page;
 
 import core.ui.page.UnbxdCommonPage;
 import lib.EnvironmentConfig;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 import static lib.UrlMapper.MANAGE_BROWSE_PAGE;

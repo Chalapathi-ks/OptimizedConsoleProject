@@ -1,7 +1,7 @@
 package core.ui.actions;
 
 import core.ui.page.SearchableFieldsPage;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ public class SearchableFieldActions extends SearchableFieldsPage {
 
 
     public FluentWebElement getAttributeUsingDisplayName(String name) throws InterruptedException {
-        Thread.sleep(50000);
+        Thread.sleep(15000);
         awaitForElementPresence(attributeSearchBox);
         //facetSearchBox.clear();
         attributeSearchBox.fill().with(name);

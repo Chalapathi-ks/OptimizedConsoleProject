@@ -2,7 +2,7 @@ package core.consoleui.actions;
 
 import core.consoleui.page.SynonymsPage;
 import lib.constants.UnbxdErrorConstants;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 
 import static lib.constants.UnbxdErrorConstants.SUCCESS_MESSAGE_FAILURE;
@@ -15,7 +15,7 @@ public class ContentActions extends SynonymsPage {
         String stem="autoStem"+ System.currentTimeMillis();
         String stemmed="autoStemmed"+ System.currentTimeMillis();
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         awaitForElementPresence(synonymCreationButton);
         click(synonymCreationButton);
         awaitForElementPresence(synonymCreateWindow);
@@ -61,13 +61,13 @@ public class ContentActions extends SynonymsPage {
         Thread.sleep(1000);
         synonymsSearchBox.clear();
         synonymsSearchBox.fill().with(name);
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         awaitForElementPresence(synonymsLists);
         for (int i = 0; i< createdItemList.size(); i++)
         {
             if(createdItemList.get(i).find(keywordCssLocator).getValue().trim().equals(name))
             {
-                Thread.sleep(10000);
+                Thread.sleep(5000);
                 return createdItemList.get(i);
             }
         }

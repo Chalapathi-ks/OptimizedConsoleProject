@@ -3,7 +3,8 @@ package core.consoleui.actions;
 import core.consoleui.page.ABTestPage;
 import lib.enums.UnbxdEnum;
 import lib.Helper;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
@@ -51,7 +52,7 @@ public class ABActions extends ABTestPage {
         if (expectedValue == null || expectedValue.trim().isEmpty()) {
             Assert.fail("'winnerDecidedBy' value is missing or empty.");
         }
-        for (org.fluentlenium.core.domain.FluentWebElement ele : segmentActions.typeValueList) {
+        for (FluentWebElement ele : segmentActions.typeValueList) {
             System.out.println("Dropdown option: '" + ele.getText() + "'");
             if (ele.getText().trim().equalsIgnoreCase(expectedValue.trim())) {
                 click(ele);
@@ -84,7 +85,7 @@ public class ABActions extends ABTestPage {
     private void scrollToAbSummaryStrategyBox() {
         org.openqa.selenium.JavascriptExecutor js = (org.openqa.selenium.JavascriptExecutor) getDriver();
         org.openqa.selenium.By by = org.openqa.selenium.By.cssSelector("div.ab-summary-strategy-box");
-        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         org.openqa.selenium.WebElement element = null;
         try {
             element = wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(by));
@@ -105,8 +106,8 @@ public class ABActions extends ABTestPage {
         scrollToAbSummaryStrategyBox();
 
         String targetText = "Variation A"; // Change as needed
-        org.fluentlenium.core.domain.FluentWebElement targetElement = null;
-        for (org.fluentlenium.core.domain.FluentWebElement ele : segmentActions.typeValueList) {
+        FluentWebElement targetElement = null;
+        for (FluentWebElement ele : segmentActions.typeValueList) {
             if (ele.getText().trim().equalsIgnoreCase(targetText)) {
                 targetElement = ele;
                 break;
@@ -163,7 +164,7 @@ public class ABActions extends ABTestPage {
         org.openqa.selenium.WebDriver driver = getDriver();
         org.openqa.selenium.JavascriptExecutor js = (org.openqa.selenium.JavascriptExecutor) driver;
         org.openqa.selenium.By by = org.openqa.selenium.By.cssSelector(cssSelector);
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         org.openqa.selenium.WebElement element = null;
         try {
             element = wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(by));

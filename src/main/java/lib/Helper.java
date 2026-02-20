@@ -3,8 +3,8 @@ package lib;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.apache.commons.io.FileUtils;
-import org.fluentlenium.core.FluentPage;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.PageBase;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.logging.LogEntries;
@@ -18,7 +18,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class Helper extends FluentPage {
+public class Helper extends PageBase {
 
 
     private static ThreadLocal<WebDriver> localDriver = new ThreadLocal<>();

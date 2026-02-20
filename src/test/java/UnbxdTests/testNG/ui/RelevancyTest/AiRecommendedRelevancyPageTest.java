@@ -10,8 +10,8 @@ import core.ui.components.FeedUploadComponent;
 import lib.Helper;
 import lib.annotation.FileToTest;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.Page;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterGroups;
@@ -214,7 +214,7 @@ public class AiRecommendedRelevancyPageTest extends BaseTest {
     public void contentRelevanceDataTest() throws InterruptedException {
         try {
             facetableFieldsActions.goToRelevancySectionsByName(UnbxdEnum.valueOf(contentSection));
-            Thread.sleep(50000);
+            Thread.sleep(15000);
             int synonymCount = contentRelevanceActions.getSynonymCount(contentRelevanceActions.synonymContainer);
             System.out.println(synonymCount);
             int conceptsCount = contentRelevanceActions.getConceptsCount((contentRelevanceActions.conceptsContainer));
@@ -245,7 +245,7 @@ public class AiRecommendedRelevancyPageTest extends BaseTest {
         String pageCount = object.get("pageCount").getAsString();
         facetableFieldsActions.scrollToBottom();
         facetableFieldsActions.goToRelevancySectionsByName(UnbxdEnum.valueOf(facetSection));
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         facetableFieldsActions.selectPageCount(pageCount);
 
         int aiFacetList = facetableFieldsActions.facetList.size();
@@ -272,7 +272,7 @@ public class AiRecommendedRelevancyPageTest extends BaseTest {
         goTo(feedUploadComponent.getRelevancyPage());
         await();
         facetableFieldsActions.goToRelevancySectionsByName(UnbxdEnum.valueOf(facetSection));
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         facetableFieldsActions.openCreateFacetForm();
         String facetDisplayName = facetableFieldsActions.fillFacetDetails(testData);
         facetableFieldsActions.saveFacet();
@@ -318,7 +318,7 @@ public class AiRecommendedRelevancyPageTest extends BaseTest {
         goTo(feedUploadComponent.getRelevancyPage());
         await();
         facetableFieldsActions.goToRelevancySectionsByName(UnbxdEnum.valueOf(facetSection));
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         facetableFieldsActions.openCreateFacetForm();
         String name = facetableFieldsActions.createFacet();
 
@@ -353,7 +353,7 @@ public class AiRecommendedRelevancyPageTest extends BaseTest {
         goTo(feedUploadComponent.getRelevancyPage());
         await();
         facetableFieldsActions.goToRelevancySectionsByName(UnbxdEnum.valueOf(facetSection));
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         facetableFieldsActions.openCreateFacetForm();
         String name = facetableFieldsActions.createFacet();
 
@@ -401,7 +401,7 @@ public class AiRecommendedRelevancyPageTest extends BaseTest {
 
         facetableFieldsActions.scrollToBottom();
         facetableFieldsActions.goToRelevancySectionsByName(UnbxdEnum.valueOf(autoSuggestSection));
-        Thread.sleep(50000);
+        Thread.sleep(15000);
         autoSuggestActions.clickOnCustomiseButton();
         Thread.sleep(5000);
         autoSuggestActions.goToSuggestionSectionsByName(UnbxdEnum.valueOf(suggestion));
@@ -468,7 +468,7 @@ public class AiRecommendedRelevancyPageTest extends BaseTest {
         for (String name : createdFacets) {
             driver.navigate().refresh();
             facetableFieldsActions.goToRelevancySectionsByName(UnbxdEnum.valueOf(facetSection));
-            Thread.sleep(10000);
+            Thread.sleep(5000);
             facetableFieldsActions.deleteFacet(name);
             Assert.assertNull(facetableFieldsActions.getFacetUsingDisplayName(name),"Facet Deletion is failing!!!");
         }

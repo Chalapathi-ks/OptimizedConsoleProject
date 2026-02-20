@@ -50,7 +50,7 @@ public class Site {
         return  statusById;
     }
 
-    public void setStatusById()
+    public void setStatusById(String statusById)
     {
         this.statusById = statusById;
     }

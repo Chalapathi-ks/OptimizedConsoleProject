@@ -4,8 +4,8 @@ import core.consoleui.actions.ContentActions;
 import lib.EnvironmentConfig;
 import lib.UrlMapper;
 import static lib.UrlMapper.PRODUCT_CARD_MAPPING;
-import org.fluentlenium.core.domain.FluentList;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentList;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class productCardMappingPage extends ContentActions {

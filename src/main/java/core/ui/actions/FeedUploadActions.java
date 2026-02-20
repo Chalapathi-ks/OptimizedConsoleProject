@@ -8,9 +8,9 @@ import lib.api.ApiClient;
 import lib.api.HttpMethod;
 import lib.api.UnbxdResponse;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
-import org.fluentlenium.core.domain.FluentList;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.Page;
+import lib.compat.FluentList;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 
@@ -116,18 +116,18 @@ public class FeedUploadActions extends FeedUploadPage {
         awaitForElementPresence(mapImportText);
         awaitForElementPresence(importSave);
         selectPropertyFromDropDown(mandatoryMappingFieldsList,"Product Id",productId);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         selectPropertyFromDropDown(mandatoryMappingFieldsList,"Product Name",productName);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         selectPropertyFromDropDown(mandatoryMappingFieldsList,"Category",category);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }*/
 
     public void mapMandatoryProperties(String uniqueId) throws InterruptedException {
         awaitForElementPresence(mapImportText);
         awaitForElementPresence(importSave);
         selectPropertyFromDropDown(mandatoryMappingFieldsList,"UniqueId",uniqueId);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
 
     public void startImport()
@@ -215,7 +215,7 @@ public class FeedUploadActions extends FeedUploadPage {
     public void selectProperty(String property) throws InterruptedException {
         awaitForElementPresence(mappingSearchBox);
         mappingSearchBox.fill().with(property);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         FluentList<FluentWebElement> propertiesList = find(".ReactVirtualized__List li");
         selectDropDownValue(propertiesList,property);
         waitForLoaderToDisAppear(imageLoader,importLoaderName);

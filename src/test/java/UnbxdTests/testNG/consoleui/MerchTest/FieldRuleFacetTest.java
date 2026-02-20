@@ -17,7 +17,7 @@ import core.ui.page.FacetableFieldsPage;
 import lib.Helper;
 import lib.annotation.FileToTest;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
@@ -82,7 +82,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
        
         //create the rule
         createPromotion(query,false,false);
@@ -136,7 +136,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
 
         createPromotion(query,false,false);
         ThreadWait();
@@ -233,7 +233,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
 
         //create the rule
         createPromotion(query, false, false);
@@ -289,7 +289,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
         Assert.assertNotNull(searchPage.queryRuleByName(query));
         queryRules.add(query);
 
@@ -340,7 +340,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
 
         //create the rule
         createPromotion(query, false, false);
@@ -410,7 +410,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
         Assert.assertNotNull(searchPage.queryRuleByName(query));
         queryRules.add(query);
 
@@ -457,7 +457,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
 
         //create the rule
         createPromotion(query, false, false);
@@ -528,7 +528,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
 
         //create the rule
         createBrowsePromotion(page,false,false);
@@ -582,7 +582,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
 
         //create the rule
         //createBrowsePromotion(page,false,false);
@@ -695,7 +695,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
 
         //create the rule
         createBrowsePromotion(page,false,false);
@@ -767,7 +767,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
 
         goTo(searchableFieldActions);
         searchPage.threadWait();

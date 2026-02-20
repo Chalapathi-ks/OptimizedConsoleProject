@@ -3,7 +3,7 @@ package core.consoleui.page;
 import core.ui.page.UiBase;
 import lib.EnvironmentConfig;
 import static lib.UrlMapper.PHRASES;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class PhrasesPage extends UiBase {

@@ -1,6 +1,6 @@
 package core.consoleui.page;
 
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ABTestPage extends CampaignCreationPage {

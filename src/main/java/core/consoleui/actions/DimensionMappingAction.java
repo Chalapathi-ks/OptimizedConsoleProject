@@ -1,7 +1,7 @@
 package core.consoleui.actions;
 
 import core.consoleui.page.DimensionMappingPage;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class DimensionMappingAction extends DimensionMappingPage {

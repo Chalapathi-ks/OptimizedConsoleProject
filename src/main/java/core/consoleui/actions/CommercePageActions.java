@@ -6,8 +6,8 @@ import core.consoleui.page.CampaignCreationPage;
 import core.consoleui.page.CommerceSearchPage;
 import lib.Helper;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.domain.FluentList;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentList;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 

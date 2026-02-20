@@ -1,7 +1,7 @@
 package core.ui.actions;
 
 import core.ui.page.PreviewPage;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 
 import java.util.ArrayList;
@@ -35,7 +35,7 @@ public class PreviewFacetActions extends PreviewPage {
         awaitForElementPresence(searchInputBox);
         click(searchInputBox);
         searchInputBox.clear();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
         searchInputBox.fill().with(query);
 
     }
@@ -103,7 +103,7 @@ public class PreviewFacetActions extends PreviewPage {
                     if (fElement.find(facetValueText).get(i).getText().equalsIgnoreCase(facet_value)) {
                         waitForLoaderToDisAppear(pageLoader, websitePreviewPageLoader);
                         fElement.find(facetValueText).get(i).doubleClick();
-                        Thread.sleep(10000);
+                        Thread.sleep(5000);
                     }
                 }
             }else{

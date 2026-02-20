@@ -9,8 +9,8 @@ import lib.Config;
 import lib.Helper;
 import lib.annotation.FileToTest;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.Page;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -167,7 +167,7 @@ public class SmokeEndToEndTest extends BaseTest
             Assert.assertTrue(ActualMappedFields.size() > 0);
             facetableFieldsActions.waitForElementAppear(autoMappingActions.setUpSearchButtons, autoMappingActions.mappingPageLoader, Config.getIntValueForProperty("indexing.numOfRetries"), Config.getIntValueForProperty("indexing.wait.time"));
             facetableFieldsActions.awaitForElementPresence(autoMappingActions.setUpSearchButton);
-            Thread.sleep(50000);
+            Thread.sleep(15000);
             autoMappingActions.mapFields();
             click(autoMappingActions.setUpSearchButton);
                     //Assert.assertEquals(ActualMappedFields,expectedDimensionMappedField);
@@ -210,7 +210,7 @@ public class SmokeEndToEndTest extends BaseTest
             //AutoSuggest flow :
             //KeyWordSuggestion:
             facetableFieldsActions.goToRelevancySectionsByName(UnbxdEnum.valueOf(autoSuggestSection));
-            Thread.sleep(50000);
+            Thread.sleep(15000);
             autoSuggestActions.clickOnCustomiseButton();
             autoSuggestActions.goToSuggestionSectionsByName(UnbxdEnum.valueOf(suggestion1));
             await();
@@ -231,7 +231,7 @@ public class SmokeEndToEndTest extends BaseTest
 
             //PopularProducts:
 
-            Thread.sleep(30000);
+            Thread.sleep(10000);
             autoSuggestActions.scrollToBottom();
             autoSuggestActions.goToSuggestionSectionsByName(UnbxdEnum.valueOf(suggestion3));
             await();

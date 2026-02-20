@@ -10,7 +10,7 @@ import lib.api.HttpMethod;
 import lib.api.UnbxdResponse;
 import lib.enums.UnbxdEnum;
 import lombok.Data;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 
 import java.util.ArrayList;
@@ -128,7 +128,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
     public void checkSelectedField(String facetAttribute) throws InterruptedException {
         awaitForElementPresence(facetAttributeDropDown);
         click(facetAttributeDropDown);
-        Thread.sleep(3000);
+        Thread.sleep(1500);
         ThreadWait();
         attributeInputBox.fill().with(facetAttribute);
         ThreadWait();
@@ -137,7 +137,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
     public void SelectedField(String facetAttribute) throws InterruptedException {
         awaitForElementPresence(facetAttributeDropDown);
         click(facetAttributeDropDown);
-        Thread.sleep(3000);
+        Thread.sleep(1500);
         ThreadWait();
         attributeInputBox.fill().with(facetAttribute);
     }
@@ -149,7 +149,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
         awaitForElementPresence(facetAttributeDropDown);
         ThreadWait();
         click(facetAttributeDropDown);
-        Thread.sleep(3000);
+        Thread.sleep(1500);
         ThreadWait();
         attributeInputBox.fill().with(facetAttribute);
         ThreadWait();
@@ -423,7 +423,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
 
     public void openFacetEditWindow(FluentWebElement facet) throws InterruptedException
     {
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         Helper.mouseOver(facet.getElement());
         ThreadWait();
         click(editFacetIcon);

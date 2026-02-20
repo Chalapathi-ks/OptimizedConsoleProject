@@ -2,7 +2,7 @@ package core.consoleui.actions;
 
 import core.consoleui.page.CollectionsPage;
 import core.ui.page.UnbxdCommonPage;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import java.io.File;
 import java.net.URL;
 

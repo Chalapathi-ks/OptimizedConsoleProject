@@ -7,7 +7,7 @@ import core.consoleui.actions.CommercePageActions;
 import core.consoleui.actions.MerchandisingActions;
 import lib.annotation.FileToTest;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -67,7 +67,7 @@ public class SearchRedirectTest extends MerchandisingTest {
 
         //duplicate the rule
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
         searchPageActions.selectActionType(UnbxdEnum.MORE,query);
         searchPageActions.selectActionFromMore(UnbxdEnum.DUPLICATE,query);
         searchPageActions.awaitForPageToLoad();

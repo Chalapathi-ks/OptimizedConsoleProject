@@ -3,7 +3,7 @@ package UnbxdTests.testNG.consoleui.Collections;
 import UnbxdTests.testNG.consoleui.MerchBulkUpload.uploadTest;
 import UnbxdTests.testNG.consoleui.MerchTest.MerchandisingTest;
 import core.consoleui.actions.CollectionsActions;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.annotations.Test;
 
 import static core.ui.page.UiBase.ThreadWait;

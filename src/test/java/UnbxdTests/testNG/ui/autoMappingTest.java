@@ -11,7 +11,7 @@ import lib.Config;
 import lib.EnvironmentConfig;
 import lib.Helper;
 import lib.annotation.FileToTest;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -111,7 +111,7 @@ public class autoMappingTest extends BaseTest {
             facetableFieldsActions.waitForElementAppear(autoMappingActions.setUpSearchButtons, autoMappingActions.mappingPageLoader, Config.getIntValueForProperty("indexing.numOfRetries"), Config.getIntValueForProperty("indexing.wait.time"));
             Assert.assertTrue(autoMappingActions.awaitForElementPresence(autoMappingActions.setUpSearchButton),"Mapping page is not yet loaded!!");
             Assert.assertEquals(autoMappingActions.setUpSearchButton.getText(), "Set Up Search");
-            Thread.sleep(50000);
+            Thread.sleep(15000);
 
             List<String> ActualMappedFields = new ArrayList<>();
             for (String field : fields) {

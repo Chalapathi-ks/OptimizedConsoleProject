@@ -1,7 +1,7 @@
 package core.consoleui.actions;
 
 import core.consoleui.page.AlgorithmsPage;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import java.io.File;
 import static lib.UrlMapper.SYNONYMS;
 import static lib.UrlMapper.PHRASES;

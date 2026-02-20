@@ -2,7 +2,7 @@ package core.consoleui.page;
 
 import core.ui.page.UiBase;
 import lib.EnvironmentConfig;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 import static lib.UrlMapper.CATALOG_SEARCH_PAGE;

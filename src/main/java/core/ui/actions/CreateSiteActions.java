@@ -25,7 +25,7 @@ public class CreateSiteActions extends CreateSitePage {
     public void goToCreateSitePage() throws InterruptedException {
         goTo(CREATE_SITE_PAGE.getBaseUrl());
         awaitForPageToLoad();
-        Thread.sleep(30000);
+        Thread.sleep(15000);
         Assert.assertTrue(awaitForElementPresence(proceedButton));
         //awaitForElementPresence(configureFirstSite);
         //configureFirstSite.click();

@@ -9,7 +9,7 @@ import core.consoleui.page.BlacklistedSuggestionsPage;
 import core.ui.actions.LoginActions;
 import lib.Helper;
 import lib.annotation.FileToTest;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -71,7 +71,7 @@ public class BlacklistedSuggestionsTest extends BaseTest {
         promotedSuggestionsActions.editSuggestions(term, newTerm);
 
         // Wait for modal to disappear before clearing the search term
-        new org.openqa.selenium.support.ui.WebDriverWait(driver, 10)
+        new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(10))
                 .until(org.openqa.selenium.support.ui.ExpectedConditions.invisibilityOfElementLocated(
                         org.openqa.selenium.By.cssSelector(".RCB-modal.add-edit-modal")));
         promotedSuggestionsActions.clearSearch();

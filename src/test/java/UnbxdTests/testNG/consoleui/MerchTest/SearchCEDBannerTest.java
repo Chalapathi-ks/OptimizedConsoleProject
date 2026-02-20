@@ -8,7 +8,7 @@ import core.consoleui.actions.MerchandisingActions;
 import core.consoleui.page.BrowsePage;
 import lib.annotation.FileToTest;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -66,7 +66,7 @@ public class SearchCEDBannerTest extends MerchandisingTest {
         Assert.assertNotNull(searchPage.queryRuleByName(query));
         queryRules.add(query);
         ThreadWait();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
 
         merchandisingActions.openPreviewAndSwitchTheTab();
         merchandisingActions.awaitForPageToLoad();
@@ -84,7 +84,7 @@ public class SearchCEDBannerTest extends MerchandisingTest {
             "var modal = document.querySelector('div.preview'); if(modal){modal.scrollTop = modal.scrollHeight;}"
         );
         merchandisingActions.awaitForElementPresence(bannerActions.bannerExperienceInput);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         Assert.assertTrue(bannerActions.bannerExperienceInput.getText().contains(html),"SEARCH:  HTML URL IS NOT SAME AS GIVEN ");
 
         // Edit the rule

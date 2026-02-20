@@ -2,8 +2,8 @@ package core.ui.actions;
 
 import core.ui.page.PreviewPage;
 import lib.Config;
-import org.fluentlenium.core.domain.FluentList;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentList;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 

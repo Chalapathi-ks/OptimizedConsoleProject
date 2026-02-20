@@ -2,8 +2,8 @@ package core.ui.actions;
 
 import core.ui.page.ShopifyFeedUploadPage;
 import lib.Config;
-import org.fluentlenium.core.domain.FluentList;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentList;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 
 public class ShopifyFeedUploadActions extends ShopifyFeedUploadPage {
@@ -95,7 +95,7 @@ public class ShopifyFeedUploadActions extends ShopifyFeedUploadPage {
     }
 
     public void clickOnInstallShopifyPluginTab() throws InterruptedException {
-        Thread.sleep(20000);
+        Thread.sleep(8000);
         Assert.assertTrue(awaitForElementPresence(installPluginButton));
         waitForElementToBeClickable(installPluginButton,installTabName);
         click(installPluginButton);
@@ -108,10 +108,10 @@ public class ShopifyFeedUploadActions extends ShopifyFeedUploadPage {
         scrollToBottom();
         Assert.assertTrue(awaitForElementPresence(shopifyLoginTab));
         waitForElementToBeClickable(shopifyLoginTab,installTabName);
-        Thread.sleep(20000);
+        Thread.sleep(8000);
         click(shopifyLoginTab);
         awaitForPageToLoad();
-        Thread.sleep(20000);
+        Thread.sleep(8000);
     }
 
     public void checkFeedStatus()

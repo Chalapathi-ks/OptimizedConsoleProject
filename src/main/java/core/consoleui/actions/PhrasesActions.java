@@ -2,10 +2,10 @@ package core.consoleui.actions;
 
 import core.consoleui.page.PhrasesPage;
 import core.ui.page.UiBase;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 import java.util.List;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import core.consoleui.actions.SynonymActions;
 
 
@@ -17,11 +17,11 @@ public class PhrasesActions extends PhrasesPage {
         public String createPhrase(String synonym, String uni, String bi) throws InterruptedException
             {
     String phraseName = "auto phrases" + System.currentTimeMillis();
-    Thread.sleep(10000);
+    Thread.sleep(5000);
     awaitForElementPresence(synonymActions.synonymCreationButton);
     click(synonymActions.synonymCreationButton);
     awaitForElementPresence(synonymActions.synonymCreateWindow);
-    Thread.sleep(4000);
+    Thread.sleep(2000);
     Assert.assertTrue(awaitForElementPresence(synonymActions.synonymCreateWindow));
 
     synonymActions.synonymInput.fill().with(synonym);

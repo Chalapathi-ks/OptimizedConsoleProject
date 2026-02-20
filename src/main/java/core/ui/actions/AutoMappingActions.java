@@ -1,7 +1,7 @@
 package core.ui.actions;
 
 import core.ui.page.AutoMappingPage;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 
 import java.util.HashMap;

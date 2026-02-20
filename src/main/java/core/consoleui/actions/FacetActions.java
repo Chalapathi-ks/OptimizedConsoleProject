@@ -1,6 +1,6 @@
 package core.consoleui.actions;
 
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 

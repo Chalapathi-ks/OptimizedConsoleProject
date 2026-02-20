@@ -9,7 +9,7 @@ import core.ui.actions.CreateSiteActions;
 import core.ui.actions.LoginActions;
 import lib.Helper;
 import lib.annotation.FileToTest;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import UnbxdTests.testNG.dataProvider.ResourceLoader;

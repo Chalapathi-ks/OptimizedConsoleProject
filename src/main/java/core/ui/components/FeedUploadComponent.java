@@ -1,13 +1,13 @@
 package core.ui.components;
 
-import com.thoughtworks.selenium.webdriven.commands.Refresh;
+
 import core.consoleui.actions.CatalogPageActions;
 import core.consoleui.page.CatalogPage;
 import core.ui.actions.*;
 import core.ui.page.UiBase;
 import lib.Config;
 import lib.UrlMapper;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.Assert;
 
 import java.util.regex.Pattern;
@@ -73,7 +73,7 @@ public class FeedUploadComponent extends UiBase {
 
         //goto Mapping page
         click(autoMappingActions.mapCatalogButton);
-        // Thread.sleep(50000);
+        // Thread.sleep(15000);
         facetableFieldsActions.waitForLoaderToDisAppear(facetableFieldsActions.relevancyPageLoader1, facetableFieldsActions.relevancePageLoader);
         facetableFieldsActions.waitForElementAppear(autoMappingActions.setUpSearchButtons, autoMappingActions.mappingPageLoader, Config.getIntValueForProperty("indexing.numOfRetries"), Config.getIntValueForProperty("indexing.wait.time"));
         facetableFieldsActions.waitForElementAppear(autoMappingActions.mapList1, autoMappingActions.mappingPageLoader, Config.getIntValueForProperty("indexing.numOfRetries"), Config.getIntValueForProperty("indexing.wait.time"));
@@ -84,7 +84,7 @@ public class FeedUploadComponent extends UiBase {
     public void goTillMappingPage() throws InterruptedException
     {
         //Map fields
-        Thread.sleep(50000);
+        Thread.sleep(15000);
         autoMappingActions.mapFields();
         threadWait();
         click(autoMappingActions.setUpSearchButton);
@@ -104,7 +104,7 @@ public class FeedUploadComponent extends UiBase {
 
         //Go to Relevancy page
         facetableFieldsActions.waitForElementAppear(autoSuggestActions.skipQueryButton, facetableFieldsActions.relevancePageLoader, Config.getIntValueForProperty("indexing.numOfRetries"), Config.getIntValueForProperty("indexing.wait.time"));
-        Thread.sleep(50000);
+        Thread.sleep(15000);
         Assert.assertEquals(autoSuggestActions.skipQuery.getText(), "Skip this step");
         facetableFieldsActions.skipQueryData();
         threadWait();

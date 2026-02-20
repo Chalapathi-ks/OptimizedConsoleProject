@@ -3,7 +3,7 @@ package core.ui.actions;
 import core.ui.page.WelcomePage;
 import lib.EnvironmentConfig;
 import lib.UrlMapper;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -51,7 +51,7 @@ public class LoginActions extends WelcomePage {
         goTo(this);
         awaitForPageToLoad();
         try {
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

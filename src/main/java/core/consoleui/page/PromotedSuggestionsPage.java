@@ -3,8 +3,8 @@ package core.consoleui.page;
 import core.ui.page.UiBase;
 import lib.EnvironmentConfig;
 import static lib.UrlMapper.PROMOTEDSUGGESTIONS_PAGE;
-import org.fluentlenium.core.domain.FluentWebElement;
-import org.fluentlenium.core.domain.FluentList;
+import lib.compat.FluentWebElement;
+import lib.compat.FluentList;
 import org.openqa.selenium.support.FindBy;
 
 public class PromotedSuggestionsPage extends UiBase {

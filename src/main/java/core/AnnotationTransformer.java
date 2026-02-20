@@ -1,15 +1,16 @@
 package core;
 
+import lib.retry.RetryAnalyzer;
 import org.testng.IAnnotationTransformer;
 import org.testng.annotations.ITestAnnotation;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
-public class AnnotationTransformer implements IAnnotationTransformer{
+public class AnnotationTransformer implements IAnnotationTransformer {
 
     @Override
-    public synchronized void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
-        // Retry logic completely removed - tests will not retry on failure
+    public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
+        annotation.setRetryAnalyzer(RetryAnalyzer.class);
     }
 }

@@ -1,6 +1,6 @@
 package core.ui.page;
 
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class contentRelevancePage  extends UiBase {

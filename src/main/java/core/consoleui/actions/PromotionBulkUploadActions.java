@@ -2,8 +2,8 @@ package core.consoleui.actions;
 
 import lib.enums.UnbxdEnum;
 import lib.Helper;
-import org.fluentlenium.core.annotation.Page;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.Page;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;

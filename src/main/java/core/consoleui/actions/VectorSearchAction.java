@@ -1,7 +1,7 @@
 package core.consoleui.actions;
 
 import core.consoleui.page.VectorSearchPage;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 
 public class VectorSearchAction extends VectorSearchPage {

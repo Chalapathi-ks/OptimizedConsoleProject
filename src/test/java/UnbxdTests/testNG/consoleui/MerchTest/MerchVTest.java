@@ -10,7 +10,7 @@ import core.ui.page.UiBase;
 import lib.EnvironmentConfig;
 import lib.Helper;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;

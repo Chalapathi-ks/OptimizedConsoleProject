@@ -3,9 +3,9 @@ package core.consoleui.actions;
 import core.consoleui.page.SegmentPage;
 import lib.Helper;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
-import org.fluentlenium.core.domain.FluentList;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.Page;
+import lib.compat.FluentList;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 
 import java.util.Map;

@@ -5,12 +5,12 @@ import core.ui.actions.LoginActions;
 import lib.Helper;
 import lib.constants.UnbxdErrorConstants;
 
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.Assert;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 
 import core.consoleui.actions.ContentActions;
 import core.consoleui.actions.MerasurementSearchAction;

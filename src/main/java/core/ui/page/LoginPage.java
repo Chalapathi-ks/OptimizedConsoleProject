@@ -1,7 +1,7 @@
 package core.ui.page;
 
 import lib.UrlMapper;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends UiBase {

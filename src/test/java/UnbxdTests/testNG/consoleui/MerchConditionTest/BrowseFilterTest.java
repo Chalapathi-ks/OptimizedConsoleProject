@@ -8,7 +8,7 @@ import core.consoleui.actions.CommercePageActions;
 import core.consoleui.page.BrowsePage;
 import lib.annotation.FileToTest;
 import lib.enums.UnbxdEnum;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
@@ -64,7 +64,7 @@ public class BrowseFilterTest extends MerchandisingTest {
         fillMerchandisingData(object, UnbxdEnum.FILTER,false);
         searchPage.threadWait();
         searchPage.awaitForPageToLoad();
-        Thread.sleep(7000);
+        Thread.sleep(3000);
         merchandisingActions.clickOnApplyButton();
         merchandisingActions.publishCampaign();
         merchandisingActions.verifySuccessMessage();

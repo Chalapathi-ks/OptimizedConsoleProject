@@ -1,6 +1,6 @@
 package UnbxdTests.testNG.consoleui.AlgorithmTest;
 
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;

@@ -3,7 +3,7 @@ package UnbxdTests.testNG.consoleui.AlgorithmTest;
 import UnbxdTests.testNG.ui.BaseTest;
 import core.ui.actions.LoginActions;
 import lib.Helper;
-import org.fluentlenium.core.annotation.Page;
+import lib.compat.Page;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -11,7 +11,7 @@ import core.consoleui.actions.PhrasesActions;
 import core.consoleui.actions.SynonymActions;
 import core.consoleui.actions.ContentActions;
 import core.consoleui.page.PhrasesPage;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 import lib.EnvironmentConfig;
 

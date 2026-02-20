@@ -1,9 +1,9 @@
 package core.consoleui.actions;
 
 import core.consoleui.page.freshnessPage;
-import org.fluentlenium.core.annotation.Page;
-import org.fluentlenium.core.domain.FluentList;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.Page;
+import lib.compat.FluentList;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 
 import java.time.LocalDate;

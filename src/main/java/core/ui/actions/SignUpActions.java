@@ -1,6 +1,6 @@
 package core.ui.actions;
 
-import com.gargoylesoftware.htmlunit.WebConsole;
+
 import core.ui.page.SignUpPage;
 import lib.UrlMapper;
 import org.apache.commons.lang.RandomStringUtils;

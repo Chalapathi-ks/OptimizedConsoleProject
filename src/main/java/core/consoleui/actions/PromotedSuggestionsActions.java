@@ -4,6 +4,7 @@ import lib.enums.UnbxdEnum;
 import org.testng.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 
 public class PromotedSuggestionsActions extends PromotedSuggestionsPage {
     public void selectDeviceType(UnbxdEnum type,String segmentvalue) throws InterruptedException {
@@ -63,7 +64,7 @@ public class PromotedSuggestionsActions extends PromotedSuggestionsPage {
         }
         // Wait until the dropdown icon is clickable, then click it
         org.openqa.selenium.By dropdownArrowSelector = org.openqa.selenium.By.cssSelector(".RCB-select-arrow");
-        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         org.openqa.selenium.WebElement dropdownArrow = wait.until(org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable(dropdownArrowSelector));
         dropdownArrow.click();
         // Wait for the timezone search box to appear, then fill it
@@ -111,7 +112,7 @@ public class PromotedSuggestionsActions extends PromotedSuggestionsPage {
         visibleTermsInput.getElement().sendKeys(org.openqa.selenium.Keys.ENTER);
         // Wait and click the Update button
         org.openqa.selenium.By updateButtonSelector = org.openqa.selenium.By.xpath("//button[contains(@class,'RCB-btn-primary') and text()='Update']");
-        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         org.openqa.selenium.WebElement updateButton = wait.until(ExpectedConditions.elementToBeClickable(updateButtonSelector));
         updateButton.click();
         // Wait for and verify the success toast
@@ -134,7 +135,7 @@ public class PromotedSuggestionsActions extends PromotedSuggestionsPage {
         Assert.assertTrue(found, "Promoted suggestion to delete not found: " + term);
         // Wait for the delete confirmation modal and click Yes
         org.openqa.selenium.By yesButtonSelector = org.openqa.selenium.By.cssSelector(".modal-footer .RCB-btn-primary");
-        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         org.openqa.selenium.WebElement yesButton = wait.until(ExpectedConditions.elementToBeClickable(yesButtonSelector));
         yesButton.click();
         // Wait for and verify the success toast

@@ -1,7 +1,7 @@
 package core.ui.components;
 
 import core.ui.actions.FacetableFieldsActions;
-import org.fluentlenium.core.domain.FluentWebElement;
+import lib.compat.FluentWebElement;
 import org.testng.Assert;
 
 public class FacetComponent extends FacetableFieldsActions {
