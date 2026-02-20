@@ -316,7 +316,7 @@ public class CommercePageActions extends CommerceSearchPage {
             searchInput.fill().with(browse_Attribute);
             await();
             FluentWebElement attributeOption = null;
-            for (int retry = 0; retry < 15; retry++) {
+            for (int retry = 0; retry < 25; retry++) {
                 await();
                 FluentWebElement modal = findFirst(".browse-picker-modal");
                 FluentList<FluentWebElement> items = modal.find(".RCB-list-item.dm-dd-item");

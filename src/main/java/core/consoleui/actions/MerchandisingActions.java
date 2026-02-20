@@ -199,9 +199,11 @@ public class MerchandisingActions extends MerchandisingRulesPage {
     }
 
     public void fillSortOrPinRowValues(int group, UnbxdEnum type, int index, String key, String value, int product) throws InterruptedException {
+        new WebDriverWait(getDriver(), 20).until((ExpectedCondition<Boolean>) d -> getGroup(type).size() > group);
         for (int attempt = 0; attempt < 3; attempt++) {
             try {
                 FluentWebElement rowGroup = getGroup(type).get(group);
+                new WebDriverWait(getDriver(), 10).until((ExpectedCondition<Boolean>) d -> rowGroup.find(pinSortRuleGroups).size() > index);
                 FluentWebElement row = rowGroup.find(pinSortRuleGroups).get(index);
                 FluentWebElement attributeElement = row.findFirst(sortAttribute);
                 FluentWebElement valueElement;
@@ -220,6 +222,8 @@ public class MerchandisingActions extends MerchandisingRulesPage {
                 await();
                 return;
             } catch (org.openqa.selenium.StaleElementReferenceException e) {
+                await();
+            } catch (IndexOutOfBoundsException e) {
                 await();
             }
         }
@@ -611,8 +615,9 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         {
             awaitTillElementDisplayed(landingPageToggle);
             safeClick(landingPageToggle);
-            awaitTillElementDisplayed(landingPageEnabledToggle);
-            Assert.assertTrue(awaitForElementPresence(landingPageEnabledToggle),"LANDING PAGE IS NOT ENABLED");
+            new WebDriverWait(getDriver(), 20).until(
+                ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".landing-page-toggle .active")));
+            Assert.assertTrue(awaitForElementPresence(landingPageEnabledToggle), "LANDING PAGE IS NOT ENABLED");
         }
 
     public void goToSearch_browsePreview() throws InterruptedException {

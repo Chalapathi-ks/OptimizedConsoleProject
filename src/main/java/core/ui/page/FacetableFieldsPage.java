@@ -65,9 +65,11 @@ public class FacetableFieldsPage extends RelevancyPage {
     @FindBy(css=".new-facet-form .RCB-dropdown:nth-child(7) .RCB-select-arrow")
     public FluentWebElement rangeFacetEnableDisableDropdown;
 
-    @FindBy(css=".RCB-form-el.RCB-toggle  ")
+    @FindBy(css=".RCB-form-el.RCB-toggle")
     public FluentWebElement facetEnableToggle;
 
+    /** Selector for toggle in "on" state; use with explicit wait on remote. */
+    public static final By ACTIVE_TOGGLE_BY = By.cssSelector(".RCB-form-el.RCB-toggle.active");
     @FindBy(css=".RCB-form-el.RCB-toggle.active")
     public FluentWebElement activeToggle;
     @FindBy(css=".new-facet-form .RCB-dropdown:nth-child(1) .RCB-select-arrow")

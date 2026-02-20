@@ -242,8 +242,8 @@ public class SimilarQueryTest extends MerchandisingTest {
         searchPageActions.awaitForPageToLoad();
         searchPageActions.awaitForElementPresence(searchPageActions.searchInputBox);
         merchandisingActions.await();
-        Assert.assertTrue(merchandisingActions.similarqueryinListpage.getText().contains(AISuggestedQueryInListinPage));
-        Assert.assertTrue(merchandisingActions.similarqueryinListpage.getText().contains(AISuggestedQuery));
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(org.openqa.selenium.By.cssSelector(".single-pill-wrapper"), AISuggestedQueryInListinPage, 15), "AI suggested query not found in list page");
+        Assert.assertTrue(merchandisingActions.waitForElementTextToContain(org.openqa.selenium.By.cssSelector(".single-pill-wrapper"), AISuggestedQuery, 15), "Similar query not found in list page");
 
         searchPageActions.selectActionType(UnbxdEnum.EDIT, query);
         merchandisingActions.await();

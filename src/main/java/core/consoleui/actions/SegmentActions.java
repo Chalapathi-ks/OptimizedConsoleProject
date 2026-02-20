@@ -89,12 +89,13 @@ public class SegmentActions extends SegmentPage {
     }
 
     public FluentWebElement segmentRuleByName(String name) {
-        final int maxAttempts = 3;
+        final int maxAttempts = 6;
         for (int attempt = 1; attempt <= maxAttempts; attempt++) {
+            if (attempt > 1) threadWait();
             shortWait();
             awaitForElementPresence(searchPageActions.searchIcon);
             if (searchPageActions.queryRulesList.size() == 0) {
-                if (attempt < maxAttempts) { shortWait(); continue; }
+                if (attempt < maxAttempts) continue;
                 return null;
             }
             safeClick(searchPageActions.searchIcon);
@@ -111,7 +112,7 @@ public class SegmentActions extends SegmentPage {
                 } catch (Exception ignored) { }
             }
             if (attempt < maxAttempts)
-                shortWait();
+                threadWait();
         }
         return null;
     }

@@ -25,6 +25,9 @@ public class BannerActions extends CommercePageActions {
         awaitForElementPresence(htmlBannerInput);
         threadWait();
         Assert.assertTrue(htmlRadioButtonIsSelected.isSelected(),"Html Radio Button is not selected");
+        scrollUntilVisible(htmlBannerInput);
+        waitForElementToBeClickable(htmlBannerInput, "HTML banner input");
+        threadWait();
         htmlBannerInput.clear();
         threadWait();
         htmlBannerInput.fill().with(html);
@@ -52,11 +55,22 @@ public class BannerActions extends CommercePageActions {
         new WebDriverWait(getDriver(), 20).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@name='imageUrl']")));
         awaitForElementPresence(bannerInputImgUrl);
         Assert.assertTrue(imgUrlRadioButtonIsSelected.isSelected(),"ImageUrl Radio Button is not selected");
-        bannerInputImgUrl.clear();
-        threadWait();
-        bannerInputImgUrl.fill().with(ImgUrl);
-        bannerInputRedirectUrl.clear();
-        bannerInputRedirectUrl.fill().with(ImgUrl);
+        // Retry on stale: DOM can re-render after tab content loads
+        for (int attempt = 0; attempt < 3; attempt++) {
+            try {
+                awaitForElementPresence(bannerInputImgUrl);
+                bannerInputImgUrl.clear();
+                threadWait();
+                bannerInputImgUrl.fill().with(ImgUrl);
+                awaitForElementPresence(bannerInputRedirectUrl);
+                bannerInputRedirectUrl.clear();
+                bannerInputRedirectUrl.fill().with(ImgUrl);
+                break;
+            } catch (org.openqa.selenium.StaleElementReferenceException e) {
+                threadWait();
+                if (attempt == 2) throw e;
+            }
+        }
         ThreadWait();
         findFirst("body").click();
     }

@@ -12,6 +12,7 @@ import lib.enums.UnbxdEnum;
 import lombok.Data;
 import org.fluentlenium.core.domain.FluentWebElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -128,6 +129,21 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
         safeClick(createNewFacetTab);
     }
 
+    /** Check if the facet enable toggle is in "on" state without resolving FluentWebElement (avoids no such element on remote). */
+    private boolean isActiveTogglePresent() {
+        try {
+            return getDriver().findElement(ACTIVE_TOGGLE_BY).isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    /** Wait for facet toggle to show as active (e.g. after click); use 15–20s on remote. */
+    private void awaitForActiveToggle(int timeoutSec) {
+        new WebDriverWait(getDriver(), timeoutSec)
+            .until(ExpectedConditions.presenceOfElementLocated(ACTIVE_TOGGLE_BY));
+    }
+
     public void checkSelectedField(String facetAttribute) throws InterruptedException {
         awaitForElementPresence(facetAttributeDropDown);
         click(facetAttributeDropDown);
@@ -161,17 +177,15 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
         awaitForElementPresence(displayNameInput);
         displayNameInput.fill().with(name);
         awaitForElementPresence(facetEnableToggle);
-        if(!checkElementPresence(activeToggle))
-        {
+        if (!isActiveTogglePresent()) {
             click(facetEnableToggle);
             threadWait();
-        }
-        else
-        {
+            awaitForActiveToggle(20);
+        } else {
             click(facetEnableToggle);
             threadWait();
             click(facetEnableToggle);
-            awaitForElementPresence(activeToggle);
+            awaitForActiveToggle(20);
             Assert.assertTrue(activeToggle.isDisplayed());
         }
 
@@ -236,8 +250,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
         }
 
         awaitForElementPresence(facetEnableToggle);
-         if(checkElementPresence(activeToggle))
-        {
+        if (isActiveTogglePresent()) {
             ThreadWait();
             click(facetEnableToggle);
             threadWait();

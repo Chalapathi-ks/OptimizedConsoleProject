@@ -77,7 +77,15 @@ public class  PinningTest extends MerchandisingTest {
         }
         Assert.assertTrue(merchandisingActions.pinnedProductIndex.size() > 0, "PRODUCT IS NOT PINNED AT THE GIVEN POSITION: pinned list empty");
         Assert.assertTrue(foundPinnedAtPosition, "PRODUCT IS NOT PINNED AT THE GIVEN POSITION: " + pinningPosition + " (waited 30s for remote)");
-        Assert.assertEquals(merchandisingActions.pinnedProductIndex.get(0).getText().trim(), pinningPosition, "PRODUCT IS NOT PINNED AT THE GIVEN POSITION");
+        String actualPosition = null;
+        for (int r = 0; r < 3; r++) {
+            if (merchandisingActions.pinnedProductIndex.size() > 0) {
+                try { actualPosition = merchandisingActions.pinnedProductIndex.get(0).getText().trim(); break; } catch (IndexOutOfBoundsException e) { merchandisingActions.await(); }
+            }
+            if (r < 2) try { Thread.sleep(500); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+        }
+        Assert.assertNotNull(actualPosition, "PRODUCT IS NOT PINNED AT THE GIVEN POSITION: could not read pinned index");
+        Assert.assertEquals(actualPosition, pinningPosition, "PRODUCT IS NOT PINNED AT THE GIVEN POSITION");
         Assert.assertTrue(merchandisingActions.pinnedProductText.isDisplayed(),"PINNED TEXT IS NOT PRESENT AT THE GIVEN POSITION");
 
         merchandisingActions.publishCampaign();
