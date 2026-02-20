@@ -53,7 +53,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         Map<String, Object> campaignData = merchandisingActions.getCampaignData("boosting.json");
 
         merchandisingActions.fillCampaignDataforUpcoming(campaignData);
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         // Find calendar icon and click it
         if (merchandisingActions.calendarIcon.isDisplayed()) {
             // Scroll until calendar icon is visible and wait for it
@@ -209,7 +209,6 @@ public class PromotionStatusTest extends MerchandisingTest {
 
         //Duplicate the rule
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(3000);
         searchPageActions.selectActionType(UnbxdEnum.MORE,query);
         searchPageActions.selectActionFromMore(UnbxdEnum.DUPLICATE,query);
         searchPageActions.awaitForPageToLoad();
@@ -257,7 +256,7 @@ public class PromotionStatusTest extends MerchandisingTest {
 
         searchPageActions.fillPageName(object);
         merchandisingActions.fillCampaignDataforUpcoming(campaignData);
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         // Find calendar icon and click it
         if (merchandisingActions.calendarIcon.isDisplayed()) {
             searchPageActions.threadWait();
@@ -360,7 +359,6 @@ public class PromotionStatusTest extends MerchandisingTest {
 
         //Duplicate the rule
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(3000);
         searchPageActions.selectActionType(UnbxdEnum.MORE,page);
         searchPageActions.selectActionFromMore(UnbxdEnum.DUPLICATE,page);
         searchPageActions.awaitForPageToLoad();

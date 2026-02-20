@@ -165,7 +165,6 @@ public class CommerceSearchPage extends ConsoleCommonPage  {
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return  SEARCH_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 

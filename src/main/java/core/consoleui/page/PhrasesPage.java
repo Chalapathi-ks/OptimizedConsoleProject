@@ -20,7 +20,6 @@ public class PhrasesPage extends UiBase {
     public FluentWebElement successMessage;
 
     public String getUrl() {
-        awaitForPageToLoad();
         return PHRASES.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 } 

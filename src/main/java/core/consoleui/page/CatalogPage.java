@@ -15,7 +15,6 @@ public class CatalogPage extends UiBase
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return  CATALOG_SEARCH_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 }

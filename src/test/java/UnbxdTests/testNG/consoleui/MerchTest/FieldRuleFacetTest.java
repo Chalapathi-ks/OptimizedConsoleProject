@@ -82,7 +82,6 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(3000);
        
         //create the rule
         createPromotion(query,false,false);
@@ -136,7 +135,6 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(3000);
 
         createPromotion(query,false,false);
         ThreadWait();
@@ -233,7 +231,6 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(3000);
 
         //create the rule
         createPromotion(query, false, false);
@@ -289,7 +286,6 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(3000);
         Assert.assertNotNull(searchPage.queryRuleByName(query));
         queryRules.add(query);
 
@@ -340,7 +336,6 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(3000);
 
         //create the rule
         createPromotion(query, false, false);
@@ -410,7 +405,6 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(3000);
         Assert.assertNotNull(searchPage.queryRuleByName(query));
         queryRules.add(query);
 
@@ -457,7 +451,6 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(3000);
 
         //create the rule
         createPromotion(query, false, false);
@@ -528,7 +521,6 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(3000);
 
         //create the rule
         createBrowsePromotion(page,false,false);
@@ -582,7 +574,6 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(3000);
 
         //create the rule
         //createBrowsePromotion(page,false,false);
@@ -695,7 +686,6 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(3000);
 
         //create the rule
         createBrowsePromotion(page,false,false);
@@ -767,7 +757,6 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(3000);
 
         goTo(searchableFieldActions);
         searchPage.threadWait();

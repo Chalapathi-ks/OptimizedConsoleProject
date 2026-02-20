@@ -8,16 +8,19 @@ import java.lang.reflect.Field;
 
 /**
  * Handles @Page annotation injection, replacing FluentLenium's initTest().
- * Matches FluentLenium 0.10.9 behavior: creates page instances, sets driver,
- * and initializes @FindBy fields - but does NOT recursively inject @Page on children.
+ * Injects @Page fields up to 2 levels deep to support nested page objects
+ * (e.g. MerchandisingActions containing @Page CommercePageActions).
  */
 public class PageInjector {
 
-    /**
-     * Process all @Page-annotated fields on the target object.
-     * Creates instances, sets the driver, and initializes @FindBy fields.
-     */
     public static void initPages(Object target, WebDriver driver) {
+        injectPages(target, driver, 0, 2);
+        initFindByFields(target, driver);
+    }
+
+    private static void injectPages(Object target, WebDriver driver, int depth, int maxDepth) {
+        if (depth >= maxDepth) return;
+
         Class<?> clazz = target.getClass();
         while (clazz != null && clazz != Object.class) {
             for (Field field : clazz.getDeclaredFields()) {
@@ -31,6 +34,7 @@ public class PageInjector {
                         }
 
                         initFindByFields(page, driver);
+                        injectPages(page, driver, depth + 1, maxDepth);
                         field.set(target, page);
                     } catch (Exception e) {
                         throw new RuntimeException(
@@ -41,8 +45,6 @@ public class PageInjector {
             }
             clazz = clazz.getSuperclass();
         }
-
-        initFindByFields(target, driver);
     }
 
     /**

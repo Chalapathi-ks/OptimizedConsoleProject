@@ -11,7 +11,6 @@ public class BrowseFieldPropertiesPage extends UiBase
 {
     public String getUrl()
     {
-        awaitForPageToLoad();
         return  BROWSE_FIELD_PROPERTIES_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 }

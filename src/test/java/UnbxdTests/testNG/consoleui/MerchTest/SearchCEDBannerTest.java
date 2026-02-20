@@ -66,7 +66,7 @@ public class SearchCEDBannerTest extends MerchandisingTest {
         Assert.assertNotNull(searchPage.queryRuleByName(query));
         queryRules.add(query);
         ThreadWait();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
 
         merchandisingActions.openPreviewAndSwitchTheTab();
         merchandisingActions.awaitForPageToLoad();
@@ -84,7 +84,7 @@ public class SearchCEDBannerTest extends MerchandisingTest {
             "var modal = document.querySelector('div.preview'); if(modal){modal.scrollTop = modal.scrollHeight;}"
         );
         merchandisingActions.awaitForElementPresence(bannerActions.bannerExperienceInput);
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         Assert.assertTrue(bannerActions.bannerExperienceInput.getText().contains(html),"SEARCH:  HTML URL IS NOT SAME AS GIVEN ");
 
         // Edit the rule

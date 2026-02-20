@@ -12,7 +12,6 @@ public class searchAutosuggestPage extends UnbxdCommonPage {
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return SEARCH_AUTOSUGGEST_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
     }
     @FindBy(xpath = "(//*[contains(text(),'Keyword suggestions')]//following::*[@class='select-field'])[1]")

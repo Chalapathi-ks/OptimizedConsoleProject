@@ -48,7 +48,6 @@ public class WelcomePage extends LoginPage{
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return WELCOME_PAGE.getBaseUrl();
     }
 

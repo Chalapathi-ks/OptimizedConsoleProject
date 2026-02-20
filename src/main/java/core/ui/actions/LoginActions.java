@@ -50,32 +50,27 @@ public class LoginActions extends WelcomePage {
     private void loginWith(String email,String pwd) {
         goTo(this);
         awaitForPageToLoadQuick();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
         Assert.assertTrue(awaitForElementPresence(loginTitle), "Login page is not yet loaded");
         awaitForElementPresence(emailInputBox);
-        ThreadWait();
         click(emailInputBox);
         emailInputBox.clear();
-        ThreadWait();
         emailInputBox.fill().with(email);
         ThreadWait();
-        //emailInputBox.getElement().sendKeys(email);
         awaitForElementPresence(passwordInputBox);
         click(passwordInputBox);
         passwordInputBox.clear();
-        //passwordInputBox.getElement().sendKeys(pwd);
         passwordInputBox.fill().with(pwd);
-        threadWait();
+        ThreadWait();
         click(signIn);
         awaitForPageToLoad();
-        if (awaitForElementPresence(getErrorMessageInLogin)==true) {
-            System.out.println("Login is not working!!! The reason is " + getErrorMessageInLogin.getText());
-        } else {
-            Assert.assertFalse(awaitForElementPresence(emailInputBox), "Login is not working properly");
+        ThreadWait();
+        String currentUrl = getDriver().getCurrentUrl();
+        if (currentUrl != null && currentUrl.contains("/login")) {
+            System.out.println("Still on login page after sign-in attempt, login may have failed");
+            if (awaitForElementPresence(getErrorMessageInLogin)==true) {
+                System.out.println("Login is not working!!! The reason is " + getErrorMessageInLogin.getText());
+            }
+            Assert.fail("Login failed - still on login page: " + currentUrl);
         }
     }
 

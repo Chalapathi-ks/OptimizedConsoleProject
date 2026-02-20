@@ -64,7 +64,6 @@ public class BrowseFilterTest extends MerchandisingTest {
         fillMerchandisingData(object, UnbxdEnum.FILTER,false);
         searchPage.threadWait();
         searchPage.awaitForPageToLoad();
-        Thread.sleep(3000);
         merchandisingActions.clickOnApplyButton();
         merchandisingActions.publishCampaign();
         merchandisingActions.verifySuccessMessage();

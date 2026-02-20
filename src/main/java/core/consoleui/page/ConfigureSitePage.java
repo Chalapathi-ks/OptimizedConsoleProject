@@ -29,7 +29,6 @@ public class ConfigureSitePage extends UiBase {
 
     public String getUrl()
       {
-          awaitForPageToLoad();
           return  CONFIGURE_SITE_SEARCH_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
       }
 

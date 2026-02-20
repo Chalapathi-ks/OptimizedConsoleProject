@@ -15,7 +15,6 @@ public class BrowseSegmentPage extends ConsoleCommonPage  {
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return  BROWSE_SEGMENT_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 }

@@ -20,14 +20,13 @@ public class freshnessAction extends freshnessPage {
     public void selectAttribute(String value) throws InterruptedException {
         ThreadWait();
         AttributeDropDown.click();
-        Thread.sleep(3000);
+        threadWait();
         if (attributeDropDownList.size() > 0) {
             attributeInput.clear();
-            ThreadWait();
             attributeInput.fill().with(value);
-            Thread.sleep(3000);
+            threadWait();
             selectDropDownValue(attributeDropDownList, value);
-            Thread.sleep(3000);
+            ThreadWait();
         } else {
             Assert.fail("ATTRIBUTE DROPDOWN LIST IS EMPTY!!!");
         }
@@ -90,14 +89,6 @@ public class freshnessAction extends freshnessPage {
                                 // Scroll to the summary value element
                                 scrollUntilVisible(summaryValue);
                                 ThreadWait();
-                                threadWait();
-                                
-                                // Wait a bit for scroll to complete
-                                try {
-                                    Thread.sleep(500);
-                                } catch (InterruptedException e) {
-                                    Thread.currentThread().interrupt();
-                                }
                                 
                                 if (summaryValue.isDisplayed()) {
                                     String valueText = summaryValue.getText().trim();

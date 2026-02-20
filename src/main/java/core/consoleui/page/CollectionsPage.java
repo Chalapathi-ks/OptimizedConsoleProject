@@ -240,7 +240,6 @@ public class CollectionsPage extends ConsoleCommonPage {
      * @return Collections page URL with site ID
      */
     public String getUrl() {
-        awaitForPageToLoad();
         return COLLECTION_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 

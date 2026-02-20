@@ -93,7 +93,6 @@ public class MerasurementSearchPage extends ContentActions {
 
 
     public String getUrl() {
-        awaitForPageToLoad();
         return MEASUREMENT_SEARCH.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 } 

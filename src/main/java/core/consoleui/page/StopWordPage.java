@@ -15,7 +15,6 @@ public class StopWordPage extends UiBase {
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return STOP_WORD.getBaseUrl(EnvironmentConfig.getSiteId());
 
     }

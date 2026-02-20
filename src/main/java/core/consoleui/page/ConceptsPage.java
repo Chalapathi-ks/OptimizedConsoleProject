@@ -28,7 +28,6 @@ public class ConceptsPage extends ContentActions {
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return CONCEPTS.getBaseUrl(EnvironmentConfig.getSiteId());
 
     }

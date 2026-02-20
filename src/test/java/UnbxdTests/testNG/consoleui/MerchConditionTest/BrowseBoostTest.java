@@ -47,14 +47,11 @@ public class BrowseBoostTest extends MerchandisingTest {
         page = boostJsonObject.get("page").getAsString();
 
         goTo(browsePage);
-        searchPage.threadWait();
         createBrowsePromotion(page,false,false);
         JsonArray object = boostJsonObject.get("data").getAsJsonArray();
         Map<String, Object> campaignData = merchandisingActions.getCampaignData("browseBoosting.json");
-        ThreadWait();
         searchPageActions.fillPageName(object);
         merchandisingActions.fillCampaignData(campaignData);
-        ThreadWait();
         merchandisingActions.goToLandingPage();
         merchandisingActions.goToSectionInMerchandising(UnbxdEnum.BOOST);
 
@@ -62,16 +59,13 @@ public class BrowseBoostTest extends MerchandisingTest {
         merchandisingActions.clickOnApplyButton();
         merchandisingActions.publishCampaign();
         merchandisingActions.verifySuccessMessage();
-        ThreadWait();
         Assert.assertNotNull(searchPage.queryRuleByName(page));
         pageRules.add(page);
 
         merchandisingActions.openPreviewAndSwitchTheTab();
         merchandisingActions.awaitForPageToLoad();
-        Thread.sleep(4000);
         String previewPage = driver.getCurrentUrl();
         Assert.assertTrue(previewPage.contains("preview"),"Not redirecting to preview page");
-        ThreadWait();
         merchandisingActions.awaitForElementPresence(merchandisingActions.SearchpreviewOption);
         Assert.assertTrue(merchandisingActions.showingResultinPreview.getText().contains(page));
 
@@ -81,27 +75,21 @@ public class BrowseBoostTest extends MerchandisingTest {
         verifyMerchandisingGenericData(object, UnbxdEnum.BOOST,false);
 
         goTo(browsePage);
-        searchPage.threadWait();
         searchPage.queryRuleByName(page);
         searchPageActions.selectActionType(UnbxdEnum.EDIT, page);
-        ThreadWait();
         String condition = searchPageActions.getConditionTitle();
         int group = searchPageActions.getConditionSize();
         Assert.assertTrue(condition.equalsIgnoreCase(conditionType), "SELECTED CONDITION TYPE IS WRONG!!! SELECTED CONDITION IS : " + conditionType);
         Assert.assertEquals(group, object.size(), "NUMBER OF CONDITION GROUP IS WRONG!!! SELECTED CONDITION GROUP IS : " + group);
 
         searchPage.scrollToBottom();
-        ThreadWait();
-        // Use robust click handling to avoid click interception issues
         merchandisingActions.scrollUntilVisible(merchandisingActions.MerchandisingStrategyEditButton);
         merchandisingActions.waitForElementToBeClickable(merchandisingActions.MerchandisingStrategyEditButton, "Edit");
         merchandisingActions.clickUsingJS(merchandisingActions.MerchandisingStrategyEditButton);
         fillMerchandisingData(object,UnbxdEnum.BOOST,true);
         merchandisingActions.clickOnApplyButton();
-        searchPage.threadWait();
         merchandisingActions.publishCampaign();
         merchandisingActions.verifySuccessMessage();
-        ThreadWait();
 
         //Preview
         merchandisingActions.openPreviewAndSwitchTheTab();
@@ -117,22 +105,17 @@ public class BrowseBoostTest extends MerchandisingTest {
         verifyMerchandisingGenericData(object, UnbxdEnum.BOOST,true);
 
         goTo(browsePage);
-        searchPage.threadWait();
         searchPage.queryRuleByName(page);
         searchPageActions.selectActionType(UnbxdEnum.PREVIEW, page);
-        ThreadWait();
         String updatedCondition = searchPageActions.getConditionTitle();
         int updatedGroup = searchPageActions.getConditionSize();
         Assert.assertTrue(updatedCondition.equalsIgnoreCase(conditionType), "SELECTED CONDITION TYPE IS WRONG!!! SELECTED CONDITION IS : " + conditionType);
         Assert.assertEquals(updatedGroup, object.size(), "NUMBER OF CONDITION GROUP IS WRONG!!! SELECTED CONDITION GROUP IS : " + group);
 
         goTo(browsePage);
-        searchPage.threadWait();
         searchPage.queryRuleByName(page);
-        ThreadWait();
         searchPageActions.deleteQueryRule(page);
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
-        searchPage.threadWait();
 
     }
 
@@ -147,13 +130,11 @@ public class BrowseBoostTest extends MerchandisingTest {
         JsonObject boostJsonObject = (JsonObject) jsonObject;
 
         goTo(browsePage);
-        searchPage.threadWait();
         await();
         createGlobalRulePromotion();
 
         JsonArray object = boostJsonObject.get("data").getAsJsonArray();
 
-        ThreadWait();
         merchandisingActions.goToSectionInMerchandising(UnbxdEnum.BOOST);
         int group1=searchPageActions.conditionsList.size();
         merchandisingActions.deleteConditionIfItsPresent(group1);
@@ -161,20 +142,16 @@ public class BrowseBoostTest extends MerchandisingTest {
         fillMerchandisingData(object,UnbxdEnum.BOOST,false);
         merchandisingActions.clickOnApplyButton();
 
-        ThreadWait();
         merchandisingActions.goToSectionInMerchandising(UnbxdEnum.FILTER);
         int group2=searchPageActions.conditionsList.size();
         merchandisingActions.deleteConditionIfItsPresent(group2);
-        ThreadWait();
         merchandisingActions.selectGlobalActionType(UnbxdEnum.GLOBALFILTER);
         fillMerchandisingData(object,UnbxdEnum.FILTER,false);
         merchandisingActions.clickOnApplyButton();
 
         merchandisingActions.publishGlobalRule();
         merchandisingActions.verifySuccessMessage();
-        ThreadWait();
         searchPage.editGlobalRule();
-        ThreadWait();
         int group = searchPageActions.getConditionSize();
 
         for (String conditiontype : conditiontypes)

@@ -23,9 +23,7 @@ public class CommercePageActions extends CommerceSearchPage {
     CampaignCreationPage campaignCreationPage;
 
     public FluentWebElement queryRuleByName(String name) {
-        ThreadWait();
         awaitForElementPresence(searchIcon);
-        ThreadWait();
         if (queryRulesList.size() == 0)
             return null;
         searchIcon.click();
@@ -62,7 +60,6 @@ public class CommercePageActions extends CommerceSearchPage {
 
 
         public void deleteQueryRule(String name) {
-        ThreadWait();
         ThreadWait();
 //        FluentWebElement element = queryRuleByName(name);
 //        if (element == null) {
@@ -253,9 +250,7 @@ public class CommercePageActions extends CommerceSearchPage {
     public String fillQueryRuleData(String query,String page,String... similarQuiries) throws InterruptedException {
     String queryName=query+System.currentTimeMillis();
         awaitForElementPresence(newQueryRuleInput);
-        ThreadWait();
        if(query!=null){
-           awaitForElementPresence(newQueryRuleInput);
            Assert.assertTrue(awaitForElementPresence(newQueryRuleInput),"SEARCH CAMPAIGN CREATION PAGE IS NOT LOADED");
            newQueryRuleInput.fill().with(queryName);
        }else if(page!=null) {
@@ -294,26 +289,57 @@ public class CommercePageActions extends CommerceSearchPage {
             awaitForElementPresence(BuildPath);
             BuildPath.click();
             browseAttributeArrow.click();
-            // Add search input fill before iterating attributes
+            threadWait();
             FluentWebElement searchInput = findFirst(".RCB-dd-search-ip");
             searchInput.fill().with(browse_Attribute);
-            ThreadWait();
+            threadWait();
+            boolean attrSelected = false;
             for (FluentWebElement attribute : browseAttributeList) {
                 if (attribute.getText().trim().equalsIgnoreCase(browse_Attribute)) {
-                    attribute.click();
+                    try {
+                        ((org.openqa.selenium.JavascriptExecutor) getDriver())
+                            .executeScript("arguments[0].click();", attribute.getElement());
+                    } catch (Exception e) {
+                        attribute.click();
+                    }
+                    attrSelected = true;
                     ThreadWait();
                     break;
                 }
             }
-            threadWait();
+            if (!attrSelected) {
+                System.out.println("WARNING: Browse attribute '" + browse_Attribute + "' not found. Trying generic list items...");
+                java.util.List<org.openqa.selenium.WebElement> items = getDriver()
+                    .findElements(org.openqa.selenium.By.cssSelector(".RCB-list-item"));
+                for (org.openqa.selenium.WebElement item : items) {
+                    if (item.getText().trim().equalsIgnoreCase(browse_Attribute) && item.isDisplayed()) {
+                        ((org.openqa.selenium.JavascriptExecutor) getDriver())
+                            .executeScript("arguments[0].click();", item);
+                        ThreadWait();
+                        break;
+                    }
+                }
+            }
+            // Wait for value list to load after attribute selection
+            int retries = 0;
+            while (categoeyValueList.size() == 0 && retries < 10) {
+                threadWait();
+                retries++;
+            }
+            boolean valueSelected = false;
             for (FluentWebElement value : categoeyValueList) {
                 if (value.getText().trim().equalsIgnoreCase(browse_Value)) {
-                    // ThreadWait();
-                    // value.click();
+                    ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript(
+                        "arguments[0].scrollIntoView({block:'center'});", value.getElement());
+                    ThreadWait();
                     ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", value.getElement());
                     ThreadWait();
+                    valueSelected = true;
                     break;
                 }
+            }
+            if (!valueSelected) {
+                System.out.println("WARNING: Browse value '" + browse_Value + "' not found in list. Available values: " + categoeyValueList.size());
             }
             threadWait();
             categorypathApplyButton.click();

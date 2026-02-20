@@ -37,7 +37,6 @@ public class DimensionMappingPage extends ContentActions {
     public FluentWebElement searchBoxInput;
 
     public String getUrl() {
-        awaitForPageToLoad();
         return DIMENSION_MAPPING.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 } 

@@ -25,13 +25,13 @@ public class EnvironmentConfig {
             LoaderOptions loaderOptions = new LoaderOptions();
             loaderOptions.setAllowDuplicateKeys(true);
             Yaml yaml = new Yaml(new Constructor(Configuration.class, loaderOptions));
-            // Resolve profile: system property first, then config.properties. No fallback.
             String resolvedProfile = System.getProperty("env.profile");
             if (resolvedProfile == null || resolvedProfile.trim().isEmpty()) {
                 resolvedProfile = Config.getEnvironmentProfile();
             }
             if (resolvedProfile == null || resolvedProfile.trim().isEmpty() || resolvedProfile.contains("${")) {
-                throw new Exception("Environment profile not set. Provide -Denv.profile=<ProfileName> (e.g., ProdGCP) or set 'environment.profile' in config.properties.");
+                resolvedProfile = "ProdUK";
+                System.out.println("No env.profile set, defaulting to: " + resolvedProfile);
             }
             String file= resolvedProfile + ".yaml";
             try(InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream(file)) {

@@ -10,7 +10,6 @@ public class RelevancyPage extends UiBase {
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return UrlMapper.RELEVANCY_PAGE.getBaseUrl(EnvironmentConfig.getStatusById());
     }
 

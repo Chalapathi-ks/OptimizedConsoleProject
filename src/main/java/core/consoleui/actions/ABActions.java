@@ -72,7 +72,7 @@ public class ABActions extends ABTestPage {
         long lastHeight = ((Number) js.executeScript("return document.body.scrollHeight;")).longValue();
         while (true) {
             js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-            try { Thread.sleep(700); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+            try { Thread.sleep(300); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
             long newHeight = ((Number) js.executeScript("return document.body.scrollHeight;")).longValue();
             if (newHeight == lastHeight) {
                 break;

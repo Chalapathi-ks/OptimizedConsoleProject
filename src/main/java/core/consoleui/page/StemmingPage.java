@@ -26,7 +26,6 @@ public class StemmingPage extends UiBase {
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return STEMMING.getBaseUrl(EnvironmentConfig.getSiteId());
 
     }

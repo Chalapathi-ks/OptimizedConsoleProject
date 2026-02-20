@@ -12,7 +12,6 @@ public class BlacklistedSuggestionsPage extends UiBase {
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return  BLACKLISTEDSUGGESTIONS_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 

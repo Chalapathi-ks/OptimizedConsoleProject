@@ -110,7 +110,6 @@ public class PreviewPage extends UiBase {
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return  PREVIEW_PAGE.getBaseUrl(EnvironmentConfig.getSiteKey());
     }
     public String websitePreviewPopularProductPage = ".unbxd-as-sidecontent";

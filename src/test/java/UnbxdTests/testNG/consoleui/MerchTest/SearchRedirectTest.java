@@ -67,7 +67,6 @@ public class SearchRedirectTest extends MerchandisingTest {
 
         //duplicate the rule
         searchPageActions.awaitForPageToLoad();
-        Thread.sleep(3000);
         searchPageActions.selectActionType(UnbxdEnum.MORE,query);
         searchPageActions.selectActionFromMore(UnbxdEnum.DUPLICATE,query);
         searchPageActions.awaitForPageToLoad();

@@ -45,7 +45,7 @@ public class BaseTest extends SeleniumBase {
             boolean reused = GlobalLoginManager.tryCookieReuse(driver);
             if (!reused) {
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException ie) {
                     Thread.currentThread().interrupt();
                 }

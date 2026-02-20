@@ -331,7 +331,7 @@ public class SimilarQueryTest extends MerchandisingTest {
 
         searchPageActions.fillPageName(object);
         merchandisingActions.fillCampaignData(campaignData);
-        Thread.sleep(5000);
+        Thread.sleep(1500);
         merchandisingActions.goToLandingPage();
         merchandisingActions.publishCampaign();
         merchandisingActions.verifySuccessMessage();

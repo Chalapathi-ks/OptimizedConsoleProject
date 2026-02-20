@@ -9,11 +9,11 @@ public class UnbxdConstants {
     public static final int SELENIUM_PAGE_MAXTIMEOUT=6000;
     public static final int SELENIUM_PAGE_MINTIMEOUT=3000;
 
-    /** Timeouts in seconds for WebDriverWait (Selenium 3 takes seconds). */
-    public static final int WAIT_LOADER_SECONDS = 60;
-    public static final int WAIT_ELEMENT_APPEAR_SECONDS = 45;
-    public static final int WAIT_ELEMENT_LOAD_SECONDS = 30;
-    public static final int WAIT_ELEMENT_DISAPPEAR_SECONDS = 30;
+    /** Timeouts in seconds for WebDriverWait. */
+    public static final int WAIT_LOADER_SECONDS = 30;
+    public static final int WAIT_ELEMENT_APPEAR_SECONDS = 20;
+    public static final int WAIT_ELEMENT_LOAD_SECONDS = 15;
+    public static final int WAIT_ELEMENT_DISAPPEAR_SECONDS = 15;
 
     public static final String IMPORT_FILE_DATE_FORMAT="dd/MM/yyyy HH:mm:ss";
 

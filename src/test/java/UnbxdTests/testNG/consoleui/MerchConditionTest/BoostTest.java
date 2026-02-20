@@ -63,7 +63,7 @@ public class BoostTest extends MerchandisingTest {
         merchandisingActions.clickOnApplyButton();
         merchandisingActions.publishCampaign();
         merchandisingActions.verifySuccessMessage();
-        ThreadWait();
+       // ThreadWait();
         Assert.assertNotNull(searchPage.queryRuleByName(query));
         queryRules.add(query);
 

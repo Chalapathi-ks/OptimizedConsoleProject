@@ -70,10 +70,9 @@ public void browsePinningCreateTest(Object jsonObject) throws InterruptedExcepti
     ThreadWait();
     Assert.assertNotNull(searchPage.queryRuleByName(page));
     pageRules.add(page);
-    Thread.sleep(5000);
+    Thread.sleep(1500);
     merchandisingActions.openPreviewAndSwitchTheTab();
     merchandisingActions.awaitForPageToLoad();
-    Thread.sleep(5000);
     String previewPage = driver.getCurrentUrl();
     ThreadWait();
     Assert.assertTrue(previewPage.contains("preview"),"Not redirecting to preview page");

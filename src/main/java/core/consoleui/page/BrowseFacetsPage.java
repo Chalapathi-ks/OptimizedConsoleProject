@@ -12,7 +12,6 @@ public class BrowseFacetsPage extends UnbxdCommonPage {
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return MANAGE_BROWSE_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 

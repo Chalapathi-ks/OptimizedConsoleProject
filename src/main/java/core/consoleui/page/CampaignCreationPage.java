@@ -92,61 +92,45 @@ public class CampaignCreationPage extends UnbxdCommonPage {
     public String fillCampaignDataforUpcoming(Map<String, Object> campaignData) throws InterruptedException {
         String campaignName = "AutoTestupcoming" + System.currentTimeMillis();
         awaitForElementPresence(campaignNameInput);
-        ThreadWait();
         campaignNameInput.fill().with(campaignName);
-        awaitForElementPresence(moreOptionLink);
-        ThreadWait();
-        click(moreOptionLink);
-        threadWait();
-        //selectDevices((ArrayList<String>) campaignData.get("devices"));
-        //Thread.sleep(7000);
-//        if (awaitForElementPresence(SelectSegment)) {
-//            selectGlobalSegment();
-//        }
+        clickMoreOptionIfPresent();
         return campaignName;
+    }
+
+    protected void clickMoreOptionIfPresent() {
+        java.util.List<org.openqa.selenium.WebElement> links = getDriver()
+            .findElements(org.openqa.selenium.By.cssSelector(".grey-link-text"));
+        if (links.size() > 0 && links.get(0).isDisplayed()) {
+            try {
+                links.get(0).click();
+            } catch (Exception e) {
+                ((org.openqa.selenium.JavascriptExecutor) getDriver())
+                    .executeScript("arguments[0].click();", links.get(0));
+            }
+        }
     }
 
     public void clickonNext()  {
         awaitTillElementDisplayed(nextButton);
-        ThreadWait();
-        // Scroll until next button is visible and wait for it to be clickable
         scrollUntilVisible(nextButton);
-        awaitForElementPresence(nextButton);
-        ThreadWait();
-        // Use safeClick to handle click interception
         try {
             waitForElementToBeClickable(nextButton, "Next button");
-        nextButton.click();
+            nextButton.click();
         } catch (org.openqa.selenium.ElementClickInterceptedException e) {
-            // Fallback to JavaScript click if regular click is intercepted
             ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", nextButton.getElement());
         }
         awaitForPageToLoad();
-        threadWait();
     }
 
     public String fillCampaignData(Map<String, Object> campaignData) throws InterruptedException {
         String campaignName = "AutoTest" + System.currentTimeMillis();
         awaitForElementPresence(campaignNameInput);
-        ThreadWait();
         campaignNameInput.fill().with(campaignName);
-        awaitForElementPresence(moreOptionLink);
-        ThreadWait();
-        click(moreOptionLink);
-        threadWait();
-        //selectDevices((ArrayList<String>) campaignData.get("devices"));
-        //Thread.sleep(7000);
-//        if(awaitForElementPresence(SelectSegment))
-//        {
-//            selectGlobalSegment();
-//        }
-//        campaignDescription.fill().with((String) campaignData.get("CampaignDescription"));
+        clickMoreOptionIfPresent();
 
         awaitTillElementDisplayed(nextButton);
-        threadWait();
         nextButton.click();
         awaitForPageToLoad();
-        threadWait();
 
         return campaignName;
 
@@ -155,25 +139,16 @@ public class CampaignCreationPage extends UnbxdCommonPage {
     public String fillCampaignDataForAB(Map<String, Object> campaignData,String timZone) throws InterruptedException {
         String campaignName = "AutoTest" + System.currentTimeMillis();
         awaitForElementPresence(campaignNameInput);
-        threadWait();
         campaignNameInput.fill().with(campaignName);
-        awaitForElementPresence(moreOptionLink);
-        click(moreOptionLink);
-        /*threadWait();
-        Datepicker(timZone);
-        click(calenderApplyButton);
-        selectDevices((ArrayList<String>) campaignData.get("devices"));*/
+        clickMoreOptionIfPresent();
         if(awaitForElementPresence(SSegmentDropDown))
         {
             selectGlobalSegment();
         }
-//        campaignDescription.fill().with((String) campaignData.get("CampaignDescription"));
 
         awaitTillElementDisplayed(nextButton);
-        threadWait();
         nextButton.click();
         awaitForPageToLoad();
-        threadWait();
 
         return campaignName;
 

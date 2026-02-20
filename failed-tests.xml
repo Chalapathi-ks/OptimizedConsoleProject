@@ -1,2 +1,3 @@
 <failed-tests>
+  <testcase name="globalBoostingTest" class="UnbxdTests.testNG.consoleui.MerchConditionTest.BoostTest" screenshot="screenshots/globalBoostingTest_1771609309608.png"/>
 </failed-tests>

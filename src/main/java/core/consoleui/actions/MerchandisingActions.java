@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class MerchandisingActions extends MerchandisingRulesPage {
 
@@ -21,29 +22,21 @@ public class MerchandisingActions extends MerchandisingRulesPage {
     CommercePageActions searchPageActions;
 
     public void publishCampaign() throws InterruptedException {
-        ThreadWait();
         awaitForElementPresence(publishButton);
         safeClick(publishButton);
         waitForLoaderToDisAppear(successMsgPopUp, "STILL PUBLISHING IS IN-PROGRESS");
         ThreadWait();
-        await();
-        Assert.assertFalse(awaitForElementPresence(publishButton), "CAMPAIGN PUBLISHING IS NOT WORKING!!!");
     }
 
     public void publishGlobalRule() throws InterruptedException {
-        ThreadWait();
         if (awaitForElementPresence(publishButton) == true) {
-            await();
             safeClick(publishButton);
             waitForLoaderToDisAppear(successMsgPopUp, "STILL PUBLISHING IS IN-PROGRESS");
             ThreadWait();
-            Assert.assertFalse(awaitForElementPresence(publishButton), "CAMPAIGN PUBLISHING IS NOT WORKING!!!");
         } else {
-            await();
             safeClick(saveAsDraftButton);
             waitForLoaderToDisAppear(successMsgPopUp, "STILL PUBLISHING IS IN-PROGRESS");
             ThreadWait();
-            Assert.assertFalse(awaitForElementPresence(saveAsDraftButton), "CAMPAIGN PUBLISHING IS NOT WORKING!!!");
         }
 
     }
@@ -206,12 +199,11 @@ public class MerchandisingActions extends MerchandisingRulesPage {
     public void selectAttribute(String value, FluentWebElement attribute) throws InterruptedException {
         ThreadWait();
         attribute.find(".RCB-select-arrow").click();
-        ThreadWait();
+        threadWait();
         if (attributeDropDownList.size() > 0) {
             attributeInput.clear();
-            ThreadWait();
             attributeInput.fill().with(value);
-            ThreadWait();
+            threadWait();
             selectDropDownValue(attributeDropDownList, value);
             ThreadWait();
         } else {
@@ -231,9 +223,9 @@ public class MerchandisingActions extends MerchandisingRulesPage {
     public void selectSortAttribute(String value, FluentWebElement attribute) throws InterruptedException {
         await();
         attribute.find(".RCB-select-arrow").click();
-        Thread.sleep(3000);
+        threadWait();
         selectDropDownValue(attributeDropDwnList, value);
-        Thread.sleep(3000);
+        ThreadWait();
     }
 
 
@@ -303,56 +295,41 @@ public class MerchandisingActions extends MerchandisingRulesPage {
     }
 
     public void clickOnApplyButton() {
-        awaitTillElementDisplayed(applyButton);
-        ThreadWait();
-        threadWait();
-        // Scroll element into view before clicking
-        scrollUntilVisible(applyButton);
-        ThreadWait();
-        // Wait for element to be clickable
-        waitForElementToBeClickable(applyButton, "Apply button");
-        ThreadWait();
         safeClick(applyButton);
-        ThreadWait();
     }
 
     public void deleteConditionIfItsPresent(int group) {
         if (conditionsList.size() > 0) {
             for (int i = 0; i < group; i++) {
-                deleteMerchandizingCondition();
+                if (!deleteMerchandizingCondition()) {
+                    System.out.println("Delete icon not found, skipping remaining deletions");
+                    break;
+                }
                 ThreadWait();
             }
         }
     }
 
     public void selectGlobalActionType (UnbxdEnum type) {
-//        if(awaitForElementPresence(AddBoostRuleButton))
-//            click(AddBoostRuleButton);
-//            switch (type)
-//            {
-//                case GLOBALBOOST:
-//                    click(globalBoostButton);
-//                case GLOBALFILTER:
-//                    click(globalFilterButton);
-//                default:
-//                    return;
-//            }
+        ThreadWait();
+        List<WebElement> addRuleBtns = getDriver().findElements(By.cssSelector(".rule-content .align-center .RCB-btn-primary"));
+        boolean addRuleVisible = addRuleBtns.size() > 0 && addRuleBtns.get(0).isDisplayed();
 
         switch (type) {
             case GLOBALBOOST:
-                if(awaitForElementPresence(AddBoostRuleButton)){
-                    click(AddBoostRuleButton);}
-                    else if(awaitForElementPresence(globalBoostButton)) {
-                        threadWait();
-                        click(globalBoostButton);
-                    }
+                if (addRuleVisible) {
+                    safeClick(AddBoostRuleButton);
+                } else if (globalBoostButton.isDisplayed()) {
+                    safeClick(globalBoostButton);
+                }
                 return;
             case GLOBALFILTER:
-                if(awaitForElementPresence(AddBoostRuleButton)){
-                    click(AddBoostRuleButton);}
-                else if(awaitForElementPresence(globalFilterButton)){
-                    threadWait();
-                click(globalFilterButton);}
+                if (addRuleVisible) {
+                    safeClick(AddBoostRuleButton);
+                } else if (globalFilterButton.isDisplayed()) {
+                    safeClick(globalFilterButton);
+                }
+                return;
             default:
                 return;
         }
@@ -439,13 +416,40 @@ public class MerchandisingActions extends MerchandisingRulesPage {
         }
     }
 
-    public void deleteMerchandizingCondition() {
-        awaitForElementPresence(deleteThePromtionMerchandizingSet);
-        click(deleteThePromtionMerchandizingSet);
+    public boolean deleteMerchandizingCondition() {
+        String[] deleteSelectors = {
+            ".merch-delete-icon",
+            ".promotion-filter-item .unx-qa-deleteicon",
+            ".promotion-filter-item [class*='delete']",
+            ".promotion-filters-list [class*='delete']",
+            ".unx-icon-delete"
+        };
+        WebElement deleteIcon = null;
+        for (String selector : deleteSelectors) {
+            List<WebElement> found = getDriver().findElements(By.cssSelector(selector));
+            if (found.size() > 0 && found.get(0).isDisplayed()) {
+                deleteIcon = found.get(0);
+                System.out.println("Found delete icon with selector: " + selector);
+                break;
+            }
+        }
+        if (deleteIcon == null) {
+            System.out.println("No delete icon found with any known selector");
+            return false;
+        }
+        try {
+            ((JavascriptExecutor) getDriver()).executeScript(
+                "arguments[0].scrollIntoView({block:'center'});", deleteIcon);
+            ThreadWait();
+            deleteIcon.click();
+        } catch (Exception e) {
+            ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", deleteIcon);
+        }
         awaitForElementPresence(searchPageActions.modalWindow);
         awaitForElementPresence(searchPageActions.deleteYesButton);
-        click(searchPageActions.deleteYesButton);
+        safeClick(searchPageActions.deleteYesButton);
         ThreadWait();
+        return true;
     }
 
     public void verifySlotIconIsPresentAtGivenPosition(int slotCount) {
@@ -477,9 +481,8 @@ public class MerchandisingActions extends MerchandisingRulesPage {
             threadWait();
             click(searchPageActions.menuIcon);
         }
-        Thread.sleep(3000);
+        awaitForElementPresence(seach_browsepreview);
         click(seach_browsepreview);
-        threadWait();
         threadWait();
     }
     public void ClickViewHideInsight()

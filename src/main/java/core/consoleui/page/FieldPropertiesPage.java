@@ -78,7 +78,6 @@ public class FieldPropertiesPage extends UiBase
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return  SEARCH_FIELD_PROPERTIES_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 }

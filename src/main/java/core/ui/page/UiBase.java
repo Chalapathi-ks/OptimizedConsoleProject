@@ -258,17 +258,17 @@ public class UiBase extends PageBase {
 
     public void threadWait() {
         try {
-            Thread.sleep(1500);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
     }
 
     public void threadWaitForBackendVerification() {
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
     }
 
@@ -333,9 +333,6 @@ public class UiBase extends PageBase {
 
     public void unbxdInputBoxSearch(FluentWebElement element, String name) {
         try {
-            //String campaignName = campaignCreationPage.fillCampaignData();
-            awaitForElementPresence(element);
-            threadWait();
             element.getElement().sendKeys(name);
             threadWait();
         } catch (Exception e) {
@@ -696,9 +693,9 @@ public class UiBase extends PageBase {
 
     public static void ThreadWait() {
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
     }
 

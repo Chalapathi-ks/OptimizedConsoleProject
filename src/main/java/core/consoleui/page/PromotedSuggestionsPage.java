@@ -11,7 +11,6 @@ public class PromotedSuggestionsPage extends UiBase {
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return  PROMOTEDSUGGESTIONS_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 

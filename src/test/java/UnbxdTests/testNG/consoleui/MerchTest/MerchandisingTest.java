@@ -56,20 +56,16 @@ public class MerchandisingTest extends BaseTest {
 
         public void createPromotion(String query,boolean bannerOrFacet,boolean queryBasedBanner) throws InterruptedException {
             searchPage.awaitForPageToLoad();
-            searchPage.threadWait();
             if(searchPage.queryRuleByName(query)!=null) {
-                searchPage.threadWait();
                 searchPage.deleteQueryRule(query);
                 if (bannerOrFacet == true) {
                     searchPage.clickOnAddRule(bannerOrFacet);
                     if (queryBasedBanner == true) {
-                        searchPage.threadWait();
                         searchPage.goToQueryBasedBanner();
                     } else {
                         searchPage.goToFieldRuleBasedBanner();
                     }
                 } else {
-                    searchPage.threadWait();
                     searchPage.clickOnAddRule(bannerOrFacet);
                     if (searchPage.awaitForElementPresence(searchPage.newQueryRuleInput) == true) {
                         searchPage.fillQueryRuleData(query, null);
@@ -89,7 +85,6 @@ public class MerchandisingTest extends BaseTest {
                 }
                 else {
                     searchPage.clickOnAddRule(bannerOrFacet);
-                    searchPage.threadWait();
                     if (searchPage.awaitForElementPresence(searchPage.newQueryRuleInput) == true) {
                         searchPage.fillQueryRuleData(query, null);
                     }
@@ -99,7 +94,6 @@ public class MerchandisingTest extends BaseTest {
 
     public void createBrowsePromotion(String page,boolean bannerOrFacet,boolean queryBasedBanner) throws InterruptedException {
         searchPage.awaitForPageToLoad();
-        searchPage.threadWait();
         if(searchPage.queryRuleByName(page)!=null) {
             searchPage.deleteQueryRule(page);
             if (bannerOrFacet == true) {
@@ -127,7 +121,6 @@ public class MerchandisingTest extends BaseTest {
             }
             else {
                 searchPage.clickOnAddRule(bannerOrFacet);
-                searchPage.threadWait();
                 searchPage.fillQueryRuleData(null,page);
             }
         }
@@ -137,13 +130,11 @@ public class MerchandisingTest extends BaseTest {
 
     public void createGlobalRulePromotion() throws InterruptedException {
         searchPage.awaitForPageToLoad();
-        searchPage.threadWait();
         searchPage.editGlobalRule();
         searchPage.awaitForPageToLoad();
     }
 
     public void fillMerchandisingData(JsonArray object, UnbxdEnum section, boolean useUpdatedData) throws InterruptedException {
-        searchPage.threadWait();
         for(int i=0;i<object.size();i++)
         {
             if(i!=0)

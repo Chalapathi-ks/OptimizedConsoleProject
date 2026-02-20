@@ -178,9 +178,7 @@ public class SegmentActions extends SegmentPage {
         String campaignName = "AutoTest" + System.currentTimeMillis();
         awaitForElementPresence(campaignNameInput);
         campaignNameInput.fill().with(campaignName);
-        awaitForElementPresence(moreOptionLink);
-        click(moreOptionLink);
-        threadWait();
+        clickMoreOptionIfPresent();
         return campaignName;
     }
 

@@ -96,7 +96,6 @@ public class SynonymsPage extends UiBase {
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return SYNONYMS.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 }

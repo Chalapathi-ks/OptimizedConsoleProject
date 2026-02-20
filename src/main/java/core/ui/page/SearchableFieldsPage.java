@@ -44,7 +44,6 @@ public class SearchableFieldsPage extends UiBase{
 
     public String getUrl()
     {
-        awaitForPageToLoad();
         return MANAGE_BROWSE_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 
