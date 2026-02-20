@@ -40,7 +40,8 @@ public class BannerActions extends CommercePageActions {
         click(htmlRadioButton);
         threadWait();
         new WebDriverWait(getDriver(), 40).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".banner-tab-header .radio-tab:nth-child(2) input")));
-        new WebDriverWait(getDriver(), 25).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".banner-tab-header .radio-tab:nth-child(2) input")));
+        threadWait();
+        new WebDriverWait(getDriver(), 35).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".banner-html-body .RCB-form-el")));
         threadWait();
         fillHtmlBanner(html);
         threadWait();
@@ -53,10 +54,9 @@ public class BannerActions extends CommercePageActions {
         threadWait();
         safeClick(imageUrlRadioButton);
         new WebDriverWait(getDriver(), 40).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".banner-tab-header .radio-tab:nth-child(1) input")));
-        new WebDriverWait(getDriver(), 25).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".banner-tab-header .radio-tab:nth-child(1) input")));
         threadWait();
         // Wait for tab content / image URL input (remote can render slower)
-        new WebDriverWait(getDriver(), 25).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@name='imageUrl']")));
+        new WebDriverWait(getDriver(), 35).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@name='imageUrl']")));
         awaitForElementPresence(bannerInputImgUrl);
         Assert.assertTrue(imgUrlRadioButtonIsSelected.isSelected(),"ImageUrl Radio Button is not selected");
         // Retry on stale: DOM can re-render after tab content loads

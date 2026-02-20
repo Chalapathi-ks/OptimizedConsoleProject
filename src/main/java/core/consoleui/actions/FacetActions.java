@@ -296,8 +296,12 @@ public boolean isFacetToggleActive(String facetName) {
         try {
             threadWait();
             Assert.assertTrue(afterUpdateRanking.isDisplayed(), "Ranking field is not displayed");
+            for (int i = 0; i < 24; i++) {
+                threadWait();
+                if ("2".equals(afterUpdateRanking.getText().trim())) break;
+                if (i == 23) Assert.fail("Ranking did not update to 2 within timeout");
+            }
             Assert.assertTrue(afterUpdateRanking.getText().equals("2"), "Ranking was not updated to 2");
-            System.out.println("Successfully verified ranking update to 2");
         } catch (Exception e) {
             System.out.println("Failed to verify ranking update: " + e.getMessage());
         }

@@ -21,9 +21,10 @@ import static lib.constants.UnbxdErrorConstants.*;
 
 public class CommercePageActions extends CommerceSearchPage {
 
-    private static final int SUCCESS_TOAST_WAIT_SEC = 45;
+    private static final int SUCCESS_TOAST_WAIT_SEC = 60;
     private static final By SUCCESS_TOAST_SELECTOR = By.cssSelector(".unx-qa-toastsucess, .unx-qa-toastsuccess");
     private static final By STOP_CAMPAIGN_BY = By.cssSelector(".unx-qa-stop");
+    private static final By ACTIVE_STATUS_BY = By.cssSelector(".unx-qa-active");
     private static final By CONDITION_TITLE_BY = By.cssSelector(".action-rules-list .action-title span:nth-child(2)");
 
     MerchandisingActions merchandisingActions;
@@ -128,6 +129,12 @@ public class CommercePageActions extends CommerceSearchPage {
             ExpectedConditions.presenceOfElementLocated(STOP_CAMPAIGN_BY));
     }
 
+    /** Waits for the active status badge to appear (e.g. after publish/duplicate). Use before asserting activeStatus. */
+    public void waitForActiveStatusVisible(int timeoutSec) {
+        new WebDriverWait(getDriver(), timeoutSec).until(
+            ExpectedConditions.visibilityOfElementLocated(ACTIVE_STATUS_BY));
+    }
+
     public void goToQueryBasedBanner()
     {
         awaitForElementPresence(queryBasedBannerButon);
@@ -173,12 +180,19 @@ public class CommercePageActions extends CommerceSearchPage {
         awaitForElementPresence(Addanothercampaign);
         click(Addanothercampaign);
     }
-    public String getConditionTitle()
-    {
+    public String getConditionTitle() {
         await();
-        new WebDriverWait(getDriver(), 20).until(ExpectedConditions.presenceOfElementLocated(CONDITION_TITLE_BY));
+        new WebDriverWait(getDriver(), 25).until(ExpectedConditions.presenceOfElementLocated(CONDITION_TITLE_BY));
         scrollToBottom();
-        return conditionTitle.getText().trim();
+        for (int attempt = 0; attempt < 3; attempt++) {
+            try {
+                return conditionTitle.getText().trim();
+            } catch (org.openqa.selenium.StaleElementReferenceException e) {
+                await();
+                if (attempt == 2) throw e;
+            }
+        }
+        throw new IllegalStateException("getConditionTitle failed after retries");
     }
 
     public int getConditionSize()
@@ -322,51 +336,90 @@ public class CommercePageActions extends CommerceSearchPage {
             awaitForElementPresence(browseModal);
             FluentWebElement searchInput = browseModal.findFirst(".RCB-dd-search-ip");
             searchInput.fill().with(browse_Attribute);
+            threadWait();
             await();
             FluentWebElement attributeOption = null;
-            for (int retry = 0; retry < 25; retry++) {
+            for (int retry = 0; retry < 35; retry++) {
                 await();
                 FluentWebElement modal = findFirst(".browse-picker-modal");
                 FluentList<FluentWebElement> items = modal.find(".RCB-list-item.dm-dd-item");
                 for (FluentWebElement el : items) {
-                    if (el.getText().trim().equalsIgnoreCase(browse_Attribute)) {
-                        attributeOption = el;
-                        break;
-                    }
+                    try {
+                        if (el.getText().trim().equalsIgnoreCase(browse_Attribute)) {
+                            attributeOption = el;
+                            break;
+                        }
+                    } catch (org.openqa.selenium.StaleElementReferenceException ignored) { }
                 }
                 if (attributeOption != null) break;
                 threadWait();
             }
             Assert.assertNotNull(attributeOption, "Attribute option not found in browse-picker: " + browse_Attribute);
-            scrollUntilVisible(attributeOption);
-            waitForElementToBeClickable(attributeOption, "Attribute option");
-            try {
-                attributeOption.click();
-            } catch (ElementClickInterceptedException e) {
-                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(attributeOption.getElement()));
+            for (int clickAttempt = 0; clickAttempt < 3; clickAttempt++) {
+                try {
+                    if (attributeOption == null) break;
+                    scrollUntilVisible(attributeOption);
+                    waitForElementToBeClickable(attributeOption, "Attribute option");
+                    attributeOption.click();
+                    break;
+                } catch (org.openqa.selenium.StaleElementReferenceException e) {
+                    await();
+                    FluentWebElement modal = findFirst(".browse-picker-modal");
+                    FluentList<FluentWebElement> items = modal.find(".RCB-list-item.dm-dd-item");
+                    attributeOption = null;
+                    for (FluentWebElement el : items) {
+                        try {
+                            if (el.getText().trim().equalsIgnoreCase(browse_Attribute)) { attributeOption = el; break; }
+                        } catch (org.openqa.selenium.StaleElementReferenceException ignored) { }
+                    }
+                    if (attributeOption == null) throw e;
+                } catch (ElementClickInterceptedException e) {
+                    if (attributeOption != null)
+                        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(attributeOption.getElement()));
+                    break;
+                }
             }
             await();
             FluentWebElement valueOption = null;
-            for (int retry = 0; retry < 15; retry++) {
+            for (int retry = 0; retry < 30; retry++) {
                 await();
                 FluentWebElement modal = findFirst(".browse-picker-modal");
                 FluentList<FluentWebElement> valueItems = modal.find(".list-item");
                 for (FluentWebElement el : valueItems) {
-                    if (el.getText().trim().equalsIgnoreCase(browse_Value)) {
-                        valueOption = el;
-                        break;
-                    }
+                    try {
+                        if (el.getText().trim().equalsIgnoreCase(browse_Value)) {
+                            valueOption = el;
+                            break;
+                        }
+                    } catch (org.openqa.selenium.StaleElementReferenceException ignored) { }
                 }
                 if (valueOption != null) break;
                 threadWait();
             }
             Assert.assertNotNull(valueOption, "Value option not found in browse-picker: " + browse_Value);
-            scrollUntilVisible(valueOption);
-            waitForElementToBeClickable(valueOption, "Value option");
-            try {
-                valueOption.click();
-            } catch (ElementClickInterceptedException e) {
-                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(valueOption.getElement()));
+            for (int clickAttempt = 0; clickAttempt < 3; clickAttempt++) {
+                try {
+                    if (valueOption == null) break;
+                    scrollUntilVisible(valueOption);
+                    waitForElementToBeClickable(valueOption, "Value option");
+                    valueOption.click();
+                    break;
+                } catch (org.openqa.selenium.StaleElementReferenceException e) {
+                    await();
+                    FluentWebElement modal = findFirst(".browse-picker-modal");
+                    FluentList<FluentWebElement> valueItems = modal.find(".list-item");
+                    valueOption = null;
+                    for (FluentWebElement el : valueItems) {
+                        try {
+                            if (el.getText().trim().equalsIgnoreCase(browse_Value)) { valueOption = el; break; }
+                        } catch (org.openqa.selenium.StaleElementReferenceException ignored) { }
+                    }
+                    if (valueOption == null) throw e;
+                } catch (ElementClickInterceptedException e) {
+                    if (valueOption != null)
+                        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", unwrapWebElement(valueOption.getElement()));
+                    break;
+                }
             }
             await();
             categorypathApplyButton.click();

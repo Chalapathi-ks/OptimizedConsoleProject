@@ -136,7 +136,7 @@ public class CampaignCreationPage extends UnbxdCommonPage {
             By.cssSelector(".campaign-name-search input"),
             By.cssSelector(".RCB-form-el-block input[type='text']")
         };
-        new WebDriverWait(getDriver(), 30).until(new ExpectedCondition<Boolean>() {
+        new WebDriverWait(getDriver(), 45).until(new ExpectedCondition<Boolean>() {
             @Override
             public Boolean apply(WebDriver driver) {
                 for (By by : locators) {

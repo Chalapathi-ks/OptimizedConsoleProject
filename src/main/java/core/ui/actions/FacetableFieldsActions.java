@@ -174,7 +174,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
         ThreadWait();
         selectValueBYMatchingText(facetAttribute);
         await();
-        new WebDriverWait(getDriver(), 20).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='display-name']//input|//input[@id='display_name']")));
+        new WebDriverWait(getDriver(), 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='display-name']//input|//input[@id='display_name']")));
         displayNameInput.fill().with(name);
         awaitForElementPresence(facetEnableToggle);
         if (!isActiveTogglePresent()) {
@@ -329,7 +329,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
         selectValueBYMatchingText(state);
     }
 
-    /** Wait for Update facet button (e.g. after editing facet details); use 25s on remote. */
+    /** Wait for Update facet button (e.g. after editing facet details); use 35s on remote. */
     public void awaitForUpdateFacetButton(int timeoutSec) {
         new WebDriverWait(getDriver(), timeoutSec).until(
             ExpectedConditions.presenceOfElementLocated(FacetableFieldsPage.UPDATE_FACET_BUTTON_BY));

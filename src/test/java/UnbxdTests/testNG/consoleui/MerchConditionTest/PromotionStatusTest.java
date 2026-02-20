@@ -134,8 +134,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         // Wait for the active status badge to appear
         searchPage.await();
         merchandisingActions.await();
-        // Wait for status badge to appear (with retry logic)
-        merchandisingActions.awaitTillElementDisplayed(merchandisingActions.activeStatus);
+        searchPageActions.waitForActiveStatusVisible(25);
         Assert.assertTrue(merchandisingActions.isDisplayedSafe(merchandisingActions.activeStatus), "SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
 
         //Stopped the rule
@@ -183,7 +182,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         merchandisingActions.verifySuccessMessage();
         merchandisingActions.await();
         Assert.assertNotNull(searchPage.queryRuleByName(query));
-        merchandisingActions.awaitForElementPresence(merchandisingActions.activeStatus);
+        searchPageActions.waitForActiveStatusVisible(25);
         Assert.assertTrue(merchandisingActions.isDisplayedSafe(merchandisingActions.activeStatus), "SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
 
         //Stopped the rule
@@ -209,7 +208,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         merchandisingActions.await();
         searchPage.queryRuleByName(query);
         merchandisingActions.campaignPromotions.getText().contains("copy");
-        merchandisingActions.awaitForElementPresence(merchandisingActions.activeStatus);
+        searchPageActions.waitForActiveStatusVisible(25);
         Assert.assertTrue(merchandisingActions.isDisplayedSafe(merchandisingActions.activeStatus), "SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
 
         goTo(searchPage);
@@ -325,6 +324,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         merchandisingActions.await();
         Assert.assertNotNull(searchPage.queryRuleByName(page));
         pageRules.add(page);
+        searchPageActions.waitForActiveStatusVisible(25);
         Assert.assertTrue(merchandisingActions.isDisplayedSafe(merchandisingActions.activeStatus), "SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
 
         //Stopped the rule
@@ -350,6 +350,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         merchandisingActions.await();
         searchPage.queryRuleByName(page);
         merchandisingActions.campaignPromotions.getText().contains("copy");
+        searchPageActions.waitForActiveStatusVisible(25);
         Assert.assertTrue(merchandisingActions.isDisplayedSafe(merchandisingActions.activeStatus), "SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
 
         goTo(browsePage);

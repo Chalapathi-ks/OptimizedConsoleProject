@@ -264,7 +264,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
 //        Assert.assertTrue(facetActions.rangeEnd_value.getTextContent().contains(rangeEndValue));
         facetableFieldsActions.editFacetIcon.click();
         String facetUpdateDisplayName = facetableFieldsActions.fillUpdateFacetDetails(testData);
-        facetableFieldsActions.awaitForUpdateFacetButton(25);
+        facetableFieldsActions.awaitForUpdateFacetButton(35);
         facetableFieldsActions.updateFacet.click();
 
         click(merchandisingActions.fieldRulePublishBtn);
@@ -378,7 +378,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         Assert.assertEquals(String.valueOf(fLenght), facetLenght);
         facetableFieldsActions.editFacetIcon.click();
         String facetUpdateDisplayName = facetableFieldsActions.fillUpdateFacetDetails(testData);
-        facetableFieldsActions.awaitForUpdateFacetButton(25);
+        facetableFieldsActions.awaitForUpdateFacetButton(35);
         facetableFieldsActions.updateFacet.click();
 
         click(merchandisingActions.fieldRulePublishBtn);
@@ -736,7 +736,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         Assert.assertEquals(String.valueOf(facetLength), FacetLenght);
         merchandisingActions.safeClick(facetableFieldsActions.editFacetIcon);
         String facetUpdateDisplayName = facetableFieldsActions.fillUpdateFacetDetails(testData);
-        facetableFieldsActions.awaitForUpdateFacetButton(25);
+        facetableFieldsActions.awaitForUpdateFacetButton(35);
         merchandisingActions.safeClick(facetableFieldsActions.updateFacet);
 
         merchandisingActions.safeClick(merchandisingActions.fieldRulePublishBtn);

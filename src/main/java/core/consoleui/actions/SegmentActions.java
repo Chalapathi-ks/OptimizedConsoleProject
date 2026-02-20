@@ -104,8 +104,20 @@ public class SegmentActions extends SegmentPage {
         threadWait();
     }
 
+    /** Polls for the segment rule to appear in the listing (e.g. after save). Returns null if not found within maxWaitSec. */
+    public FluentWebElement waitForSegmentRulePresent(String name, int maxWaitSec) {
+        long deadline = System.currentTimeMillis() + maxWaitSec * 1000L;
+        while (System.currentTimeMillis() < deadline) {
+            FluentWebElement el = segmentRuleByName(name);
+            if (el != null) return el;
+            threadWait();
+            threadWait();
+        }
+        return null;
+    }
+
     public FluentWebElement segmentRuleByName(String name) {
-        final int maxAttempts = 6;
+        final int maxAttempts = 10;
         for (int attempt = 1; attempt <= maxAttempts; attempt++) {
             if (attempt > 1) threadWait();
             shortWait();
@@ -290,7 +302,13 @@ public class SegmentActions extends SegmentPage {
         for (FluentWebElement option : options) {
             if (option.getText().trim().equalsIgnoreCase(Value)) {
                 shortWait();
-                option.click();
+                scrollUntilVisible(option);
+                waitForElementToBeClickable(option, "Custom attribute option");
+                try {
+                    option.click();
+                } catch (org.openqa.selenium.ElementClickInterceptedException e) {
+                    clickUsingJS(option);
+                }
                 found = true;
                 break;
             }

@@ -76,7 +76,8 @@ public class SegmentTest extends MerchandisingTest {
         segmenPageActions.clickOnSave();
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
-        Assert.assertNotNull(segmenPageActions.segmentRuleByName(segmentName));
+        FluentWebElement segmentRule = segmenPageActions.waitForSegmentRulePresent(segmentName, 25);
+        Assert.assertNotNull(segmentRule, "Segment rule not found in listing: " + segmentName);
         SegmentRules.add(segmentName);
 
         searchPageActions.selectActionType(UnbxdEnum.EDIT,segmentName);
@@ -128,7 +129,8 @@ public class SegmentTest extends MerchandisingTest {
         segmenPageActions.clickOnSave();
         merchandisingActions.verifySuccessMessage();
         searchPage.threadWait();
-        Assert.assertNotNull(segmenPageActions.segmentRuleByName(segmentName));
+        FluentWebElement segmentRule = segmenPageActions.waitForSegmentRulePresent(segmentName, 25);
+        Assert.assertNotNull(segmentRule, "Segment rule not found in listing: " + segmentName);
         SegmentRules.add(segmentName);
 
         goTo(searchPage);
@@ -189,7 +191,8 @@ public class SegmentTest extends MerchandisingTest {
         segmenPageActions.clickOnSave();
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
-        Assert.assertNotNull(segmenPageActions.segmentRuleByName(segmentName));
+        FluentWebElement segmentRule = segmenPageActions.waitForSegmentRulePresent(segmentName, 25);
+        Assert.assertNotNull(segmentRule, "Segment rule not found in listing: " + segmentName);
         SegmentRules.add(segmentName);
 
         searchPageActions.selectActionType(UnbxdEnum.EDIT,segmentName);
@@ -202,7 +205,7 @@ public class SegmentTest extends MerchandisingTest {
         segmenPageActions.clickOnSave();
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
-        Assert.assertNotNull(segmenPageActions.segmentRuleByName(segmentName));
+        Assert.assertNotNull(segmenPageActions.waitForSegmentRulePresent(segmentName, 25), "Segment rule not found: " + segmentName);
 
         goTo(segmentPage);
         segmenPageActions.deleteSegmentRule(segmentName);
@@ -235,7 +238,8 @@ public class SegmentTest extends MerchandisingTest {
         segmenPageActions.clickOnSave();
         merchandisingActions.verifySuccessMessage();
         searchPage.threadWait();
-        Assert.assertNotNull(segmenPageActions.segmentRuleByName(segmentName));
+        FluentWebElement segmentRule = segmenPageActions.waitForSegmentRulePresent(segmentName, 25);
+        Assert.assertNotNull(segmentRule, "Segment rule not found in listing: " + segmentName);
         SegmentRules.add(segmentName);
 
         goTo(searchPage);
@@ -291,7 +295,8 @@ public class SegmentTest extends MerchandisingTest {
         segmenPageActions.clickOnSave();
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
-        Assert.assertNotNull(segmenPageActions.segmentRuleByName(segmentName));
+        FluentWebElement segmentRule = segmenPageActions.waitForSegmentRulePresent(segmentName, 25);
+        Assert.assertNotNull(segmentRule, "Segment rule not found in listing: " + segmentName);
         SegmentRules.add(segmentName);
 
         searchPageActions.selectActionType(UnbxdEnum.EDIT,segmentName);
@@ -344,7 +349,7 @@ public class SegmentTest extends MerchandisingTest {
         segmenPageActions.clickOnSave();
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
-        Assert.assertNotNull(segmenPageActions.segmentRuleByName(segmentName));
+        Assert.assertNotNull(segmenPageActions.waitForSegmentRulePresent(segmentName, 25), "Segment rule not found: " + segmentName);
         SegmentRules.add(segmentName);
 
         goTo(browsePage);
@@ -404,7 +409,7 @@ public class SegmentTest extends MerchandisingTest {
         segmenPageActions.clickOnSave();
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
-        Assert.assertNotNull(segmenPageActions.segmentRuleByName(segmentName));
+        Assert.assertNotNull(segmenPageActions.waitForSegmentRulePresent(segmentName, 25), "Segment rule not found: " + segmentName);
         SegmentRules.add(segmentName);
 
         searchPageActions.selectActionType(UnbxdEnum.EDIT,segmentName);
@@ -417,7 +422,7 @@ public class SegmentTest extends MerchandisingTest {
         segmenPageActions.clickOnSave();
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
-        Assert.assertNotNull(segmenPageActions.segmentRuleByName(segmentName));
+        Assert.assertNotNull(segmenPageActions.waitForSegmentRulePresent(segmentName, 25), "Segment rule not found: " + segmentName);
         SegmentRules.add(segmentName);
 
         goTo(browsePage);

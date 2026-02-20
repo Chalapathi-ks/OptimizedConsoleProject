@@ -16,6 +16,8 @@ public class PromotedSuggestionsActions extends PromotedSuggestionsPage {
         awaitForElementPresence(addPromotedSuggestionButton);
         click(addPromotedSuggestionButton);
         awaitForElementPresence(modalTitle);
+        new WebDriverWait(getDriver(), 15).until(org.openqa.selenium.support.ui.ExpectedConditions.textToBePresentInElementLocated(
+            org.openqa.selenium.By.cssSelector(".RCB-modal-title"), "Add Promoted Suggestion"));
         Assert.assertEquals(modalTitle.getText().trim(), "Add Promoted Suggestion", "Modal title mismatch");
         awaitForElementPresence(termsContainer);
         click(termsContainer);

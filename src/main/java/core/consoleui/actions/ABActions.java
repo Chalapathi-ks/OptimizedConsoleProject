@@ -2,14 +2,10 @@ package core.consoleui.actions;
 
 import core.consoleui.page.ABTestPage;
 import lib.enums.UnbxdEnum;
-import lib.Helper;
 import org.fluentlenium.core.annotation.Page;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.Keys;
 import org.testng.Assert;
-import com.google.gson.JsonObject;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
 
 
 public class ABActions extends ABTestPage {
@@ -23,6 +19,8 @@ public class ABActions extends ABTestPage {
     public void enableABToggle() {
         if (awaitForElementPresence(abTestToggle) == true) {
             click(abTestToggle);
+            new WebDriverWait(getDriver(), 25).until(
+                ExpectedConditions.visibilityOf(abTestEnabledToggle.getElement()));
             Assert.assertTrue(awaitForElementPresence(abTestEnabledToggle), "AB CONDITION TOGGLE IS NOT ENABLED");
         }else{
             Assert.fail("AB TEST TOGGLE BUTTON IS NOT PRESENT");
@@ -33,32 +31,58 @@ public class ABActions extends ABTestPage {
         threadWait();
         click(winnerDecidedBy);
 
-        // Wait for dropdown options to be present and visible
-        int maxTries = 10;
+        // Wait for dropdown options to be present and at least one to have non-empty text
+        int maxTries = 15;
         int tries = 0;
-        while (segmentActions.typeValueList.size() == 0 && tries < maxTries) {
-            System.out.println("Waiting for dropdown options... try " + (tries + 1));
+        while (tries < maxTries) {
             ThreadWait();
+            if (segmentActions.typeValueList.size() > 0) {
+                boolean hasMatchingOrNonEmpty = false;
+                for (org.fluentlenium.core.domain.FluentWebElement ele : segmentActions.typeValueList) {
+                    try {
+                        String text = ele.getText();
+                        if (text != null && !text.trim().isEmpty()) {
+                            hasMatchingOrNonEmpty = true;
+                            if (text.trim().equalsIgnoreCase(expectedValue != null ? expectedValue.trim() : "")) {
+                                click(ele);
+                                return;
+                            }
+                        }
+                    } catch (Exception ignored) { }
+                }
+                if (hasMatchingOrNonEmpty) {
+                    // Options loaded but no exact match yet; retry once more for timing
+                    ThreadWait();
+                    for (org.fluentlenium.core.domain.FluentWebElement ele : segmentActions.typeValueList) {
+                        try {
+                            if (ele.getText().trim().equalsIgnoreCase(expectedValue != null ? expectedValue.trim() : "")) {
+                                click(ele);
+                                return;
+                            }
+                        } catch (Exception ignored) { }
+                    }
+                    break;
+                }
+            }
             tries++;
         }
-        System.out.println("Dropdown options found: " + segmentActions.typeValueList.size());
         if (segmentActions.typeValueList.size() == 0) {
-            System.out.println("Dropdown container HTML: " + winnerDecidedBy.getElement().getAttribute("outerHTML"));
-            // If you have a static driver reference, print body HTML here. Otherwise, skip.
             Assert.fail("No values to select from the dropdown for winnerDecidedBy after waiting. Possible UI/data/selector issue.");
         }
-
         if (expectedValue == null || expectedValue.trim().isEmpty()) {
             Assert.fail("'winnerDecidedBy' value is missing or empty.");
         }
+        final String expectedTrim = expectedValue.trim();
         for (org.fluentlenium.core.domain.FluentWebElement ele : segmentActions.typeValueList) {
-            System.out.println("Dropdown option: '" + ele.getText() + "'");
-            if (ele.getText().trim().equalsIgnoreCase(expectedValue.trim())) {
-                click(ele);
-                return;
-            }
+            try {
+                if (ele.getText().trim().equalsIgnoreCase(expectedTrim)) {
+                    click(ele);
+                    return;
+                }
+            } catch (Exception ignored) { }
         }
-        Assert.fail("No matching value '" + expectedValue + "' found in the dropdown for winnerDecidedBy. Available options: " + segmentActions.typeValueList.stream().map(e -> e.getText()).collect(java.util.stream.Collectors.toList()));
+        String ev = expectedValue != null ? expectedValue : "";
+        Assert.fail("No matching value '" + ev + "' found in the dropdown for winnerDecidedBy. Available options: " + segmentActions.typeValueList.stream().map(e -> { try { return e.getText(); } catch (Exception ex) { return ""; } }).collect(java.util.stream.Collectors.toList()));
     }
 
      public String getWinnerDecidedByValue(){

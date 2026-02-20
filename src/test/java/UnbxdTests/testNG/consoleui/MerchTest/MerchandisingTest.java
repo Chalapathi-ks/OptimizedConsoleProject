@@ -283,58 +283,47 @@ public class MerchandisingTest extends BaseTest {
                     value = row.get("value").getAsString();
                 }
 
+                // Allow time for strategy details to load (e.g. extracted_color)
+                merchandisingActions.threadWait();
+                merchandisingActions.threadWait();
                 boolean foundMatch = false;
-                
-                // Check boost attributes first
-                if (merchandisingActions.MerchandisingStrategyBoostDetails.isDisplayed()) {
-                    String boostAttribute = merchandisingActions.MerchandisingStrategyBoostAttribute.getText();
-                    String boostCondition = merchandisingActions.MerchandisingStrategyBoostCondition.getText();
-                    String boostValue = merchandisingActions.MerchandisingStrategyBoostValue.getText();
-                    
-                    // Check if boost details contain attribute and value
-                    boolean containsBoostAttribute = boostAttribute.contains(attribute);
-                    boolean containsBoostValue = boostValue.contains(value);
-                    
-                    if (containsBoostAttribute && containsBoostValue) {
-                        System.out.println("Boost strategy details contain required elements: " 
-                            + attribute + " " + value);
-                        foundMatch = true;
+                for (int waitAttempt = 0; waitAttempt < 8 && !foundMatch; waitAttempt++) {
+                    if (waitAttempt > 0) {
+                        try { Thread.sleep(2000); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
                     }
-                }
-                
-                // Then check filter attributes if boost didn't match
-                if (!foundMatch && merchandisingActions.MerchandisingStrategyFilterAttribute.isDisplayed()) {
-                    String filterAttribute = merchandisingActions.MerchandisingStrategyFilterAttribute.getText();
-                    String filterCondition = merchandisingActions.MerchandisingStrategyFilterCondition.getText();
-                    String filterValue = merchandisingActions.MerchandisingStrategyFilterValue.getText();
-                    
-                    // Check if filter details contain attribute and value
-                    boolean containsFilterAttribute = filterAttribute.contains(attribute);
-                    boolean containsFilterValue = filterValue.contains(value);
-                    
-                    if (containsFilterAttribute && containsFilterValue) {
-                        System.out.println("Filter strategy details contain required elements: " 
-                            + attribute + " " + value);
-                        foundMatch = true;
+                    foundMatch = false;
+                    // Check boost attributes first
+                    if (merchandisingActions.MerchandisingStrategyBoostDetails.isDisplayed()) {
+                        String boostAttribute = merchandisingActions.MerchandisingStrategyBoostAttribute.getText();
+                        String boostValue = merchandisingActions.MerchandisingStrategyBoostValue.getText();
+                        boolean containsBoostAttribute = boostAttribute.contains(attribute);
+                        boolean containsBoostValue = boostValue.contains(value);
+                        if (containsBoostAttribute && containsBoostValue) {
+                            foundMatch = true;
+                        }
                     }
-                }
-
-                if (!foundMatch && merchandisingActions.MerchandisingStrategySlotAttribute.isDisplayed()) {
-                    String slotAttribute = merchandisingActions.MerchandisingStrategySlotAttribute.getText();
-                    String slotCondition = merchandisingActions.MerchandisingStrategySlotCondition.getText();
-                    String slotValue = merchandisingActions.MerchandisingStrategySlotValue.getText();
-                    
-                    // Check if slot details contain attribute and value (case-insensitive for UI display variants)
-                    boolean containsSlotAttribute = slotAttribute.toLowerCase().contains(attribute.toLowerCase());
-                    boolean containsSlotValue = slotValue.toLowerCase().contains(value.toLowerCase());
-                    
-                    if (containsSlotAttribute && containsSlotValue) {
-                        foundMatch = true;
+                    if (!foundMatch && merchandisingActions.MerchandisingStrategyFilterAttribute.isDisplayed()) {
+                        String filterAttribute = merchandisingActions.MerchandisingStrategyFilterAttribute.getText();
+                        String filterValue = merchandisingActions.MerchandisingStrategyFilterValue.getText();
+                        boolean containsFilterAttribute = filterAttribute.contains(attribute);
+                        boolean containsFilterValue = filterValue.contains(value);
+                        if (containsFilterAttribute && containsFilterValue) {
+                            foundMatch = true;
+                        }
+                    }
+                    if (!foundMatch && merchandisingActions.MerchandisingStrategySlotAttribute.isDisplayed()) {
+                        String slotAttribute = merchandisingActions.MerchandisingStrategySlotAttribute.getText();
+                        String slotValue = merchandisingActions.MerchandisingStrategySlotValue.getText();
+                        boolean containsSlotAttribute = slotAttribute.toLowerCase().contains(attribute.toLowerCase());
+                        boolean containsSlotValue = slotValue.toLowerCase().contains(value.toLowerCase());
+                        if (containsSlotAttribute && containsSlotValue) {
+                            foundMatch = true;
+                        }
                     }
                 }
 
                 // Assert that we found a match in either boost, filter, or slot
-                Assert.assertTrue(foundMatch, 
+                Assert.assertTrue(foundMatch,
                     "Strategy details missing attribute: " + attribute + " or value: " + value);
             }
             merchandisingActions.threadWait();

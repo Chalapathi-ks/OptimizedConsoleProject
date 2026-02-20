@@ -89,6 +89,7 @@ public class SearchBannerTest extends MerchandisingTest {
         searchPage.await();
         searchPage.queryRuleByName(query);
         merchandisingActions.campaignPromotions.getText().contains("copy");
+        searchPageActions.waitForActiveStatusVisible(25);
         Assert.assertTrue(merchandisingActions.activeStatus.isDisplayed(),"SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
 
         searchPage.await();

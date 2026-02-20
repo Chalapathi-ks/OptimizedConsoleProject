@@ -284,6 +284,7 @@ public class SimilarQueryTest extends MerchandisingTest {
         merchandisingActions.await();
         Assert.assertNotNull(searchPage.queryRuleByName(query));
         queryRules.add(query);
+        searchPageActions.waitForActiveStatusVisible(25);
         Assert.assertTrue(merchandisingActions.activeStatus.isDisplayed(), "SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
 
         //Stopped the rule
@@ -341,6 +342,7 @@ public class SimilarQueryTest extends MerchandisingTest {
         merchandisingActions.await();
         Assert.assertNotNull(searchPage.queryRuleByName(page));
         pageRules.add(page);
+        searchPageActions.waitForActiveStatusVisible(25);
         Assert.assertTrue(merchandisingActions.activeStatus.isDisplayed(), "SEARCH: PROMOTION RULE IS NOT IN ACTIVE STATE");
 
         //Stopped the rule
