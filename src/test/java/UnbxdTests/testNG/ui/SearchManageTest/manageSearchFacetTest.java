@@ -96,6 +96,7 @@ public class manageSearchFacetTest extends BaseTest {
         goTo(manageSearchFacetAndSearchFieldPage);//Manage
         searchPage.awaitForPageToLoad();
         searchPage.threadWait();
+        driver.navigate().refresh();
         searchPage.awaitForElementPresence(manageSearchFacetAndSearchFieldPage.searchManageFacetSection);
         if (facetableFieldsActions.getFacetUsingFieldName(facetName) != null) {
             click(facetableFieldsActions.deleteFacetIcon);
