@@ -121,10 +121,9 @@ public class ExtentTestNGITestListener implements ITestListener {
             return;
         }
         
-        // Calculate and log execution time
+        // Calculate execution time
         long executionTime = iTestResult.getEndMillis() - iTestResult.getStartMillis();
-        String formattedTime = formatExecutionTime(executionTime);
-        test.get().info("Execution Time: " + formattedTime);
+        String executionTimeFormatted = formatExecutionTime(executionTime);
         
         if (testStatus.equals(Status.FAIL)) {
             try {
@@ -158,38 +157,51 @@ public class ExtentTestNGITestListener implements ITestListener {
             if (iTestResult.getThrowable() != null) {
                 test.get().log(testStatus, "Failure Reason : " + iTestResult.getThrowable().getMessage());
             }
+            test.get().log(testStatus, "Execution Time: " + executionTimeFormatted);
         }
         if (testStatus.equals(Status.SKIP)) {
             if (iTestResult.getThrowable() != null) {
                 test.get().log(testStatus, "Skipped Reason: " + iTestResult.getThrowable().getMessage());
             }
+            test.get().log(testStatus, "Execution Time: " + executionTimeFormatted);
         }
         if (testStatus.equals(Status.PASS)) {
             test.get().pass("Test passed successfully");
+            test.get().log(Status.PASS, "Execution Time: " + executionTimeFormatted);
         }
     }
-
+    
     /**
-     * Formats execution time from milliseconds to a human-readable format
+     * Formats execution time in a human-readable format
      * @param milliseconds Execution time in milliseconds
-     * @return Formatted time string (e.g., "2.5 seconds", "1m 30s", "45ms")
+     * @return Formatted string (e.g., "2.5s", "1m 30s", "2h 15m")
      */
     private String formatExecutionTime(long milliseconds) {
         if (milliseconds < 1000) {
             return milliseconds + "ms";
-        } else if (milliseconds < 60000) {
-            // Less than 1 minute - show seconds with 2 decimal places
-            double seconds = milliseconds / 1000.0;
-            return String.format("%.2f seconds", seconds);
-        } else {
-            // 1 minute or more - show minutes and seconds
-            long minutes = milliseconds / 60000;
-            long seconds = (milliseconds % 60000) / 1000;
-            if (seconds > 0) {
-                return String.format("%dm %ds", minutes, seconds);
+        }
+        
+        long seconds = milliseconds / 1000;
+        if (seconds < 60) {
+            return String.format("%.2fs", seconds);
+        }
+        
+        long minutes = seconds / 60;
+        long remainingSeconds = seconds % 60;
+        if (minutes < 60) {
+            if (remainingSeconds > 0) {
+                return String.format("%dm %ds", minutes, remainingSeconds);
             } else {
                 return String.format("%dm", minutes);
             }
+        }
+        
+        long hours = minutes / 60;
+        long remainingMinutes = minutes % 60;
+        if (remainingMinutes > 0) {
+            return String.format("%dh %dm", hours, remainingMinutes);
+        } else {
+            return String.format("%dh", hours);
         }
     }
 

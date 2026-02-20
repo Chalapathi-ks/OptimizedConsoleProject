@@ -70,9 +70,7 @@ public class manageSearchFacetTest extends BaseTest {
     @Test(description = "This test verifies that facet ranking can be enabled, disabled, and updated for search facets.", priority = 1,dataProviderClass = ResourceLoader.class, dataProvider = "getTestDataFromFile")
     public void FacetRanking(Object data) throws InterruptedException {
         goTo(manageSearchFacetAndSearchFieldPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
-        searchPage.awaitForElementPresence(manageSearchFacetAndSearchFieldPage.searchManageFacetSection);
         String facetFieldName = facetActions.enableAndDisableTheRanking();
         Assert.assertTrue(searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess));
         ThreadWait();
@@ -95,9 +93,6 @@ public class manageSearchFacetTest extends BaseTest {
 
         goTo(manageSearchFacetAndSearchFieldPage);//Manage
         searchPage.threadWait();
-        searchPage.awaitForPageToLoad();
-        searchPage.threadWait();
-        searchPage.awaitForElementPresence(manageSearchFacetAndSearchFieldPage.searchManageFacetSection);
         if (facetableFieldsActions.getFacetUsingFieldName(facetName) != null) {
             click(facetableFieldsActions.deleteFacetIcon);
             facetableFieldsActions.awaitForElementPresence(facetableFieldsActions.deleteConfirmationTab);
@@ -108,9 +103,7 @@ public class manageSearchFacetTest extends BaseTest {
 
 
         goTo(manageSearchFacetAndSearchFieldPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
-        searchPage.awaitForElementPresence(manageSearchFacetAndSearchFieldPage.searchManageFacetSection);
         facetableFieldsActions.openCreateFacetForm();
         String facetDisplayName = facetableFieldsActions.fillFacetDetails(testData);
         facetableFieldsActions.saveFacet();
@@ -131,23 +124,15 @@ public class manageSearchFacetTest extends BaseTest {
         ThreadWait();
         createdFacets.add(facetUpdateDisplayName);
         goTo(manageSearchFacetAndSearchFieldPage);
-        searchPage.awaitForPageToLoad();
-        searchPage.threadWait();
-        searchPage.awaitForElementPresence(manageSearchFacetAndSearchFieldPage.searchManageFacetSection);
         Assert.assertNotNull(facetableFieldsActions.getFacetUsingDisplayName(facetUpdateDisplayName),"Facet creation is failing!!!");
 
        // Delete
         goTo(manageSearchFacetAndSearchFieldPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
-        searchPage.awaitForElementPresence(manageSearchFacetAndSearchFieldPage.searchManageFacetSection);
         facetableFieldsActions.deleteFacet(facetUpdateDisplayName);
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
         searchPage.threadWait();
         goTo(manageSearchFacetAndSearchFieldPage);
-        searchPage.awaitForPageToLoad();
-        searchPage.threadWait();
-        searchPage.awaitForElementPresence(manageSearchFacetAndSearchFieldPage.searchManageFacetSection);
         Assert.assertNull(searchPage.queryRuleByName(facetUpdateDisplayName), "CREATED QUERY RULE IS NOT DELETED");
 
 
@@ -162,9 +147,7 @@ public class manageSearchFacetTest extends BaseTest {
         String facetName = (String) testData.get("facetName");
 
         goTo(manageSearchFacetAndSearchFieldPage);//Manage
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
-        searchPage.awaitForElementPresence(manageSearchFacetAndSearchFieldPage.searchManageFacetSection);
         if (facetableFieldsActions.getFacetUsingFieldName(facetName) != null) {
             click(facetableFieldsActions.deleteFacetIcon);
             facetableFieldsActions.awaitForElementPresence(facetableFieldsActions.deleteConfirmationTab);
@@ -174,9 +157,7 @@ public class manageSearchFacetTest extends BaseTest {
         }
 
         goTo(manageSearchFacetAndSearchFieldPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
-        searchPage.awaitForElementPresence(manageSearchFacetAndSearchFieldPage.searchManageFacetSection);
         facetableFieldsActions.openCreateFacetForm();
         String facetDisplayName = facetableFieldsActions.fillFacetDetails(testData);
 
@@ -198,23 +179,15 @@ public class manageSearchFacetTest extends BaseTest {
         ThreadWait();
         createdFacets.add(facetUpdateDisplayName);
         goTo(manageSearchFacetAndSearchFieldPage);
-        searchPage.awaitForPageToLoad();
-        searchPage.threadWait();
-        searchPage.awaitForElementPresence(manageSearchFacetAndSearchFieldPage.searchManageFacetSection);
         Assert.assertNotNull(facetableFieldsActions.getFacetUsingDisplayName(facetUpdateDisplayName),"Facet creation is failing!!!");
 
         // Delete
         goTo(manageSearchFacetAndSearchFieldPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
-        searchPage.awaitForElementPresence(manageSearchFacetAndSearchFieldPage.searchManageFacetSection);
         facetableFieldsActions.deleteFacet(facetUpdateDisplayName);
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
         searchPage.threadWait();
         goTo(manageSearchFacetAndSearchFieldPage);
-        searchPage.awaitForPageToLoad();
-        searchPage.threadWait();
-        searchPage.awaitForElementPresence(manageSearchFacetAndSearchFieldPage.searchManageFacetSection);
         Assert.assertNull(searchPage.queryRuleByName(facetUpdateDisplayName), "CREATED QUERY RULE IS NOT DELETED");
 
     }
@@ -226,9 +199,7 @@ public class manageSearchFacetTest extends BaseTest {
     @Test(description = "This test verifies that facet ranking can be enabled, disabled, and updated for browse facets.", priority = 4,dataProviderClass = ResourceLoader.class, dataProvider = "getTestDataFromFile")
     public void BrowseFacetRanking(Object data) throws InterruptedException {
         goTo(browseFacetsPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
-        searchPage.awaitForElementPresence(facetableFieldsActions.facetableFieldGroup);
         String facetFieldName = facetActions.enableAndDisableTheRanking();
         Assert.assertTrue(searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess));
         ThreadWait();
@@ -250,9 +221,7 @@ public class manageSearchFacetTest extends BaseTest {
         testData.put("updatedFacetDisplayName", displayUpdateName);
 
         goTo(browseFacetsPage);//Manage
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
-        searchPage.awaitForElementPresence(facetableFieldsActions.facetableFieldGroup);
         if (facetableFieldsActions.getFacetUsingFieldName(facetName) != null) {
             click(facetableFieldsActions.deleteFacetIcon);
             facetableFieldsActions.awaitForElementPresence(facetableFieldsActions.deleteConfirmationTab);
@@ -262,9 +231,7 @@ public class manageSearchFacetTest extends BaseTest {
         }
 
         goTo(browseFacetsPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
-        searchPage.awaitForElementPresence(facetableFieldsActions.facetableFieldGroup);
         facetableFieldsActions.openCreateFacetForm();
         String facetDisplayName = facetableFieldsActions.fillFacetDetails(testData);
         facetableFieldsActions.saveFacet();
@@ -284,24 +251,16 @@ public class manageSearchFacetTest extends BaseTest {
         ThreadWait();
         createdFacets.add(facetUpdateDisplayName);
         goTo(manageSearchFacetAndSearchFieldPage);
-        searchPage.awaitForPageToLoad();
-        searchPage.threadWait();
-        searchPage.awaitForElementPresence(manageSearchFacetAndSearchFieldPage.searchManageFacetSection);
         ThreadWait();
         Assert.assertNotNull(facetableFieldsActions.getFacetUsingDisplayName(facetUpdateDisplayName),"Facet creation is failing!!!");
 
         // Delete
         goTo(browseFacetsPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
-        searchPage.awaitForElementPresence(facetableFieldsActions.facetableFieldGroup);
         facetableFieldsActions.deleteFacet(facetUpdateDisplayName);
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
         searchPage.threadWait();
         goTo(browseFacetsPage);
-        searchPage.awaitForPageToLoad();
-        searchPage.threadWait();
-        searchPage.awaitForElementPresence(facetableFieldsActions.facetableFieldGroup);
         Assert.assertNull(searchPage.queryRuleByName(facetUpdateDisplayName), "CREATED QUERY RULE IS NOT DELETED");
 
 
@@ -317,9 +276,7 @@ public class manageSearchFacetTest extends BaseTest {
 
 
         goTo(browseFacetsPage);//Manage
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
-        searchPage.awaitForElementPresence(facetableFieldsActions.facetableFieldGroup);
         if (facetableFieldsActions.getFacetUsingFieldName(facetName) != null) {
             click(facetableFieldsActions.deleteFacetIcon);
             facetableFieldsActions.awaitForElementPresence(facetableFieldsActions.deleteConfirmationTab);
@@ -329,9 +286,7 @@ public class manageSearchFacetTest extends BaseTest {
         }
 
         goTo(browseFacetsPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
-        searchPage.awaitForElementPresence(facetableFieldsActions.facetableFieldGroup);
         facetableFieldsActions.openCreateFacetForm();
         String facetDisplayName = facetableFieldsActions.fillFacetDetails(testData);
 
@@ -352,23 +307,15 @@ public class manageSearchFacetTest extends BaseTest {
         ThreadWait();
         createdFacets.add(facetUpdateDisplayName);
         goTo(manageSearchFacetAndSearchFieldPage);
-        searchPage.awaitForPageToLoad();
-        searchPage.threadWait();
-        searchPage.awaitForElementPresence(manageSearchFacetAndSearchFieldPage.searchManageFacetSection);
         Assert.assertNotNull(facetableFieldsActions.getFacetUsingDisplayName(facetUpdateDisplayName),"Facet creation is failing!!!");
 
         // Delete
         goTo(browseFacetsPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
-        searchPage.awaitForElementPresence(facetableFieldsActions.facetableFieldGroup);
         facetableFieldsActions.deleteFacet(facetUpdateDisplayName);
         searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
         searchPage.threadWait();
         goTo(browseFacetsPage);
-        searchPage.awaitForPageToLoad();
-        searchPage.threadWait();
-        searchPage.awaitForElementPresence(facetableFieldsActions.facetableFieldGroup);
         Assert.assertNull(searchPage.queryRuleByName(facetUpdateDisplayName), "CREATED QUERY RULE IS NOT DELETED");
 
 

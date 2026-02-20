@@ -77,7 +77,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
     public void bulkEnableAndDisableFieldFeatures(Object jsonObject) throws InterruptedException {
         // Navigate to field properties page
         goTo(fieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
 
         JsonObject fieldProperties = (JsonObject) jsonObject;
@@ -97,7 +96,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
         fieldPropertiesActions.refreshIcon.click();
         searchPage.threadWait();
         goTo(fieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         fieldPropertiesActions.selectField(FieldName);
         fieldPropertiesActions.clickActionDropdown();
@@ -116,7 +114,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
     public void EnableAndDisableFieldFeatures(Object jsonObject) throws InterruptedException {
         // Navigate to field properties page
         goTo(fieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
 
         JsonObject fieldProperties = (JsonObject) jsonObject;
@@ -145,7 +142,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //Disable
         goTo(fieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         fieldPropertiesActions.selectField(FieldName);
         fieldPropertiesActions.clickEditIcon();
@@ -171,7 +167,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
     public void EnableFieldFeaturesAndcheckInManageFacetAndPromotion(Object jsonObject) throws InterruptedException {
         // Navigate to field properties page
         goTo(fieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
 
         JsonObject fieldProperties = (JsonObject) jsonObject;
@@ -195,7 +190,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //Manage
         goTo(manageSearchFacetAndSearchFieldPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         facetableFieldsActions.openCreateFacetForm();
         facetableFieldsActions.checkSelectedField(FieldName);
@@ -205,7 +199,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //promotion
         goTo(searchPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         createPromotion(query,false,false);
         JsonArray object = fieldProperties.get("data").getAsJsonArray();
@@ -220,7 +213,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //Disable feature
         goTo(fieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         fieldPropertiesActions.selectField(FieldName);
         fieldPropertiesActions.clickEditIcon();
@@ -233,7 +225,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
         fieldPropertiesActions.isFeatureDisabled(Merchandisable);
 
         goTo(manageSearchFacetAndSearchFieldPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         facetableFieldsActions.openCreateFacetForm();
         facetableFieldsActions.SelectedField(FieldName);
@@ -242,7 +233,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //promotion
         goTo(searchPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         createPromotion(query,false,false);
         merchandisingActions.fillCampaignData(campaignData);
@@ -258,7 +248,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
     public void EnableFieldFeaturesAndcheckInFieldRuleAndAutosuggest(Object jsonObject) throws InterruptedException {
         // Navigate to field properties page
         goTo(fieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
 
         JsonObject fieldProperties = (JsonObject) jsonObject;
@@ -284,7 +273,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //FieldRule
         goTo(searchPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
@@ -299,7 +287,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //Autosuggest
         goTo(SearchAutosuggestPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         autoSuggestActions.clickOnCustomiseButton();
         autoSuggestActions.goToSuggestionSectionsByName(UnbxdEnum.valueOf(suggestion));
@@ -311,7 +298,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //Disable feature
         goTo(fieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         fieldPropertiesActions.selectField(FieldName);
         fieldPropertiesActions.clickEditIcon();
@@ -327,7 +313,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //FieldRule
         goTo(searchPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
@@ -339,7 +324,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
         fieldPropertiesActions.manageAttributeCoundnotFind.isDisplayed();
 
         goTo(SearchAutosuggestPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         autoSuggestActions.clickOnCustomiseButton();
         autoSuggestActions.goToSuggestionSectionsByName(UnbxdEnum.valueOf(suggestion));
@@ -357,7 +341,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
     public void BrowsebulkEnableAndDisableFieldFeatures(Object jsonObject) throws InterruptedException {
         // Navigate to field properties page
         goTo(browseFieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
 
         JsonObject fieldProperties = (JsonObject) jsonObject;
@@ -376,7 +359,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
         fieldPropertiesActions.refreshIcon.click();
         searchPage.threadWait();
         goTo(browseFieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         fieldPropertiesActions.selectField(FieldName);
         fieldPropertiesActions.clickActionDropdown();
@@ -394,7 +376,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
     public void BrowseEnableAndDisableFieldFeatures(Object jsonObject) throws InterruptedException {
         // Navigate to field properties page
         goTo(browseFieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
 
         JsonObject fieldProperties = (JsonObject) jsonObject;
@@ -425,7 +406,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //Disable
         goTo(browseFieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         fieldPropertiesActions.selectField(FieldName);
         fieldPropertiesActions.clickEditIcon();
@@ -450,7 +430,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
     public void BrowseEnableFieldFeaturesAndcheckInManageFacetAndPromotion(Object jsonObject) throws InterruptedException {
         // Navigate to field properties page
         goTo(browseFieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
 
         JsonObject fieldProperties = (JsonObject) jsonObject;
@@ -473,7 +452,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //Manage
         goTo(browseFacetsPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         facetableFieldsActions.openCreateFacetForm();
         facetableFieldsActions.checkSelectedField(FieldName);
@@ -483,7 +461,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //promotion
         goTo(browsePage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         createBrowsePromotion(page,false,false);
         JsonArray object = fieldProperties.get("data").getAsJsonArray();
@@ -500,7 +477,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //Disable feature
         goTo(browseFieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         fieldPropertiesActions.selectField(FieldName);
         fieldPropertiesActions.clickEditIcon();
@@ -514,7 +490,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
 
         goTo(browseFacetsPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         facetableFieldsActions.openCreateFacetForm();
         facetableFieldsActions.checkSelectedField(FieldName);
@@ -523,7 +498,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //promotion
         goTo(browsePage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         createBrowsePromotion(page,false,false);
         searchPageActions.fillPageName(object);
@@ -540,7 +514,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
     public void BrowseEnableFieldFeaturesAndcheckInFieldRule(Object jsonObject) throws InterruptedException {
         // Navigate to field properties page
         goTo(browseFieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
 
         JsonObject fieldProperties = (JsonObject) jsonObject;
@@ -565,7 +538,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //FieldRule
         goTo(browsePage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
@@ -580,7 +552,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //Disable feature
         goTo(browseFieldPropertiesPage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         fieldPropertiesActions.selectField(FieldName);
         fieldPropertiesActions.clickEditIcon();
@@ -596,7 +567,6 @@ public class FieldPropertiesTest extends MerchandisingTest {
 
         //FieldRule
         goTo(browsePage);
-        searchPage.awaitForPageToLoad();
         searchPage.threadWait();
         merchandisingActions.goToSection(UnbxdEnum.FACETS);
         searchPageActions.awaitForPageToLoad();
