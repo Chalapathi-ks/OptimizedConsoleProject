@@ -214,10 +214,19 @@ public class UiBase extends PageBase {
 
     public Boolean awaitForPageToLoad() {
         try {
-            await().atMost(getMaxTimeout()).withMessage("Waiting for the Page Load is failed").untilPage().isLoaded();
+            await().atMost(10).withMessage("Waiting for the Page Load is failed").untilPage().isLoaded();
             return true;
         } catch (Exception e) {
             System.out.println("Waiting for the Page Load is failed");
+            return false;
+        }
+    }
+
+    public Boolean awaitForPageToLoadQuick() {
+        try {
+            await().atMost(5).untilPage().isLoaded();
+            return true;
+        } catch (Exception e) {
             return false;
         }
     }

@@ -82,17 +82,17 @@ public class GlobalLoginManager {
             
             // Navigate to the application URL first
             loginActions.goTo(loginActions);
-            loginActions.awaitForPageToLoad();
+            loginActions.awaitForPageToLoadQuick();
             
             // Try to reuse cookies
             if (!GlobalCookieManager.reuseCookies(driver)) {
-                System.out.println("❌ Failed to reuse global cookies");
+                System.out.println("Failed to reuse global cookies");
                 return false;
             }
             
             // Navigate to a protected page to verify session
             loginActions.goTo(loginActions);
-            loginActions.awaitForPageToLoad();
+            loginActions.awaitForPageToLoadQuick();
             
             // Check if session is valid
             if (GlobalCookieManager.isSessionValid(driver)) {
