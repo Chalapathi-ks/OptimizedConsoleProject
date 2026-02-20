@@ -14,6 +14,7 @@ import org.testng.annotations.BeforeSuite;
 
 import core.ui.actions.LoginActions;
 import lib.BrowserInitializer;
+import lib.GlobalCookieManager;
 import lib.GlobalLoginManager;
 
 public class BaseTest extends SeleniumBase {
@@ -69,7 +70,9 @@ public class BaseTest extends SeleniumBase {
 
     protected void performGlobalLogin() {
         try {
-            GlobalLoginManager.smartLogin(driver, 0, 1);
+            System.out.println("Performing direct login with this test's own loginActions...");
+            loginActions.login(0, 1);
+            GlobalCookieManager.storeCookies(driver);
         } catch (Exception e) {
             System.err.println("Global login failed: " + e.getMessage());
             e.printStackTrace();

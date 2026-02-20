@@ -33,7 +33,7 @@ public class WelcomePage extends LoginPage{
 
     public String welcomePageLoader = "welcomePage loader";
 
-    public static By welcomePageText = By.cssSelector("..unx-welcome-text");
+    public static By welcomePageText = By.cssSelector(".unx-welcome-text");
 
 
     public WelcomePage gotoWelcomePage()
