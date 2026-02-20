@@ -38,6 +38,14 @@ public class User {
         this.deleteSiteSsoIdKeyValue=cookie;
     }
 
+    public String getDeleteSiteSsoIdKeyValue() {
+        return deleteSiteSsoIdKeyValue;
+    }
+
+    public void setDeleteSiteSsoIdKeyValue(String deleteSiteSsoIdKeyValue) {
+        this.deleteSiteSsoIdKeyValue = deleteSiteSsoIdKeyValue;
+    }
+
     private int id;
     private String email;
     private String password;
