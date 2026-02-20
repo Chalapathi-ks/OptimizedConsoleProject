@@ -13,6 +13,7 @@ public class searchableFieldsAndFacetsPage extends UnbxdCommonPage {
     public String getUrl()
     {
         awaitForPageToLoad();
+        threadWait();
         return MANAGE_SEARCH_PAGE.getBaseUrl(EnvironmentConfig.getSiteId());
     }
 

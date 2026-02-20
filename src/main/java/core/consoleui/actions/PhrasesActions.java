@@ -21,7 +21,7 @@ public class PhrasesActions extends PhrasesPage {
     awaitForElementPresence(synonymActions.synonymCreationButton);
     click(synonymActions.synonymCreationButton);
     awaitForElementPresence(synonymActions.synonymCreateWindow);
-    Thread.sleep(3000);
+    Thread.sleep(4000);
     Assert.assertTrue(awaitForElementPresence(synonymActions.synonymCreateWindow));
 
     synonymActions.synonymInput.fill().with(synonym);
