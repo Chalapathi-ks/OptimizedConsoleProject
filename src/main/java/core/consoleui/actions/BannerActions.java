@@ -47,6 +47,9 @@ public class BannerActions extends CommercePageActions {
         threadWait();
         safeClick(imageUrlRadioButton);
         new WebDriverWait(getDriver(), 30).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".banner-tab-header .radio-tab:nth-child(1) input")));
+        threadWait();
+        // Wait for tab content / image URL input (remote can render slower)
+        new WebDriverWait(getDriver(), 20).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@name='imageUrl']")));
         awaitForElementPresence(bannerInputImgUrl);
         Assert.assertTrue(imgUrlRadioButtonIsSelected.isSelected(),"ImageUrl Radio Button is not selected");
         bannerInputImgUrl.clear();

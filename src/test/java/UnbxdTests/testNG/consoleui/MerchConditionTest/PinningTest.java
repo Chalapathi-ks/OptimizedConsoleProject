@@ -64,13 +64,19 @@ public class  PinningTest extends MerchandisingTest {
         ThreadWait();
         merchandisingActions.clickOnApplyButton();
         ThreadWait();
-        for (int i = 0; i < 15; i++) {
+        // Wait for pinned position to appear (remote/Grid can be slower than local; poll up to 30s)
+        boolean foundPinnedAtPosition = false;
+        for (int i = 0; i < 30; i++) {
+            merchandisingActions.await();
             if (merchandisingActions.pinnedProductIndex.size() > 0
-                    && pinningPosition.equals(merchandisingActions.pinnedProductIndex.get(0).getText().trim()))
+                    && pinningPosition.equals(merchandisingActions.pinnedProductIndex.get(0).getText().trim())) {
+                foundPinnedAtPosition = true;
                 break;
-            try { Thread.sleep(1000); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+            }
+            try { Thread.sleep(1000); } catch (InterruptedException e) { Thread.currentThread().interrupt(); break; }
         }
         Assert.assertTrue(merchandisingActions.pinnedProductIndex.size() > 0, "PRODUCT IS NOT PINNED AT THE GIVEN POSITION: pinned list empty");
+        Assert.assertTrue(foundPinnedAtPosition, "PRODUCT IS NOT PINNED AT THE GIVEN POSITION: " + pinningPosition + " (waited 30s for remote)");
         Assert.assertEquals(merchandisingActions.pinnedProductIndex.get(0).getText().trim(), pinningPosition, "PRODUCT IS NOT PINNED AT THE GIVEN POSITION");
         Assert.assertTrue(merchandisingActions.pinnedProductText.isDisplayed(),"PINNED TEXT IS NOT PRESENT AT THE GIVEN POSITION");
 

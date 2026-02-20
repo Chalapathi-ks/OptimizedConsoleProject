@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="PromotionTests" parallel="tests" thread-count="5" verbose="10" preserve-order="true">
+<suite name="PromotionTests" parallel="tests" thread-count="2" verbose="10" preserve-order="true">
 
     <test name="Merch - PromotionStatusTest - UpcomingStatusTest">
         <classes>

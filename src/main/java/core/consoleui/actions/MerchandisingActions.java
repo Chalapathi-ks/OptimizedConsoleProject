@@ -161,13 +161,31 @@ public class MerchandisingActions extends MerchandisingRulesPage {
     public void timeZoneSelection(){
         scrollUntilVisible(timezoneDropdown);
         waitForElementToBeClickable(timezoneDropdown, "Timezone dropdown");
-        clickUsingJS(timezoneDropdown);
-        awaitForElementPresence(zoneinput);
-        zoneinput.fill().with("kolkata");
-        scrollUntilVisible(timezonelist);
-        awaitForElementPresence(timezonelist);
-        waitForElementToBeClickable(timezonelist, "Timezone list option");
-        clickUsingJS(timezonelist);
+        // Click via in-browser XPath so we never pass a WebElement proxy to executeScript (avoids jdk.proxy2.$Proxy13)
+        String timezoneDropdownXpath = "//*[@class='time-zone time-headers']//following::*[@class='RCB-select-arrow']";
+        ((JavascriptExecutor) getDriver()).executeScript(
+            "var el = document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue; if(el) el.click();",
+            timezoneDropdownXpath);
+        await();
+        // Re-find zoneinput after dropdown opens to avoid StaleElementReferenceException
+        for (int i = 0; i < 3; i++) {
+            try {
+                awaitForElementPresence(zoneinput);
+                zoneinput.fill().with("kolkata");
+                break;
+            } catch (org.openqa.selenium.StaleElementReferenceException e) {
+                await();
+                if (i == 2) throw e;
+            }
+        }
+        await();
+        // Wait for list to be in DOM without holding a reference; then click via XPath in JS (no stale ref)
+        new WebDriverWait(getDriver(), 10).until(
+            ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='time-zone time-headers']//following::*[contains(@class,'RCB-list-item')]")));
+        String timezonelistXpath = "//*[@class='time-zone time-headers']//following::*[contains(@class,'RCB-list-item')]";
+        ((JavascriptExecutor) getDriver()).executeScript(
+            "var el = document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue; if(el) el.click();",
+            timezonelistXpath);
     }
 
 

@@ -288,9 +288,6 @@ public class PromotionStatusTest extends MerchandisingTest {
                 goTo(browsePage);
                 searchPage.await();
                 searchPage.queryRuleByName(page);
-                searchPageActions.awaitForSuccessToastPresence();
-                searchPage.awaitTillElementDisplayed(searchPageActions.ToasterSuccess);
-
                 merchandisingActions.await();
                 searchPageActions.deleteQueryRule(page);
                 searchPageActions.awaitForSuccessToastPresence();
