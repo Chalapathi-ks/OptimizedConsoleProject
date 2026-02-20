@@ -39,6 +39,8 @@ public class BannerActions extends CommercePageActions {
         threadWait();
         click(htmlRadioButton);
         threadWait();
+        new WebDriverWait(getDriver(), 30).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".banner-tab-header .radio-tab:nth-child(2) input")));
+        threadWait();
         fillHtmlBanner(html);
         threadWait();
         findFirst("body").click();

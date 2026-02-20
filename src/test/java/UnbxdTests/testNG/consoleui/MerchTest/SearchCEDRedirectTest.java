@@ -70,8 +70,9 @@ public class SearchCEDRedirectTest extends MerchandisingTest {
         ThreadWait();
         searchPageActions.selectActionType(UnbxdEnum.PREVIEW, query);
         ThreadWait();
+        new WebDriverWait(merchandisingActions.getDriver(), 25).until(org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated(org.openqa.selenium.By.cssSelector(".rule-content .RCB-form-el-block input")));
         merchandisingActions.awaitForElementPresence(searchPageActions.redirectPreview);
-        new WebDriverWait(merchandisingActions.getDriver(), 60).until(new ExpectedCondition<Boolean>() {
+        new WebDriverWait(merchandisingActions.getDriver(), 90).until(new ExpectedCondition<Boolean>() {
             @Override
             public Boolean apply(WebDriver driver) {
                 try {

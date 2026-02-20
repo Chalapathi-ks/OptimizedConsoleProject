@@ -291,7 +291,7 @@ public class SimilarQueryTest extends MerchandisingTest {
         searchPageActions.selectActionFromMore(UnbxdEnum.STOPPED, query);
         searchPageActions.selectModelWindow();
         Assert.assertTrue(searchPageActions.checkSuccessMessage(), SUCCESS_MESSAGE_FAILURE);
-        searchPage.awaitTillElementDisplayed(searchPageActions.stopCampaign);
+        searchPageActions.waitForStopCampaignVisible(25);
         Assert.assertTrue(searchPageActions.stopCampaign.isDisplayed(), "SEARCH: PROMOTION RULE IS NOT IN STOPPED STATE");
 
         searchPageActions.selectActionType(UnbxdEnum.LEFTMORE, query);
@@ -348,7 +348,7 @@ public class SimilarQueryTest extends MerchandisingTest {
         searchPageActions.selectActionFromMore(UnbxdEnum.STOPPED, page);
         searchPageActions.selectModelWindow();
         Assert.assertTrue(searchPageActions.checkSuccessMessage(), SUCCESS_MESSAGE_FAILURE);
-        searchPage.awaitTillElementDisplayed(searchPageActions.stopCampaign);
+        searchPageActions.waitForStopCampaignVisible(25);
         Assert.assertTrue(searchPageActions.stopCampaign.isDisplayed(), "SEARCH: PROMOTION RULE IS NOT IN STOPPED STATE");
 
         searchPageActions.selectActionType(UnbxdEnum.LEFTMORE, page);

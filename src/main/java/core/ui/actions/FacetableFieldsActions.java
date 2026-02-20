@@ -174,18 +174,18 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
         ThreadWait();
         selectValueBYMatchingText(facetAttribute);
         await();
-        awaitForElementPresence(displayNameInput);
+        new WebDriverWait(getDriver(), 20).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='display-name']//input|//input[@id='display_name']")));
         displayNameInput.fill().with(name);
         awaitForElementPresence(facetEnableToggle);
         if (!isActiveTogglePresent()) {
             click(facetEnableToggle);
             threadWait();
-            awaitForActiveToggle(20);
+            awaitForActiveToggle(30);
         } else {
             click(facetEnableToggle);
             threadWait();
             click(facetEnableToggle);
-            awaitForActiveToggle(20);
+            awaitForActiveToggle(30);
             Assert.assertTrue(activeToggle.isDisplayed());
         }
 

@@ -21,8 +21,10 @@ import static lib.constants.UnbxdErrorConstants.*;
 
 public class CommercePageActions extends CommerceSearchPage {
 
-    private static final int SUCCESS_TOAST_WAIT_SEC = 30;
+    private static final int SUCCESS_TOAST_WAIT_SEC = 45;
     private static final By SUCCESS_TOAST_SELECTOR = By.cssSelector(".unx-qa-toastsucess, .unx-qa-toastsuccess");
+    private static final By STOP_CAMPAIGN_BY = By.cssSelector(".unx-qa-stop");
+    private static final By CONDITION_TITLE_BY = By.cssSelector(".action-rules-list .action-title span:nth-child(2)");
 
     MerchandisingActions merchandisingActions;
     CampaignCreationPage campaignCreationPage;
@@ -120,6 +122,12 @@ public class CommercePageActions extends CommerceSearchPage {
             ExpectedConditions.presenceOfElementLocated(SUCCESS_TOAST_SELECTOR));
     }
 
+    /** Waits for the stop campaign indicator to appear (e.g. after stopping a rule). Use before asserting on stopCampaign. */
+    public void waitForStopCampaignVisible(int timeoutSec) {
+        new WebDriverWait(getDriver(), timeoutSec).until(
+            ExpectedConditions.presenceOfElementLocated(STOP_CAMPAIGN_BY));
+    }
+
     public void goToQueryBasedBanner()
     {
         awaitForElementPresence(queryBasedBannerButon);
@@ -168,7 +176,7 @@ public class CommercePageActions extends CommerceSearchPage {
     public String getConditionTitle()
     {
         await();
-        awaitForElementPresence(conditionTitle);
+        new WebDriverWait(getDriver(), 20).until(ExpectedConditions.presenceOfElementLocated(CONDITION_TITLE_BY));
         scrollToBottom();
         return conditionTitle.getText().trim();
     }

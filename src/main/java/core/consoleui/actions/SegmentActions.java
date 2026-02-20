@@ -6,8 +6,11 @@ import lib.enums.UnbxdEnum;
 import org.fluentlenium.core.annotation.Page;
 import org.fluentlenium.core.domain.FluentList;
 import org.fluentlenium.core.domain.FluentWebElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.Map;
@@ -27,6 +30,19 @@ public class SegmentActions extends SegmentPage {
         locationSearchBox.fill().with(locationName);
         ThreadWait();
         locDropdownList.get(indexRange).click();
+    }
+
+    private static final By SEGMENT_USER_TYPE_EDIT_BY = By.xpath("//*[text()=\"User type\"]//following::*[contains(@class,\"new-summary-tag\")][1]");
+    private static final By SEGMENT_USER_TYPE_LISTING_BY = By.xpath("//*[contains(normalize-space(text()),'User Type') or contains(normalize-space(text()),'User type')]//following::*[contains(@class,'seg-item-col')][1]");
+
+    /** Wait for segment edit panel (User type value) to load after opening EDIT. */
+    public void awaitForSegmentEditPanelLoaded(int timeoutSec) {
+        new WebDriverWait(getDriver(), timeoutSec).until(ExpectedConditions.presenceOfElementLocated(SEGMENT_USER_TYPE_EDIT_BY));
+    }
+
+    /** Wait for segment listing row (User Type column) to appear. */
+    public void awaitForSegmentUserTypeInListingPage(int timeoutSec) {
+        new WebDriverWait(getDriver(), timeoutSec).until(ExpectedConditions.presenceOfElementLocated(SEGMENT_USER_TYPE_LISTING_BY));
     }
 
     public FluentWebElement getSegmentType(UnbxdEnum type) {

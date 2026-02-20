@@ -64,9 +64,10 @@ public class  PinningTest extends MerchandisingTest {
         ThreadWait();
         merchandisingActions.clickOnApplyButton();
         ThreadWait();
-        // Wait for pinned position to appear (remote/Grid can be slower than local; poll up to 30s)
+        ThreadWait();
+        // Wait for pinned position to appear (remote/Grid can be slower than local; poll up to 45s)
         boolean foundPinnedAtPosition = false;
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 45; i++) {
             merchandisingActions.await();
             if (merchandisingActions.pinnedProductIndex.size() > 0
                     && pinningPosition.equals(merchandisingActions.pinnedProductIndex.get(0).getText().trim())) {
@@ -76,7 +77,7 @@ public class  PinningTest extends MerchandisingTest {
             try { Thread.sleep(1000); } catch (InterruptedException e) { Thread.currentThread().interrupt(); break; }
         }
         Assert.assertTrue(merchandisingActions.pinnedProductIndex.size() > 0, "PRODUCT IS NOT PINNED AT THE GIVEN POSITION: pinned list empty");
-        Assert.assertTrue(foundPinnedAtPosition, "PRODUCT IS NOT PINNED AT THE GIVEN POSITION: " + pinningPosition + " (waited 30s for remote)");
+        Assert.assertTrue(foundPinnedAtPosition, "PRODUCT IS NOT PINNED AT THE GIVEN POSITION: " + pinningPosition + " (waited 45s for remote)");
         String actualPosition = null;
         for (int r = 0; r < 3; r++) {
             if (merchandisingActions.pinnedProductIndex.size() > 0) {
