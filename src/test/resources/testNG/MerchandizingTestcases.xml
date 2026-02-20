@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="MerchandizingTests " parallel="tests" thread-count="20" verbose="10" preserve-order="true">
+<suite name="MerchandizingTests " parallel="tests" thread-count="15" verbose="10" preserve-order="true">
 
 
 <!--     ABTest methods -->
