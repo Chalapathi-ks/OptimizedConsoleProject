@@ -530,45 +530,24 @@ public class MerchandisingActions extends MerchandisingRulesPage {
 
     public boolean switchPreviewTab() {
         try {
-            ThreadWait(); // Wait for new window to fully open
+            // Poll up to 10s for a new tab to appear
+            org.openqa.selenium.support.ui.WebDriverWait tabWait =
+                new org.openqa.selenium.support.ui.WebDriverWait(getDriver(), java.time.Duration.ofSeconds(10));
+            tabWait.until(d -> d.getWindowHandles().size() >= 2);
 
-            // Get all window handles
             ArrayList<String> tabs = new ArrayList<>(getDriver().getWindowHandles());
             int totalTabs = tabs.size();
-            
             System.out.println("Total tabs open: " + totalTabs);
 
-            // Check if we have at least 2 tabs
-            if (totalTabs < 2) {
-                System.out.println("Not enough tabs are open. Total tabs: " + totalTabs);
-                return false;
-            }
+            int targetTabIndex = (totalTabs >= 3) ? 2 : 1;
+            System.out.println("Switching to tab index: " + targetTabIndex);
 
-            // Determine which tab to switch to based on total number of tabs
-            int targetTabIndex;
-            if (totalTabs == 2) {
-                // If 2 tabs are open, switch to tab index 1 (second tab)
-                targetTabIndex = 1;
-                System.out.println("Two tabs detected, switching to tab index: " + targetTabIndex);
-            } else if (totalTabs >= 3) {
-                // If 3 or more tabs are open, switch to tab index 2 (third tab)
-                targetTabIndex = 2;
-                System.out.println("Three or more tabs detected, switching to tab index: " + targetTabIndex);
-            } else {
-                return false;
-            }
-
-            // Switch to the target tab
             getDriver().switchTo().window(tabs.get(targetTabIndex));
             System.out.println("Successfully switched to tab index: " + targetTabIndex);
-            ThreadWait(); // Wait for page to load in new tab
-            threadWait();
             awaitForPageToLoad();
-            ThreadWait();
-            threadWait();
 
             return true;
-            
+
         } catch (Exception e) {
             System.out.println("Error switching tabs: " + e.getMessage());
             e.printStackTrace();
@@ -577,36 +556,19 @@ public class MerchandisingActions extends MerchandisingRulesPage {
     }
 
     public void openPreviewAndSwitchTheTab() throws InterruptedException {
-        ThreadWait();
         goToSearch_browsePreview();
-        ThreadWait();
-        threadWait();
 
-        // Switch to the appropriate tab based on how many are open
         if (switchPreviewTab()) {
             System.out.println("Now working in preview tab");
-            // Wait for the preview page to load and verify URL contains "preview"
-            awaitForPageToLoad();
-            ThreadWait();
-            threadWait();
-            
-            // Wait for URL to contain "preview" with retry logic
-            int retries = 0;
-            int maxRetries = 5;
-            while (retries < maxRetries && !getDriver().getCurrentUrl().contains("preview")) {
-                ThreadWait();
-                threadWait();
-                retries++;
-                System.out.println("Waiting for preview URL... retry " + retries);
-            }
-            
-            String currentUrl = getDriver().getCurrentUrl();
-            if (!currentUrl.contains("preview")) {
-                System.out.println("Warning: URL does not contain 'preview' after switching. Current URL: " + currentUrl);
+            // Wait up to 10s for URL to contain "preview"
+            try {
+                new org.openqa.selenium.support.ui.WebDriverWait(getDriver(), java.time.Duration.ofSeconds(10))
+                    .until(d -> d.getCurrentUrl().contains("preview"));
+            } catch (Exception e) {
+                System.out.println("Warning: URL does not contain 'preview'. Current URL: " + getDriver().getCurrentUrl());
             }
         } else {
             System.out.println("Failed to switch to preview tab");
-            // Try to get current URL for debugging
             System.out.println("Current URL: " + getDriver().getCurrentUrl());
         }
     }

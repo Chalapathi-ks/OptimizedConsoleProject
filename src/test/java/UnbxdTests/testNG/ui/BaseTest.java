@@ -29,7 +29,7 @@ public class BaseTest extends SeleniumBase {
     public void setUp() {
         try {
             BrowserInitializer initializer = new BrowserInitializer();
-            initializer.init();
+            initializer.init(this.getClass().getSimpleName());
             driver = initializer.getDriver();
 
             if (driver == null) {

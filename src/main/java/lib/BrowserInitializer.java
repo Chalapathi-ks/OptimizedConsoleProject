@@ -50,6 +50,7 @@ public class BrowserInitializer {
     private static final String BROWSER_NAME = "browserName";
     private Browser browser;
     private WebDriver driver = null;
+    private String sessionName = "AutomationTest";
 
     public BrowserInitializer() throws Exception {
         Config.loadConfig();
@@ -57,6 +58,13 @@ public class BrowserInitializer {
     }
 
     public void init() {
+        init(null);
+    }
+
+    public void init(String testName) {
+        if (testName != null && !testName.isEmpty()) {
+            this.sessionName = testName;
+        }
         browserCapabilities.put(BROWSER_NAME, Config.getBrowser());
         browser = Browser.getBrowser(browserCapabilities.get(BROWSER_NAME).toString());
 
@@ -139,10 +147,12 @@ public class BrowserInitializer {
                 chromeOptions.setCapability("browserVersion", browserVersion);
             }
 
+            chromeOptions.setCapability("se:name", sessionName);
             addSelenoidOptionsIfNeeded(chromeOptions, hubUrl);
             options = chromeOptions;
         } else if (browser == Browser.FIREFOX) {
             FirefoxOptions firefoxOptions = new FirefoxOptions();
+            firefoxOptions.setCapability("se:name", sessionName);
             addSelenoidOptionsIfNeeded(firefoxOptions, hubUrl);
             options = firefoxOptions;
         } else {
@@ -168,7 +178,7 @@ public class BrowserInitializer {
             var selenoidOptions = new HashMap<String, Object>();
             selenoidOptions.put("enableVNC", true);
             selenoidOptions.put("enableVideo", false);
-            selenoidOptions.put("name", "Merchandising_testcases");
+            selenoidOptions.put("name", sessionName);
             selenoidOptions.put("sessionTimeout", "5m");
             options.setCapability("selenoid:options", selenoidOptions);
             log.info("Selenoid options enabled");
