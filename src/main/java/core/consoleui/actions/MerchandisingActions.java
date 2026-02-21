@@ -488,11 +488,10 @@ public class MerchandisingActions extends MerchandisingRulesPage {
 
     public void goToSearch_browsePreview() throws InterruptedException {
         if (awaitForElementPresence(searchPageActions.menuIcon)) {
-            threadWait();
-            click(searchPageActions.menuIcon);
+            safeClick(searchPageActions.menuIcon);
         }
         awaitForElementPresence(seach_browsepreview);
-        click(seach_browsepreview);
+        safeClick(seach_browsepreview);
         threadWait();
     }
     public void ClickViewHideInsight()
