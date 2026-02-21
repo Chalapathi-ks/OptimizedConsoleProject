@@ -231,7 +231,7 @@ public class FacetableFieldsActions extends FacetableFieldsPage {
          if(checkElementPresence(activeToggle))
         {
             ThreadWait();
-            click(facetEnableToggle);
+            safeClick(facetEnableToggle);
             threadWait();
         }
         return updateName;

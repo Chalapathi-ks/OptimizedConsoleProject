@@ -251,8 +251,8 @@ public class CommercePageActions extends CommerceSearchPage {
 
     public String fillQueryRuleData(String query,String page,String... similarQuiries) throws InterruptedException {
         String queryName=query+System.currentTimeMillis();
-        Assert.assertTrue(awaitForElementPresence(newQueryRuleInput),"SEARCH CAMPAIGN CREATION PAGE IS NOT LOADED");
         if(query!=null){
+            Assert.assertTrue(awaitForElementPresence(newQueryRuleInput),"SEARCH CAMPAIGN CREATION PAGE IS NOT LOADED");
             newQueryRuleInput.fill().with(queryName);
         }else if(page!=null) {
             //fillPageName(); dnt forget

@@ -134,10 +134,28 @@ public class UiBase extends PageBase {
     }
 
     public void selectDropDownValue(FluentList<FluentWebElement> dropDownList, String searchValue) {
-        for (FluentWebElement value : dropDownList) {
-            if (value.getText().trim().contains(searchValue)) {
-                robustClick(value);
-                break;
+        try {
+            for (FluentWebElement value : dropDownList) {
+                if (value.getText().trim().contains(searchValue)) {
+                    robustClick(value);
+                    return;
+                }
+            }
+        } catch (org.openqa.selenium.StaleElementReferenceException e) {
+            // Dropdown re-rendered; re-query fresh elements
+            java.util.List<WebElement> freshItems = getDriver()
+                .findElements(By.cssSelector(".RCB-list-item"));
+            for (WebElement item : freshItems) {
+                try {
+                    if (item.isDisplayed() && item.getText().trim().contains(searchValue)) {
+                        try { item.click(); } catch (Exception ex) {
+                            ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", item);
+                        }
+                        return;
+                    }
+                } catch (org.openqa.selenium.StaleElementReferenceException se) {
+                    // skip stale item
+                }
             }
         }
     }
@@ -169,12 +187,28 @@ public class UiBase extends PageBase {
     }
 
     public void selectValueBYMatchingText(String value) throws InterruptedException {
-        for (FluentWebElement e : find(".RCB-list-item")) {
-            threadWait();
-            if (e.getText().trim().equalsIgnoreCase(value)) {
-               Thread.sleep(2000);
-                e.click();
-                break;
+        ThreadWait();
+        java.util.List<WebElement> items = getDriver().findElements(By.cssSelector(".RCB-list-item"));
+        for (WebElement item : items) {
+            try {
+                if (item.isDisplayed() && item.getText().trim().equalsIgnoreCase(value)) {
+                    try { item.click(); } catch (Exception ex) {
+                        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", item);
+                    }
+                    return;
+                }
+            } catch (org.openqa.selenium.StaleElementReferenceException e) {
+                // re-query and retry
+                items = getDriver().findElements(By.cssSelector(".RCB-list-item"));
+                for (WebElement freshItem : items) {
+                    try {
+                        if (freshItem.isDisplayed() && freshItem.getText().trim().equalsIgnoreCase(value)) {
+                            ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", freshItem);
+                            return;
+                        }
+                    } catch (org.openqa.selenium.StaleElementReferenceException ignored) {}
+                }
+                return;
             }
         }
     }
