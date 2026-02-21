@@ -992,9 +992,14 @@ public class UiBase extends PageBase {
         try {
             ThreadWait();
             element.click();
+        } catch (org.openqa.selenium.StaleElementReferenceException e) {
+            System.out.println("robustClick: stale element, skipping JS fallback");
         } catch (Exception e) {
-            // Fallback to JS click
-            ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element.getElement());
+            try {
+                ((org.openqa.selenium.JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element.getElement());
+            } catch (org.openqa.selenium.StaleElementReferenceException se) {
+                System.out.println("robustClick: stale element on JS fallback");
+            }
         }
     }
 }

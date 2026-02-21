@@ -98,14 +98,27 @@ public class CampaignCreationPage extends UnbxdCommonPage {
     }
 
     protected void clickMoreOptionIfPresent() {
-        java.util.List<org.openqa.selenium.WebElement> links = getDriver()
-            .findElements(org.openqa.selenium.By.cssSelector(".grey-link-text"));
-        if (links.size() > 0 && links.get(0).isDisplayed()) {
+        ThreadWait();
+        for (int attempt = 0; attempt < 3; attempt++) {
+            java.util.List<org.openqa.selenium.WebElement> links = getDriver()
+                .findElements(org.openqa.selenium.By.cssSelector(".grey-link-text"));
+            if (links.isEmpty() || !links.get(0).isDisplayed()) return;
             try {
                 links.get(0).click();
+                return;
+            } catch (org.openqa.selenium.StaleElementReferenceException e) {
+                ThreadWait();
             } catch (Exception e) {
-                ((org.openqa.selenium.JavascriptExecutor) getDriver())
-                    .executeScript("arguments[0].click();", links.get(0));
+                try {
+                    links = getDriver().findElements(org.openqa.selenium.By.cssSelector(".grey-link-text"));
+                    if (!links.isEmpty()) {
+                        ((org.openqa.selenium.JavascriptExecutor) getDriver())
+                            .executeScript("arguments[0].click();", links.get(0));
+                    }
+                    return;
+                } catch (Exception ex) {
+                    ThreadWait();
+                }
             }
         }
     }
@@ -185,8 +198,21 @@ public class CampaignCreationPage extends UnbxdCommonPage {
     public void selectSegment(String segment) {
         SSegmentDropDown.click();
         searchSegment.fill().with(segment);
-        ThreadWait();
-        selectDropDownValue(segmentDropDownList, segment);
+        threadWait();
+        // Re-query dropdown items after search filter re-renders the list
+        java.util.List<org.openqa.selenium.WebElement> items = getDriver()
+            .findElements(org.openqa.selenium.By.cssSelector(".browse-dd-item"));
+        for (org.openqa.selenium.WebElement item : items) {
+            if (item.getText().trim().contains(segment)) {
+                try {
+                    item.click();
+                } catch (Exception e) {
+                    ((org.openqa.selenium.JavascriptExecutor) getDriver())
+                        .executeScript("arguments[0].click();", item);
+                }
+                break;
+            }
+        }
         ThreadWait();
         SSegmentDropDown.click();
     }
