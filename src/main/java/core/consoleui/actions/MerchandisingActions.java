@@ -518,8 +518,35 @@ public class MerchandisingActions extends MerchandisingRulesPage {
             safeClick(searchPageActions.menuIcon);
         }
         awaitForElementPresence(seach_browsepreview);
-        safeClick(seach_browsepreview);
-        threadWait();
+
+        int handlesBefore = getDriver().getWindowHandles().size();
+
+        // Native click needed — JS click won't open a new tab via target="_blank"
+        try {
+            waitForElementToBeClickable(seach_browsepreview, "Search preview");
+            seach_browsepreview.click();
+        } catch (org.openqa.selenium.ElementClickInterceptedException e) {
+            scrollUntilVisible(seach_browsepreview);
+            ThreadWait();
+            seach_browsepreview.click();
+        }
+
+        // Verify new tab actually opened; if not, retry with Ctrl+Click
+        try {
+            new org.openqa.selenium.support.ui.WebDriverWait(getDriver(), java.time.Duration.ofSeconds(3))
+                .until(d -> d.getWindowHandles().size() > handlesBefore);
+        } catch (Exception e) {
+            System.out.println("New tab didn't open, retrying with Ctrl+Click");
+            if (awaitForElementPresence(searchPageActions.menuIcon)) {
+                safeClick(searchPageActions.menuIcon);
+            }
+            awaitForElementPresence(seach_browsepreview);
+            new org.openqa.selenium.interactions.Actions(getDriver())
+                .keyDown(org.openqa.selenium.Keys.CONTROL)
+                .click(seach_browsepreview.getElement())
+                .keyUp(org.openqa.selenium.Keys.CONTROL)
+                .perform();
+        }
     }
     public void ClickViewHideInsight()
     {

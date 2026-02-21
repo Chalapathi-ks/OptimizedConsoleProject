@@ -159,7 +159,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         searchPageActions.selectActionFromMore(UnbxdEnum.STOPPED, query);
         searchPageActions.selectModelWindow();
         Assert.assertTrue(searchPageActions.checkSuccessMessage(), SUCCESS_MESSAGE_FAILURE);
-        ThreadWait();
+        merchandisingActions.awaitTillElementDisplayed(searchPageActions.stopCampaign);
         Assert.assertTrue(searchPageActions.stopCampaign.isDisplayed(), "SEARCH: PROMOTION RULE IS NOT IN STOPPED STATE");
 
         goTo(searchPage);
@@ -205,6 +205,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         searchPageActions.selectActionFromMore(UnbxdEnum.STOPPED,query);
         searchPageActions.selectModelWindow();
         Assert.assertTrue(searchPageActions.checkSuccessMessage(), SUCCESS_MESSAGE_FAILURE);
+        merchandisingActions.awaitTillElementDisplayed(searchPageActions.stopCampaign);
         Assert.assertTrue(searchPageActions.stopCampaign.isDisplayed(),"SEARCH: PROMOTION RULE IS NOT IN STOPPED STATE");
 
         //Duplicate the rule
@@ -355,6 +356,7 @@ public class PromotionStatusTest extends MerchandisingTest {
         searchPageActions.selectActionFromMore(UnbxdEnum.STOPPED,page);
         searchPageActions.selectModelWindow();
         Assert.assertTrue(searchPageActions.checkSuccessMessage(), SUCCESS_MESSAGE_FAILURE);
+        merchandisingActions.awaitTillElementDisplayed(searchPageActions.stopCampaign);
         Assert.assertTrue(searchPageActions.stopCampaign.isDisplayed(),"SEARCH: PROMOTION RULE IS NOT IN STOPPED STATE");
 
         //Duplicate the rule
