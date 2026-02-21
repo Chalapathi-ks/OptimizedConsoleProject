@@ -62,6 +62,7 @@ public class FluentFieldDecorator extends DefaultFieldDecorator {
         @Override public FluentWebElement click() { resolve().click(); return this; }
         @Override public String getText() { return resolve().getText(); }
         @Override public String getValue() { return resolve().getAttribute("value"); }
+        @Override public String getTextContent() { return resolve().getAttribute("textContent"); }
         @Override public String getAttribute(String name) { return resolve().getAttribute(name); }
         @Override public boolean isDisplayed() {
             try { return resolve().isDisplayed(); } catch (Exception e) { return false; }

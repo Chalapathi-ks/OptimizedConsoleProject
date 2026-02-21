@@ -263,8 +263,9 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         facetableFieldsActions.editFacetIcon.click();
         String facetUpdateDisplayName = facetableFieldsActions.fillUpdateFacetDetails(testData);
         facetableFieldsActions.updateFacet.click();
+        ThreadWait();
 
-        click(merchandisingActions.fieldRulePublishBtn);
+        merchandisingActions.safeClick(merchandisingActions.fieldRulePublishBtn);
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
         searchPage.threadWait();
@@ -275,6 +276,7 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         facetActions.verifydTheToggleIsEnabledOrNot();
 
         // facetActions.previewFacetHeader.getText().contains(facetUpdateDisplayName);
+        facetActions.awaitForElementPresence(facetActions.rangeStart_value);
         Assert.assertTrue(facetActions.rangeStart_value.getTextContent().contains(updatedRangeStartValue));
         Assert.assertTrue(facetActions.rangeEnd_value.getTextContent().contains(updatedRangeEndValue));
         facetActions.disableTheToggle();
@@ -374,8 +376,9 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         facetableFieldsActions.editFacetIcon.click();
         String facetUpdateDisplayName = facetableFieldsActions.fillUpdateFacetDetails(testData);
         facetableFieldsActions.updateFacet.click();
+        ThreadWait();
 
-        click(merchandisingActions.fieldRulePublishBtn);
+        merchandisingActions.safeClick(merchandisingActions.fieldRulePublishBtn);
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
         searchPage.threadWait();
@@ -726,8 +729,9 @@ public class FieldRuleFacetTest extends MerchandisingTest {
         facetableFieldsActions.editFacetIcon.click();
         String facetUpdateDisplayName = facetableFieldsActions.fillUpdateFacetDetails(testData);
         facetableFieldsActions.updateFacet.click();
+        ThreadWait();
 
-        click(merchandisingActions.fieldRulePublishBtn);
+        merchandisingActions.safeClick(merchandisingActions.fieldRulePublishBtn);
         merchandisingActions.verifySuccessMessage();
         ThreadWait();
         searchPage.threadWait();

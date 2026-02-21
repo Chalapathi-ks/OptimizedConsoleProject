@@ -23,10 +23,37 @@ public class MerchandisingActions extends MerchandisingRulesPage {
 
     public void publishCampaign() throws InterruptedException {
         awaitForElementPresence(publishButton);
-        scrollUntilVisible(publishButton);
-        waitForElementToBeClickable(publishButton, "Publish button");
         ((JavascriptExecutor) getDriver()).executeScript(
-            "document.querySelector('.promotion-action-btns .RCB-btn-primary').click();");
+            "arguments[0].scrollIntoView({block:'center'});", publishButton.getElement());
+        ThreadWait();
+
+        for (int attempt = 1; attempt <= 3; attempt++) {
+            System.out.println("Publish attempt " + attempt);
+            try {
+                publishButton.getElement().click();
+            } catch (Exception e) {
+                ((JavascriptExecutor) getDriver()).executeScript(
+                    "arguments[0].click();", publishButton.getElement());
+            }
+            try {
+                new org.openqa.selenium.support.ui.WebDriverWait(getDriver(), java.time.Duration.ofSeconds(3))
+                    .until(org.openqa.selenium.support.ui.ExpectedConditions
+                        .visibilityOfElementLocated(successMsgPopUp));
+                System.out.println("Publish loader appeared - click registered successfully");
+                break;
+            } catch (org.openqa.selenium.TimeoutException te) {
+                System.out.println("Publish loader did NOT appear after attempt " + attempt);
+                if (attempt < 3) {
+                    java.util.List<WebElement> btns = getDriver()
+                        .findElements(By.cssSelector(".promotion-action-btns .RCB-btn-primary"));
+                    if (btns.isEmpty()) {
+                        System.out.println("Publish button gone - publish may have succeeded");
+                        break;
+                    }
+                }
+            }
+        }
+
         waitForLoaderToDisAppear(successMsgPopUp, "STILL PUBLISHING IS IN-PROGRESS");
         ThreadWait();
     }
