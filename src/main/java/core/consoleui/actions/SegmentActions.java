@@ -42,24 +42,19 @@ public class SegmentActions extends SegmentPage {
     }
 
     public void selectTypeValues(UnbxdEnum type,String segmentvalue) throws InterruptedException {
-        ThreadWait();
-        click(userTypeFilter);
+        awaitForElementPresence(userTypeFilter);
+        safeClick(userTypeFilter);
         selectDropDownValue(typeValueList,segmentvalue);
         ThreadWait();
-        click(userTypeFilter);
-        ThreadWait();
-        click(outsideBox);
-
-
+        safeClick(outsideBox);
     }
+
     public void selectDeviceType(UnbxdEnum type,String segmentvalue) throws InterruptedException {
-        ThreadWait();
-        click(deviceTypeFilter);
+        awaitForElementPresence(deviceTypeFilter);
+        safeClick(deviceTypeFilter);
         selectDropDownValue(typeValueList,segmentvalue);
         ThreadWait();
-        click(deviceTypeFilter);
-        ThreadWait();
-        click(outsideBox);
+        safeClick(outsideBox);
     }
 
     public void removeSegmentValues(String SegmentType)

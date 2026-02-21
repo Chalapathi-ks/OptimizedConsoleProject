@@ -12,8 +12,9 @@ public class BannerActions extends CommercePageActions {
 
     public void goToQueryRuleBanner()
     {
-            awaitForElementPresence(bannerQueryRuleButton);
-            click(bannerQueryRuleButton);
+            if (awaitForElementPresence(bannerQueryRuleButton)) {
+                safeClick(bannerQueryRuleButton);
+            }
     }
 
     public void fillHtmlBanner(String html)

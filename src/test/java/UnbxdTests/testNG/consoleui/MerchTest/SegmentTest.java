@@ -134,7 +134,7 @@ public class SegmentTest extends MerchandisingTest {
         createPromotion(segmentName,true,true);
         Map<String, Object> campaignData = merchandisingActions.getCampaignData("SegmentMerchBanner.json");
         bannerActions.goToQueryRuleBanner();
-        ThreadWait();
+       // ThreadWait();
         searchPageActions.fillQueryRuleData(segmentName,null);
         merchandisingActions.fillCampaignDataforUpcoming(campaignData);
         ThreadWait();

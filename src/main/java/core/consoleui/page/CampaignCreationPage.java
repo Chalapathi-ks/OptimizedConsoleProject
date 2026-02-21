@@ -229,7 +229,6 @@ public class CampaignCreationPage extends UnbxdCommonPage {
     public void unSelectAllDeviceType() {
         for (int i = 0; i < deviceTypeList.size(); i++) {
             deviceTypeList.get(i).click();
-            await();
             Assert.assertFalse(deviceTypeList.findFirst(".segments-dd-checkbox").isSelected());
         }
     }
@@ -238,8 +237,7 @@ public class CampaignCreationPage extends UnbxdCommonPage {
     public void selectDevices(ArrayList<String> devices) {
         if (devices == null)
             return;
-        awaitForElementPresence(deviceDropDownButton);
-        click(deviceDropDownButton);
+        safeClick(deviceDropDownButton);
         scrollToBottom();
         unSelectAllDeviceType();
         for (String device : devices)
@@ -248,14 +246,12 @@ public class CampaignCreationPage extends UnbxdCommonPage {
             {
                 if(deviceTypeList.get(i).find(deviceTypeName).getText().equals(device))
                 {
-                    await();
-                    click(deviceTypeList.get(i));
+                    deviceTypeList.get(i).click();
                     Assert.assertTrue(deviceTypeList.get(i).findFirst(".segments-dd-checkbox input").isSelected());
                 }
             }
         }
-        awaitForElementPresence(deviceDropDownButton);
-        click(deviceDropDownButton);
+        safeClick(deviceDropDownButton);
     }
 
 

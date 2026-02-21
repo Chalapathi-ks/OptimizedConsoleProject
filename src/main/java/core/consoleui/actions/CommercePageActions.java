@@ -108,14 +108,16 @@ public class CommercePageActions extends CommerceSearchPage {
 
     public void goToQueryBasedBanner()
     {
-        awaitForElementPresence(queryBasedBannerButon);
-        click(queryBasedBannerButon);
+        if (awaitForElementPresence(queryBasedBannerButon)) {
+            safeClick(queryBasedBannerButon);
+        }
     }
 
     public void goToFieldRuleBasedBanner()
     {
-        awaitForElementPresence(fieldBasedBannerButon);
-        click(fieldBasedBannerButon);
+        if (awaitForElementPresence(fieldBasedBannerButon)) {
+            safeClick(fieldBasedBannerButon);
+        }
     }
 
 
@@ -248,26 +250,22 @@ public class CommercePageActions extends CommerceSearchPage {
 
 
     public String fillQueryRuleData(String query,String page,String... similarQuiries) throws InterruptedException {
-    String queryName=query+System.currentTimeMillis();
-        awaitForElementPresence(newQueryRuleInput);
-       if(query!=null){
-           Assert.assertTrue(awaitForElementPresence(newQueryRuleInput),"SEARCH CAMPAIGN CREATION PAGE IS NOT LOADED");
-           newQueryRuleInput.fill().with(queryName);
-       }else if(page!=null) {
-           //fillPageName(); dnt forget
-       }
+        String queryName=query+System.currentTimeMillis();
+        Assert.assertTrue(awaitForElementPresence(newQueryRuleInput),"SEARCH CAMPAIGN CREATION PAGE IS NOT LOADED");
+        if(query!=null){
+            newQueryRuleInput.fill().with(queryName);
+        }else if(page!=null) {
+            //fillPageName(); dnt forget
+        }
         if(similarQuiries!=null && similarQuiries.length>0)
         {
-            awaitForElementPresence(addMoreQueryTab);
-            click(addMoreQueryTab);
+            safeClick(addMoreQueryTab);
             for(String similarQuery:similarQuiries) {
-            ThreadWait();
-
                 similarQueryInput.fill().with(similarQuery);
                 similarQueryInput.getElement().sendKeys(Keys.ENTER);
+                ThreadWait();
             }
         }
-        await();
         return queryName;
     }
 

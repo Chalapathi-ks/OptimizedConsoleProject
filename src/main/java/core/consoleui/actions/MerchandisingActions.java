@@ -23,7 +23,10 @@ public class MerchandisingActions extends MerchandisingRulesPage {
 
     public void publishCampaign() throws InterruptedException {
         awaitForElementPresence(publishButton);
-        safeClick(publishButton);
+        scrollUntilVisible(publishButton);
+        waitForElementToBeClickable(publishButton, "Publish button");
+        ((JavascriptExecutor) getDriver()).executeScript(
+            "document.querySelector('.promotion-action-btns .RCB-btn-primary').click();");
         waitForLoaderToDisAppear(successMsgPopUp, "STILL PUBLISHING IS IN-PROGRESS");
         ThreadWait();
     }
@@ -73,15 +76,18 @@ public class MerchandisingActions extends MerchandisingRulesPage {
             ThreadWait();
             selectValue(value, valueElement);
             ThreadWait();
-            if (awaitForElementPresence(boostValueSection)) {
+            java.util.List<WebElement> boostSections = getDriver()
+                .findElements(By.cssSelector(".boost-slot-section .RCB-range-wrapper"));
+            java.util.List<WebElement> slotSections = getDriver()
+                .findElements(By.cssSelector(".boost-slot-section.slot-section"));
+            if (boostSections.size() > 0 && boostSections.get(0).isDisplayed()) {
                 boostRowSection = rowGroup.find(ruleValueGroups).get(index);
                 boostValue = boostRowSection.findFirst(boostSliderValue);
                 fillBoostInputValue(boostValue);
                 ThreadWait();
-            } else if (awaitForElementPresence(slotPositionSection)) {
+            } else if (slotSections.size() > 0 && slotSections.get(0).isDisplayed()) {
                 fillSlotPositions();
                 ThreadWait();
-
             }
         } catch (Exception e) {
             e.getMessage();
@@ -295,7 +301,11 @@ public class MerchandisingActions extends MerchandisingRulesPage {
     }
 
     public void clickOnApplyButton() {
+        awaitForElementPresence(applyButton);
+        scrollUntilVisible(applyButton);
+        waitForElementToBeClickable(applyButton, "Apply button");
         safeClick(applyButton);
+        threadWait();
     }
 
     public void deleteConditionIfItsPresent(int group) {

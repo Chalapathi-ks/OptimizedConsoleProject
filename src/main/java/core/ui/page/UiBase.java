@@ -135,15 +135,10 @@ public class UiBase extends PageBase {
 
     public void selectDropDownValue(FluentList<FluentWebElement> dropDownList, String searchValue) {
         for (FluentWebElement value : dropDownList) {
-            System.out.println("value is "+value.getText());
-
             if (value.getText().trim().contains(searchValue)) {
-                ThreadWait();
-                ThreadWait();
                 robustClick(value);
                 break;
             }
-
         }
     }
 
@@ -990,7 +985,6 @@ public class UiBase extends PageBase {
 
     private void robustClick(FluentWebElement element) {
         try {
-            ThreadWait();
             element.click();
         } catch (org.openqa.selenium.StaleElementReferenceException e) {
             System.out.println("robustClick: stale element, skipping JS fallback");
