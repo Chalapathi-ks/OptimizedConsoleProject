@@ -20,6 +20,8 @@ import core.consoleui.actions.productCardMappingAction;
 import java.util.HashMap;
 import java.util.Map;
 
+import static core.ui.page.UiBase.ThreadWait;
+
 public class ProductCardMappingTest extends BaseTest {
     @Page
     productCardMappingAction pcmAction;
@@ -64,7 +66,7 @@ public class ProductCardMappingTest extends BaseTest {
         String varientFieldValuePriceEdit =mappingData.get("parentFieldValuePrice").getAsString();
 
         goTo(pcmAction);
-        Thread.sleep(2000);
+        ThreadWait();
 
         pcmAction.selectTitleValue( parentFieldValueTitle,varientFieldValueTitle);
         pcmAction.selectAndRemoveThirdAdditionalField();

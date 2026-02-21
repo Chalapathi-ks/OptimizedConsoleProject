@@ -24,12 +24,9 @@ public class SearchableFieldActions extends SearchableFieldsPage {
 
 
     public FluentWebElement getAttributeUsingDisplayName(String name) throws InterruptedException {
-        Thread.sleep(15000);
         awaitForElementPresence(attributeSearchBox);
         //facetSearchBox.clear();
         attributeSearchBox.fill().with(name);
-        ThreadWait();
-        //facetableFieldsActions.selectPageCount(pageCount);
         ThreadWait();
         for(int i=0 ; i<attributeList.size() ; i++)
         {
@@ -54,7 +51,6 @@ public class SearchableFieldActions extends SearchableFieldsPage {
     public void selectSearchWeightFromDropdown(String searchWeight) throws InterruptedException {
         awaitForElementPresence(searchWeighDropdown);
         ThreadWait();
-        await();
         click(searchWeighDropdown);
         selectValueBYMatchingText(searchWeight);
     }

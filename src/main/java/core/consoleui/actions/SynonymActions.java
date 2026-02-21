@@ -12,27 +12,20 @@ public class SynonymActions extends SynonymsPage {
 
 public String createSynonym(String synonym, String uni, String bi) throws InterruptedException
 {
-    Thread.sleep(5000);
     awaitForElementPresence(synonymCreationButton);
     click(synonymCreationButton);
-    awaitForElementPresence(synonymCreateWindow);
-    Thread.sleep(1500);
     Assert.assertTrue(awaitForElementPresence(synonymCreateWindow));
 
     synonymInput.fill().with(synonym);
     awaitForElementPresence(createSynonymButton);
 
     if(uni!=null && uni!="") {
-        await();
         unidirections.click();
-        await();
         unidirectionalInput.fill().with(uni);
     }
 
     if(bi!=null && bi!=""){
-        await();
         bidirections.click();
-        await();
         bidirectionalInput.fill().with(bi);
     }
 
@@ -65,13 +58,12 @@ public FluentWebElement getKeyWordsByName(String name) throws InterruptedExcepti
 {
     click(synonymsSearchBox);
     searchBoxOpen.fill().with(name);
-    Thread.sleep(2000);
     awaitForElementPresence(synonymsLists);
     for (int i = 0; i< find(".rdt_TableBody .rdt_TableRow").size(); i++)
     {
         if(find(".rdt_TableBody .rdt_TableRow").get(i).find(keywordCssLocator).getValue().trim().contains(name))
         {
-            Thread.sleep(1000);
+            ThreadWait();
             return find(".rdt_TableBody .rdt_TableRow").get(i);
         }
     }

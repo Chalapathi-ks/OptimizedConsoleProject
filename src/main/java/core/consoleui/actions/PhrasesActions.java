@@ -17,27 +17,20 @@ public class PhrasesActions extends PhrasesPage {
         public String createPhrase(String synonym, String uni, String bi) throws InterruptedException
             {
     String phraseName = "auto phrases" + System.currentTimeMillis();
-    Thread.sleep(5000);
     awaitForElementPresence(synonymActions.synonymCreationButton);
     click(synonymActions.synonymCreationButton);
-    awaitForElementPresence(synonymActions.synonymCreateWindow);
-    Thread.sleep(2000);
     Assert.assertTrue(awaitForElementPresence(synonymActions.synonymCreateWindow));
 
     synonymActions.synonymInput.fill().with(synonym);
     awaitForElementPresence(synonymActions.createSynonymButton);
 
     if(uni!=null && uni!="") {
-        await();
         synonymActions.unidirections.click();
-        await();
         synonymActions.unidirectionalInput.fill().with(uni);
     }
 
     if(bi!=null && bi!=""){
-        await();
         synonymActions.bidirections.click();
-        await();
         synonymActions.bidirectionalInput.fill().with(bi);
     }
 
@@ -52,7 +45,7 @@ public class PhrasesActions extends PhrasesPage {
     
 
     public FluentWebElement getPhraseByName(String name) throws InterruptedException {
-        await();
+        ThreadWait();
         List<FluentWebElement> phraseRows = find(".rdt_TableBody .rdt_TableRow");
         for (FluentWebElement row : phraseRows) {
             String rowText = row.getText();

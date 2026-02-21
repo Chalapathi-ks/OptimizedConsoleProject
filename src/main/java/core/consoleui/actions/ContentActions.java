@@ -15,15 +15,11 @@ public class ContentActions extends SynonymsPage {
         String stem="autoStem"+ System.currentTimeMillis();
         String stemmed="autoStemmed"+ System.currentTimeMillis();
 
-        Thread.sleep(5000);
         awaitForElementPresence(synonymCreationButton);
         click(synonymCreationButton);
-        awaitForElementPresence(synonymCreateWindow);
-        await();
         Assert.assertTrue(awaitForElementPresence(synonymCreateWindow));
 
         synonymInput.fill().with(stem);
-        await();
        // stemmedWordInput.fill().with(stemmed);
         unidirectionalInput.fill().with(stemmed);
 
@@ -58,16 +54,15 @@ public class ContentActions extends SynonymsPage {
     {
         click(synonymsSearchBox);
         click(searchBoxOpen);
-        Thread.sleep(1000);
+        ThreadWait();
         synonymsSearchBox.clear();
         synonymsSearchBox.fill().with(name);
-        Thread.sleep(5000);
         awaitForElementPresence(synonymsLists);
         for (int i = 0; i< createdItemList.size(); i++)
         {
             if(createdItemList.get(i).find(keywordCssLocator).getValue().trim().equals(name))
             {
-                Thread.sleep(5000);
+                ThreadWait();
                 return createdItemList.get(i);
             }
         }
@@ -100,7 +95,6 @@ public class ContentActions extends SynonymsPage {
 
     public FluentWebElement getKeyWord(FluentWebElement synonym)
     {
-        await();
         return synonym.findFirst(keywordCssLocator);
     }
 
@@ -113,7 +107,7 @@ public class ContentActions extends SynonymsPage {
     }
 
     public int getSynonymsSize(String keyword) throws InterruptedException {
-        Thread.sleep(4000);
+        ThreadWait();
         if(createdItemList.size()==0)
             return 0;
         if(!searchBoxOpen.getAttribute("class").contains("hide")) {
@@ -134,9 +128,8 @@ public class ContentActions extends SynonymsPage {
 
     public void deleteCreatedKeyword(String synonymName) throws InterruptedException {
         FluentWebElement synonym= getKeyWordsByName(synonymName);
-        Thread.sleep(2000);
+        ThreadWait();
         synonym.findFirst(deleteCssLocator).click();
-        await();
         Assert.assertTrue(awaitForElementPresence(deleteButton),"Delete button is not visible");
         click(deleteButton);
         Assert.assertTrue(awaitForElementPresence(deleteConfirmationWindow),"Delete Confirmation Window is not getting Opened");

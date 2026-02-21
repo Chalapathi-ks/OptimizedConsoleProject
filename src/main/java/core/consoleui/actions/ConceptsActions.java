@@ -15,14 +15,10 @@ public class ConceptsActions extends ConceptsPage {
     {
         String keyword = "autokeyword" + System.currentTimeMillis();
 
-        Thread.sleep(5000);
         awaitForElementPresence(synonymCreationButton);
         click(synonymCreationButton);
-        awaitForElementPresence(synonymCreateWindow);
-        await();
         Assert.assertTrue(awaitForElementPresence(synonymCreateWindow));
         conceptsKeyWordInput.fill().with(keyword);
-        await();
         createSynonymButton.click();
         awaitForElementNotDisplayed(synonymCreateWindow);
         //Assert.assertTrue(checkSuccessMessage(), UnbxdErrorConstants.SUCCESS_MESSAGE_FAILURE);
@@ -35,7 +31,7 @@ public class ConceptsActions extends ConceptsPage {
     }
 
     public int getConceptsSize(String keyword) throws InterruptedException {
-        Thread.sleep(4000);
+        ThreadWait();
         synonymsSearchBox.clear();
         awaitForElementNotDisplayed(PageLoader);
 
@@ -53,7 +49,7 @@ public class ConceptsActions extends ConceptsPage {
 
     public void deleteKeyword(String name) throws InterruptedException {
         FluentWebElement synonym=getKeyWordsByName(name);
-        Thread.sleep(6000);
+        ThreadWait();
         synonym.findFirst(conceptsCloseButton).click();
         Assert.assertTrue(awaitForElementPresence(deleteConfirmationWindow),"Delete Confirmation Window is not getting Opened");
         deleteYesSynonymButton.click();
@@ -86,7 +82,7 @@ public class ConceptsActions extends ConceptsPage {
         {
             if(find(".RCB-list .unx-qa-createdconcepts-stopwords").get(i).getText().contains(name))
             {
-                Thread.sleep(1000);
+                ThreadWait();
                 return find(".RCB-list .unx-qa-createdconcepts-stopwords").get(i);
             }
         }
